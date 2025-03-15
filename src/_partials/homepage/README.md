@@ -1,0 +1,1 @@
+Partials in this folder are blocks in the homepage. They are named with number prefixes showing them the order they appear in the homepage to easily understand at a glance how they relate to each other when looking at the directory tree.

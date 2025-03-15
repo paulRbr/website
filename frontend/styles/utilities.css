@@ -1,0 +1,108 @@
+/*
+Global custom tailwind utilities.
+More specific/complete css utilities should be declared as tailwind "components" in their own files
+
+Note: utilities prefixed with "private-" are here only to help build other utilities,
+and are not intended to be used in the templates.
+*/
+
+@utility font-mono {
+  --font-sans-mono: 100;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+/*
+Writing our own utility classes for our variable font instead of re-declaring default tailwind utilities because:
+  - overriding default utility doesn't work, it just adds a new declaration in addition to the default one
+  - having both font-style/font-weight (default utility) + font-variation-settings (custom utility)
+    would be problematic depending on browsers, as they can add both a virtual weight + the variable font weight styling
+  - the 'font-mono' above is okay as default utility rule don't collapse with our custom needs,
+    and I'd rather stick to "default tailwind" as much as possible
+*/
+@utility vfont-italic {
+  --font-sans-ital: 10;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+@utility vfont-not-italic {
+  --font-sans-ital: 0;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+@utility vfont-regular {
+  --font-sans-wght: 380;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+@utility vfont-medium {
+  --font-sans-wght: 570;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+@utility vfont-semibold {
+  --font-sans-wght: 670;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+
+/* Text type utilities. Naming matches figma design. */
+@utility private-heading {
+  @apply font-sans vfont-semibold leading-[1.1] tracking-[-1%];
+}
+@utility h1 {
+  @apply private-heading text-[3rem];
+}
+@utility h2 {
+  @apply private-heading text-[2.5rem];
+}
+@utility h3 {
+  @apply private-heading text-[2rem];
+}
+@utility h4 {
+  @apply private-heading text-[1.5rem];
+}
+@utility h5 {
+  @apply private-heading text-[1.125rem];
+}
+@utility h6 {
+  @apply private-heading text-[1rem];
+}
+
+@utility private-capped {
+  @apply font-mono leading-[normal] tracking-[2%] uppercase;
+}
+@utility capped-small {
+  @apply private-capped vfont-semibold text-[0.75rem];
+}
+@utility capped-big {
+  @apply private-capped vfont-regular text-[0.875rem];
+}
+
+@utility private-body {
+  @apply font-sans vfont-regular leading-[1.3];
+}
+@utility body-1 {
+  @apply private-body text-[1.25rem] leading-[1.5];
+}
+@utility body-2 {
+  @apply private-body text-[1rem];
+}
+@utility body-3 {
+  @apply private-body text-[0.875rem];
+}
+@utility body-4 {
+  @apply private-body text-[0.75rem];
+}
+@utility body-5 {
+  @apply private-body text-[0.625rem] leading-[1.1];
+}
+
+@utility cta {
+  @apply font-sans vfont-medium text-[1.125rem] leading-[1.2] tracking-[-1%];
+}
+@utility other-link {
+  @apply font-sans vfont-medium text-[1rem] leading-[1.2];
+}
+@utility small-link {
+  @apply font-sans vfont-medium text-[0.875rem] leading-[1.2];
+}

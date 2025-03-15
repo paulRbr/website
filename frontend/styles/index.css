@@ -1,0 +1,18 @@
+@import "dev-tailwind-build-trigger.css"; /* our bridgetown's-way to trigger tailwind rebuilds… yup */
+@import "tailwindcss";
+@import "theme.css";
+@import "utilities.css";
+
+/* see ../fonts/README.md for details on how to handle the font */
+@layer base {
+  @font-face {
+    font-family: "Saans";
+    src: url("../fonts/saans-variable.woff2") format("woff2-variations");
+    font-display: swap;
+    unicode-range: U+20-23, U+25-5D, U+5F-7B, U+7D, U+A0, U+A9, U+AB, U+B0, U+BB,
+      U+C0, U+C6, U+C7, U+C9-CB, U+CF, U+D4, U+D7, U+E0, U+E2, U+E4, U+E7-EB,
+      U+EE, U+EF, U+F4, U+F7, U+F9, U+FB, U+152, U+153, U+2DA, U+2019, U+201C,
+      U+201D, U+2022, U+2026, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+221A,
+      U+2264, U+2265;
+  }
+}

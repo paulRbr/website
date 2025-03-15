@@ -1,0 +1,25 @@
+<%# Just a helper to test tailwind classes, components, partials, etc. %>
+<div class="p-4">
+  <h1 class="h1">Heading 1</h1>
+  <h2 class="h2">Heading 2</h2>
+  <h3 class="h3">Heading 3</h3>
+  <h4 class="h4">Heading 4</h4>
+  <h5 class="h5">Heading 5</h5>
+  <h6 class="h6">Heading 6</h6>
+  <p class="font-sans">Sans font. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates ipsum ad labore molestias cupiditate, neque dignissimos, reiciendis sed hic fugit reprehenderit iusto rerum aut nesciunt numquam placeat ratione delectus atque.
+  </p>
+  <pre><code class="font-mono">Mono font.
+struct group_info init_groups = { .usage = ATOMIC_INIT(2) };
+struct group_info *groups_alloc(int gidsetsize){
+struct group_info *group_info;
+int nblocks;
+int i</code></pre>
+  <p class="vfont-italic">Italic text</p>
+  <p class="vfont-not-italic">Non-italic text</p>
+  <p class="vfont-regular">Regular weight text</p>
+  <p class="vfont-medium">Medium weight text</p>
+  <p class="vfont-semibold">Semibold weight text</p>
+  <%= render(Ui::Button.new()) do %>
+    <span>Default button</span>
+  <% end %>
+</div>
