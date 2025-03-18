@@ -2,7 +2,7 @@
 @layer base {
   @font-face {
     font-family: "Saans";
-    src: url("../fonts/saans-variable.woff2") format("woff2-variations");
+    src: url("../fonts/saans-variable-subset.woff2") format("woff2-variations");
     font-display: swap;
     unicode-range: U+20-23, U+25-5D, U+5F-7B, U+7D, U+A0, U+A9, U+AB, U+B0, U+BB,
       U+C0, U+C6, U+C7, U+C9-CB, U+CF, U+D4, U+D7, U+E0, U+E2, U+E4, U+E7-EB,

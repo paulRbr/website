@@ -6,7 +6,7 @@ Bump.sh uses one custom font-face in multiple variants for all its type: [Saans]
 
 We use a variable font file. It allows us to render the font in multiple weights/italic/mono with one unique woff2 file.
 
-_Note: for some reason, the variable font file in the drive folder only has the `wght` font axe and misses the `ital` and `MONO` axes. I snatched the testing font on the displaay website to have a complete variable font file…_
+_Note: for some reason, the variable font file in the drive folder only has the `wght` font axe and misses the `ital` and `MONO` axes. For now I snatched the testing font on the displaay website to have a complete variable font file…_
 
 ### Font-related CSS rules
 
