@@ -1,0 +1,55 @@
+<%#
+  Homepage workflow section
+
+  Params: none
+%>
+<div class="w-main mx-auto my-section">
+  <%= render 'section_heading', locals: {
+    title: 'Modern workflow',
+    pill: 'pill title',
+    description: 'This is the subtext that explains the section further'
+  } %>
+
+  <%# Workflow steps %>
+  <div class="flex flex-row justify-stretch items-stretch gap-24 w-full">
+    <%= render "homepage/35_workflow__step", locals: {
+      number: "01",
+      title: "Commit",
+      subtitle: "Git as the source of truth",
+      features: [
+        "Swagger, OpenAPI & AsyncAPI support",
+        "Code-first and design-first",
+        "Doc-as-code workflow"
+      ]
+    } %>
+
+    <%= render "homepage/35_workflow__step", locals: {
+      number: "02",
+      title: "Review",
+      subtitle: "Top-notch collaboration & governance",
+      features: [
+        "Code review assistance",
+        "Breaking changes notification",
+        "Doc preview"
+      ]
+    } %>
+
+    <%= render "homepage/35_workflow__step", locals: {
+      number: "03",
+      title: "Publish",
+      subtitle: "Release control",
+      features: [
+        "Automatic doc & changelog update",
+        "Release management & rollback",
+        "Customers notification"
+      ]
+    } %>
+  </div>
+
+  <%# CTA Button %>
+  <div class="flex justify-center items-center mt-48">
+    <%= render Button.new href: "/product", icon: "arrow-right-up-line", variant: 'link' do %>
+      Check out our product page to learn more
+    <% end %>
+  </div>
+</div>

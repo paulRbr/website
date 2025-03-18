@@ -1,0 +1,37 @@
+<%#
+  Homepage doc preview banner section
+
+  Params: none
+%>
+<div class="w-main mx-auto flex flex-col gap-40 p-64 bg-black rounded-24 shadow-[0px_3.85px_14.68px_0px_rgba(173,225,239,0.54),0px_12.92px_49.31px_0px_rgba(173,225,239,0.4),0px_7.84px_220.76px_0px_rgba(173,225,239,0.3)]">
+  <div class="flex justify-between items-stretch gap-64 w-[992px]">
+    <div class="flex flex-col gap-8 justify-center flex-1">
+      <h2 class="h3 text-white">Preview your documentation using a Swagger, OpenAPI or AsyncAPI file.</h2>
+    </div>
+
+    <div class="flex flex-col justify-center gap-24 flex-1">
+      <div class="flex flex-col gap-12 border-b border-[#393837] pb-24">
+        <div class="flex justify-stretch items-stretch gap-8 w-full">
+          <div class="flex justify-between items-center gap-16 px-10 py-4 pr-4 bg-white rounded-12 border border-[#F3F1F1] flex-1">
+            <div class="flex items-center gap-8 flex-1">
+              <span class="body-3 text-[#B9B9B9]">mydomain.com/file.json</span>
+            </div>
+            <button class="flex justify-center items-center gap-8 px-20 py-8 bg-black text-white rounded-8">
+              <span class="cta">Preview</span>
+            </button>
+          </div>
+        </div>
+        <p class="body-4 text-white">Try it with an OpenAPI or an AsyncAPI example.</p>
+      </div>
+
+      <div class="flex flex-col justify-center items-center gap-16 p-[16px_6px] w-[464px] h-[92px] rounded-12 border border-dashed border-[#555252] bg-black">
+        <div class="flex items-center gap-12">
+          <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-[#464242]">
+            <%= render Icon.new "download-cloud-line", class: "text-white" %>
+          </div>
+          <span class="cta text-white">Import your documentation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

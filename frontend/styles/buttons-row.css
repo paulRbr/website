@@ -1,0 +1,5 @@
+@layer components {
+  .buttons-row {
+    @apply flex gap-16;
+  }
+}

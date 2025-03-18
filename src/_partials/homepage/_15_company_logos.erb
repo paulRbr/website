@@ -1,0 +1,37 @@
+<%#
+  Homepage company logos section
+
+  Params: none
+%>
+<% companyLogos = [
+  {
+    name: 'Company Logo 1',
+    image: '/images/company-logos/company-logo-1.png'
+  },
+  {
+    name: 'Company Logo 2',
+    image: '/images/company-logos/company-logo-2.png'
+  },
+  {
+    name: 'Company Logo 3',
+    image: '/images/company-logos/company-logo-3.png'
+  },
+  {
+    name: 'Company Logo 4',
+    image: '/images/company-logos/company-logo-4.png'
+  }
+] %>
+<div class="w-main mx-auto">
+  <div class="flex flex-col items-center w-full gap-[56px] py-[40px] pb-[80px] my-section">
+    <h2 class="capped-small text-black-600">
+      Trusted by leading companies
+    </h2>
+    <div class="flex flex-wrap justify-between items-center w-full gap-16">
+      <% companyLogos.each do |companyLogo| %>
+        <div class="flex items-center justify-center">
+          <img src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-32 w-auto"/>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

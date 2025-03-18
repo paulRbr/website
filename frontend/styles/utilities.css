@@ -17,7 +17,7 @@ Writing our own utility classes for our variable font instead of re-declaring de
   - having both font-style/font-weight (default utility) + font-variation-settings (custom utility)
     would be problematic depending on browsers, as they can add both a virtual weight + the variable font weight styling
   - the 'font-mono' above is okay as default utility rule don't collapse with our custom needs,
-    and I'd rather stick to "default tailwind" as much as possible
+    and I'd rather stick to "default tailwind" as much as possible.
 */
 @utility vfont-italic {
   --font-sans-ital: 10;

@@ -1,0 +1,42 @@
+<%#
+  Homepage feature block item
+
+  Params (all required):
+    - pill: hash with:
+      - icon: icon name for the category pill shown above the title
+      - text: text for the category pill shown above the title
+    - title
+    - content: main text, should be correctly formatted (ie in a <p> tag)
+    - cta: hash with:
+      - href
+      - text
+    - image_path
+    - tags: array of hashes with:
+      - icon: icon name for the tag
+      - text: text for the tag
+%>
+<div class="my-section flex items-center gap-[56px]">
+  <div class="flex flex-1 flex-col gap-32 w-full rounded-12">
+    <%= render Tag.new icon: pill[:icon], variant: 'pill' do %><%= pill[:text] %><% end %>
+    <div class="flex flex-col gap-8">
+      <h3 class="h3 text-black-900"><%= title %></h3>
+      <div class="body-2 text-black-900">
+        <%= content %>
+      </div>
+    </div>
+
+    <%= render Button.new icon: 'arrow-right-up-line', variant: 'link', href: cta[:href] do %>
+      <%= cta[:text] %>
+    <% end %>
+  </div>
+  <div class="flex-1 flex flex-col gap-8">
+    <div>
+      <img style="height: 400px; background-color: #ddd" src="<%= image_path %>" alt="Feature blocks 1">
+    </div>
+    <div class="flex gap-8">
+      <% tags.each do |tag| %>
+        <%= render Tag.new icon: tag[:icon], variant: 'seashell' do %><%= tag[:text] %><% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

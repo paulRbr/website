@@ -1,0 +1,119 @@
+<%#
+  Desktop header bar
+
+  Params: none
+%>
+<div class="relative flex my-20 px-24 justify-between bg-white border border-black-100 rounded-tl-8 rounded-tr-8 items-center w-main mx-auto">
+  <header>
+    <a href="<%= relative_url '/' %>">
+      <img src="<%= relative_url '/images/logo.svg' %>" alt="Bump.sh" />
+    </a>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <ul class="flex gap-12">
+      <li><%= render 'header/nav_item', title: 'Pricing', href: '/pricing' %></li>
+      <li><%= render 'header/nav_item', title: 'Product', href: '/product' %></li>
+      <li>
+        <%= render 'header/nav_item', title: 'Resources', dropdown: true %>
+        <div class="js-nav-dropdown-content transition-all duration-200 opacity-100 hidden absolute top-full left-0 w-full bg-white p-24 gap-16">
+          <div class="w-[282px] p-24 bg-black-50 text-black-600 mt-32 rounded-8 flex flex-col">
+            <h2 class="other-link text-black-900 mb-8">
+              Want a personalized product tour?
+            </h2>
+            <p class="body-3 mb-24">
+              Short explanation sentence here
+            </p>
+            <div class="mt-auto">
+              <%= render Button.new variant: 'primary', href: '#' do %>
+                Request demo
+              <% end %>
+            </div>
+          </div>
+          <div>
+            <h2 class="capped-small text-black-500">All ressources</h2>
+            <ul class="grid grid-cols-2 gap-16 mt-20">
+              <% resourceItems = [
+                {
+                  title: 'About',
+                  icon: 'arrow-right',
+                  href: '/about',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'Blog',
+                  icon: 'arrow-right',
+                  href: '/blog',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'Careers',
+                  icon: 'arrow-right',
+                  href: '/careers',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'Customers',
+                  icon: 'arrow-right',
+                  href: '/customers',
+                  description: 'Short explanation sentence here'
+                }
+              ] %>
+              <% resourceItems.each do |item| %>
+                <%= render 'header/nav_sub_item', **item %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li>
+        <%= render 'header/nav_item', title: 'Documentation', href: '/documentation', dropdown: true %>
+        <div class="js-nav-dropdown-content hidden absolute top-full left-0 w-full bg-white p-24 gap-16">
+          <div class="flex flex-col gap-16">
+            <div class="flex gap-8">
+              <h2 class="capped-small text-black-500">All documentation</h2>
+            </div>
+            <ul class="flex gap-16">
+              <% docItems = [
+                {
+                  title: 'Help center',
+                  icon: 'arrow-down',
+                  href: '/help-center',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'API Reference',
+                  icon: 'arrow-down',
+                  href: '/api-reference',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'API Management Encyclopedia',
+                  icon: 'arrow-down',
+                  href: '/api-encyclopedia',
+                  description: 'Short explanation sentence here'
+                },
+                {
+                  title: 'Status',
+                  icon: 'arrow-down',
+                  href: '/status',
+                  description: 'Short explanation sentence here'
+                }
+              ] %>
+              <% docItems.each do |item| %>
+                <%= render 'header/nav_sub_item', **item %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <nav aria-label="Account navigation">
+    <ul class="flex gap-12">
+      <li><%= render 'header/nav_item', title: 'Login', href: '/login' %></li>
+      <li><%= render 'header/nav_item', title: 'Sign up', href: '/signup' %></li>
+    </ul>
+  </nav>
+</div>

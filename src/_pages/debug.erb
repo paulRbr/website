@@ -1,0 +1,91 @@
+---
+layout: empty
+---
+<%# Just a page to test tailwind classes, components, partials, etc. %>
+<div class="p-4" style="margin-bottom: 300px">
+  <div class="pb-20">
+    <div class="h1">Typography</div>
+    <h1 class="h1">Heading 1</h1>
+    <h2 class="h2">Heading 2</h2>
+    <h3 class="h3">Heading 3</h3>
+    <h4 class="h4">Heading 4</h4>
+    <h5 class="h5">Heading 5</h5>
+    <h6 class="h6">Heading 6</h6>
+    <p class="font-sans">Sans font. <br/>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates ipsum ad labore molestias cupiditate, neque dignissimos, reiciendis sed hic fugit reprehenderit iusto rerum aut nesciunt numquam placeat ratione delectus atque.
+    </p>
+    <pre><code class="font-mono">Mono font.<br/>
+struct group_info init_groups = { .usage = ATOMIC_INIT(2) };
+struct group_info *groups_alloc(int gidsetsize){
+struct group_info *group_info;
+int nblocks;
+int i</code></pre>
+    <p class="vfont-regular">Regular weight text</p>
+    <p class="vfont-medium">Medium weight text</p>
+    <p class="vfont-semibold">Semibold weight text</p>
+  </div>
+  <div class="py-20">
+    <div class="h1">Buttons</div>
+    <div class="flex gap-4 mb-20">
+      <%= render Button.new variant: 'primary' do %>
+        <span>Primary button</span>
+      <% end %>
+      <%= render Button.new variant: 'primary', disabled: true do %>
+        <span>Primary button (disabled)</span>
+      <% end %>
+      <%= render Button.new variant: 'aqua' do %>
+        <span>Aqua button</span>
+      <% end %>
+      <%= render Button.new variant: 'seashell' do %>
+        <span>Seashell button</span>
+      <% end %>
+      <%= render Button.new variant: 'outline' do %>
+        <span>Outline button</span>
+      <% end %>
+      <%= render Button.new variant: 'link' do %>
+        <span>Link button</span>
+      <% end %>
+      <%= render Button.new variant: 'link', disabled: true do %>
+        <span>Link button (disabled)</span>
+      <% end %>
+    </div>
+    <div class="flex gap-4">
+      <%= render Button.new href: '#', variant: 'primary' do %>Primary link<% end %>
+      <%= render Button.new href: '#', variant: 'primary', disabled: true do %>Primary link (disabled)<% end %>
+      <%= render Button.new href: '#', variant: 'aqua' do %>Aqua link<% end %>
+      <%= render Button.new href: '#', variant: 'seashell' do %>Seashell link<% end %>
+      <%= render Button.new href: '#', variant: 'outline' do %>Outline link<% end %>
+      <%= render Button.new href: '#', variant: 'link', icon: 'arrow-right-up-line' do %>
+        Link link
+      <% end %>
+      <%= render Button.new href: '#', variant: 'link', icon: 'arrow-right-up-line', disabled: true do %>
+        Link link (disabled)
+      <% end %>
+    </div>
+  </div>
+  <div class="py-20">
+    <div class="h2">Buttons row</div>
+    <div class="buttons-row">
+      <%= render Button.new variant: 'primary' do %>Primary button<% end %>
+      <%= render Button.new variant: 'primary' do %>Primary button<% end %>
+    </div>
+  </div>
+  <div class="py-20">
+    <div class="h2">Button icons</div>
+    <div class="buttons-row">
+      <%= render IconButton.new 'arrow-left' %>
+      <%= render IconButton.new 'arrow-right' %>
+      <%= render IconButton.new 'arrow-left', variant: 'seashell' %>
+      <%= render IconButton.new 'arrow-right', variant: 'seashell' %>
+    </div>
+  </div>
+  <div class="py-20">
+    <div class="h2">Tags</div>
+    <div class="flex gap-4 items-center">
+      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'pill' do %>This is a pill title<% end %>
+      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'square' do %>This is a tag<% end %>
+      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'aqua' do %>This is an tag<% end %>
+      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'seashell' do %>This is a tag<% end %>
+    </div>
+  </div>
+</div>

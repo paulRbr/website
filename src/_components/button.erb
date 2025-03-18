@@ -1,0 +1,30 @@
+<%
+  buttonStyles = "inline-flex w-fit data-disabled:opacity-50 items-center justify-center gap-2 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  buttonVariantStyles = case @variant
+  when 'primary'
+    'rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700'
+  when 'aqua'
+    'rounded-pill border-transparent bg-aqua-100 text-black-900 hover:bg-aqua-500'
+  when 'seashell'
+    'rounded-pill border-transparent bg-seashell-300 text-black-900 hover:bg-seashell-700'
+  when 'outline'
+    'rounded-4 border-black-200 bg-white text-black-900 hover:bg-black-100'
+  end
+  linkStyles = "inline-flex w-fit data-disabled:opacity-50 items-center justify-center p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default"
+  styles = @variant == 'link' ? linkStyles : "#{buttonStyles} #{buttonVariantStyles}"
+  attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
+%>
+<% if @href %>
+  <a href="<%= @href %>" class="<%= styles %>" <%=raw attrs %>>
+  <% else %>
+    <button class="<%= styles %>" <%=raw attrs %>>
+    <% end %>
+    <%= content %>
+    <% if @icon %>
+      <span class="p-4"><%= render Icon.new(@icon, size: 16) %></span>
+<% end %>
+<% if @href %>
+</a>
+<% else %>
+</button>
+<% end %>

@@ -1,0 +1,66 @@
+<%#
+  Homepage screenshot carousel section
+
+  Params: none
+%>
+<div class="w-main mx-auto">
+  <div class="flex flex-col items-center gap-24 w-full">
+    <%# Browser window with shadow effect %>
+    <div class="flex flex-col w-full rounded-16 shadow-strong-shadow">
+      <%# Browser toolbar %>
+      <div class="flex flex-col w-full bg-black-900 px-16 py-8 h-32">
+        <div class="flex items-center gap-[9.95px]">
+          <%# Browser controls (dots) %>
+          <div class="flex gap-[4.97px] pt-[4.97px]">
+            <div class="w-[7.46px] h-[7.46px] rounded-[3.73px] bg-white"></div>
+            <div class="w-[7.46px] h-[7.46px] rounded-[3.73px] bg-white"></div>
+            <div class="w-[7.46px] h-[7.46px] rounded-[3.73px] bg-white"></div>
+          </div>
+        </div>
+      </div>
+      <%# Browser content area %>
+      <div class="flex flex-col justify-center items-center w-full bg-black-900 rounded-b-8 px-12 pb-12">
+        <img src="/images/feature-1.png" alt="API Documentation Interface" class="w-full h-auto" />
+      </div>
+    </div>
+
+    <%# Feature tabs %>
+    <div class="flex p-4 rounded-12 bg-aqua-100 border border-aqua-200">
+      <%# API doc tab %>
+      <button class="flex justify-center items-center gap-8 px-24 py-6 rounded-8 bg-white">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.25 2.5H3.75C3.41848 2.5 3.10054 2.6317 2.86612 2.86612C2.6317 3.10054 2.5 3.41848 2.5 3.75V16.25C2.5 16.5815 2.6317 16.8995 2.86612 17.1339C3.10054 17.3683 3.41848 17.5 3.75 17.5H16.25C16.5815 17.5 16.8995 17.3683 17.1339 17.1339C17.3683 16.8995 17.5 16.5815 17.5 16.25V3.75C17.5 3.41848 17.3683 3.10054 17.1339 2.86612C16.8995 2.6317 16.5815 2.5 16.25 2.5ZM6.25 5H13.75V6.25H6.25V5ZM6.25 7.5H13.75V8.75H6.25V7.5ZM6.25 10H13.75V11.25H6.25V10Z" fill="#1F1B1B"/>
+        </svg>
+        <span class="body-3 vfont-medium text-black-900">API doc</span>
+      </button>
+
+      <%# API explorer tab %>
+      <button class="flex justify-center items-center gap-8 px-24 py-6 rounded-8">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.375 15.625C12.8958 15.625 15.625 12.8958 15.625 9.375C15.625 5.85418 12.8958 3.125 9.375 3.125C5.85418 3.125 3.125 5.85418 3.125 9.375C3.125 12.8958 5.85418 15.625 9.375 15.625Z" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.75 13.75L16.875 16.875" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="body-3 vfont-medium text-black-900">API explorer</span>
+      </button>
+
+      <%# Automatic changelog tab %>
+      <button class="flex justify-center items-center gap-8 px-24 py-6 rounded-8">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.25 2.5H3.75C3.41848 2.5 3.10054 2.6317 2.86612 2.86612C2.6317 3.10054 2.5 3.41848 2.5 3.75V16.25C2.5 16.5815 2.6317 16.8995 2.86612 17.1339C3.10054 17.3683 3.41848 17.5 3.75 17.5H16.25C16.5815 17.5 16.8995 17.3683 17.1339 17.1339C17.3683 16.8995 17.5 16.5815 17.5 16.25V3.75M7.5 10L10 12.5L12.5 7.5" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="body-3 vfont-medium text-black-900">Automatic changelog</span>
+      </button>
+
+      <%# Hub tab %>
+      <button class="flex justify-center items-center gap-8 px-24 py-6 rounded-8">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.125 3.75H3.75V8.125H8.125V3.75Z" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.25 3.75H11.875V8.125H16.25V3.75Z" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16.25 11.875H11.875V16.25H16.25V11.875Z" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8.125 11.875H3.75V16.25H8.125V11.875Z" stroke="#1F1B1B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="body-3 vfont-medium text-black-900">Hub</span>
+      </button>
+    </div>
+  </div>
+</div>

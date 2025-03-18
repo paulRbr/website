@@ -1,0 +1,22 @@
+<%#
+  Homepage features section
+
+  Params: none
+%>
+<div class="w-main mx-auto">
+  <%= render 'section_heading', locals: {
+    title: 'The best API doc experience',
+    pill: 'pill title',
+    description: 'This is the subtext that explains the section further'
+  } %>
+
+  <%= render 'homepage/20_feature_blocks__item', locals: {
+    title: 'The API doc your users deserve',
+    pill: { icon: 'checkbox-circle-fill-fg', text: 'Improve adoption' },
+    cta: { href: '/product', text: 'Check out our product page to learn more' },
+    image_path: '/images/homepage/feature-blocks/feature-blocks-1.png',
+    tags: [{ icon: 'checkbox-circle-fill-fg', text: 'Improve adoption' }]
+  } do %>
+    <p>More than just documentation, Bump.sh creates a doorway to your APIs. With an auto-updated API reference and an intuitive Explorer, it empowers your users to explore, understand, and integrate with your APIs faster than ever.</p>
+  <% end %>
+</div>

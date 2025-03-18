@@ -1,0 +1,21 @@
+<%
+  tagStyles = "inline-flex w-fit items-center justify-center gap-4 border body-4 text-black-900"
+  tagVariantStyles = case @variant
+  when 'pill'
+    'rounded-pill px-12 py-8 border-black-300 bg-black-50'
+  when 'square'
+    'rounded-square px-10 py-5 border-black-300 bg-black-50'
+  when 'aqua'
+    'rounded-20 px-10 py-4 border-aqua-400 bg-aqua-100'
+  when 'seashell'
+    'rounded-pill px-12 py-[7px] border-seashell-300 bg-seashell-300'
+  end
+  styles = "#{tagStyles} #{tagVariantStyles}"
+  attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
+%>
+<span class="<%= styles %>" <%=raw attrs %>>
+  <% if @icon %>
+    <%= render Icon.new(@icon, size: 14) %>
+<% end %>
+<span><%= content %></span>
+</span>

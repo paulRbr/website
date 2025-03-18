@@ -1,0 +1,36 @@
+<%#
+  Homepage workflow step item
+
+  Params (all required):
+    - number: step number to show in a pill (01, 02, 03)
+    - title: step title
+    - subtitle: step subtitle
+    - features: array of feature strings that will be rendered as a list of checkboxes
+%>
+<div class="flex flex-col items-center gap-8">
+  <div aria-hidden="true" class="flex justify-center items-center leading-none rounded-pill bg-seashell-300 p-24">
+    <span class="h6 leading-none text-black-900"><%= number %></span>
+  </div>
+
+  <div class="flex flex-col justify-between gap-32 p-24 w-[357px] h-[380px] bg-black-50 text-black-900 rounded-12">
+    <div class="flex flex-col gap-24">
+      <div class="flex flex-col gap-24">
+        <div class="flex flex-col gap-8">
+          <h3 class="h5"><span class="sr-only"><%= number %>.&nbsp;</span><%= title %></h3>
+          <p class="body-2"><%= subtitle %></p>
+        </div>
+
+        <ul class="flex flex-col gap-8">
+          <% features.each do |feature| %>
+            <li class="flex gap-4 items-center rounded-32 w-full">
+              <span class="flex items-center gap-8 pt-2">
+                <%= render Icon.new "checkbox-circle-fill", class: "text-black-800" %>
+              </span>
+              <span class="body-3"><%= feature %></span>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
