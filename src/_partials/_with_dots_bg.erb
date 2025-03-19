@@ -1,0 +1,23 @@
+<%#
+  Content section having the little bump dots gradient as background
+
+  Params:
+    - classes (optional): additional classes to be applied to the wrapping div
+    - offset (optional): vertical offset to be applied to the background dots. Default to none
+  Must also be passed the default content slot, which will be rendered above the background dots
+%>
+<div class="relative <%= defined?(classes) ? classes : '' %>">
+  <div class="absolute z-0 top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+    <div
+    style="
+    mask-image: linear-gradient(180deg, rgba(217,217,217,0.3) 0%, rgba(217,217,217,0.5) 30%, rgba(217,217,217,0) 100%);
+    background-image: url('<%= relative_url "/images/dots.svg" %>');
+    background-size: 191.7px 68px;
+    margin-top: <%= defined?(offset) ? offset : '0' %>;
+    "
+    class="overflow-hidden bg-repeat bg-center w-full h-full"></div>
+  </div>
+  <div class="relative z-10">
+    <%= content %>
+  </div>
+</div>

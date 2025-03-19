@@ -11,7 +11,7 @@
   </header>
 
   <nav aria-label="Main navigation">
-    <ul class="flex gap-12">
+    <ul role="list" class="flex gap-12">
       <li><%= render 'header/nav_item', title: 'Pricing', href: '/pricing' %></li>
       <li><%= render 'header/nav_item', title: 'Product', href: '/product' %></li>
       <li>
@@ -32,8 +32,8 @@
           </div>
           <div>
             <h2 class="capped-small text-black-500">All ressources</h2>
-            <ul class="grid grid-cols-2 gap-16 mt-20">
-              <% resourceItems = [
+            <ul role="list" class="grid grid-cols-2 gap-16 mt-20">
+              <% resource_items = [
                 {
                   title: 'About',
                   icon: 'arrow-right',
@@ -59,7 +59,7 @@
                   description: 'Short explanation sentence here'
                 }
               ] %>
-              <% resourceItems.each do |item| %>
+              <% resource_items.each do |item| %>
                 <%= render 'header/nav_sub_item', **item %>
               <% end %>
             </ul>
@@ -73,8 +73,8 @@
             <div class="flex gap-8">
               <h2 class="capped-small text-black-500">All documentation</h2>
             </div>
-            <ul class="flex gap-16">
-              <% docItems = [
+            <ul role="list" class="flex gap-16">
+              <% doc_items = [
                 {
                   title: 'Help center',
                   icon: 'arrow-down',
@@ -100,7 +100,7 @@
                   description: 'Short explanation sentence here'
                 }
               ] %>
-              <% docItems.each do |item| %>
+              <% doc_items.each do |item| %>
                 <%= render 'header/nav_sub_item', **item %>
               <% end %>
             </ul>
@@ -111,7 +111,7 @@
   </nav>
 
   <nav aria-label="Account navigation">
-    <ul class="flex gap-12">
+    <ul role="list" class="flex gap-12">
       <li><%= render 'header/nav_item', title: 'Login', href: '/login' %></li>
       <li><%= render 'header/nav_item', title: 'Sign up', href: '/signup' %></li>
     </ul>

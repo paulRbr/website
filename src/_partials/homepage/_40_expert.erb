@@ -1,0 +1,62 @@
+<div class="bg-black-900 text-white py-40">
+  <div class="w-main mx-auto my-section flex flex-col gap-[72px]">
+    <div class="w-[588px] mx-auto">
+      <%= render 'section_heading', locals: {
+        title: 'Your dedicated doc team',
+        pill: 'pill title',
+        description: 'Not only are we experts in API docs, OpenAPI and AsyncAPI, but we’re also the best partners when it comes to workflows and integration to complex environments.',
+        variant: 'dark'
+      } do %>
+        <%= render Button.new variant: 'seashell', href: '#' do %>
+          Talk to an expert
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="grid grid-cols-2 gap-24 w-[900px] mx-auto">
+      <%= render "homepage/40_expert_bento_item", locals: {
+        icon: "command-fill",
+        title: "Access management",
+        description: "Easily grant or revoke access and permissions."
+      } %>
+
+      <%= render "homepage/40_expert_bento_item", locals: {
+        icon: "image-edit-line",
+        title: "Brand impact",
+        description: "Personalize your library to your brand."
+      } %>
+
+      <%= render "homepage/40_expert_bento_item", locals: {
+        icon: "scales-2-line",
+        title: "Scalable & reliable",
+        description: "Whether you have one or hundreds of APIs, we're here for you."
+      } %>
+
+      <%= render "homepage/40_expert_bento_item", locals: {
+        icon: "shield-check-line",
+        title: "Privacy & security by design",
+        description: "Bump.sh is built with security and privacy in mind."
+      } %>
+
+      <div class="col-span-2">
+        <%= render "homepage/40_expert_bento_item", locals: {
+          icon: "keyboard-box-line",
+          title: "Key features",
+          description: "Subtext here"
+        } do %>
+          <% slot :right_column do %>
+            <div class="flex flex-wrap gap-8 justify-end">
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>custom JS & CSS<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>full white labelling<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>custom analytics & reports<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>SSO<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>Other feature<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>Other feature<% end %>
+              <%= render Tag.new icon: "hard-drive-2-line", variant: "seashell" do %>Other feature<% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

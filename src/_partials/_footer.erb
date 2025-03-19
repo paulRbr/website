@@ -1,5 +1,114 @@
-<footer class="w-main mx-auto mt-40 py-20">
-  <p>
-    © coin coin
-  </p>
-</footer>
+<% link_lists = [
+  {
+    title: 'Product',
+    links: [
+      { title: 'API Documentation', href: '#' },
+      { title: 'Change management', href: '#' },
+      { title: 'Hubs', href: '#' },
+      { title: 'API Diff', href: '#' },
+    ]
+  },
+  {
+    title: 'Specifications',
+    links: [
+      { title: 'OpenAPI (Swagger)', href: '#' },
+      { title: 'AsyncAPI', href: '#' },
+      { title: 'Our Free Guides', href: '#' },
+      { title: 'GraphQL', href: '#' },
+      { title: 'gRPC', href: '#' },
+      { title: 'SOAP', href: '#' },
+    ]
+  },
+  {
+    title: 'Information',
+    links: [
+      { title: 'About', href: '#' },
+      { title: 'Pricing', href: '#' },
+      { title: 'Students', href: '#' },
+      { title: 'Careers', href: '#' },
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { title: 'Customers', href: '#' },
+      { title: 'Blog', href: '#' },
+      { title: 'Help center', href: '#' },
+      { title: 'CLI', href: '#' },
+      { title: 'Status', href: '#' },
+      { title: 'Contact', href: '#' },
+    ]
+  }
+] %>
+<% legal_links = [
+  { title: 'Privacy Policy', href: '#' },
+  { title: 'Legal mentions', href: '#' },
+  { title: 'Terms of use', href: '#' },
+  { title: 'Data Processing Agreement', href: '#' },
+  { title: 'Cookie Policy', href: '#' },
+] %>
+<div class="bg-black-50 pb-section relative">
+  <%= render 'with_dots_bg', classes: "pt-section" do %>
+    <div class="w-main mx-auto">
+      <%= render 'section_heading', locals: {
+      title: 'Ready to give Bump.sh a try?',
+      description: 'This is the subtext that explains the section further',
+    } do %>
+        <%= render Button.new href: '#', icon: 'arrow-right-up-line' do %>
+          Get a demo
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <footer class="w-main mx-auto">
+    <%# have a heading helping screen reader users. Use role heading instead of h2 to not impact SEO %>
+    <div role="heading" aria-level="2" class="sr-only">Footer</div>
+
+    <div class="flex justify-between border-t border-black-200 pt-64 pb-16">
+      <div class="flex flex-col gap-48">
+        <div class="flex flex-col gap-16">
+          <img src="<%= relative_url '/images/logo.svg' %>" width="147" height="32" alt="Bump.sh" />
+          <p class="body-3 text-black-900">Lorem Ipsum is simply dummy text</p>
+        </div>
+      </div>
+
+      <div class="flex gap-32 pl-120">
+        <% link_lists.each do |link_list| %>
+          <div class="w-[172px] flex flex-col gap-16">
+            <%# Use role heading instead of h3 to not impact SEO %>
+            <div role="heading" aria-level="3" class="capped-small text-black-700 opacity-50"><%= link_list[:title] %></div>
+            <ul role="list" class="flex flex-col gap-8">
+              <% link_list[:links].each do |link| %>
+                <li><a href="<%= link[:href] %>" class="text-black-700 small-link"><%= link[:title] %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-end py-16">
+      <div class="flex flex-col gap-32">
+        <div class="flex gap-24">
+          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
+            <%= render Icon.new "x", size: 20, classes: "text-black-600" %>
+          </a>
+          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
+            <%= render Icon.new "instagram", size: 20, classes: "text-black-600" %>
+          </a>
+          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
+            <%= render Icon.new "linkedin", size: 20, classes: "text-black-600" %>
+          </a>
+        </div>
+        <p class="text-black-600 body-4">© 2025 Bump.sh. All rights reserved.</p>
+      </div>
+
+      <ul role="list" class="flex gap-32">
+        <% legal_links.each do |link| %>
+          <li><a href="<%= link[:href] %>" class="text-black-600 small-link"><%= link[:title] %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </footer>
+</div>

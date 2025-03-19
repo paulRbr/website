@@ -1,17 +1,27 @@
 <%#
-  Page section heading, with a small monospace uppercase, a bold title and a description
+  Page section heading, with a small monospace uppercase 'category' label, a bold title and a description
 
-  Params (all required):
-    - title: section title
-    - pill: section pill
-    - description: section description
+  Params:
+    - title (required): section title
+    - pill (optional): section pill
+    - description (required): section description
+    - variant (optional): "dark" or nothing. Default to light theme when omitted
+  Can also be passed the default content slot, which will be rendered below the description, mostly used to render a button for now
 %>
+<% variant = variant || 'light' %>
 <div class="flex flex-col items-center justify-center w-full my-section gap-40">
   <div class="flex flex-col items-center justify-center w-full gap-24">
     <div class="flex flex-col items-center justify-center w-full gap-12">
-      <h2 class="h2 text-black-900 text-center"><%= title %></h2>
-      <p class="capped-small order-first text-aqua-700"><%= pill %></p>
+      <h2 class="h2 <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> text-center"><%= title %></h2>
+      <% if defined?(pill) && pill %>
+        <p class="capped-small order-first <%= variant == 'dark' ? 'text-white' : 'text-aqua-700' %>"><%= pill %></p>
+      <% end %>
     </div>
-    <p class="body-2 text-black-900 text-center max-w-[42rem]"><%= description %></p>
+    <p class="body-2 <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> text-center max-w-[42rem]"><%= description %></p>
+    <% if content %>
+      <div class="mt-16">
+        <%= content %>
+      </div>
+    <% end %>
   </div>
 </div>
