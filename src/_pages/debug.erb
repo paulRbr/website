@@ -27,47 +27,29 @@ int i</code></pre>
   <div class="py-20">
     <div class="h1">Buttons</div>
     <div class="flex gap-4 mb-20">
-      <%= render Button.new variant: 'primary' do %>
-        <span>Primary button</span>
-      <% end %>
-      <%= render Button.new variant: 'primary', disabled: true do %>
-        <span>Primary button (disabled)</span>
-      <% end %>
-      <%= render Button.new variant: 'aqua' do %>
-        <span>Aqua button</span>
-      <% end %>
-      <%= render Button.new variant: 'seashell' do %>
-        <span>Seashell button</span>
-      <% end %>
-      <%= render Button.new variant: 'outline' do %>
-        <span>Outline button</span>
-      <% end %>
-      <%= render Button.new variant: 'link' do %>
-        <span>Link button</span>
-      <% end %>
-      <%= render Button.new variant: 'link', disabled: true do %>
-        <span>Link button (disabled)</span>
-      <% end %>
+      <%= render Button.new 'Primary button', variant: 'primary' %>
+      <%= render Button.new 'Primary button (disabled)', variant: 'primary', disabled: true %>
+      <%= render Button.new 'Aqua button', variant: 'aqua' %>
+      <%= render Button.new 'Seashell button', variant: 'seashell' %>
+      <%= render Button.new 'Outline button', variant: 'outline' %>
+      <%= render Button.new 'Link button', variant: 'link' %>
+      <%= render Button.new 'Link button (disabled)', variant: 'link', disabled: true %>
     </div>
     <div class="flex gap-4">
-      <%= render Button.new href: '#', variant: 'primary' do %>Primary link<% end %>
-      <%= render Button.new href: '#', variant: 'primary', disabled: true do %>Primary link (disabled)<% end %>
-      <%= render Button.new href: '#', variant: 'aqua' do %>Aqua link<% end %>
-      <%= render Button.new href: '#', variant: 'seashell' do %>Seashell link<% end %>
-      <%= render Button.new href: '#', variant: 'outline' do %>Outline link<% end %>
-      <%= render Button.new href: '#', variant: 'link', icon: 'arrow-right-up-line' do %>
-        Link link
-      <% end %>
-      <%= render Button.new href: '#', variant: 'link', icon: 'arrow-right-up-line', disabled: true do %>
-        Link link (disabled)
-      <% end %>
+      <%= render Button.new 'Primary link', href: '#', variant: 'primary' %>
+      <%= render Button.new 'Primary link (disabled)', href: '#', variant: 'primary', disabled: true %>
+      <%= render Button.new 'Aqua link', href: '#', variant: 'aqua' %>
+      <%= render Button.new 'Seashell link', href: '#', variant: 'seashell' %>
+      <%= render Button.new 'Outline link', href: '#', variant: 'outline' %>
+      <%= render Button.new 'Link link', href: '#', variant: 'link', icon: 'arrow-right-up-line' %>
+      <%= render Button.new 'Link link (disabled)', href: '#', variant: 'link', icon: 'arrow-right-up-line', disabled: true %>
     </div>
   </div>
   <div class="py-20">
     <div class="h2">Buttons row</div>
     <div class="buttons-row">
-      <%= render Button.new variant: 'primary' do %>Primary button<% end %>
-      <%= render Button.new variant: 'primary' do %>Primary button<% end %>
+      <%= render Button.new 'Primary button', variant: 'primary' %>
+      <%= render Button.new 'Primary button (disabled)', variant: 'primary', disabled: true %>
     </div>
   </div>
   <div class="py-20">
@@ -82,10 +64,10 @@ int i</code></pre>
   <div class="py-20">
     <div class="h2">Tags</div>
     <div class="flex gap-4 items-center">
-      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'pill' do %>This is a pill title<% end %>
-      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'square' do %>This is a tag<% end %>
-      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'aqua' do %>This is an tag<% end %>
-      <%= render Tag.new icon: 'arrow-right-up-line', variant: 'seashell' do %>This is a tag<% end %>
+      <%= render Tag.new 'This is a pill title', icon: 'arrow-right-up-line', variant: 'pill' %>
+      <%= render Tag.new 'This is a tag', icon: 'arrow-right-up-line', variant: 'square' %>
+      <%= render Tag.new 'This is an tag', icon: 'arrow-right-up-line', variant: 'aqua' %>
+      <%= render Tag.new 'This is a tag', icon: 'arrow-right-up-line', variant: 'seashell' %>
     </div>
   </div>
 </div>

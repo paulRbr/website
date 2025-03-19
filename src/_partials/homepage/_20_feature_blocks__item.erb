@@ -17,7 +17,7 @@
 %>
 <div class="my-section flex items-center gap-[56px]">
   <div class="flex flex-1 flex-col gap-32 w-full rounded-12">
-    <%= render Tag.new icon: pill[:icon], variant: 'pill' do %><%= pill[:text] %><% end %>
+    <%= render Tag.new pill[:text], icon: pill[:icon], variant: 'pill' %>
     <div class="flex flex-col gap-8">
       <h3 class="h3 text-black-900"><%= title %></h3>
       <div class="body-2 text-black-900">
@@ -25,9 +25,7 @@
       </div>
     </div>
 
-    <%= render Button.new icon: 'arrow-right-up-line', variant: 'link', href: cta[:href] do %>
-      <%= cta[:text] %>
-    <% end %>
+    <%= render Button.new cta[:text], icon: 'arrow-right-up-line', variant: 'link', href: cta[:href] %>
   </div>
   <div class="flex-1 flex flex-col gap-8">
     <div>
@@ -35,7 +33,7 @@
     </div>
     <div class="flex gap-8">
       <% tags.each do |tag| %>
-        <%= render Tag.new icon: tag[:icon], variant: 'seashell' do %><%= tag[:text] %><% end %>
+        <%= render Tag.new tag[:text], icon: tag[:icon], variant: 'seashell' %>
       <% end %>
     </div>
   </div>
