@@ -92,4 +92,12 @@ Font loading is handled in a specific way. Refer to the [fonts documentation](./
 
 ## Deployment
 
-Refer to the [Bridgetown deployment docs](https://www.bridgetownrb.com/docs/deployment) for deployment information.
+To build a production version of the website:
+
+```bash
+BRIDGETOWN_ENV=production ./bin/bridgetown deploy
+```
+
+This generates a static website in the `output` directory.
+
+Refer to the [Bridgetown deployment docs](https://www.bridgetownrb.com/docs/deployment) for more information.
