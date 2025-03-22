@@ -1,4 +1,4 @@
-export const initNavDropdowns = () => {
+export const navDropdown = () => {
   const contents = document.querySelectorAll(".js-nav-dropdown-content");
   const toggles = document.querySelectorAll(".js-nav-dropdown-toggle");
 
