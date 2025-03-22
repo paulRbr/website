@@ -8,7 +8,7 @@ class Builders::AssetInline < SiteBuilder
       path_parts = [
         site.root_dir,
         "output/_bridgetown/static",
-        site.frontend_manifest[asset_type.to_s == "css" ? "styles/index.css" : "javascript/index.js"],
+        site.frontend_manifest[(asset_type.to_s == "css") ? "styles/index.css" : "javascript/index.js"]
       ].join("/")
 
       if File.exist?(path_parts)

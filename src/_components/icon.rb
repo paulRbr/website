@@ -1,4 +1,4 @@
-require 'nokogiri'
+require "nokogiri"
 
 class Icon < Bridgetown::Component
   # @@icons = %w[arrow-right-up-line arrow-left arrow-right arrow-down]
@@ -18,22 +18,22 @@ class Icon < Bridgetown::Component
 
     svg_file_content = File.read("#{@@icons_dir}#{@name}.svg")
     dom = Nokogiri::HTML(svg_file_content)
-    dom.at('svg').remove_attribute('xmlns')
-    dom.at('svg')['data-name'] = @name
-    dom.at('svg')['width'] = @size
-    dom.at('svg')['height'] = @size
-    dom.at('svg')['class'] = classes if classes
+    dom.at("svg").remove_attribute("xmlns")
+    dom.at("svg")["data-name"] = @name
+    dom.at("svg")["width"] = @size
+    dom.at("svg")["height"] = @size
+    dom.at("svg")["class"] = classes if classes
     if alt
-      dom.at('svg')['aria-label'] = alt
-      dom.at('svg')['role'] = 'img'
+      dom.at("svg")["aria-label"] = alt
+      dom.at("svg")["role"] = "img"
     else
-      dom.at('svg')['aria-hidden'] = 'true'
+      dom.at("svg")["aria-hidden"] = "true"
     end
     # apply additional attributes after everything else in case we want to override any defaults
     attributes.each do |key, value|
-      dom.at('svg')[key] = value
+      dom.at("svg")[key] = value
     end
-    @svg_dom = dom.at('svg').to_html
+    @svg_dom = dom.at("svg").to_html
   end
 
   def render_in(view_context, &block)
