@@ -54,7 +54,7 @@
               <p class="body-3 text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
               <div class="flex items-center gap-8">
                 <div class="w-[44px] h-[44px] rounded-full overflow-hidden bg-[#F3F1F1]">
-                  <img src="/images/testimonials/avatar2.png" alt="Manuel Ems" class="w-full h-full object-cover">
+                  <img src="/images/testimonials/avatar1.png" alt="Manuel Ems" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col gap-4">
                   <span class="body-4 text-black">Manuel Ems</span>
@@ -82,7 +82,7 @@
               <p class="body-3 text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisn."</p>
               <div class="flex items-center gap-8">
                 <div class="w-[44px] h-[44px] rounded-full overflow-hidden bg-[#F3F1F1]">
-                  <img src="/images/testimonials/avatar3.png" alt="Manuel Ems" class="w-full h-full object-cover">
+                  <img src="/images/testimonials/avatar1.png" alt="Manuel Ems" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col gap-4">
                   <span class="body-4 text-black">Manuel Ems</span>
@@ -116,35 +116,35 @@
 
 <%# Add JavaScript for carousel functionality %>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const slidesContainer = document.getElementById('testimonials-slides');
-  const prevButton = document.querySelector('[data-carousel-prev]');
-  const nextButton = document.querySelector('[data-carousel-next]');
-  const slides = slidesContainer.children;
-  let currentIndex = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+    const slidesContainer = document.getElementById('testimonials-slides');
+    const prevButton = document.querySelector('[data-carousel-prev]');
+    const nextButton = document.querySelector('[data-carousel-next]');
+    const slides = slidesContainer.children;
+    let currentIndex = 0;
 
-  function updateSlidePosition() {
-    const slideWidth = slides[0].offsetWidth;
-    slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-    
-    // Update ARIA attributes
-    Array.from(slides).forEach((slide, index) => {
-      slide.setAttribute('aria-hidden', index !== currentIndex);
-      slide.setAttribute('tabindex', index === currentIndex ? '0' : '-1');
+    function updateSlidePosition() {
+      const slideWidth = slides[0].offsetWidth;
+      slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+      // Update ARIA attributes
+      Array.from(slides).forEach((slide, index) => {
+        slide.setAttribute('aria-hidden', index !== currentIndex);
+        slide.setAttribute('tabindex', index === currentIndex ? '0' : '-1');
+      });
+    }
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlidePosition();
     });
-  }
 
-  prevButton.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlidePosition();
+    });
+
+    // Initialize first slide
     updateSlidePosition();
   });
-
-  nextButton.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlidePosition();
-  });
-
-  // Initialize first slide
-  updateSlidePosition();
-});
 </script>
