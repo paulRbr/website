@@ -1,0 +1,150 @@
+<%#
+  Homepage testimonials section
+
+  Params: none
+%>
+<div class="w-main mx-auto my-section">
+  <%= render 'section_heading', locals: {
+    title: 'Bump.sh in action',
+    pill: 'Our customer stories',
+    description: 'See how teams are using Bump.sh to improve their API documentation workflow'
+  } %>
+
+  <%# Carousel region with ARIA roles %>
+  <div class="relative" role="region" aria-roledescription="carousel" aria-label="Customer testimonials">
+    <%# Carousel viewport %>
+    <div class="overflow-hidden">
+      <%# Carousel slides container %>
+      <div class="flex gap-24 transition-transform duration-300 ease-in-out" id="testimonials-slides" role="presentation">
+        <%# Testimonial 1 %>
+        <div class="w-[588px] h-[280px] flex-none bg-white border border-[#F3F1F1] rounded-[12px] p-32 shadow-[0px_3.846108913421631px_14.680879592895508px_0px_rgba(173,225,239,0.54),0px_12.918280601501465px_49.31001663208008px_0px_rgba(173,225,239,0.4),0px_7.840000152587891px_220.76170349121094px_0px_rgba(173,225,239,0.3)]" role="tabpanel" aria-roledescription="slide" aria-label="1 of 3">
+          <div class="flex flex-col justify-between h-full">
+            <div class="flex flex-col gap-24">
+              <div class="bg-[#F3F1F1] p-16 rounded-[8px] flex items-center justify-center">
+                <img src="/images/logos/bigid.svg" alt="BigID" class="h-24">
+              </div>
+              <p class="body-3 text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisn."</p>
+              <div class="flex items-center gap-8">
+                <div class="w-[44px] h-[44px] rounded-full overflow-hidden bg-[#F3F1F1]">
+                  <img src="/images/testimonials/avatar1.png" alt="Manuel Ems" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span class="body-4 text-black">Manuel Ems</span>
+                  <span class="capped-small text-[#555252]">@COMPANY</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <hr class="border-[#F9F9F9] mb-24" />
+              <a href="#" class="inline-flex items-center gap-[1px] text-black hover:text-aqua-500 transition-colors">
+                <span class="text-[18px] font-medium leading-[1.2] tracking-[-0.01em]">Read more</span>
+                <%= render Icon.new("arrow-right-up") %>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <%# Testimonial 2 %>
+        <div class="w-[588px] h-[280px] flex-none bg-white border border-[#F3F1F1] rounded-[12px] p-32 shadow-[0px_3.846108913421631px_14.680879592895508px_0px_rgba(173,225,239,0.54),0px_12.918280601501465px_49.31001663208008px_0px_rgba(173,225,239,0.4),0px_7.840000152587891px_220.76170349121094px_0px_rgba(173,225,239,0.3)]" role="tabpanel" aria-roledescription="slide" aria-label="2 of 3">
+          <div class="flex flex-col justify-between h-full">
+            <div class="flex flex-col gap-24">
+              <div class="bg-[#F3F1F1] p-16 rounded-[8px] flex items-center justify-center">
+                <img src="/images/logos/elastic.svg" alt="Elastic" class="h-24">
+              </div>
+              <p class="body-3 text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."</p>
+              <div class="flex items-center gap-8">
+                <div class="w-[44px] h-[44px] rounded-full overflow-hidden bg-[#F3F1F1]">
+                  <img src="/images/testimonials/avatar2.png" alt="Manuel Ems" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span class="body-4 text-black">Manuel Ems</span>
+                  <span class="capped-small text-[#555252]">@COMPANY</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <hr class="border-[#F9F9F9] mb-24" />
+              <a href="#" class="inline-flex items-center gap-[1px] text-black hover:text-aqua-500 transition-colors">
+                <span class="text-[18px] font-medium leading-[1.2] tracking-[-0.01em]">Read more</span>
+                <%= render Icon.new("arrow-right-up") %>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <%# Testimonial 3 %>
+        <div class="w-[588px] h-[280px] flex-none bg-white border border-[#F3F1F1] rounded-[12px] p-32 shadow-[0px_3.846108913421631px_14.680879592895508px_0px_rgba(173,225,239,0.54),0px_12.918280601501465px_49.31001663208008px_0px_rgba(173,225,239,0.4),0px_7.840000152587891px_220.76170349121094px_0px_rgba(173,225,239,0.3)]" role="tabpanel" aria-roledescription="slide" aria-label="3 of 3">
+          <div class="flex flex-col justify-between h-full">
+            <div class="flex flex-col gap-24">
+              <div class="bg-[#F3F1F1] p-16 rounded-[8px] flex items-center justify-center">
+                <img src="/images/logos/lightspeed.svg" alt="Lightspeed" class="h-24">
+              </div>
+              <p class="body-3 text-black">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quisn."</p>
+              <div class="flex items-center gap-8">
+                <div class="w-[44px] h-[44px] rounded-full overflow-hidden bg-[#F3F1F1]">
+                  <img src="/images/testimonials/avatar3.png" alt="Manuel Ems" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-4">
+                  <span class="body-4 text-black">Manuel Ems</span>
+                  <span class="capped-small text-[#555252]">@COMPANY</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <hr class="border-[#F9F9F9] mb-24" />
+              <a href="#" class="inline-flex items-center gap-[1px] text-black hover:text-aqua-500 transition-colors">
+                <span class="text-[18px] font-medium leading-[1.2] tracking-[-0.01em]">Read more</span>
+                <%= render Icon.new("arrow-right-up") %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# Carousel controls %>
+    <div class="flex justify-center gap-16 mt-40">
+      <button type="button" class="w-40 h-40 flex items-center justify-center bg-[#FEE1DA] rounded-full hover:bg-seashell-400 transition-colors duration-200" aria-label="Previous slide" data-carousel-prev>
+        <%= render Icon.new("arrow-left", class: "stroke-black stroke-[1.5]") %>
+      </button>
+      <button type="button" class="w-40 h-40 flex items-center justify-center bg-[#FEE1DA] rounded-full hover:bg-seashell-400 transition-colors duration-200" aria-label="Next slide" data-carousel-next>
+        <%= render Icon.new("arrow-right", class: "stroke-black stroke-[1.5]") %>
+      </button>
+    </div>
+  </div>
+</div>
+
+<%# Add JavaScript for carousel functionality %>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slidesContainer = document.getElementById('testimonials-slides');
+  const prevButton = document.querySelector('[data-carousel-prev]');
+  const nextButton = document.querySelector('[data-carousel-next]');
+  const slides = slidesContainer.children;
+  let currentIndex = 0;
+
+  function updateSlidePosition() {
+    const slideWidth = slides[0].offsetWidth;
+    slidesContainer.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    
+    // Update ARIA attributes
+    Array.from(slides).forEach((slide, index) => {
+      slide.setAttribute('aria-hidden', index !== currentIndex);
+      slide.setAttribute('tabindex', index === currentIndex ? '0' : '-1');
+    });
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlidePosition();
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlidePosition();
+  });
+
+  // Initialize first slide
+  updateSlidePosition();
+});
+</script>
