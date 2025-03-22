@@ -16,6 +16,7 @@ At the root of the directory:
 ```sh
 bundle install
 npm install
+touch frontend/styles/dev-tailwind-build-trigger.css
 ```
 
 ## Development
