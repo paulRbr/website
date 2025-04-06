@@ -1,6 +1,6 @@
-export const headerScroll = () => {
+const fixOnScroll = () => {
   const headerOriginalPosition = document.querySelector(
-    ".js-header-position-tracker"
+    ".js-headerPositionTracker"
   );
   const header = document.querySelector(".js-header");
 
@@ -14,7 +14,6 @@ export const headerScroll = () => {
       } else {
         header.removeAttribute("data-fixed");
       }
-      document.body.classList.toggle("body--withFixedHeader", fixedMenu);
     },
     { threshold: 1 }
   );
@@ -22,4 +21,8 @@ export const headerScroll = () => {
   if (headerOriginalPosition) {
     headerPositionObs.observe(headerOriginalPosition);
   }
+};
+
+export const init = () => {
+  fixOnScroll();
 };

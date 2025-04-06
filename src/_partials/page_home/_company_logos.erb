@@ -21,17 +21,15 @@
     image: '/images/company-logos/company-logo-4.png'
   }
 ] %>
-<div class="w-main mx-auto">
-  <div class="flex flex-col items-center w-full gap-56 py-40 pb-80 my-section">
-    <h2 class="capped-small text-black-600">
-      Trusted by leading companies
-    </h2>
-    <div class="flex flex-wrap justify-between items-center w-full gap-16">
-      <% companyLogos.each do |companyLogo| %>
-        <div class="flex items-center justify-center">
-          <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-32 w-auto"/>
-        </div>
-      <% end %>
-    </div>
+<div class="flex flex-col items-center w-full gap-56 py-40 pb-80 my-section">
+  <h2 class="capped-small text-black-600">
+    Trusted by leading companies
+  </h2>
+  <div class="flex flex-wrap justify-between items-center w-full gap-16">
+    <% companyLogos.each do |companyLogo| %>
+      <div class="flex items-center justify-center">
+        <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-32 w-auto"/>
+      </div>
+    <% end %>
   </div>
 </div>

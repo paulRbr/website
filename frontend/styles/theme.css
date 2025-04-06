@@ -74,6 +74,7 @@ This is a good way to be explicit about the design system.
   --spacing-64: 4rem;
   --spacing-80: 5rem;
   --spacing-section: 5rem;
+  --spacing-section2x: 10rem;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -85,6 +86,7 @@ This is a good way to be explicit about the design system.
   --radius-8: 0.5rem;
   --radius-10: 0.625rem;
   --radius-12: 0.75rem;
+  --radius-16: 1rem;
   --radius-20: 1.25rem;
   --radius-24: 1.5rem;
   --radius-32: 2rem;
@@ -95,4 +97,5 @@ This is a good way to be explicit about the design system.
     0rem 0.8074rem 3.0819rem 0rem rgba(173, 225, 239, 0.4),
     0rem 0.49rem 13.7976rem 0rem rgba(173, 225, 239, 0.3);
   --blur-8: 8px;
+  --default-transition-duration: 0.15s;
 }

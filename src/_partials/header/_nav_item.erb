@@ -6,11 +6,13 @@
     - href (optional if dropdown is true, required otherwise)
     - dropdown (optional, default: false), set to true to render a button with an arrow icon
 %>
+<% styles = 'flex items-center gap-4 small-link py-16 px-4 transition-all border-b-2 border-transparent hover:border-black-900' %>
+
 <% if defined?(dropdown) && dropdown %>
-  <button class="js-nav-dropdown-toggle flex items-center gap-4 small-link py-16 px-4">
+  <button class="<%= styles %> js-navToggle">
     <span><%= title %></span>
-    <%= render Icon.new 'arrow-down', size: 12, classes: 'js-nav-dropdown-toggle-icon relative top-[2px]' %>
+    <%= render Icon.new 'arrow-down', size: 12, classes: 'js-navToggleIcon relative top-[2px]' %>
   </button>
 <% else %>
-  <a class="block small-link py-16 px-4" href="<%= href %>"><%= title %></a>
+  <a class="<%= styles %>" href="<%= href %>"><%= title %></a>
 <% end %>
