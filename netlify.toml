@@ -1,0 +1,20 @@
+[build]
+  command = "touch frontend/styles/dev-tailwind-build-trigger.css && bin/bridgetown deploy"
+  publish = "output"
+
+[build.environment]
+  NODE_ENV = "development"
+  BRIDGETOWN_ENV = "production"
+
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = false
+  minify = true
+[build.processing.js]
+  bundle = false
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = true
