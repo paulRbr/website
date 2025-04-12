@@ -35,4 +35,18 @@ const handleFileUpload = () => {
   fileInput.addEventListener("change", (event) => {
     // @TODO: handle file upload
   });
+
+  // make our custom file input work with keyboard
+  const fileInputLabel = document.querySelector(
+    'label[for="doc-preview-file"]'
+  );
+  if (!fileInputLabel) {
+    return;
+  }
+  fileInputLabel.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      fileInput.click();
+    }
+  });
 };
