@@ -3,14 +3,13 @@
 
   Params: none
 %>
-<div class="w-main mx-auto my-section">
+<div class="w-main mx-auto my-section2x">
   <%= render 'section_heading', locals: {
     title: 'Modern workflow',
     pill: 'pill title',
     description: 'This is the subtext that explains the section further'
   } %>
 
-  <%# Workflow steps %>
   <div class="flex flex-row justify-stretch items-stretch gap-24 w-full">
     <%= render "page_home/workflow_step", locals: {
       number: "01",
@@ -20,7 +19,8 @@
         "Swagger, OpenAPI & AsyncAPI support",
         "Code-first and design-first",
         "Doc-as-code workflow"
-      ]
+      ],
+      image: "/images/workflow/commit.png"
     } %>
 
     <%= render "page_home/workflow_step", locals: {
@@ -31,7 +31,8 @@
         "Code review assistance",
         "Breaking changes notification",
         "Doc preview"
-      ]
+      ],
+      image: "/images/workflow/review.png"
     } %>
 
     <%= render "page_home/workflow_step", locals: {
@@ -42,11 +43,11 @@
         "Automatic doc & changelog update",
         "Release management & rollback",
         "Customers notification"
-      ]
+      ],
+      image: "/images/workflow/publish.png"
     } %>
   </div>
 
-  <%# CTA Button %>
   <div class="flex justify-center items-center mt-48">
     <%= render Button.new "Check out our product page to learn more", href: "/product", icon: "arrow-right-up-line", variant: 'link' %>
   </div>
