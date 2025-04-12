@@ -4,6 +4,8 @@ import "$styles/index.css";
 import components from "$components/**/*.{js,jsx,js.rb,css}";
 import { init as initHeader } from "./header";
 import { init as initNav } from "./nav";
+import { init as initFeatureScreenshots } from "./featuresScreenshots";
 
 initHeader();
 initNav();
+initFeatureScreenshots();
