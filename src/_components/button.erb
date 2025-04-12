@@ -1,5 +1,5 @@
 <%
-  buttonStyles = "inline-flex w-fit data-disabled:opacity-50 items-center justify-center gap-2 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  buttonStyles = "inline-flex w-fit data-disabled:opacity-50 items-center justify-center gap-8 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
   buttonVariantStyles = case @variant
   when 'primary'
     'transition-colors transition rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700'
@@ -21,7 +21,7 @@
     <% end %>
     <%= @text %>
     <% if @icon %>
-      <span class="p-4"><%= render Icon.new(@icon, size: 16) %></span>
+      <span><%= render Icon.new(@icon, size: 16) %></span>
 <% end %>
 <% if @href %>
 </a>
