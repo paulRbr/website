@@ -1,5 +1,5 @@
 <div class="bg-black-900 text-white py-section2x">
-  <div class="w-main mx-auto flex flex-col gap-[4.5rem]">
+  <div class="w-main mx-auto">
     <div class="w-[36.75rem] mx-auto">
       <%= render 'section_heading', locals: {
         title: 'Your dedicated doc team',
@@ -44,13 +44,13 @@
         } do %>
           <% slot :right_column do %>
             <div class="flex flex-wrap gap-8 justify-end">
-              <%= render Tag.new "custom JS & CSS", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "full white labelling", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "custom analytics & reports", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "SSO", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell" %>
+              <%= render Tag.new "custom JS & CSS", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "full white labelling", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "custom analytics & reports", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "SSO", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
             </div>
           <% end %>
         <% end %>

@@ -1,5 +1,11 @@
 <%
-  tagStyles = "inline-flex w-fit items-center justify-center gap-4 border body-4 text-black-900"
+  tagStyles = "inline-flex w-fit items-center justify-center gap-4 border text-black-900"
+  tagSizeStyles = case @size
+  when 'normal'
+    'body-4'
+  when 'small'
+    'body-5'
+  end
   tagVariantStyles = case @variant
   when 'pill'
     'rounded-pill px-12 py-8 border-black-300 bg-black-50'
@@ -10,12 +16,12 @@
   when 'seashell'
     'rounded-pill px-12 py-8 border-seashell-300 bg-seashell-300'
   end
-  styles = "#{tagStyles} #{tagVariantStyles}"
+  styles = "#{tagStyles} #{tagVariantStyles} #{tagSizeStyles}"
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>
 <span class="<%= styles %>" <%=raw attrs %>>
   <% if @icon %>
-    <%= render Icon.new(@icon, size: 14) %>
+    <%= render Icon.new(@icon, size: @size == "small" ? 12 : 14) %>
 <% end %>
 <span><%= @text %></span>
 </span>
