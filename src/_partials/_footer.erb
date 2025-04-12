@@ -75,7 +75,7 @@
         <% link_lists.each do |link_list| %>
           <div class="w-[10.75rem] flex flex-col gap-16">
             <%# Use role heading instead of h3 to not impact SEO %>
-            <div role="heading" aria-level="3" class="capped-small text-black-700 opacity-50"><%= link_list[:title] %></div>
+            <div role="heading" aria-level="3" class="capped-small text-black-600"><%= link_list[:title] %></div>
             <ul role="list" class="flex flex-col gap-8">
               <% link_list[:links].each do |link| %>
                 <li><a href="<%= link[:href] %>" class="text-black-700 small-link hover:underline underline-offset-2"><%= link[:title] %></a></li>
