@@ -1,32 +1,10 @@
-<%#
-  Homepage hero section
-
-  Params: none
-%>
-<div class="flex flex-col items-center justify-center gap-24 w-[36.75rem] mx-auto my-section">
-  <div class="flex flex-col items-center w-full gap-2">
-    <div class="flex justify-center gap-12">
-      <%# The aria-label is there to prevent screen reader from stoping on each part of the dom to read the headline. Not a very good practice, but better than nothing. %>
-      <h1 class="flex gap-[1ch] items-center" aria-label="Stunning A.P.I. doc, made easy.">
-        <span class="h1">The modern</span>
-        <span class="flex gap-4 items-center">
-          <span class="flex items-center gap-4 px-16 py-[5px] rounded-[10px] bg-aqua-100 border border-aqua-400">
-            <span class="h1 vfont-regular text-[3.5rem]">API doc</span>
-          </span>
-        </span>
-      </h1>
-    </div>
-    <span class="h1">platform.</span>
+<%# the specific top padding matches the fixed header height %>
+<%= render "with_dots_bg",
+  style: "background: linear-gradient(358.18deg, rgba(249, 253, 253, 0) -0.97%, #F7FDFE 28.76%, #F4FDFF 98.13%);",
+  classes: "pt-[5.375rem] mb-section2x",
+  offset: '-55px' do %>
+  <div class="w-main mx-auto">
+    <%= render "page_home/hero_heading" %>
+    <%= render "page_home/hero_screenshots" %>
   </div>
-
-  <div class="flex flex-col items-center w-full gap-40">
-    <p class="body-1 text-black-800 text-center">
-      From API contract to documentation portal: streamline your workflow and deliver the best API experience. Built for engineers and tech writers.
-    </p>
-
-    <div class="flex justify-center items-center gap-16">
-      <%= render Button.new 'Get a demo', href: '#', icon: 'arrow-right-up-line' %>
-      <%= render Button.new 'Sign up', href: '#', variant: 'link' %>
-    </div>
-  </div>
-</div>
+<% end %>

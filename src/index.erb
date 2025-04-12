@@ -1,23 +1,12 @@
 ---
 layout: default
 ---
-<%# the specific top padding matches the fixed header height %>
-<%= render "with_dots_bg",
-  style: "background: linear-gradient(358.18deg, rgba(249, 253, 253, 0) -0.97%, #F7FDFE 28.76%, #F4FDFF 98.13%);",
-  classes: "pt-[5.375rem]",
-  offset: '-55px' do %>
-  <div class="w-main mx-auto">
-    <%= render "page_home/hero" %>
-    <%= render "page_home/hero_screenshots" %>
-  </div>
-<% end %>
-<div class="w-main mx-auto">
-  <%= render "page_home/company_logos" %>
-</div>
-<%= render "page_home/feature_blocks" %>
+<%= render "page_home/hero" %>
+<%= render "page_home/company_logos" %>
+<%= render "page_home/features" %>
 <%= render "page_home/doc_preview" %>
 <div aria-hidden="true" class="py-64"></div>
 <%= render "page_home/workflow" %>
 <%= render "page_home/expert" %>
 <%# this is really not ready, dont bother showing it now %>
-<%# <%= render "page_home/testimonials" %> %>
+<%# <%= render "page_home/testimonials" %>

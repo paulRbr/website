@@ -10,7 +10,7 @@
   when 'outline'
     'transition-colors transition rounded-4 border-black-200 bg-white text-black-900 hover:bg-black-100'
   end
-  linkStyles = "inline-flex underline-offset-3 w-fit data-disabled:opacity-50 items-center justify-center p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default"
+  linkStyles = "inline-flex underline-offset-3 w-fit data-disabled:opacity-50 items-center justify-center gap-8 p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default"
   styles = @variant == 'link' ? linkStyles : "#{buttonStyles} #{buttonVariantStyles}"
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>

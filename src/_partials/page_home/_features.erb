@@ -10,12 +10,12 @@
     description: 'This is the subtext that explains the section further'
   } %>
 
-  <div class="flex flex-col gap-80">
-    <%= render "page_home/feature_blocks_item", locals: {
+  <div class="flex flex-col gap-section">
+    <%= render "page_home/features_item", locals: {
       title: 'The API doc your users deserve',
       pill: { icon: 'checkbox-circle-fill', text: 'Improve adoption' },
       cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image_path: '/images/homepage/feature-blocks/feature-blocks-1.png',
+      image: '/images/features/api-doc-you-deserve.png',
       tags: [
         { icon: 'hard-drive-2-line', text: 'tag here' },
         { icon: 'hard-drive-2-line', text: 'second other tag here' },
@@ -26,11 +26,11 @@
       <p>More than just documentation, Bump.sh creates a doorway to your APIs. With an auto-updated API reference and an intuitive Explorer, it empowers your users to explore, understand, and integrate with your APIs faster than ever.</p>
     <% end %>
 
-    <%= render "page_home/feature_blocks_item", locals: {
+    <%= render "page_home/features_item", locals: {
       title: 'Make 100% of your API ecosystem discoverable',
       pill: { icon: 'checkbox-circle-fill', text: 'Increase discoverability' },
       cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image_path: '/images/homepage/feature-blocks/feature-blocks-1.png',
+      image: '/images/features/discoverable-api-ecosystem.png',
       tags: [
         { icon: 'hard-drive-2-line', text: 'API catalogs landing pages' },
         { icon: 'hard-drive-2-line', text: 'Unified semantic search' },
@@ -40,11 +40,11 @@
       <p>Publish your API catalogs, give complete visibility and a central onboarding experience to your entire ecosystem thanks to Bump.sh Hubs.</p>
     <% end %>
 
-    <%= render "page_home/feature_blocks_item", locals: {
+    <%= render "page_home/features_item", locals: {
       title: 'Strengthen your developer relations',
       pill: { icon: 'checkbox-circle-fill', text: 'Manage API change' },
       cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image_path: '/images/homepage/feature-blocks/feature-blocks-1.png',
+      image: '/images/features/developer-relations.png',
       tags: [
         { icon: 'hard-drive-2-line', text: 'API diff' },
         { icon: 'hard-drive-2-line', text: 'Breaking changes detection' },
