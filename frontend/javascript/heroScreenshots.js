@@ -1,5 +1,5 @@
 export const init = () => {
-  document.querySelectorAll(".js-featureScreenshots").forEach((container) => {
+  document.querySelectorAll(".js-heroScreenshots").forEach((container) => {
     const firstButton = container.querySelector('button[data-current="true"]');
     if (firstButton) {
       slideBackgroundTo(firstButton, container);
@@ -44,7 +44,7 @@ const showButtonScreenshot = (button) => {
 
 const slideBackgroundTo = (button, container) => {
   const slidingBackground = container.querySelector(
-    ".js-featureScreenshots-slidingBackground"
+    ".js-heroScreenshots-slidingBackground"
   );
   if (!slidingBackground) {
     return;
@@ -54,5 +54,5 @@ const slideBackgroundTo = (button, container) => {
 };
 
 const getContainer = (el) => {
-  return el.closest(".js-featureScreenshots");
+  return el.closest(".js-heroScreenshots");
 };

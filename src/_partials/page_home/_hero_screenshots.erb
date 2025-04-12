@@ -6,29 +6,29 @@
 <% features = [
   {
     title: 'API Doc',
-    image: '/images/features/api-doc.png',
+    image: '/images/hero/api-doc.png',
     icon: 'file-text-line',
   },
   {
     title: 'API Explorer',
-    image: '/images/features/api-explorer.png',
+    image: '/images/hero/api-explorer.png',
     icon: 'search-eye-line',
   },
   {
     title: 'Automatic changelog',
-    image: '/images/features/automatic-changelog.png',
+    image: '/images/hero/automatic-changelog.png',
     icon: 'exchange-box-line',
   },
   {
     title: 'Hub',
-    image: '/images/features/hub.png',
+    image: '/images/hero/hub.png',
     icon: 'apps-2-line',
   }
 ] %>
-<div class="js-featureScreenshots flex flex-col-reverse items-center gap-24 w-full">
+<div class="js-heroScreenshots flex flex-col-reverse items-center gap-24 w-full my-section">
   <%# start with the buttons in the DOM for better screen reader experience %>
   <div class="flex p-4 rounded-12 bg-aqua-200 border border-aqua-300 gap-4 relative">
-    <div class="js-featureScreenshots-slidingBackground z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white"></div>
+    <div class="js-heroScreenshots-slidingBackground z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white"></div>
 
     <% features.each_with_index do |feature, index| %>
       <button
@@ -71,5 +71,5 @@
           />
         <% end %>
       </div>
-    </div>
-  </div>
+          </div>
+        </div>
