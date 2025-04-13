@@ -37,15 +37,40 @@
           <p id="doc-preview-help" class="body-4 text-white">Try it with an OpenAPI or an AsyncAPI example.</p>
         </div>
 
-        <input id="doc-preview-file" type="file" class="hidden" />
-        <label tabindex="0" for="doc-preview-file" class="flex flex-col justify-center items-center gap-16 p-[16px_6px] w-[29rem] h-[5.75rem] rounded-12 border border-dashed border-black-600 bg-black-900 cursor-pointer hover:bg-black-800 active:bg-black-700 transition-colors group">
-          <div class="flex items-center gap-12">
-            <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-600 group-active:bg-black-600 transition-colors">
-              <%= render Icon.new "download-cloud-line", class: "text-white" %>
+        <%# yep, this is a bit of a mess %>
+        <form id="doc-preview-upload-form" action="#" method="POST" class="relative js-docPreviewUpload">
+          <input data-dropzone="initial" id="doc-preview-file" type="file" aria-label="Import your documentation" class="opacity-0 text-white absolute inset-0 z-10 peer cursor-pointer" />
+          <div
+            class="relative z-0 peer-data-[dropzone=drop]:z-20 flex flex-col justify-center items-center gap-16 py-16 px-6 w-[29rem] h-[5.75rem] rounded-12 border border-dashed border-black-600 bg-black-900 peer-data-[dropzone=initial]:cursor-pointer peer-hover:bg-black-700 peer-active:bg-black-800 peer-data-[dropzone=drag]:bg-black-700 peer-data-[dropzone=drop]:bg-black-700 peer-data-[dropzone=drop]:py-10 transition-colors group"
+          >
+            <div data-visible="true" data-dropzone="initial" class="hidden data-visible:flex items-center gap-12">
+              <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
+                <%= render Icon.new "download-cloud-line", class: "text-white" %>
+              </div>
+              <span class="cta text-white">Import your documentation</span>
             </div>
-            <span class="cta text-white">Import your documentation</span>
+
+            <div data-dropzone="drag" class="hidden data-visible:flex items-center gap-12">
+              <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
+                <%= render Icon.new "file-download-line", class: "text-white" %>
+              </div>
+              <span class="cta text-white">Drop your file to preview</span>
+            </div>
+
+            <div data-dropzone="drop" class="hidden w-full h-full data-visible:flex flex-col gap-12 bg-black-700">
+              <div class="flex justify-between items-center">
+                <div class="flex gap-4">
+                  <%= render Icon.new "checkbox-circle-fill", class: "text-white" %>
+                  <span data-filename class="body-3 text-white"></span>
+                </div>
+                <button type="reset" aria-label="Delete">
+                  <%= render Icon.new "delete-bin-line", class: "text-white" %>
+                </button>
+              </div>
+              <%= render Button.new "Preview", variant: "primary-square", size: "full" %>
+            </div>
           </div>
-        </label>
+        </form>
       </div>
     </div>
   </div>

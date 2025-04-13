@@ -1,5 +1,6 @@
 <%
-  buttonStyles = "inline-flex w-fit data-disabled:opacity-50 items-center justify-center gap-8 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  sizeStyles = @size == 'full' ? 'w-full' : 'w-fit'
+  buttonStyles = "inline-flex data-disabled:opacity-50 items-center justify-center gap-8 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
   primaryStyles = 'transition-colors rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700 active:hover:bg-black-900'
   buttonVariantStyles = case @variant
   when 'primary'
@@ -13,8 +14,8 @@
   when 'outline'
     'transition-colors rounded-4 border-black-200 bg-white text-black-900 hover:bg-black-100 active:bg-black-200'
   end
-  linkStyles = "inline-flex underline-offset-3 w-fit data-disabled:opacity-50 items-center justify-center gap-8 p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default active:not-data-disabled:no-underline"
-  styles = @variant == 'link' ? linkStyles : "#{buttonStyles} #{buttonVariantStyles}"
+  linkStyles = "inline-flex underline-offset-3 data-disabled:opacity-50 items-center justify-center gap-8 p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default active:not-data-disabled:no-underline"
+  styles = @variant == 'link' ? "#{linkStyles} #{sizeStyles}" : "#{buttonStyles} #{buttonVariantStyles} #{sizeStyles}"
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>
 <% if @href %>

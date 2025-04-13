@@ -33,25 +33,54 @@ const handleTextUrlFormSubmission = () => {
 };
 
 const handleFileUpload = () => {
-  const fileInput = document.querySelector("#doc-preview-file");
-  if (!fileInput) {
+  const uploadForm = document.querySelector(".js-docPreviewUpload");
+  const fileInput = uploadForm.querySelector("#doc-preview-file");
+  if (!uploadForm || !fileInput) {
     return;
   }
+
+  const hideAllDropzones = () => {
+    uploadForm.querySelectorAll("div[data-dropzone]").forEach((dropzone) => {
+      dropzone.removeAttribute("data-visible");
+    });
+  };
+  const inactiveDropzone = uploadForm.querySelector(
+    "div[data-dropzone='initial']"
+  );
+  const activeDropzone = uploadForm.querySelector("div[data-dropzone='drag']");
+  const droppedDropzone = uploadForm.querySelector("div[data-dropzone='drop']");
+  const showDropzone = (dropzone) => {
+    hideAllDropzones();
+    dropzone.setAttribute("data-visible", "true");
+  };
+  fileInput.addEventListener("dragenter", (event) => {
+    fileInput.setAttribute("data-dropzone", "drag");
+    showDropzone(activeDropzone);
+  });
+  fileInput.addEventListener("dragleave", (event) => {
+    fileInput.setAttribute("data-dropzone", "initial");
+    showDropzone(inactiveDropzone);
+  });
   fileInput.addEventListener("change", (event) => {
-    // @TODO: handle file upload
+    fileInput.setAttribute("data-dropzone", "drop");
+    showDropzone(droppedDropzone);
+    const fileName = event.target.files[0].name;
+    const fileNameElement = uploadForm.querySelector("[data-filename]");
+    if (fileNameElement) {
+      fileNameElement.textContent = fileName;
+    }
   });
 
-  // make our custom file input work with keyboard
-  const fileInputLabel = document.querySelector(
-    'label[for="doc-preview-file"]'
-  );
-  if (!fileInputLabel) {
-    return;
-  }
-  fileInputLabel.addEventListener("keyup", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      fileInput.click();
-    }
+  uploadForm.addEventListener("reset", (event) => {
+    event.preventDefault();
+    fileInput.value = "";
+    fileInput.setAttribute("data-dropzone", "initial");
+    hideAllDropzones();
+    showDropzone(inactiveDropzone);
+  });
+
+  uploadForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    // @TODO: handle file upload
   });
 };
