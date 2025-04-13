@@ -47,6 +47,11 @@
   { title: 'Data Processing Agreement', href: '#' },
   { title: 'Cookie Policy', href: '#' },
 ] %>
+<% social_links = [
+  { title: 'Twitter', href: '#', icon: 'twitter-x-line' },
+  { title: 'Instagram', href: '#', icon: 'instagram-line' },
+  { title: 'LinkedIn', href: '#', icon: 'linkedin-box-fill' },
+] %>
 <div class="bg-black-50 pb-section relative">
   <%= render "with_dots_bg", classes: "pt-section" do %>
     <div class="w-main mx-auto">
@@ -78,7 +83,7 @@
             <div role="heading" aria-level="3" class="capped-small text-black-600"><%= link_list[:title] %></div>
             <ul role="list" class="flex flex-col gap-8">
               <% link_list[:links].each do |link| %>
-                <li><a href="<%= link[:href] %>" class="text-black-700 small-link hover:underline underline-offset-2"><%= link[:title] %></a></li>
+                <li><a href="<%= link[:href] %>" class="text-black-700 small-link hover:underline active:no-underline underline-offset-2"><%= link[:title] %></a></li>
               <% end %>
             </ul>
           </div>
@@ -89,22 +94,18 @@
     <div class="flex justify-between items-end py-16">
       <div class="flex flex-col gap-32">
         <div class="flex gap-24">
-          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
-            <%= render Icon.new "twitter-x-line", size: 20, classes: "text-black-600" %>
-          </a>
-          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
-            <%= render Icon.new "instagram-line", size: 20, classes: "text-black-600" %>
-          </a>
-          <a href="#" class="p-8 rounded-8 hover:bg-black-100">
-            <%= render Icon.new "linkedin-box-fill", size: 20, classes: "text-black-600" %>
-          </a>
+          <% social_links.each do |social_link| %>
+            <a href="<%= social_link[:href] %>" aria-label="<%= social_link[:title] %>" class="p-8 rounded-8 transition-colors hover:bg-black-100 active:bg-black-300">
+              <%= render Icon.new social_link[:icon], size: 20, classes: "text-black-600" %>
+            </a>
+          <% end %>
         </div>
         <p class="text-black-600 body-4">© 2025 Bump.sh. All rights reserved.</p>
       </div>
 
       <ul role="list" class="flex gap-32">
         <% legal_links.each do |link| %>
-          <li><a href="<%= link[:href] %>" class="text-black-600 small-link hover:underline underline-offset-2"><%= link[:title] %></a></li>
+          <li><a href="<%= link[:href] %>" class="text-black-600 small-link hover:underline active:no-underline underline-offset-2"><%= link[:title] %></a></li>
         <% end %>
       </ul>
     </div>
