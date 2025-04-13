@@ -1,0 +1,57 @@
+<%#
+  Pricing plan item
+
+  Params:
+    - plan: hash with:
+      - name: plan name
+      - price: plan price (string)
+      - description: plan description
+      - features: array of feature strings
+      - cta: hash with:
+        - text: button text
+        - href: button href
+        - variant: button variant
+      - highlight: boolean, whether to highlight this plan (optional)
+%>
+<% is_highlighted = defined?(highlight) && highlight %>
+<div class="flex flex-col gap-40 p-24 rounded-32 text-white <%= is_highlighted ? 'bg-black-800' : 'bg-black-900' %>">
+  <%# Plan header %>
+  <div class="flex flex-col gap-40">
+    <div class="flex flex-col gap-24 border-b border-black-600 pb-40">
+      <div class="flex flex-col gap-8">
+        <h3 class="h4"><%= name %></h3>
+        <p class="body-4 text-black-400"><%= description %></p>
+      </div>
+      <div class="flex items-center gap-4">
+        <% if price.is_a?(Numeric) %>
+          <span class="h4"><%= price %>€</span>
+          <span class="capped-small text-black-400">/mo</span>
+        <% else %>
+          <span class="h4"><%= price %></span>
+        <% end %>
+      </div>
+    </div>
+
+    <%# Features list %>
+    <div class="flex flex-col gap-16">
+      <h4 class="body-3 vfont-semibold"><%= features_description %></h4>
+      <ul role="list" class="flex flex-col gap-6">
+        <% features.each do |feature| %>
+          <li class="flex items-start gap-8">
+            <%= render Icon.new "checkbox-circle-fill", class: "flex-shrink-0 mt-2 text-black-600" %>
+            <span class="body-3"><%= feature %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mt-auto">
+    <%= render Button.new cta[:text],
+      href: cta[:href],
+      size: "full",
+      variant: is_highlighted ? "primary" : "primary-light",
+      style: is_highlighted ? "box-shadow: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54), 0px 7.84px 220.76px 0px hsla(193, 67%, 81%, 0.3);" : ""
+    %>
+  </div>
+</div>

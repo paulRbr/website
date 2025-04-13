@@ -1,19 +1,28 @@
 <%#
   Desktop header bar
 
-  Params: none
+  Params:
+    - dark: optional boolean indicating if the page begins with a dark background
 %>
-<% base_styles = 'fixed top-0 left-0 right-0 z-50 flex my-16 px-24 bg-transparent border border-transparent justify-between rounded-tl-8 rounded-tr-8 items-center w-main mx-auto transition-all' %>
-<% fixed_styles = 'data-fixed:backdrop-blur-8 data-fixed:bg-white/70 data-fixed:border-black-300 data-fixed:shadow-nav' %>
-<% hover_styles = 'hover:bg-white! hover:border-black-100!' %>
+<% base_styles = 'fixed top-0 left-0 right-0 z-50 flex my-16 px-24 bg-transparent border border-transparent justify-between rounded-tl-8 rounded-tr-8 items-center w-main mx-auto transition-all duration-300 text-black-900 data-dark:text-white' %>
+<% fixed_styles = 'data-fixed:backdrop-blur-8 data-fixed:bg-white/70 data-fixed:border-black-300 data-fixed:shadow-nav data-fixed:data-dark:text-black-900' %>
+<% hover_styles = 'hover:bg-white! hover:text-black-900! hover:border-black-100!' %>
 
 <div class="js-headerPositionTracker" aria-hidden="true"></div>
 <div
-  class="js-header <%= base_styles %> <%= fixed_styles %> <%= hover_styles %>"
+  <%= defined?(dark) && dark ? 'data-dark' : '' %>
+  class="js-header group <%= base_styles %> <%= fixed_styles %> <%= hover_styles %>"
 >
   <header>
-    <a href="<%= relative_url '/' %>">
-      <img src="<%= relative_url '/images/logo.svg' %>" alt="Bump.sh" />
+    <a href="<%= relative_url '/' %>" aria-label="Bump.sh">
+      <svg width="147" height="33" viewBox="0 0 147 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_2216_4415" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="147" height="33">
+          <path d="M147 .506306H0V32.4932h147V.506306Z" fill="#fff"/>
+        </mask>
+        <g mask="url(#mask0_2216_4415)" class="group-data-fixed:fill-[#1F1B1B] group-hover:fill-[#1F1B1B] duration-300 transition-colors" fill="<%= dark ? '#fff' : '#1F1B1B' %>">
+          <path d="M129.909 24.4809V4.55901h3.442v7.92429c.932-1.4752 2.541-2.4068 4.539-2.4068 3.09 0 5.166 2.0238 5.166 5.1138v9.2906h-3.442V16.008c0-1.6925-1.066-2.8674-2.733-2.8674-2.241 0-3.525 1.9151-3.525 5.1397v6.2058h-3.447v-.0052Zm-6.708.2226c-3.664 0-6.123-2.1066-6.257-5.1396h3.359c.083 1.0662 1.201 2.2153 2.898 2.2153 1.367 0 2.324-.6005 2.324-1.4752 0-.7401-.574-1.1749-1.532-1.3664l-2.215-.4658c-2.184-.4659-4.182-1.5321-4.182-4.3167 0-2.2153 2.024-4.0734 5.3-4.0734 3.09 0 5.497 1.6925 5.849 4.5082h-3.365c-.165-1.1491-1.34-1.7495-2.489-1.7495-1.149 0-1.884.4917-1.884 1.3095 0 .6832.6 1.0921 1.532 1.2836l2.215.4659c2.407.4917 4.265 1.4233 4.265 4.3166 0 2.4586-2.324 4.4823-5.823 4.4823l.005.0052Zm-26.0395 4.8912V10.2991h3.4415v1.6666c.767-1.1232 2.35-1.884 4.208-1.884 4.048 0 6.641 3.0072 6.641 7.298s-2.759 7.3238-6.889 7.3238c-1.667 0-3.173-.6573-3.965-1.6666v6.5578h-3.4416.0051Zm7.0285-7.8725c2.216 0 3.743-1.7236 3.743-4.3477 0-2.6242-1.533-4.3167-3.743-4.3167s-3.799 1.7236-3.799 4.3167c0 2.5931 1.532 4.3477 3.799 4.3477ZM73.9476 24.481V10.2939h3.442v2.2153c.766-1.4493 2.1325-2.4327 4.0993-2.4327 2.2411 0 3.7991.9575 4.4305 2.6811.7661-1.4751 2.4586-2.6811 4.6997-2.6811 3.0331 0 5.031 1.9668 5.031 4.7825v9.622h-3.442v-8.6645c0-1.7235-.9575-2.8156-2.5983-2.8156-1.9927 0-3.09 1.7235-3.09 4.2649v7.2152h-3.4419v-8.6645c0-1.7235-.9576-2.8156-2.5983-2.8156-1.9668 0-3.09 1.7494-3.09 4.2908v7.1893h-3.442ZM72.338 10.2991v14.187h-3.442v-2.1842c-.9316 1.4492-2.5672 2.4068-4.5392 2.4068-3.09 0-5.1655-2.0238-5.1655-5.1138v-9.2907h3.4419v8.4988c0 1.6666 1.0663 2.8416 2.7329 2.8416 2.2153 0 3.5248-1.9151 3.5248-5.1138v-6.2317h3.4471ZM51.6294 24.7035c-1.8582 0-3.4161-.8178-4.0475-1.884v1.6666h-3.442V4.55901h3.442v7.35489c.8177-1.0921 2.3498-1.8322 4.0992-1.8322 4.1252 0 6.7235 2.9813 6.7235 7.2979 0 4.3167-2.5672 7.3239-6.7804 7.3239h.0052Zm-.4917-2.9813c2.2411 0 3.7732-1.7494 3.7732-4.3477 0-2.5983-1.5321-4.3167-3.7732-4.3167-2.2412 0-3.7991 1.7236-3.7991 4.3167 0 2.5931 1.532 4.3477 3.7991 4.3477ZM33.669 11.3239c-.0207-4.20283-3.033-6.76489-7.3549-6.76489-4.3218 0-7.3238 2.60346-7.329 6.74419 0 .1915-.0155 1.6821-.0363 3.6024 0 .1501-.2122.176-.2484.031-.8023-3.0434-3.4989-4.8342-7.1116-4.8342-4.33743 0-7.32908 2.6086-7.32908 6.7545 0 .088-.1501 7.6292-.1501 7.6292H33.8191s-.119-12.6291-.1449-13.157l-.0052-.0052Zm81.836 9.6323h-3.509v3.5092h3.509v-3.5092Z"/>
+        </g>
+      </svg>
     </a>
   </header>
 

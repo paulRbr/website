@@ -1,7 +1,7 @@
 class Button < Bridgetown::Component
   def initialize(text, href: nil, icon: nil, size: "auto", variant: "primary", **attributes)
-    unless %w[primary primary-square aqua seashell outline link].include?(variant)
-      raise "Invalid variant: #{variant}. Allowed variants: primary, primary-square, aqua, seashell, outline, link."
+    unless %w[primary primary-square primary-light aqua seashell outline link].include?(variant)
+      raise "Invalid variant: #{variant}. Allowed variants: primary, primary-square, primary-light, aqua, seashell, outline, link."
     end
     unless %w[auto full].include?(size)
       raise "Invalid size: #{size}. Allowed sizes: auto, full."

@@ -1,12 +1,14 @@
 <%
   sizeStyles = @size == 'full' ? 'w-full' : 'w-fit'
   buttonStyles = "inline-flex data-disabled:opacity-50 items-center justify-center gap-8 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
-  primaryStyles = 'transition-colors rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700 active:hover:bg-black-900'
+  primaryStyles = 'transition-colors rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700 active:bg-black-900'
   buttonVariantStyles = case @variant
   when 'primary'
     primaryStyles
   when 'primary-square'
     primaryStyles + ' rounded-8! py-8!'
+  when 'primary-light'
+    'transition-colors rounded-pill border-transparent bg-black-700 text-white hover:bg-black-800 active:hover:bg-black-900'
   when 'aqua'
     'transition-colors rounded-pill border-transparent bg-aqua-100 text-black-900 hover:bg-aqua-500 active:bg-aqua-600'
   when 'seashell'

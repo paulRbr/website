@@ -1,0 +1,72 @@
+<%# Pricing plans summary section %>
+<div class="flex flex-col items-center gap-40">
+  <div class="grid grid-cols-3 gap-24">
+    <%= render "page_pricing/plans_summary_item", locals: {
+      name: "Basic",
+      price: "Free",
+      description: "For those who need…",
+      features_description: "Our basic plan features:",
+      features: [
+        "OpenAPI + AsyncAPI support",
+        "Seamless single page experience",
+        "CLI & GitHub action integration",
+        "Custom domain + logo",
+        "1 private or public API",
+        "1 user",
+        "10 guests",
+        "Priority feature requests",
+      ],
+      cta: {
+        text: "Get started",
+        href: "/signup",
+      }
+    } %>
+
+    <%= render "page_pricing/plans_summary_item", locals: {
+      name: "Pro",
+      price: 250,
+      description: "For those who need…",
+      features_description: "Everything in Basic, plus:",
+      features: [
+        "Branches management",
+        "Advanced access management",
+        "Deployment rollback",
+        "Custom color, favicon & meta image",
+        "Instant diff checker",
+        "10 API docs",
+        "1 Hub",
+        "50 guests",
+        "Unlimited internal users",
+        "Automatic changelog: unlimited",
+      ],
+      cta: {
+        text: "Start 14-day free trial",
+        href: "/signup",
+      }
+    } %>
+
+    <%= render "page_pricing/plans_summary_item", locals: {
+      name: "Entreprise",
+      price: "Custom",
+      highlight: true,
+      description: "For those who need…",
+      features_description: "Everything in Pro, plus:",
+      features: [
+        "Single Sign-On (SSO)",
+        "Manual releases & release notes",
+        "Remove Bump.sh branding",
+        "Custom JS and CSS",
+        "Custom reports and analytics",
+        "Custom path under your root domain",
+        "Custom number of API docs, Hubs & guests",
+        "Dedicated onboarding sessions",
+        "Professional services",
+        "Priority feature requests",
+      ],
+      cta: {
+        text: "Request demo",
+        href: "/signup",
+      }
+    } %>
+  </div>
+</div>

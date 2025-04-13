@@ -1,0 +1,37 @@
+<%#
+  Pricing page company logos section
+
+  Params: none
+%>
+<% companyLogos = [
+  {
+    name: 'Lightspeed',
+    image: '/images/company-logos/lightspeed-dark.png'
+  },
+  {
+    name: 'Memo Bank',
+    image: '/images/company-logos/memo-bank-dark.png'
+  },
+  {
+    name: 'Motorola Solutions',
+    image: '/images/company-logos/motorola-solutions-dark.png'
+  },
+  {
+    name: 'Elastic',
+    image: '/images/company-logos/elastic-dark.png'
+  }
+] %>
+<div class="bg-black-900 text-black-100">
+  <div class="w-main mx-auto">
+    <div class="flex flex-col items-center w-full gap-24">
+      <h3 class="capped-small text-black-100">
+        Trusted by leading companies
+      </h3>
+      <div class="flex flex-wrap justify-center items-center w-full gap-24">
+        <% companyLogos.each do |companyLogo| %>
+          <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-24 w-auto"/>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

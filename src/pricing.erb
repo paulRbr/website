@@ -1,6 +1,24 @@
 ---
 layout: default
+with_navbar_padding: false
+dark_header: true
 ---
-<div class="w-main mx-auto my-section">
-  <%= render "page_pricing/plans_summary" %>
+<div class="bg-black-900">
+  <%= render "with_dots_bg",
+    classes: "pt-navbar bg-black-900",
+    offset: "10px" do %>
+      <div class="mt-section">
+        <%= render "section_heading", locals: {
+          title: "Discover our pricing plans",
+          description: "Adapted to your company’s size and needs.",
+          variant: "dark",
+        } do %>
+          <%= render "page_pricing/company_logos" %>
+        <% end %>
+      </div>
+  <% end %>
+
+  <div class="w-main mx-auto bg-black-900 pb-section">
+    <%= render "page_pricing/plans_summary" %>
+  </div>
 </div>
