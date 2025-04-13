@@ -91,6 +91,10 @@ Allows to write variables like <% buttonStyles = "..." %> and have tailwind clas
 
 Font loading is handled in a specific way. Refer to the [fonts documentation](./frontend/fonts/README.md) for more information.
 
+## Icons
+
+Refer to the [icons documentation](./frontend/icons/README.md) for more information on how to add and consume icons in the project.
+
 ## Deployment
 
 To build a production version of the website:

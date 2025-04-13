@@ -8,7 +8,7 @@
   >
     <%= render "header/header", metadata: site.metadata, resource: resource %>
 
-    <main>
+    <main class="<%= !defined?(data.with_navbar_padding) || data.with_navbar_padding ? "pt-navbar" : "" %>">
       <%= yield %>
     </main>
 

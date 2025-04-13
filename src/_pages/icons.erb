@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<% slot :head_meta do %>
+  <meta name="robots" content="noindex">
+<% end %>
+<div class="js-icons mx-auto w-main my-section">
+  <p class="mb-8">Click an icon name or code snippet to put it in your clipboard. <span class="js-feedback hidden bg-black-200 px-8 py-4 ml-16">Copied!</span></p>
+  <p class="mb-16">See the <code>Icon</code> component to view all available params and the <code>frontend/icons/README.md</code> file for more information on how to add icons.</p>
+  <% Icon.available_icons.each do |icon| %>
+    <div class="flex flex-row items-center gap-16">
+      <%= render Icon.new icon, size: 32 %>
+      <button class="py-4 px-8 rounded-8 hover:bg-black-100 transition-colors js-clipboard">
+        <%= icon %>
+      </button>
+      <button style="font-size: 0.85em" class="py-4 px-8 rounded-8 hover:bg-black-100 transition-colors js-clipboard font-mono">&lt;%= render Icon.new "<%= icon %>" %&gt;</button>
+    </div>
+  <% end %>
+</div>
+<script>
+  let feedbackTimeout = null;
+  document.querySelector(".js-icons").addEventListener("click", (event) => {
+    const clipboardItem = event.target.closest(".js-clipboard");
+    if (!clipboardItem) {
+      return;
+    }
+    navigator.clipboard.writeText(clipboardItem.textContent.trim());
+    if (feedbackTimeout) {
+      clearTimeout(feedbackTimeout);
+    }
+    document.querySelector(".js-feedback").classList.remove("hidden");
+    feedbackTimeout = setTimeout(() => {
+      document.querySelector(".js-feedback").classList.add("hidden");
+    }, 1000);
+  });
+</script>

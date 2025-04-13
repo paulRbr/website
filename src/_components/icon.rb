@@ -1,17 +1,13 @@
 require "nokogiri"
 
 class Icon < Bridgetown::Component
-  # @@icons = %w[arrow-right-up-line arrow-left arrow-right arrow-down]
   @@icons_dir = Bridgetown::Current.site.root_dir + "/frontend/icons/"
+  @@available_icons = []
 
   def initialize(name, size: 16, alt: nil, classes: nil, **attributes)
-    # @TODO: reapply the checks once we have a proper website
-    # unless @@icons.include?(name)
-    #   raise "Unknown icon: #{name}. Existing icons: #{@@icons.join(', ')}."
-    # end
-    # unless File.exist?("#{@@icons_dir}#{name}.svg")
-    #   raise "Icon file not found: #{name}.svg. Add it to the frontend/icons directory."
-    # end
+    unless Icon.available_icons.include?(name)
+      raise "Unknown icon: #{name}. See all available icons on /icons page."
+    end
 
     @name = name
     @size = size
@@ -38,5 +34,12 @@ class Icon < Bridgetown::Component
 
   def render_in(view_context, &block)
     @svg_dom
+  end
+
+  def self.available_icons
+    if @@available_icons.empty?
+      @@available_icons = Dir.glob("#{@@icons_dir}*.svg").map { |file| File.basename(file).chomp(".svg") }
+    end
+    @@available_icons
   end
 end

@@ -3,6 +3,7 @@
 <title><% if resource_title != "Index" %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="<%= metadata.description %>" />
+<%= slotted :head_meta %>
 <%#
   Inlining css in production may go faster depending on the final css size.
   Let's try it for now and tinker with it later (yes, really perf-geek stuff that doesn't matter at all)
