@@ -34,8 +34,11 @@ const handleTextUrlFormSubmission = () => {
 
 const handleFileUpload = () => {
   const uploadForm = document.querySelector(".js-docPreviewUpload");
+  if (!uploadForm) {
+    return;
+  }
   const fileInput = uploadForm.querySelector("#doc-preview-file");
-  if (!uploadForm || !fileInput) {
+  if (!fileInput) {
     return;
   }
 
