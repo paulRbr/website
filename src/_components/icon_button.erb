@@ -1,12 +1,12 @@
 <%
-  buttonStyles = "inline-flex leading-none self-center rounded-full data-disabled:opacity-50 items-center justify-center gap-2 p-[9px] w-32 h-32 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  buttonStyles = "inline-flex leading-none self-center rounded-full data-disabled:opacity-50 items-center justify-center gap-2 p-[9px] w-32 h-32 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900 transition-colors"
   buttonVariantStyles = case @variant
   when 'primary'
     'bg-black-900 text-white hover:bg-black-700'
   when 'seashell'
-    'bg-seashell-300 text-black-900 hover:bg-seashell-700'
+    'bg-seashell-300 text-black-900 hover:bg-seashell-700 active:bg-seashell-800'
   end
-  styles = "#{buttonStyles} #{buttonVariantStyles}"
+  styles = "#{buttonStyles} #{buttonVariantStyles} #{@classes}"
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>
 <% if @href %>

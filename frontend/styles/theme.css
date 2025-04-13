@@ -76,6 +76,7 @@ This is a good way to be explicit about the design system.
   --spacing-section: 5rem;
   --spacing-section2x: 15rem;
   --spacing-navbar: 5.375rem;
+  --spacing-shadow-aqua-medium: 120px;
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
@@ -93,10 +94,12 @@ This is a good way to be explicit about the design system.
   --radius-32: 2rem;
   --radius-pill: 3.125rem;
   --shadow-nav: 0 4px 28px hsla(15, 6%, 14%, 0.05);
-  --shadow-strong-shadow: 0rem 0.2404rem 0.9176rem 0rem
-      rgba(173, 225, 239, 0.54),
+  --shadow-aqua-large: 0rem 0.2404rem 0.9176rem 0rem rgba(173, 225, 239, 0.54),
     0rem 0.8074rem 3.0819rem 0rem rgba(173, 225, 239, 0.4),
     0rem 0.49rem 13.7976rem 0rem rgba(173, 225, 239, 0.3);
+  --shadow-aqua-medium: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54),
+    0px 12.92px 49.31px 0px hsla(193, 67%, 81%, 0.4),
+    0px 7.84px var(--spacing-shadow-aqua-medium) 0px hsla(193, 67%, 81%, 0.3);
   --blur-8: 8px;
   --default-transition-duration: 0.15s;
 }
