@@ -10,42 +10,46 @@
     description: 'This is the subtext that explains the section further'
   } %>
 
-  <div class="flex flex-row justify-stretch items-stretch gap-24 w-full">
-    <%= render "page_home/workflow_step", locals: {
-      number: "01",
-      title: "Commit",
-      subtitle: "Git as the source of truth",
-      features: [
-        "Swagger, OpenAPI & AsyncAPI support",
-        "Code-first and design-first",
-        "Doc-as-code workflow"
-      ],
-      image: "/images/workflow/commit.png"
-    } %>
+  <div class="relative">
+    <div class="h-1 w-9/12 m-auto absolute z-0 top-32 left-0 right-0" style="background-image: linear-gradient(to right, transparent, var(--color-black-400), transparent);"></div>
 
-    <%= render "page_home/workflow_step", locals: {
-      number: "02",
-      title: "Review",
-      subtitle: "Top-notch collaboration & governance",
-      features: [
-        "Code review assistance",
-        "Breaking changes notification",
-        "Doc preview"
-      ],
-      image: "/images/workflow/review.png"
-    } %>
+    <div class="relative z-10 flex flex-row justify-stretch items-stretch gap-24 w-full">
+      <%= render "page_home/workflow_step", locals: {
+        number: "01",
+        title: "Commit",
+        subtitle: "Git as the source of truth",
+        features: [
+          "Swagger, OpenAPI & AsyncAPI support",
+          "Code-first and design-first",
+          "Doc-as-code workflow"
+        ],
+        image: "/images/workflow/commit.png"
+      } %>
 
-    <%= render "page_home/workflow_step", locals: {
-      number: "03",
-      title: "Publish",
-      subtitle: "Release control",
-      features: [
-        "Automatic doc & changelog update",
-        "Release management & rollback",
-        "Customers notification"
-      ],
-      image: "/images/workflow/publish.png"
-    } %>
+      <%= render "page_home/workflow_step", locals: {
+        number: "02",
+        title: "Review",
+        subtitle: "Top-notch collaboration & governance",
+        features: [
+          "Code review assistance",
+          "Breaking changes notification",
+          "Doc preview"
+        ],
+        image: "/images/workflow/review.png"
+      } %>
+
+      <%= render "page_home/workflow_step", locals: {
+        number: "03",
+        title: "Publish",
+        subtitle: "Release control",
+        features: [
+          "Automatic doc & changelog update",
+          "Release management & rollback",
+          "Customers notification"
+        ],
+        image: "/images/workflow/publish.png"
+      } %>
+    </div>
   </div>
 
   <div class="flex justify-center items-center mt-48">
