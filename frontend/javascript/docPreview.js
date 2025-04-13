@@ -14,6 +14,11 @@ const handleDefaultTextUrl = () => {
       input.select();
     }
   });
+  input.addEventListener("blur", () => {
+    if (input.value === "") {
+      input.value = input.getAttribute("data-preview-url");
+    }
+  });
 };
 
 const handleTextUrlFormSubmission = () => {
