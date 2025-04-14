@@ -6,9 +6,11 @@
   <body
     class="bg-white text-black-900 <%= data.body_class %>"
   >
+    <%= slotted :before_header %>
+
     <%= render "header/header", metadata: site.metadata, resource: resource, dark: defined?(data.dark_header) && data.dark_header %>
 
-    <main class="<%= !defined?(data.with_navbar_padding) || data.with_navbar_padding ? "pt-navbar" : "" %>">
+    <main class="<%= !defined?(data.with_navbar_padding) || data.with_navbar_padding ? "relative -mt-navbar pt-navbar" : "" %>">
       <%= yield %>
     </main>
 

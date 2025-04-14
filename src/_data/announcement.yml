@@ -1,0 +1,6 @@
+enable: true
+pill: "New"
+text: "This is an exemple of a type of annoucement that goes here"
+cta:
+  text: "Read blog post"
+  href: "#"

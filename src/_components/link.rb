@@ -2,10 +2,17 @@
 #
 # To generate buttons that look like links, are links that look like buttons, use the Button component
 class Link
-  def self.new(text, href:, variant: "arrow", **attributes)
-    unless %w[arrow no-arrow].include?(variant)
-      raise "Invalid variant: #{variant}. Allowed variants: arrow, no-arrow."
+  def self.new(text, href:, variant: "normal", arrow: true, **attributes)
+    unless %w[normal white].include?(variant)
+      raise "Invalid variant: #{variant}. Allowed variants: normal, white."
     end
-    Button.new(text, href: href, variant: "link", icon: (variant === "arrow") ? "arrow-right-up-line" : nil, **attributes)
+
+    Button.new(
+      text,
+      href: href,
+      variant: (variant === "normal") ? "link" : "link-white",
+      icon: arrow ? "arrow-right-up-line" : nil,
+      **attributes
+    )
   end
 end

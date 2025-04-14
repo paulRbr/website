@@ -2,6 +2,12 @@
 layout: default
 with_navbar_padding: false
 ---
+<% slot :before_header do %>
+  <% if site.data.announcement.enable %>
+    <%= render "announcement", **site.data.announcement %>
+  <% end %>
+<% end %>
+
 <%= render "page_home/hero" %>
 <%= render "page_home/company_logos" %>
 <%= render "page_home/features" %>
@@ -9,6 +15,7 @@ with_navbar_padding: false
 <%= render "page_home/workflow" %>
 <%= render "page_home/expert" %>
 <%= render "page_home/testimonials" %>
+
 <% slot :scripts do %>
   <script src="<%= asset_path 'javascript/pages/home/index.js' %>"></script>
 <% end %>
