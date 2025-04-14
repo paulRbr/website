@@ -1,5 +1,5 @@
 <%# Pricing plans summary section %>
-<div class="flex flex-col items-center gap-40">
+<div class="flex flex-col items-center gap-40 w-[56.25rem] mx-auto">
   <div class="grid grid-cols-3 gap-24">
     <%= render "page_pricing/plans_summary_item", locals: {
       name: "Basic",
@@ -69,4 +69,11 @@
       }
     } %>
   </div>
+  <p class="bg-black-700 text-white body-3 flex gap-8 py-16 px-24 rounded-full w-full">
+    <span class="inline-flex items-center gap-4">
+      <%= render Icon.new "heart-3-fill", size: 17, class: "text-aqua-500"%>
+      <span class="h6">Support:</span>
+    </span>
+    <span>We believe our stellar support makes a world of a difference. No matter what plan you're on, you get full (Human) support.</span>
+  </p>
 </div>

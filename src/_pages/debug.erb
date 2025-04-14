@@ -26,16 +26,20 @@ int i</code></pre>
   </div>
   <div class="py-20">
     <div class="h1">Buttons</div>
-    <div class="flex gap-4 mb-20">
+    <div class="flex gap-4 mb-20 items-baseline">
       <%= render Button.new 'Primary button', variant: 'primary' %>
       <%= render Button.new 'Primary button (disabled)', variant: 'primary', disabled: true %>
+      <%= render Button.new 'Primary button (square)', variant: 'primary-square' %>
+      <%= render Button.new 'Primary button (light)', variant: 'primary-light' %>
+      <%= render Button.new 'Primary button (small)', variant: 'primary', size: 'small' %>
       <%= render Button.new 'Aqua button', variant: 'aqua' %>
       <%= render Button.new 'Seashell button', variant: 'seashell' %>
       <%= render Button.new 'Outline button', variant: 'outline' %>
+      <%= render Button.new 'Outline button (square)', variant: 'outline-square' %>
       <%= render Button.new 'Link button', variant: 'link' %>
       <%= render Button.new 'Link button (disabled)', variant: 'link', disabled: true %>
     </div>
-    <div class="flex gap-4">
+    <div class="flex gap-4 items-baseline">
       <%= render Button.new 'Primary link', href: '#', variant: 'primary' %>
       <%= render Button.new 'Primary link (disabled)', href: '#', variant: 'primary', disabled: true %>
       <%= render Button.new 'Aqua link', href: '#', variant: 'aqua' %>
@@ -43,13 +47,6 @@ int i</code></pre>
       <%= render Button.new 'Outline link', href: '#', variant: 'outline' %>
       <%= render Link.new 'Link link', href: '#' %>
       <%= render Link.new 'Link link (disabled)', href: '#', disabled: true %>
-    </div>
-  </div>
-  <div class="py-20">
-    <div class="h2">Buttons row</div>
-    <div class="flex gap-16">
-      <%= render Button.new 'Primary button', variant: 'primary' %>
-      <%= render Button.new 'Primary button (disabled)', variant: 'primary', disabled: true %>
     </div>
   </div>
   <div class="py-20">

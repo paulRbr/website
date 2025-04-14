@@ -1,0 +1,103 @@
+<% plan_heading = "page_pricing/plan_details/plan_heading" %>
+<% category = "page_pricing/plan_details/category" %>
+
+<div class="w-main mx-auto my-section">
+  <%= render "section_heading", locals: {
+    title: 'Plans details',
+  } %>
+
+  <%# we use separate borders so that the sticky header keeps its borders when scrolling %>
+  <table class="text-black-900 table-fixed w-full relative border-separate border-spacing-0">
+    <caption class="sr-only">Plans details</caption>
+    <colgroup>
+      <col />
+      <col />
+      <col />
+      <col class="bg-black-50" />
+    </colgroup>
+    <thead>
+      <tr class="">
+        <%# we need an empty first cell so that the whole row is sticky (+ it helps screen reader users) %>
+        <%= render plan_heading, empty: true %>
+        <%= render plan_heading, locals: {
+          title: 'Basic',
+          price: 'Free',
+          cta: {
+            text: 'Get started',
+            href: '#',
+          }
+        } %>
+        <%= render plan_heading, locals: {
+          title: 'Pro',
+          price: 250,
+          cta: {
+            text: 'Start 14-day free trial',
+            href: '#',
+          }
+        } %>
+        <%= render plan_heading, locals: {
+          title: 'Enterprise',
+          price: 'Custom',
+          highlight: true,
+          cta: {
+            text: 'Request demo',
+            href: '#',
+          }
+        } %>
+        </tr>
+    </thead>
+    <tbody>
+      <%= render category, title: 'Specification Support', icon: 'spectrum-fill', features: [
+        { title: 'OpenAPI', cols: [true, true, true] },
+        { title: 'AsyncAPI', cols: [true, true, true] },
+      ] %>
+
+      <%= render category, title: 'Documentation Publication', icon: 'git-repository-fill', features: [
+        { title: 'Public', cols: [true, true, true] },
+        { title: 'Private', cols: ['1 user', 'unlimited users', 'unlimited users'] },
+        { title: 'Partner (guests)', cols: ['10 guests', 'per bundle', 'Up to 1'] },
+        { title: 'Hubs', cols: [false, 'per bundle', 'Up to 1'] },
+        { title: 'Branches', cols: [false, true, true] },
+      ] %>
+
+      <%= render category, title: 'Access Management', icon: 'user-shared-fill', features: [
+        { title: 'Granular user access management (org, hub, doc)', cols: [true, true, true] },
+        { title: 'Email invitations', cols: [false, true, true] },
+        { title: 'SSO', cols: [false, false, true] },
+        { title: 'RBAC', cols: [false, false, true] },
+      ] %>
+
+      <%= render category, title: 'API Explorer', icon: 'apps-2-fill', features: [
+        { title: 'Browse and try-it-out', cols: [false, true, true] },
+        { title: 'Manual release management', cols: [false, false, true] },
+      ] %>
+
+      <%= render category, title: 'Release management', icon: 'terminal-box-fill', features: [
+        { title: 'Unrelease a version', cols: [false, true, true] },
+        { title: 'Manual release management', cols: [false, false, true] },
+      ] %>
+
+      <%= render category, title: 'Changelog', icon: 'login-circle-fill', features: [
+        { title: 'Browse and try-it-out', cols: ['last 5 entries', '1 year retention', 'unlimited retention'] },
+        { title: 'Manual release management', cols: [false, true, true] },
+      ] %>
+
+      <%= render category, title: 'Branding customization', icon: 'edit-circle-fill', features: [
+        { title: 'Custom domain', cols: [true, true, true] },
+        { title: 'Custom logo', cols: [true, true, true] },
+        { title: 'Custom color, favicon, meta image ', cols: [false, false, 'on demand'] },
+        { title: 'Remove "Powered by Bump.sh"', cols: [false, false, 'add-on'] },
+        { title: 'Embed', cols: [false, false, 'add-on'] },
+        { title: 'Custom CSS', cols: [false, false, 'add-on'] },
+        { title: 'Custom JS', cols: [false, false, 'add-on'] },
+      ] %>
+
+      <%= render category, title: 'Integrations', icon: 'stack-fill', features: [
+        { title: 'CLI', cols: [true, true, true] },
+        { title: 'API', cols: [true, true, true] },
+        { title: 'Deploy docs with GitHub Action', cols: [true, true, true] },
+        { title: 'Comments on PRs with GitHub Action', cols: [false, true, true] },
+      ] %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<% id = title.downcase.gsub(' ', '-') %>
+<tr>
+  <th id="<%= id %>" class="text-left p-12 h-64 capped-small flex items-center gap-8 border-b border-black-200">
+    <%= render Icon.new icon, class: "text-aqua-800" %>
+    <%= title %>
+  </th>
+  <td class="border-b border-black-200" aria-hidden="true"></td>
+  <td class="border-b border-black-200" aria-hidden="true"></td>
+  <td class="border-b border-black-200" aria-hidden="true"></td>
+</tr>
+
+<% features.each do |feature| %>
+  <%= render 'page_pricing/plan_details/feature_row', locals: {
+    title: feature[:title],
+    cols: feature[:cols],
+    category_id: id
+  } %>
+<% end %>

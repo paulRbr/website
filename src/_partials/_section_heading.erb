@@ -4,7 +4,7 @@
   Params:
     - title (required): section title
     - pill (optional): section pill
-    - description (required): section description
+    - description (optional): section description
     - variant (optional): "dark" or nothing. Default to light theme when omitted
   Can also be passed the default content slot, which will be rendered below the description, mostly used to render a button for now
 %>
@@ -17,7 +17,11 @@
         <p class="capped-small order-first <%= variant == 'dark' ? 'text-white' : 'text-aqua-900' %>"><%= pill %></p>
       <% end %>
     </div>
-    <p class="body-2 <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> text-center max-w-[42rem]"><%= description %></p>
+    <% if defined?(description) %>
+      <p class="body-2 <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> text-center max-w-[42rem]">
+        <%= description %>
+      </p>
+    <% end %>
     <% if content %>
       <div class="mt-16">
         <%= content %>

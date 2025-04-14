@@ -1,6 +1,7 @@
 <%
-  sizeStyles = @size == 'full' ? 'w-full' : 'w-fit'
-  buttonStyles = "inline-flex data-disabled:opacity-50 items-center justify-center gap-8 border px-20 py-16 cta data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  buttonStyles = "inline-flex data-disabled:opacity-50 items-center justify-center border data-disabled:cursor-default data-disabled:bg-black-300 data-disabled:text-black-900"
+  buttonSizeStyles = @size == 'normal' ? 'gap-8 px-20 py-16 cta' : 'gap-8 px-12 py-10 cta'
+  widthStyles = @width == 'full' ? 'w-full' : 'w-fit'
   primaryStyles = 'transition-colors rounded-pill border-transparent bg-black-900 text-white hover:bg-black-700 active:bg-black-900'
   buttonVariantStyles = case @variant
   when 'primary'
@@ -14,10 +15,12 @@
   when 'seashell'
     'transition-colors rounded-pill border-transparent bg-seashell-300 text-black-900 hover:bg-seashell-700 active:bg-seashell-800'
   when 'outline'
+    'transition-colors rounded-pill border-black-200 bg-white text-black-900 hover:bg-black-100 active:bg-black-200'
+  when 'outline-square'
     'transition-colors rounded-4 border-black-200 bg-white text-black-900 hover:bg-black-100 active:bg-black-200'
   end
   linkStyles = "inline-flex underline-offset-3 data-disabled:opacity-50 items-center justify-center gap-8 p-2 cta text-black-900 hover:not-data-disabled:underline data-disabled:cursor-default active:not-data-disabled:no-underline"
-  styles = @variant == 'link' ? "#{linkStyles} #{sizeStyles}" : "#{buttonStyles} #{buttonVariantStyles} #{sizeStyles}"
+  styles = @variant == 'link' ? "#{linkStyles} #{widthStyles}" : "#{buttonStyles} #{buttonVariantStyles} #{buttonSizeStyles} #{widthStyles}"
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>
 <% if @href %>
