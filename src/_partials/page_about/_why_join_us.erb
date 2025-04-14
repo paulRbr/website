@@ -1,0 +1,111 @@
+<div class="bg-black-900 text-white py-section2x">
+  <div class="w-main mx-auto">
+    <div class="w-[36.75rem] mx-auto">
+      <%= render 'section_heading', locals: {
+        title: 'Why join us?',
+        pill: 'pill title',
+        description: 'Help us invent the tools allowing API builders to create APIs users love.',
+        variant: 'dark'
+      } %>
+    </div>
+
+    <div class="w-[56.25rem] mx-auto">
+      <div class="grid grid-cols-3 gap-24">
+        <%= render "bento_item", locals: {
+          title: "100% remote by design",
+          description: "This needs a subtext",
+          icon: "home-heart-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Safe place to work",
+          description: "This needs a subtext",
+          icon: "mental-health-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Competitive salary and equity",
+          description: "This needs a subtext",
+          icon: "money-euro-circle-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Time off: 7 weeks of holidays + work/life balance",
+          description: "This needs a subtext",
+          icon: "calendar-2-fill"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Team gathering: 4 IRLs a year & micro-IRLs",
+          description: "This needs a subtext",
+          icon: "team-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Gear: welcome pack, choose your computer and working equipment",
+          description: "This needs a subtext",
+          icon: "home-gear-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Knowledge: books, trainings, coaching, conferences",
+          description: "This needs a subtext",
+          icon: "book-open-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Health: insurance 100% (Alan), no carence day",
+          description: "This needs a subtext",
+          icon: "health-book-line"
+        } %>
+
+        <%= render "bento_item", locals: {
+          title: "Personalized onboarding: tailored coaching, IRL one-to-one, buddy, welcome gift",
+          description: "This needs a subtext",
+          icon: "gift-line"
+        } %>
+      </div>
+
+
+      <% images = Dir.glob("src/images/about/*.{png,jpg,jpeg}") %>
+      <% images = images.map { |image| image.gsub("src/", "") } %>
+      <div class="mt-24">
+        <div class="js-aboutImages photoswipe flex flex-col items-center gap-24" data-current-index="0">
+          <div class="w-full relative h-auto rounded-16 overflow-hidden bg-white">
+            <% images.each_with_index do |image, index| %>
+            <a
+              href="<%= image %>" <%# TODO: change to larger image size than already shown %>
+              target="_blank"
+              data-pswp-width="900"
+              data-pswp-height="460"
+              data-index="<%= index %>"
+              <% if image == images.first %>data-current="true"<% end %>
+              <% if image != images.first %>aria-hidden="true"<% end %>
+              class="block w-full h-auto rounded-16 overflow-hidden
+                  not-data-current:absolute not-data-current:inset-0
+                  transition-opacity duration-300 opacity-100 not-data-current:opacity-0"
+            >
+              <img src="<%= image %>" alt="" class="" />
+            </a>
+            <% end %>
+          </div>
+
+          <div class="flex justify-center gap-16 relative z-10">
+            <%= render IconButton.new("vuesax-linear-arrow-left",
+              size: 40,
+              variant: "seashell",
+              alt: "Previous image",
+              classes: "stroke-black stroke-[1.5] js-aboutImages-prev-button",
+            ) %>
+            <%= render IconButton.new("vuesax-linear-arrow-right",
+              size: 40,
+              variant: "seashell",
+              alt: "Next image",
+              classes: "stroke-black stroke-[1.5] js-aboutImages-next-button",
+            ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

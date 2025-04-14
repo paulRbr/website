@@ -1,0 +1,16 @@
+---
+layout: default
+with_navbar_padding: false
+---
+<%= render "page_about/heading" %>
+<%= render "page_about/team" %>
+<%= render "page_about/why_join_us" %>
+<%= render "page_about/current_positions" %>
+
+<% slot :scripts do %>
+  <script src="<%= asset_path 'javascript/pages/about/index.js' %>"></script>
+<% end %>
+
+<% slot :stylesheets do %>
+  <link rel="stylesheet" href="<%= asset_path 'styles/photoswipe.css' %>" />
+<% end %>

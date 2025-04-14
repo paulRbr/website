@@ -41,6 +41,7 @@ const esbuildOptions = {
   entryPoints: [
     "./frontend/javascript/index.js",
     "./frontend/javascript/pages/home/index.js",
+    "./frontend/javascript/pages/about/index.js",
   ],
 };
 

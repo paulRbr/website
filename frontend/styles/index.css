@@ -4,7 +4,6 @@
 @import "theme.css";
 @import "base.css";
 @import "utilities.css";
-
 /* Tailwind components:
 Here, the idea is that one filename = one classname.
 These are used like tailwind utilities, but they usually apply more than one class and are more semantic.

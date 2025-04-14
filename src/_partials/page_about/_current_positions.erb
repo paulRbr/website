@@ -1,0 +1,23 @@
+<div class="w-main mx-auto my-section2x">
+  <%= render 'section_heading', locals: {
+    title: 'Our current open positions',
+    pill: 'pill title',
+    description: 'This is the subtext that explains the section further',
+  } %>
+
+  <div class="flex flex-col gap-24">
+    <%= render 'page_about/open_position', title: "Backend Engineer", href: "#" do %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <% end %>
+    <%= render 'page_about/open_position', title: "Frontend Engineer", href: "#" do %>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <% end %>
+    <%= render 'page_about/open_position', title: "Product Manager", href: "#" do %>
+      <p>olore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <% end %>
+  </div>
+
+  <div class="flex justify-center items-center mt-48">
+    <%= render Link.new "See all open positions", href: "#" %>
+  </div>
+</div>
