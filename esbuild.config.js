@@ -1,4 +1,4 @@
-const build = require("./config/esbuild.defaults.js")
+const build = require("./config/esbuild.defaults.js");
 
 // You can customize this as you wish, perhaps to add new esbuild plugins.
 //
@@ -36,8 +36,12 @@ const esbuildOptions = {
     // add new plugins here...
   ],
   globOptions: {
-    excludeFilter: /\.(dsd|lit)\.css$/
-  }
-}
+    excludeFilter: /\.(dsd|lit)\.css$/,
+  },
+  entryPoints: [
+    "./frontend/javascript/index.js",
+    "./frontend/javascript/pages/home/index.js",
+  ],
+};
 
-build(esbuildOptions)
+build(esbuildOptions);

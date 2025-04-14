@@ -9,3 +9,6 @@ with_navbar_padding: false
 <%= render "page_home/workflow" %>
 <%= render "page_home/expert" %>
 <%= render "page_home/testimonials" %>
+<% slot :scripts do %>
+  <script src="<%= asset_path 'javascript/pages/home/index.js' %>"></script>
+<% end %>
