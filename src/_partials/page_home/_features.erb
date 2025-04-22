@@ -11,47 +11,89 @@
   } %>
 
   <div class="flex flex-col gap-section">
-    <%= render "page_home/features_item", locals: {
-      title: 'The API doc your users deserve',
-      pill: { icon: 'checkbox-circle-fill', text: 'Improve adoption' },
-      cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image: '/images/features/api-doc-you-deserve.png',
-      tags: [
-        { icon: 'hard-drive-2-line', text: 'tag here' },
-        { icon: 'hard-drive-2-line', text: 'second other tag here' },
-        { icon: 'hard-drive-2-line', text: 'third other tag here' },
-        { icon: 'hard-drive-2-line', text: 'other and final tag here' },
-      ]
-    } do %>
-      <p>More than just documentation, Bump.sh creates a doorway to your APIs. With an auto-updated API reference and an intuitive Explorer, it empowers your users to explore, understand, and integrate with your APIs faster than ever.</p>
-    <% end %>
+    <%# features are handled as one big data array instead of independent items, because the "scrolling text + fixed image"
+    layout relies on having images on their own column, making it difficult to handle each item individually. %>
+    <% features = [
+      {
+        title: 'The API doc your users deserve',
+        pill: { icon: 'checkbox-circle-fill', text: 'Improve adoption' },
+        cta: { href: '/product', text: 'Check out our product page to learn more' },
+        image: '/images/features/api-doc-you-deserve.png',
+        tags: [
+          { icon: 'hard-drive-2-line', text: 'tag here' },
+          { icon: 'hard-drive-2-line', text: 'second other tag here' },
+          { icon: 'hard-drive-2-line', text: 'third other tag here' },
+          { icon: 'hard-drive-2-line', text: 'other and final tag here' },
+        ],
+        content: '<p>More than just documentation, Bump.sh creates a doorway to your APIs. With an auto-updated API reference and an intuitive Explorer, it empowers your users to explore, understand, and integrate with your APIs faster than ever.</p>',
+      },
+      {
+        title: 'Make 100% of your API ecosystem discoverable',
+        pill: { icon: 'checkbox-circle-fill', text: 'Increase discoverability' },
+        cta: { href: '/product', text: 'Check out our product page to learn more' },
+        image: '/images/features/discoverable-api-ecosystem.png',
+        tags: [
+          { icon: 'hard-drive-2-line', text: 'API catalogs landing pages' },
+          { icon: 'hard-drive-2-line', text: 'Unified semantic search' },
+          { icon: 'hard-drive-2-line', text: 'Automated SEO & sitemaps generation' },
+        ],
+        content: '<p>Publish your API catalogs, give complete visibility and a central onboarding experience to your entire ecosystem thanks to Bump.sh Hubs.</p>'
+      },
+      {
+        title: 'Strengthen your developer relations',
+        pill: { icon: 'checkbox-circle-fill', text: 'Manage API change' },
+        cta: { href: '/product', text: 'Check out our product page to learn more' },
+        image: '/images/features/developer-relations.png',
+        tags: [
+          { icon: 'hard-drive-2-line', text: 'API diff' },
+          { icon: 'hard-drive-2-line', text: 'Breaking changes detection' },
+          { icon: 'hard-drive-2-line', text: 'Changelog and notification' },
+        ],
+        content: '<p>Managing API changes shouldn\'t feel like a full-time job. Bump.sh simplifies this by automatically spotting every update, creating clear diffs,  keeping your changelog up-to-date and notifying your users with zero effort.</p>'
+      }
+    ] %>
 
-    <%= render "page_home/features_item", locals: {
-      title: 'Make 100% of your API ecosystem discoverable',
-      pill: { icon: 'checkbox-circle-fill', text: 'Increase discoverability' },
-      cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image: '/images/features/discoverable-api-ecosystem.png',
-      tags: [
-        { icon: 'hard-drive-2-line', text: 'API catalogs landing pages' },
-        { icon: 'hard-drive-2-line', text: 'Unified semantic search' },
-        { icon: 'hard-drive-2-line', text: 'Automated SEO & sitemaps generation' },
-      ]
-    } do %>
-      <p>Publish your API catalogs, give complete visibility and a central onboarding experience to your entire ecosystem thanks to Bump.sh Hubs.</p>
-    <% end %>
+    <div class="flex gap-56 js-features">
+      <div class="flex flex-col gap-section2x">
+        <% features.each do |feature| %>
+          <div
+            class="js-features-text flex flex-1 justify-center min-h-[70dvh] flex-col gap-32 w-full rounded-12 opacity-60 data-[current=true]:opacity-100 transition-opacity duration-300"
+            data-current="<%= features.index(feature) == 0 ? 'true' : 'false' %>"
+            data-feature-index="<%= features.index(feature) %>"
+          >
+            <%= render Tag.new feature[:pill][:text], icon: feature[:pill][:icon], variant: 'pill' %>
+            <div class="flex flex-col gap-8">
+              <h3 class="h3 text-black-900"><%= feature[:title] %></h3>
+              <div class="body-2 text-black-900">
+                <%=raw feature[:content] %>
+              </div>
+            </div>
 
-    <%= render "page_home/features_item", locals: {
-      title: 'Strengthen your developer relations',
-      pill: { icon: 'checkbox-circle-fill', text: 'Manage API change' },
-      cta: { href: '/product', text: 'Check out our product page to learn more' },
-      image: '/images/features/developer-relations.png',
-      tags: [
-        { icon: 'hard-drive-2-line', text: 'API diff' },
-        { icon: 'hard-drive-2-line', text: 'Breaking changes detection' },
-        { icon: 'hard-drive-2-line', text: 'Changelog and notification' },
-      ]
-    } do %>
-      <p>Managing API changes shouldn't feel like a full-time job. Bump.sh simplifies this by automatically spotting every update, creating clear diffs,  keeping your changelog up-to-date and notifying your users with zero effort.</p>
-    <% end %>
+            <%= render Link.new feature[:cta][:text], href: feature[:cta][:href] %>
+          </div>
+        <% end %>
+      </div>
+      <div class="w-[612px] shrink-0 relative">
+        <div class="sticky pt-[70vh] top-[16vh]">
+          <% features.each do |feature| %>
+            <div
+              class="js-features-image absolute inset-0 transition-opacity duration-300
+                opacity-0 data-[current=true]:opacity-100 pointer-events-none data-[current=true]:pointer-events-auto flex flex-col justify-center gap-8"
+              data-current="<%= features.index(feature) == 0 ? 'true' : 'false' %>"
+              data-feature-index="<%= features.index(feature) %>"
+            >
+              <div>
+                <img loading="lazy" class="overflow-hidden rounded-8" src="<%= feature[:image] %>" alt="">
+              </div>
+              <div class="flex flex-wrap gap-8">
+                <% feature[:tags].each do |tag| %>
+                  <%= render Tag.new tag[:text], icon: tag[:icon] || 'hard-drive-2-line', variant: 'seashell' %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
