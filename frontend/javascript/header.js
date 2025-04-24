@@ -10,9 +10,11 @@ const fixOnScroll = () => {
       const fixedMenu = !entry.isIntersecting;
 
       if (fixedMenu) {
-        header.setAttribute("data-fixed", fixedMenu);
+        header
+          .querySelector(".js-headerContent")
+          .setAttribute("data-fixed", fixedMenu);
       } else {
-        header.removeAttribute("data-fixed");
+        header.querySelector(".js-headerContent").removeAttribute("data-fixed");
       }
     },
     { threshold: 1 }

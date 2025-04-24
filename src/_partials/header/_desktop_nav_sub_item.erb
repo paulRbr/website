@@ -1,0 +1,16 @@
+<%#
+  Desktop header navbar sub level item (dropdown content)
+
+  Params:
+    - title (required)
+    - href (required)
+    - icon (required) pass an icon name
+    - description (required)
+%>
+<li class="relative flex gap-8 items-baseline p-16 hover:bg-black-50 active:bg-black-100 transition-colors rounded-8">
+  <%= render Icon.new icon, size: 16, classes: 'relative top-[2px]' %>
+  <div class="flex flex-col gap-8">
+    <a class="other-link after:absolute after:inset-0" href="<%= href %>"><%= title %></a>
+    <span class="body-3"><%= description %></span>
+  </div>
+</li>

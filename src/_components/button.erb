@@ -5,11 +5,13 @@
     'gap-8 px-20 py-16 cta'
   when 'small'
     'gap-8 px-12 py-10 cta'
+  when 'very-small'
+    'gap-8 px-16 py-6 small-link'
   end
   linkSizeStyles = case @size
   when 'normal'
     'gap-8 p-2 cta'
-  when 'small'
+  when /(very-)?small/
     'gap-4 p-2 small-link'
   end
   widthStyles = @width == 'full' ? 'w-full' : 'w-fit'
@@ -45,9 +47,9 @@
   attrs = @attributes.map { |key, value| "#{key}=\"#{value}\"" }.join(' ')
 %>
 <% if @href %>
-  <a href="<%= @href %>" class="<%= styles %>" <%=raw attrs %>>
+  <a href="<%= @href %>" class="<%= styles %> <%= @dangerous_classes %>" <%=raw attrs %>>
   <% else %>
-    <button class="<%= styles %>" <%=raw attrs %>>
+    <button class="<%= styles %> <%= @dangerous_classes %>" <%=raw attrs %>>
     <% end %>
     <%= @text %>
     <% if @icon %>

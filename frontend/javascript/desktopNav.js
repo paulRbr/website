@@ -1,10 +1,12 @@
-/**
- * Initializes dropdown functionality for navigation elements
- * @returns {void}
- */
+export const init = () => {
+  navDropdowns();
+};
+
 const navDropdowns = () => {
-  const contents = document.querySelectorAll(".js-navDropdownContent");
-  const toggles = document.querySelectorAll(".js-navToggle");
+  const contents = document.querySelectorAll(
+    ".js-desktopNav .js-navDropdownContent"
+  );
+  const toggles = document.querySelectorAll(".js-desktopNav .js-navToggle");
 
   // make sure all dropdowns are hidden at load
   contents.forEach((content) => {
@@ -79,8 +81,4 @@ const hideDropdown = (toggle) => {
   content.closest("li").removeAttribute("data-open");
   content.classList.remove("flex", "animate-slide-fade-in");
   icon.classList.remove("rotate-180");
-};
-
-export const init = () => {
-  navDropdowns();
 };

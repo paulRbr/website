@@ -76,12 +76,19 @@ This is a good way to be explicit about the design system.
   --spacing-section: 5rem;
   --spacing-section2x: 10rem;
   --spacing-navbar: 5.375rem;
+  --spacing-navbar-mobile: 3.15rem;
   --spacing-shadow-aqua-medium: 120px;
-  --breakpoint-sm: 40rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-2xl: 96rem;
+  /*
+    Breakpoints are written in ems so that the layout scales with the font size.
+    This allows the website to render correctly without specific work when user has a very big
+    default font size, or when he uses firefox text-only zoom (this is a WCAG requirement).
+   */
+  --breakpoint-xs: 23em; /* 368px */
+  --breakpoint-sm: 36em; /* 576px */
+  --breakpoint-md: 48em; /* 768px */
+  --breakpoint-lg: 62em; /* 992px */
+  --breakpoint-xl: 75em; /* 1200px */
+  --breakpoint-2xl: 87.5em; /* 1400px */
   --container-main: 70rem;
   --radius-4: 0.25rem;
   --radius-square: 0.25rem;
@@ -100,6 +107,7 @@ This is a good way to be explicit about the design system.
   --shadow-aqua-medium: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54),
     0px 12.92px 49.31px 0px hsla(193, 67%, 81%, 0.4),
     0px 7.84px var(--spacing-shadow-aqua-medium) 0px hsla(193, 67%, 81%, 0.3);
+  --blur-4: 4px;
   --blur-8: 8px;
   --default-transition-duration: 0.15s;
 }

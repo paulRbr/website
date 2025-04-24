@@ -1,0 +1,71 @@
+<div class="md:hidden flex items-center gap-8">
+  <%= render Button.new('Sign up',
+    variant: 'primary',
+    href: '#',
+    size: 'very-small',
+    dangerous_classes: '
+      group-data-dark/header:text-black-900 group-data-dark/header:bg-white group-data-dark/header:hover:text-white
+      group-data-fixed/header:bg-black-900 group-data-fixed/header:text-white
+    '
+  ) %>
+  <nav aria-label="Main navigation">
+    <button class="js-mobileNavBurger peer group inline-flex leading-none self-center rounded-full data-disabled:opacity-50 items-center justify-center gap-2 p-4 cta
+      transition-colors bg-transparent text-current
+      hover:bg-black-100 active:bg-black-300"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >
+      <%= render Icon.new 'menu-fill', size: 21, alt: 'Open main menu', classes: 'group-aria-expanded:hidden' %>
+      <%= render Icon.new 'close-fill', size: 21, alt: 'Close main menu', classes: 'not-group-aria-expanded:hidden' %>
+    </button>
+
+    <%# we use this technique to have auto-height transition on the dropdowns:
+    https://keithjgrant.com/posts/2023/04/transitioning-to-height-auto/#with-grid
+    it's a bit messy because we make sure hidden dropdowns are actually `hidden` (for screen readers), not just at height: 0 %>
+    <div
+      id="mobile-nav"
+      style="width: calc(100% + 2px)"
+      class="
+        js-mobileNav absolute top-full left-0 right-0 data-fixed:fixed data-fixed:top-navbar-mobile
+        transition-all duration-300
+        hidden grid-rows-[0fr] data-closing:grid-rows-[0fr]
+        peer-aria-expanded:grid data-opening:grid-rows-[1fr] group-data-open/header:grid-rows-[1fr]
+      bg-white border border-t-0 border-black-500 -mx-1 -mt-1 flex-col gap-8 rounded-bl-8 rounded-br-8
+      "
+    >
+      <div class="overflow-hidden">
+          <ul class="overflow-auto">
+          <% menu_items.each do |item| %>
+            <li class="group/nav_item">
+              <%= render 'header/mobile_nav_item', title: item[:title], href: item[:href], dropdown: !!item[:submenu], id: item[:submenu] && item[:submenu][:id] %>
+
+              <% if item[:submenu] %>
+                <div
+                  id="mobile-nav-dropdown-<%= item[:submenu][:id] %>"
+                  class="
+                    js-navDropdownContent
+                    transition-all duration-300
+                    hidden grid-rows-[0fr] data-closing:grid-rows-[0fr]
+                    peer-aria-expanded:grid data-opening:grid-rows-[1fr] group-data-open/nav_item:grid-rows-[1fr]
+                  "
+                >
+                  <div class="overflow-hidden px-12 py-4">
+                    <ul role="list" class="flex flex-col gap-16 px-12">
+                      <% item[:submenu][:items].each do |sub_item| %>
+                        <%= render 'header/mobile_nav_sub_item', **sub_item %>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <hr class="mx-16 border-black-100">
+        <div class="m-16">
+          <%= render Button.new 'Login', variant: 'outline', href: '#', width: 'full', size: 'very-small' %>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

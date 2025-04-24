@@ -104,7 +104,7 @@ Writing our own utility classes for our variable font instead of re-declaring de
   @apply font-sans vfont-medium text-[1rem] leading-[1.2];
 }
 @utility small-link {
-  @apply font-sans vfont-medium text-[0.875rem] leading-[1.2];
+  @apply font-sans vfont-medium text-[0.875rem] leading-[1.4];
 }
 
 @layer utilities {

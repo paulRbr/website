@@ -3,6 +3,8 @@
   buttonVariantStyles = case @variant
   when 'primary'
     'bg-black-900 text-white hover:bg-black-700'
+  when 'transparent'
+    'bg-transparent text-black-900 hover:bg-black-100 active:bg-black-300'
   when 'seashell'
     'bg-seashell-300 text-black-900 hover:bg-seashell-700 active:bg-seashell-800'
   end
@@ -14,7 +16,7 @@
   <% else %>
     <button class="<%= styles %>" <%=raw attrs %>>
     <% end %>
-    <%= render Icon.new(@icon, size: 14) %>
+    <%= render Icon.new(@icon, size: @size, alt: @alt) %>
   <% if @href %>
   </a>
   <% else %>

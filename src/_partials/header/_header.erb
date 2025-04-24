@@ -4,34 +4,124 @@
   Params:
     - dark: optional boolean indicating if the page begins with a dark background
 %>
-<% base_styles = 'sticky top-16 left-0 right-0 z-50 flex my-16 px-24 bg-transparent border border-transparent justify-between rounded-tl-8 rounded-tr-8 items-center w-main mx-auto transition-all duration-300 text-black-900 data-dark:text-white' %>
-<% fixed_styles = 'data-fixed:backdrop-blur-8 data-fixed:bg-white/70 data-fixed:border-black-300 data-fixed:shadow-nav data-fixed:data-dark:text-black-900' %>
-<% hover_styles = 'hover:bg-white! hover:text-black-900! hover:border-black-100!' %>
+<% base_styles = 'flex my-16 px-16 md:px-24 py-8 md:py-0 bg-transparent border border-transparent justify-between rounded-tl-8 rounded-tr-8 items-center transition-all duration-300 text-black-900 data-dark:text-white' %>
+<% fixed_styles = 'data-fixed:backdrop-blur-8 data-fixed:bg-white/70 data-fixed:border-black-500 md:data-fixed:border-black-300 data-fixed:shadow-nav data-fixed:data-dark:text-black-900' %>
+<% hover_styles = 'hover:bg-white! hover:text-black-900! hover:border-black-500! md:hover:border-black-100!' %>
+<% mobile_opening_styles = 'data-opening:bg-white! data-opening:text-black-900! data-opening:border-black-500!' %>
+<% open_styles = 'data-open:bg-white! data-open:text-black-900! data-open:border-black-500! md:data-open:border-black-100!' %>
 
+<div class="js-headerMobileBlurBackdrop md:hidden pointer-events-none data-open:pointer-events-auto fixed inset-0 z-30 backdrop-blur-4 opacity-0 data-open:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
 <div class="js-headerPositionTracker" aria-hidden="true"></div>
+<div class="js-header container-main sticky top-16 left-0 right-0 z-50">
 <div
   <%= defined?(dark) && dark ? 'data-dark' : '' %>
-  class="js-header group <%= base_styles %> <%= fixed_styles %> <%= hover_styles %>"
+  class="js-headerContent relative z-40 group/header <%= base_styles %> <%= fixed_styles %> <%= hover_styles %> <%= open_styles %> <%= mobile_opening_styles %>"
 >
   <header>
-    <a href="<%= relative_url '/' %>" aria-label="Bump.sh">
-      <svg width="147" height="33" viewBox="0 0 147 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <mask id="mask0_2216_4415" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="147" height="33">
-          <path d="M147 .506306H0V32.4932h147V.506306Z" fill="#fff"/>
-        </mask>
-        <g mask="url(#mask0_2216_4415)" class="group-data-fixed:fill-[#1F1B1B] group-hover:fill-[#1F1B1B] duration-300 transition-colors" fill="<%= dark ? '#fff' : '#1F1B1B' %>">
-          <path d="M129.909 24.4809V4.55901h3.442v7.92429c.932-1.4752 2.541-2.4068 4.539-2.4068 3.09 0 5.166 2.0238 5.166 5.1138v9.2906h-3.442V16.008c0-1.6925-1.066-2.8674-2.733-2.8674-2.241 0-3.525 1.9151-3.525 5.1397v6.2058h-3.447v-.0052Zm-6.708.2226c-3.664 0-6.123-2.1066-6.257-5.1396h3.359c.083 1.0662 1.201 2.2153 2.898 2.2153 1.367 0 2.324-.6005 2.324-1.4752 0-.7401-.574-1.1749-1.532-1.3664l-2.215-.4658c-2.184-.4659-4.182-1.5321-4.182-4.3167 0-2.2153 2.024-4.0734 5.3-4.0734 3.09 0 5.497 1.6925 5.849 4.5082h-3.365c-.165-1.1491-1.34-1.7495-2.489-1.7495-1.149 0-1.884.4917-1.884 1.3095 0 .6832.6 1.0921 1.532 1.2836l2.215.4659c2.407.4917 4.265 1.4233 4.265 4.3166 0 2.4586-2.324 4.4823-5.823 4.4823l.005.0052Zm-26.0395 4.8912V10.2991h3.4415v1.6666c.767-1.1232 2.35-1.884 4.208-1.884 4.048 0 6.641 3.0072 6.641 7.298s-2.759 7.3238-6.889 7.3238c-1.667 0-3.173-.6573-3.965-1.6666v6.5578h-3.4416.0051Zm7.0285-7.8725c2.216 0 3.743-1.7236 3.743-4.3477 0-2.6242-1.533-4.3167-3.743-4.3167s-3.799 1.7236-3.799 4.3167c0 2.5931 1.532 4.3477 3.799 4.3477ZM73.9476 24.481V10.2939h3.442v2.2153c.766-1.4493 2.1325-2.4327 4.0993-2.4327 2.2411 0 3.7991.9575 4.4305 2.6811.7661-1.4751 2.4586-2.6811 4.6997-2.6811 3.0331 0 5.031 1.9668 5.031 4.7825v9.622h-3.442v-8.6645c0-1.7235-.9575-2.8156-2.5983-2.8156-1.9927 0-3.09 1.7235-3.09 4.2649v7.2152h-3.4419v-8.6645c0-1.7235-.9576-2.8156-2.5983-2.8156-1.9668 0-3.09 1.7494-3.09 4.2908v7.1893h-3.442ZM72.338 10.2991v14.187h-3.442v-2.1842c-.9316 1.4492-2.5672 2.4068-4.5392 2.4068-3.09 0-5.1655-2.0238-5.1655-5.1138v-9.2907h3.4419v8.4988c0 1.6666 1.0663 2.8416 2.7329 2.8416 2.2153 0 3.5248-1.9151 3.5248-5.1138v-6.2317h3.4471ZM51.6294 24.7035c-1.8582 0-3.4161-.8178-4.0475-1.884v1.6666h-3.442V4.55901h3.442v7.35489c.8177-1.0921 2.3498-1.8322 4.0992-1.8322 4.1252 0 6.7235 2.9813 6.7235 7.2979 0 4.3167-2.5672 7.3239-6.7804 7.3239h.0052Zm-.4917-2.9813c2.2411 0 3.7732-1.7494 3.7732-4.3477 0-2.5983-1.5321-4.3167-3.7732-4.3167-2.2412 0-3.7991 1.7236-3.7991 4.3167 0 2.5931 1.532 4.3477 3.7991 4.3477ZM33.669 11.3239c-.0207-4.20283-3.033-6.76489-7.3549-6.76489-4.3218 0-7.3238 2.60346-7.329 6.74419 0 .1915-.0155 1.6821-.0363 3.6024 0 .1501-.2122.176-.2484.031-.8023-3.0434-3.4989-4.8342-7.1116-4.8342-4.33743 0-7.32908 2.6086-7.32908 6.7545 0 .088-.1501 7.6292-.1501 7.6292H33.8191s-.119-12.6291-.1449-13.157l-.0052-.0052Zm81.836 9.6323h-3.509v3.5092h3.509v-3.5092Z"/>
-        </g>
+    <%# the rounded + negative margin + padding is there to have a bit bigger click zone + have the focus ring render better %>
+    <a href="<%= relative_url '/' %>" aria-label="Bump.sh" class="block rounded-8 -mx-8 -my-4 px-8 py-4">
+      <svg
+        width="105"
+        height="19"
+        class="md:w-[140px] md:h-[26px]"
+        class="group-data-fixed/header:text-[#1F1B1B] group-hover/header:text-[#1F1B1B] duration-300 text-[#1F1B1B] group-data-dark/header:text-white transition-colors"
+        viewBox="0 0 140 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M125.909 20.4815V0.55957H129.351V8.48383C130.283 7.00871 131.892 6.07705 133.89 6.07705C136.98 6.07705 139.056 8.10082 139.056 11.1908V20.4815H135.614V12.0086C135.614 10.3161 134.548 9.14117 132.881 9.14117C130.64 9.14117 129.356 11.0562 129.356 14.2808V20.4867H125.909V20.4815Z" fill="currentColor"/>
+        <path d="M119.201 20.7039C115.537 20.7039 113.078 18.5973 112.944 15.5642H116.303C116.386 16.6305 117.504 17.7795 119.201 17.7795C120.568 17.7795 121.525 17.1791 121.525 16.3044C121.525 15.5642 120.951 15.1295 119.993 14.938L117.778 14.4721C115.594 14.0063 113.596 12.9401 113.596 10.1554C113.596 7.94017 115.62 6.08203 118.896 6.08203C121.986 6.08203 124.393 7.77454 124.745 10.5902H121.38C121.215 9.44117 120.04 8.84077 118.891 8.84077C117.742 8.84077 117.007 9.33248 117.007 10.1503C117.007 10.8335 117.607 11.2424 118.539 11.4339L120.754 11.8997C123.161 12.3914 125.019 13.3231 125.019 16.2164C125.019 18.6749 122.695 20.6987 119.196 20.6987L119.201 20.7039Z" fill="currentColor"/>
+        <path d="M93.1615 25.5951V6.29942H96.6035V7.96605C97.3695 6.84288 98.9533 6.08203 100.811 6.08203C104.859 6.08203 107.452 9.08921 107.452 13.38C107.452 17.6708 104.693 20.7039 100.563 20.7039C98.8964 20.7039 97.3902 20.0465 96.5983 19.0372V25.5951H93.1564H93.1615ZM100.19 17.7226C102.406 17.7226 103.933 15.999 103.933 13.3748C103.933 10.7507 102.4 9.05816 100.19 9.05816C97.9803 9.05816 96.3913 10.7817 96.3913 13.3748C96.3913 15.968 97.9233 17.7226 100.19 17.7226Z" fill="currentColor"/>
+        <path d="M69.9476 20.4816V6.29454H73.3896V8.50981C74.1556 7.06056 75.5221 6.07715 77.4889 6.07715C79.73 6.07715 81.288 7.03469 81.9194 8.75825C82.6855 7.28313 84.378 6.07715 86.6191 6.07715C89.6522 6.07715 91.6501 8.04398 91.6501 10.8597V20.4816H88.2081V11.8172C88.2081 10.0936 87.2506 9.00152 85.6098 9.00152C83.6171 9.00152 82.5198 10.7251 82.5198 13.2664V20.4816H79.0779V11.8172C79.0779 10.0936 78.1203 9.00152 76.4796 9.00152C74.5128 9.00152 73.3896 10.751 73.3896 13.2923V20.4816H69.9476Z" fill="currentColor"/>
+        <path d="M68.338 6.2998V20.4869H64.896V18.3027C63.9644 19.7519 62.3288 20.7094 60.3568 20.7094C57.2668 20.7094 55.1913 18.6857 55.1913 15.5957V6.30498H58.6332V14.8038C58.6332 16.4704 59.6995 17.6453 61.3661 17.6453C63.5814 17.6453 64.8909 15.7302 64.8909 12.5316V6.2998H68.338Z" fill="currentColor"/>
+        <path d="M47.6294 20.7041C45.7712 20.7041 44.2133 19.8863 43.5819 18.8201V20.4867H40.1399V0.55957H43.5819V7.91449C44.3996 6.82238 45.9317 6.08223 47.6811 6.08223C51.8063 6.08223 54.4046 9.06353 54.4046 13.3802C54.4046 17.6969 51.8374 20.7041 47.6242 20.7041H47.6294ZM47.1377 17.7228C49.3788 17.7228 50.9109 15.9733 50.9109 13.375C50.9109 10.7767 49.3788 9.05836 47.1377 9.05836C44.8965 9.05836 43.3386 10.7819 43.3386 13.375C43.3386 15.9681 44.8706 17.7228 47.1377 17.7228Z" fill="currentColor"/>
+        <path d="M29.669 7.32444C29.6483 3.12163 26.636 0.55957 22.3141 0.55957C17.9923 0.55957 14.9903 3.16304 14.9851 7.30373C14.9851 7.49524 14.9696 8.98589 14.9488 10.9061C14.9488 11.0562 14.7366 11.0821 14.7004 10.9372C13.8981 7.89378 11.2015 6.10293 7.58876 6.10293C3.25137 6.10293 0.259719 8.71157 0.259719 12.8574C0.259719 12.9454 0.109619 20.4867 0.109619 20.4867H29.8191C29.8191 20.4867 29.7001 7.85755 29.6742 7.32961L29.669 7.32444Z" fill="currentColor"/>
+        <path d="M111.505 16.957H107.996V20.4663H111.505V16.957Z" fill="currentColor"/>
       </svg>
     </a>
   </header>
 
-  <%= render 'header/nav' %>
+  <%# change your menu items here. They will be both rendered in the desktop and mobile menu %>
+  <% menu_items = [
+    {
+      title: 'Pricing',
+      href: '/pricing'
+    },
+    {
+      title: 'Product',
+      href: '/product'
+    },
+    {
+      title: 'Resources',
+      submenu: {
+        title: 'All ressources',
+        id: 'resources',
+        layout: 'grid',
+        items: [
+          {
+            title: 'About',
+            icon: 'team-line',
+            href: '/about',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'Blog',
+            icon: 'book-read-line',
+            href: '/blog',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'Careers',
+            icon: 'rocket-2-line',
+            href: '/careers',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'Customers',
+            icon: 'user-star-line',
+            href: '/customers',
+            description: 'Short explanation sentence here'
+          }
+        ]
+      }
+    },
+    {
+      title: 'Documentation',
+      submenu: {
+        title: 'All documentation',
+        id: 'documentation',
+        layout: 'flex',
+        items: [
+          {
+            title: 'Help center',
+            icon: 'team-line',
+            href: '/help-center',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'API Reference',
+            icon: 'user-star-line',
+            href: '/api-reference',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'API Management Encyclopedia',
+            icon: 'book-read-line',
+            href: '/api-encyclopedia',
+            description: 'Short explanation sentence here'
+          },
+          {
+            title: 'Status',
+            icon: 'rocket-2-line',
+            href: '/status',
+            description: 'Short explanation sentence here'
+          }
+        ]
+      }
+    }
+  ] %>
 
-  <nav aria-label="Account navigation">
-    <ul role="list" class="flex gap-12">
-      <li><%= render 'header/nav_item', title: 'Login', href: '/login' %></li>
-      <li><%= render 'header/nav_item', title: 'Sign up', href: '/signup' %></li>
-    </ul>
-  </nav>
+  <%= render 'header/desktop_nav', menu_items: menu_items %>
+  <%= render 'header/mobile_nav', menu_items: menu_items %>
+</div>
 </div>

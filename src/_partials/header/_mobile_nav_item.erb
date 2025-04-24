@@ -1,0 +1,23 @@
+<%#
+  Mobile header navbar top level item
+
+  Params:
+    - title (required)
+    - href (optional if dropdown is true, required otherwise)
+    - dropdown (optional, default: false), set to true to render a button with an arrow icon
+    - id (required if dropdown is true) id attribute to use for dropdown aria pattern
+%>
+<% styles = 'flex items-center gap-4 other-link py-16 px-16 transition-all hover:bg-black-100 group/nav_item_button' %>
+
+<% if defined?(dropdown) && dropdown %>
+  <button
+    class="js-navToggle <%= styles %> peer flex justify-between w-full items-center"
+    aria-controls="mobile-nav-dropdown-<%= id %>"
+    aria-expanded="false"
+  >
+    <span><%= title %></span>
+    <%= render Icon.new 'arrow-down-s-line', size: 20, classes: 'js-navToggleIcon relative group-hover/nav_item_button:bg-black-300 group-aria-expanded/nav_item_button:rotate-180 rounded-full p-4 transition-all' %>
+  </button>
+<% else %>
+  <a class="<%= styles %>" href="<%= href %>"><%= title %></a>
+<% end %>

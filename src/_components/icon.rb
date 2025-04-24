@@ -18,7 +18,10 @@ class Icon < Bridgetown::Component
     dom.at("svg")["data-name"] = @name
     dom.at("svg")["width"] = @size
     dom.at("svg")["height"] = @size
-    dom.at("svg")["class"] = classes if classes
+    dom.at("svg")["class"] = "shrink-0"
+    if classes
+      dom.at("svg")["class"] += " #{classes}"
+    end
     if alt
       dom.at("svg")["aria-label"] = alt
       dom.at("svg")["role"] = "img"
