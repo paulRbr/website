@@ -43,7 +43,7 @@
       <h2 class="capped-small text-black-600">
         Trusted by leading companies
       </h2>
-      <div class="flex flex-wrap justify-center items-center w-full gap-64">
+      <div class="flex flex-wrap justify-center items-center w-full gap-32 md:gap-64">
         <% companyLogos.each do |companyLogo| %>
           <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-32 w-auto"/>
         <% end %>

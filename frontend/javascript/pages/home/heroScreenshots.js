@@ -12,6 +12,15 @@ export const init = () => {
       }
       showButtonScreenshot(button);
     });
+
+    window.addEventListener("resize", () => {
+      const currentButton = container.querySelector(
+        'button[data-current="true"]'
+      );
+      if (currentButton) {
+        slideBackgroundTo(currentButton, container);
+      }
+    });
   });
 };
 
@@ -50,7 +59,9 @@ const slideBackgroundTo = (button, container) => {
     return;
   }
   slidingBackground.style.left = `${button.offsetLeft}px`;
+  slidingBackground.style.top = `${button.offsetTop}px`;
   slidingBackground.style.width = `${button.offsetWidth}px`;
+  slidingBackground.style.height = `${button.offsetHeight}px`;
 };
 
 const getContainer = (el) => {
