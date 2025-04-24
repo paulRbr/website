@@ -124,4 +124,11 @@ Writing our own utility classes for our variable font instead of re-declaring de
       transform: translateY(0);
     }
   }
+
+  .container-main {
+    @apply w-full mx-auto;
+    max-width: calc(var(--container-main) + var(--spacing-32));
+    padding-left: var(--spacing-16);
+    padding-right: var(--spacing-16);
+  }
 }

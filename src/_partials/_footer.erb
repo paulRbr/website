@@ -54,7 +54,7 @@
 ] %>
 <div class="bg-black-50 pb-section relative">
   <%= render "with_dots_bg", classes: "pt-section" do %>
-    <div class="w-main mx-auto">
+    <div class="container-main">
       <%= render "section_heading", locals: {
         title: 'Ready to give Bump.sh a try?',
         description: 'This is the subtext that explains the section further',
@@ -64,7 +64,7 @@
     </div>
   <% end %>
 
-  <footer class="w-main mx-auto">
+  <footer class="container-main">
     <%# have a heading helping screen reader users. Use role heading instead of h2 to not impact SEO %>
     <div role="heading" aria-level="2" class="sr-only">Footer</div>
 
