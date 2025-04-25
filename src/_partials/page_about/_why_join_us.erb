@@ -85,7 +85,11 @@
                   not-data-current:absolute not-data-current:inset-0
                   transition-opacity duration-300 opacity-100 not-data-current:opacity-0"
             >
-              <img src="<%= image %>" alt="" class="" />
+              <img
+                <%== image_attrs "/#{image}", {width: 900} %>
+                alt=""
+                class=""
+              >
             </a>
             <% end %>
           </div>

@@ -71,7 +71,10 @@
     <div class="flex flex-col sm:items-center md:items-start md:flex-row gap-32 justify-between border-t border-black-200 pt-64 pb-16">
       <div class="flex flex-col gap-48">
         <div class="flex flex-col gap-16 sm:items-center md:items-start">
-          <img src="<%= relative_url '/images/logo.svg' %>" width="147" height="32" alt="Bump.sh" />
+          <img
+            <%== image_attrs "/images/logo.svg" %>
+            alt="Bump.sh"
+          >
           <p class="body-3 text-black-900">Lorem Ipsum is simply dummy text</p>
         </div>
       </div>

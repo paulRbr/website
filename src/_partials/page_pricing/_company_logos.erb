@@ -13,8 +13,8 @@
     image: '/images/company-logos/memo-bank-dark.png'
   },
   {
-    name: 'Motorola Solutions',
-    image: '/images/company-logos/motorola-solutions-dark.png'
+    name: 'Big ID',
+    image: '/images/company-logos/big-id-dark.png'
   },
   {
     name: 'Elastic',
@@ -29,7 +29,12 @@
       </h3>
       <div class="flex flex-wrap justify-center items-center w-full gap-24">
         <% companyLogos.each do |companyLogo| %>
-          <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-24 w-auto"/>
+          <img
+            loading="lazy"
+            <%== image_attrs companyLogo[:image], {height: 32} %>
+            alt="<%= companyLogo[:name] %>"
+            class="h-24 w-auto"
+          >
         <% end %>
       </div>
     </div>

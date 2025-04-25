@@ -4,12 +4,20 @@
     <%# we give screen reader context with a visually hidden heading before the content %>
     <span role="heading" aria-level="3" class="sr-only"><%= company[:name] %> testimony</span>
     <div class="md:hidden bg-black-100 rounded-8 p-16 flex justify-center items-center">
-      <img src="<%= company[:image] %>" alt="" class="h-24 w-auto">
+      <img
+        <%== image_attrs company[:image], {width: 56} %>
+        alt=""
+        class="h-24 w-auto"
+      >
     </div>
     <div class="body-1"><%= content %></div>
     <div class="flex gap-8 items-center">
       <div class="w-64 h-64 rounded-full shadow-aqua leading-none overflow-hidden">
-        <img src="<%= person[:image] %>" alt="" class="w-full h-full object-cover">
+        <img
+          <%== image_attrs person[:image], {width: 64} %>
+          alt=""
+          class="w-full h-full object-cover"
+        >
       </div>
       <div>
         <div class="body-3"><%= person[:name] %></div>
@@ -25,7 +33,11 @@
 
   <div class="hidden md:flex flex-col justify-between shrink-0">
     <div class="bg-black-100 rounded-8 p-16 flex justify-center items-center">
-      <img src="<%= company[:image] %>" alt="" class="w-[3.5rem]">
+      <img
+        <%== image_attrs company[:image], {width: 56} %>
+        alt=""
+        class="w-[3.5rem]"
+      >
     </div>
     <div class="mt-32">
       <%= render Link.new 'Read more', href: href %>

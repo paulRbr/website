@@ -1,5 +1,10 @@
 <div class="max-w-[39rem]">
-  <img loading="lazy" class="overflow-hidden rounded-8" src="<%= image %>" alt="">
+  <img
+    loading="lazy"
+    class="overflow-hidden rounded-8"
+    <%== image_attrs image, {width: 612} %>
+    alt=""
+  >
 </div>
 <div class="flex flex-wrap gap-8 max-w-[39rem]">
   <% tags.each do |tag| %>

@@ -32,7 +32,10 @@
         </ul>
       </div>
 
-      <img src="<%= image %>" alt="">
+      <img
+        <%== image_attrs image, {width: 309} %>
+        alt=""
+      >
     </div>
   </div>
 </div>

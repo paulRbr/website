@@ -58,7 +58,7 @@
       <div class="w-full relative h-auto rounded-8 md:rounded-16 overflow-hidden bg-white">
         <% features.each_with_index do |feature, index| %>
           <img
-            src="<%= feature[:image] %>"
+            <%== image_attrs feature[:image], {width: 1094} %>
             alt="Bump.sh is your <%= feature[:title] %>"
             class="
               w-full h-auto rounded-8 md:rounded-16 overflow-hidden

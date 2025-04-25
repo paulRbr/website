@@ -21,6 +21,14 @@ touch frontend/styles/dev-tailwind-build-trigger.css
 
 ## Development
 
+Before all development, you should copy the example env file to easily have dev env variables:
+
+```sh
+cp .env.example .env
+```
+
+See env vars description in the [Deployment](#env-vars) section.
+
 To start your site in development mode, run `bin/bridgetown start` and navigate to [localhost:4000](https://localhost:4000/).
 
 Most commands are run via the `bin/bridgetown` helper, see the [Bridgetown CLI docs](https://www.bridgetownrb.com/docs/command-line-usage) for more details.
@@ -106,3 +114,13 @@ BRIDGETOWN_ENV=production ./bin/bridgetown deploy
 This generates a static website in the `output` directory.
 
 Refer to the [Bridgetown deployment docs](https://www.bridgetownrb.com/docs/deployment) for more information.
+
+### Env vars
+
+When developing locally or building for production, you can set up specific env vars to change the website behavior.
+
+- `IMAGES_MODE`
+  - Optional
+  - Possible values: `cloudflare`
+  - If `cloudflare`, all images are processed through [cloudflare urls](https://developers.cloudflare.com/images/transform-images/transform-via-url/).  
+    If any other value or the var doesn't exist, images are not processed by anything. ⚠ Not using `cloudflare` in production is not recommended, as in this case, images are rendered with unoptimized sizes.

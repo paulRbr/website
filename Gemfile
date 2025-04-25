@@ -36,3 +36,7 @@ gem "nokogiri", "~> 1.13"
 # gem "nokolexbor", "~> 0.4"
 
 gem "standard"
+
+gem "dotenv", "~> 3.1"
+
+gem "image_size", "~> 3.4"

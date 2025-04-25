@@ -45,7 +45,12 @@
       </h2>
       <div class="flex flex-wrap justify-center items-center w-full gap-32 md:gap-64">
         <% companyLogos.each do |companyLogo| %>
-          <img loading="lazy" src="<%= companyLogo[:image] %>" alt="<%= companyLogo[:name] %>" class="h-32 w-auto"/>
+          <img
+            loading="lazy"
+            <%== image_attrs companyLogo[:image], {height: 32} %>
+            alt="<%= companyLogo[:name] %>"
+            class="h-32 w-auto"
+          >
         <% end %>
       </div>
     </div>
