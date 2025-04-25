@@ -1,6 +1,6 @@
 <div class="bg-black-900 text-white py-section2x">
   <div class="container-main">
-    <div class="w-[36.75rem] mx-auto">
+    <div class="md:w-[36.75rem] mx-auto">
       <%= render 'section_heading', locals: {
         title: 'Your dedicated doc team',
         pill: 'pill title',
@@ -11,7 +11,7 @@
       <% end %>
     </div>
 
-    <div class="grid grid-cols-2 gap-24 w-[56.25rem] mx-auto">
+    <div class="flex flex-col sm:max-w-[28rem] md:max-w-[56.25rem] md:grid md:grid-cols-2 gap-24 mx-auto">
       <%= render "bento_item", locals: {
         icon: "command-fill",
         title: "Access management",

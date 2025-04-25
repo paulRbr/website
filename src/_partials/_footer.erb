@@ -68,20 +68,20 @@
     <%# have a heading helping screen reader users. Use role heading instead of h2 to not impact SEO %>
     <div role="heading" aria-level="2" class="sr-only">Footer</div>
 
-    <div class="flex justify-between border-t border-black-200 pt-64 pb-16">
+    <div class="flex flex-col sm:items-center md:items-start md:flex-row gap-32 justify-between border-t border-black-200 pt-64 pb-16">
       <div class="flex flex-col gap-48">
-        <div class="flex flex-col gap-16">
+        <div class="flex flex-col gap-16 sm:items-center md:items-start">
           <img src="<%= relative_url '/images/logo.svg' %>" width="147" height="32" alt="Bump.sh" />
           <p class="body-3 text-black-900">Lorem Ipsum is simply dummy text</p>
         </div>
       </div>
 
-      <div class="flex gap-32 pl-120">
+      <div class="flex flex-col md:flex-row flex-wrap gap-32 pl-120">
         <% link_lists.each do |link_list| %>
-          <div class="w-[10.75rem] flex flex-col gap-16">
+          <div class="w-[10.75rem] flex-auto flex flex-col sm:items-center md:items-start gap-16">
             <%# Use role heading instead of h3 to not impact SEO %>
             <div role="heading" aria-level="3" class="capped-small text-black-600"><%= link_list[:title] %></div>
-            <ul role="list" class="flex flex-col gap-8">
+            <ul role="list" class="flex flex-col sm:items-center md:items-start gap-8">
               <% link_list[:links].each do |link| %>
                 <li><a href="<%= link[:href] %>" class="text-black-700 small-link hover:underline active:no-underline underline-offset-2"><%= link[:title] %></a></li>
               <% end %>
@@ -91,8 +91,8 @@
       </div>
     </div>
 
-    <div class="flex justify-between items-end py-16">
-      <div class="flex flex-col gap-32">
+    <div class="flex flex-col md:flex-row gap-32 justify-between md:items-end py-16">
+      <div class="flex flex-col gap-32 sm:items-center md:items-start">
         <div class="flex gap-24">
           <% social_links.each do |social_link| %>
             <a href="<%= social_link[:href] %>" aria-label="<%= social_link[:title] %>" class="p-8 rounded-8 transition-colors hover:bg-black-100 active:bg-black-300">
@@ -103,7 +103,7 @@
         <p class="text-black-600 body-4">© 2025 Bump.sh. All rights reserved.</p>
       </div>
 
-      <ul role="list" class="flex gap-32">
+      <ul role="list" class="flex flex-col gap-16 md:flex-row flex-wrap md:gap-32 sm:items-center md:items-start">
         <% legal_links.each do |link| %>
           <li><a href="<%= link[:href] %>" class="text-black-600 small-link hover:underline active:no-underline underline-offset-2"><%= link[:title] %></a></li>
         <% end %>

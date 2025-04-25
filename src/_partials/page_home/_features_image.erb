@@ -1,0 +1,8 @@
+<div>
+  <img loading="lazy" class="overflow-hidden rounded-8" src="<%= image %>" alt="">
+</div>
+<div class="flex flex-wrap gap-8">
+  <% tags.each do |tag| %>
+    <%= render Tag.new tag[:text], icon: tag[:icon] || 'hard-drive-2-line', variant: 'seashell' %>
+  <% end %>
+</div>

@@ -3,75 +3,77 @@
 
   Params: none
 %>
-<div class="my-section2x container-main">
-  <div class="flex flex-col gap-40 p-32 lg:p-64 bg-black-900 rounded-24 shadow-[0px_3.85px_14.68px_0px_rgba(173,225,239,0.54),0px_12.92px_49.31px_0px_rgba(173,225,239,0.4),0px_7.84px_220.76px_0px_rgba(173,225,239,0.3)]">
-    <div class="flex flex-col lg:flex-row justify-between items-stretch gap-40 lg:gap-64 lg:w-[62rem]">
-      <div class="flex flex-col gap-8 justify-center flex-1">
-        <h2 id="doc-preview-title" class="h3 text-white">Preview your documentation using a Swagger, OpenAPI or AsyncAPI file.</h2>
-      </div>
-
-      <div class="flex flex-col justify-center gap-24 flex-1">
-        <div class="flex flex-col gap-12 border-b border-black-800 pb-24">
-          <div class="flex justify-stretch items-stretch gap-8 w-full">
-            <form
-              id="doc-preview-form"
-              action="#"
-              method="GET"
-              class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 p-4 lg:p-0 lg:pr-4 bg-white rounded-12 border border-[#F3F1F1] flex-1"
-            >
-              <input
-                type="url"
-                required
-                data-preview-url="https://mydomain.com/file.json"
-                value="https://mydomain.com/file.json"
-                id="doc-preview-url"
-                aria-labelledby="doc-preview-title"
-                aria-describedby="doc-preview-help"
-                class="rounded-8 py-4 px-12 border-0 bg-white h-full flex-1"
-              >
-              <div class="lg:my-4">
-                <%= render Button.new "Preview", variant: "primary-square", dangerous_classes: "hidden! lg:block!" %>
-                <%= render Button.new "Preview", variant: "primary-square", width: "full", dangerous_classes: "lg:hidden!" %>
-              </div>
-            </form>
-          </div>
-          <p id="doc-preview-help" class="body-4 text-white">Try it with an OpenAPI or an AsyncAPI example.</p>
+<div class="overflow-hidden">
+  <div class="my-section2x container-main px-8! sm:px-16!">
+    <div class="flex flex-col gap-40 p-16 xs:p-24 sm:p-32 xl:p-64 bg-black-900 rounded-24 shadow-[0px_3.85px_14.68px_0px_rgba(173,225,239,0.54),0px_12.92px_49.31px_0px_rgba(173,225,239,0.4),0px_7.84px_220.76px_0px_rgba(173,225,239,0.3)]">
+      <div class="flex flex-col xl:flex-row justify-between items-stretch gap-24 sm:gap-40 xl:gap-64 xl:w-[62rem]">
+        <div class="flex flex-col gap-8 justify-center flex-1">
+          <h2 id="doc-preview-title" class="h4 sm:h3 text-white">Preview your documentation using a Swagger, OpenAPI or AsyncAPI file.</h2>
         </div>
 
-        <%# yep, this is a bit of a mess %>
-        <form id="doc-preview-upload-form" action="#" method="POST" class="relative js-docPreviewUpload">
-          <input data-dropzone="initial" id="doc-preview-file" type="file" aria-label="Import your documentation" class="opacity-0 text-white absolute inset-0 z-10 peer cursor-pointer" />
-          <div
-            class="relative z-0 peer-data-[dropzone=drop]:z-20 flex flex-col justify-center items-center gap-16 py-16 px-6 lg:w-[29rem] lg:h-[5.75rem] rounded-12 border border-dashed border-black-600 bg-black-900 peer-data-[dropzone=initial]:cursor-pointer peer-hover:bg-black-700 peer-focus-visible:bg-black-700 peer-active:bg-black-800 peer-data-[dropzone=drag]:bg-black-700 peer-data-[dropzone=drop]:bg-black-700 peer-data-[dropzone=drop]:py-10 transition-colors group "
-          >
-            <div data-visible="true" data-dropzone="initial" class="hidden data-visible:flex flex-col lg:flex-row items-center gap-12">
-              <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
-                <%= render Icon.new "download-cloud-line", size: 24, class: "text-white" %>
-              </div>
-              <span class="cta text-white">Import your documentation</span>
-            </div>
-
-            <div data-dropzone="drag" class="hidden data-visible:flex flex-col lg:flex-row items-center gap-12">
-              <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
-                <%= render Icon.new "file-download-line", size: 24, class: "text-white" %>
-              </div>
-              <span class="cta text-white">Drop your file to preview</span>
-            </div>
-
-            <div data-dropzone="drop" class="hidden w-full h-full data-visible:flex flex-col gap-12 bg-black-700">
-              <div class="flex justify-between items-center">
-                <div class="flex gap-4">
-                  <%= render Icon.new "checkbox-circle-fill", class: "text-white" %>
-                  <span data-filename class="body-3 text-white"></span>
+        <div class="flex flex-col justify-center gap-24 flex-1">
+          <div class="flex flex-col gap-12 border-b border-black-800 pb-24">
+            <div class="flex justify-stretch items-stretch gap-8 w-full">
+              <form
+                id="doc-preview-form"
+                action="#"
+                method="GET"
+                class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 p-4 lg:p-0 lg:pr-4 bg-white rounded-12 border border-[#F3F1F1] flex-1"
+              >
+                <input
+                  type="url"
+                  required
+                  data-preview-url="https://mydomain.com/file.json"
+                  value="https://mydomain.com/file.json"
+                  id="doc-preview-url"
+                  aria-labelledby="doc-preview-title"
+                  aria-describedby="doc-preview-help"
+                  class="rounded-8 py-4 px-12 border-0 bg-white h-full flex-1"
+                >
+                <div class="lg:my-4">
+                  <%= render Button.new "Preview", variant: "primary-square", dangerous_classes: "hidden! lg:block!" %>
+                  <%= render Button.new "Preview", variant: "primary-square", width: "full", dangerous_classes: "lg:hidden!" %>
                 </div>
-                <button type="reset" aria-label="Delete">
-                  <%= render Icon.new "delete-bin-line", class: "text-white" %>
-                </button>
-              </div>
-              <%= render Button.new "Preview", variant: "primary-square", width: "full" %>
+              </form>
             </div>
+            <p id="doc-preview-help" class="body-4 text-white">Try it with an OpenAPI or an AsyncAPI example.</p>
           </div>
-        </form>
+
+          <%# yep, this is a bit of a mess %>
+          <form id="doc-preview-upload-form" action="#" method="POST" class="relative js-docPreviewUpload">
+            <input data-dropzone="initial" id="doc-preview-file" type="file" aria-label="Import your documentation" class="opacity-0 text-white absolute inset-0 z-10 peer cursor-pointer" />
+            <div
+              class="relative z-0 peer-data-[dropzone=drop]:z-20 flex flex-col justify-center items-center gap-16 py-16 px-6 xl:w-[29rem] xl:h-[5.75rem] rounded-12 border border-dashed border-black-600 bg-black-900 peer-data-[dropzone=initial]:cursor-pointer peer-hover:bg-black-700 peer-focus-visible:bg-black-700 peer-active:bg-black-800 peer-data-[dropzone=drag]:bg-black-700 peer-data-[dropzone=drop]:bg-black-700 peer-data-[dropzone=drop]:py-10 transition-colors group "
+            >
+              <div data-visible="true" data-dropzone="initial" class="hidden data-visible:flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
+                  <%= render Icon.new "download-cloud-line", size: 24, class: "text-white" %>
+                </div>
+                <span class="cta text-white">Import your documentation</span>
+              </div>
+
+              <div data-dropzone="drag" class="hidden data-visible:flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
+                  <%= render Icon.new "file-download-line", size: 24, class: "text-white" %>
+                </div>
+                <span class="cta text-white">Drop your file to preview</span>
+              </div>
+
+              <div data-dropzone="drop" class="hidden w-full h-full data-visible:flex flex-col gap-12 bg-black-700">
+                <div class="flex justify-between items-center">
+                  <div class="flex gap-4">
+                    <%= render Icon.new "checkbox-circle-fill", class: "text-white" %>
+                    <span data-filename class="body-3 text-white"></span>
+                  </div>
+                  <button type="reset" aria-label="Delete">
+                    <%= render Icon.new "delete-bin-line", class: "text-white" %>
+                  </button>
+                </div>
+                <%= render Button.new "Preview", variant: "primary-square", width: "full" %>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

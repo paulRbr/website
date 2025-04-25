@@ -8,8 +8,8 @@
   Slots:
     - right_column (optional): slot for additional html content showing on the right side of the item
 %>
-<div class="bg-black-800 rounded-12 p-24 flex <%= slotted?(:right_column) ? "gap-24" : "flex-col gap-8" %>">
-  <div class="<%= slotted?(:right_column) ? "w-5/12" : "" %> flex flex-col gap-8">
+<div class="bg-black-800 rounded-12 p-24 flex flex-col sm:max-w-[28rem] md:max-w-none <%= slotted?(:right_column) ? "sm:flex-row gap-24" : "gap-8" %>">
+  <div class="<%= slotted?(:right_column) ? "sm:w-5/12" : "" %> flex flex-col gap-8">
     <div class="flex flex-col gap-8">
       <%= render Icon.new icon, size: 40, classes: "text-aqua-200" %>
       <h3 class="h5"><%= title %></h3>
@@ -18,7 +18,7 @@
   </div>
 
   <% if slotted?(:right_column) %>
-    <div class="w-7/12 relative flex items-center">
+    <div class="sm:w-7/12 relative flex items-center">
       <div class="relative" style="right: -10px">
         <%= slotted :right_column %>
       </div>

@@ -12,10 +12,10 @@
 <% variant = variant || 'light' %>
 <% lvl = lvl || 2 %>
 <div class="mb-section">
-  <div class="flex flex-col md:items-center justify-center w-full gap-24">
-    <div class="flex flex-col md:items-center justify-center w-full gap-12">
+  <div class="flex flex-col sm:items-center justify-center w-full gap-24">
+    <div class="flex flex-col sm:items-center justify-center w-full gap-12">
       <%# h1 h2 h3 h4 h5 h6 are generated classes %>
-      <h<%= lvl %> class="h<%= lvl %> text-balance md:text-center <%= variant == 'dark' ? 'text-white' : 'text-black-900' %>">
+      <h<%= lvl %> class="h<%= lvl %> text-balance sm:text-center <%= variant == 'dark' ? 'text-white' : 'text-black-900' %>">
         <%= title %>
       </h<%= lvl %>>
       <% if defined?(pill) && pill %>
@@ -23,7 +23,7 @@
       <% end %>
     </div>
     <% if defined?(description) %>
-      <p class="body-2 text-balance <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> md:text-center md:max-w-[42rem]">
+      <p class="body-2 text-balance <%= variant == 'dark' ? 'text-white' : 'text-black-900' %> sm:text-center md:max-w-[42rem]">
         <%= description %>
       </p>
     <% end %>

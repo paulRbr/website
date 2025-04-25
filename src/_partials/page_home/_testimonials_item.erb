@@ -1,8 +1,11 @@
 <%# DOM order is a bit different than visual order for better screen reader experience %>
-<div class="js-testimonials-slide transition-transform duration-500 ease-in-out w-[45rem] shrink-0 h-auto flex flex-row-reverse gap-32 bg-white border border-black-100 rounded-12 p-32 shadow-aqua-medium scale-90 data-current-slide:scale-100 not-data-current-slide:cursor-pointer">
+<div class="js-testimonials-slide transition-transform duration-500 ease-in-out w-[90%] md:w-[45rem] shrink-0 h-auto flex flex-col md:flex-row-reverse gap-32 bg-white border border-black-100 rounded-12 p-32 shadow-aqua-medium scale-90 data-current-slide:scale-100 not-data-current-slide:cursor-pointer">
   <div class="flex flex-col gap-24">
     <%# we give screen reader context with a visually hidden heading before the content %>
     <span role="heading" aria-level="3" class="sr-only"><%= company[:name] %> testimony</span>
+    <div class="md:hidden bg-black-100 rounded-8 p-16 flex justify-center items-center">
+      <img src="<%= company[:image] %>" alt="" class="h-24 w-auto">
+    </div>
     <div class="body-1"><%= content %></div>
     <div class="flex gap-8 items-center">
       <div class="w-64 h-64 rounded-full shadow-aqua leading-none overflow-hidden">
@@ -13,11 +16,14 @@
         <div class="capped-small"><%= person[:tag] %></div>
       </div>
     </div>
+    <div class="md:hidden">
+      <%= render Link.new 'Read more', href: href %>
+    </div>
   </div>
 
-  <div class="h-full w-1 bg-black-50 shrink-0"></div>
+  <div class="hidden md:block h-full w-1 bg-black-50 shrink-0"></div>
 
-  <div class="flex flex-col justify-between shrink-0">
+  <div class="hidden md:flex flex-col justify-between shrink-0">
     <div class="bg-black-100 rounded-8 p-16 flex justify-center items-center">
       <img src="<%= company[:image] %>" alt="" class="w-[3.5rem]">
     </div>
