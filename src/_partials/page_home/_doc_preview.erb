@@ -16,15 +16,18 @@
             <div class="flex justify-stretch items-stretch gap-8 w-full">
               <form
                 id="doc-preview-form"
-                action="#"
+                target="_blank"
+                action="https://bump.sh/preview"
+                accept-charset="UTF-8"
                 method="GET"
                 class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-8 p-4 lg:p-0 lg:pr-4 bg-white rounded-12 border border-[#F3F1F1] flex-1"
               >
                 <input
                   type="url"
+                  name="url"
                   required
-                  data-preview-url="https://mydomain.com/file.json"
-                  value="https://mydomain.com/file.json"
+                  data-preview-url="https://github.com/bump-sh-examples/train-travel-api/blob/main/openapi.yaml"
+                  value="https://github.com/bump-sh-examples/train-travel-api/blob/main/openapi.yaml"
                   id="doc-preview-url"
                   aria-labelledby="doc-preview-title"
                   aria-describedby="doc-preview-help"
@@ -47,7 +50,7 @@
             >
               <div data-visible="true" data-dropzone="initial" class="hidden data-visible:flex flex-col lg:flex-row items-center gap-12">
                 <div class="flex justify-end items-center gap-4 p-12 rounded-[42px] bg-black-700 group-hover:bg-black-700 group-active:bg-black-800 transition-colors">
-                  <%= render Icon.new "download-cloud-line", size: 24, class: "text-white" %>
+                  <%= render Icon.new "upload-cloud-line", size: 24, class: "text-white" %>
                 </div>
                 <span class="cta text-white">Import your documentation</span>
               </div>

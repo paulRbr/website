@@ -1,6 +1,5 @@
 export const init = () => {
   handleDefaultTextUrl();
-  handleTextUrlFormSubmission();
   handleFileUpload();
 };
 
@@ -18,17 +17,6 @@ const handleDefaultTextUrl = () => {
     if (input.value === "") {
       input.value = input.getAttribute("data-preview-url");
     }
-  });
-};
-
-const handleTextUrlFormSubmission = () => {
-  const form = document.querySelector("#doc-preview-form");
-  if (!form) {
-    return;
-  }
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    // @TODO: handle url submission
   });
 };
 
