@@ -1,3 +1,4 @@
+/* this is currently NOT used, as there was a mistake in building this on the homepage. keeping it just in case we want to go back to it. Will remove when we are more sure of us whether we want to reuse this or not */
 export const init = () => {
   const featuresContainer = document.querySelector(".js-features");
   if (!featuresContainer) {

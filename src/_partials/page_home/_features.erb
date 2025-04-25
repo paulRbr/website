@@ -10,7 +10,7 @@
     description: 'This is the subtext that explains the section further'
   } %>
 
-  <div class="flex flex-col gap-section">
+  <div class="flex flex-col sm:items-center gap-section">
     <%# features are handled as one big data array instead of independent items, because the "scrolling text + fixed image"
     layout relies on having images on their own column, making it difficult to handle each item individually. %>
     <% features = [
@@ -53,45 +53,8 @@
       }
     ] %>
 
-    <div class="flex gap-56 js-features sm:justify-center">
-      <div class="flex flex-col gap-64 lg:gap-section 2x w-full max-w-[600px] lg:max-w-[450px] shrink-0 grow-0">
-        <% features.each do |feature| %>
-          <div
-            class="js-features-text flex flex-1 justify-center lg:min-h-[70dvh] flex-col gap-8 lg:gap-32 w-full rounded-12 lg:opacity-60 lg:data-[current=true]:opacity-100 transition-opacity duration-300"
-            data-current="<%= features.index(feature) == 0 ? 'true' : 'false' %>"
-            data-feature-index="<%= features.index(feature) %>"
-          >
-            <%= render Tag.new feature[:pill][:text], icon: feature[:pill][:icon], variant: 'pill' %>
-            <div class="flex flex-col gap-16 lg:gap-8">
-              <h3 class="h3 text-black-900"><%= feature[:title] %></h3>
-
-              <div class="lg:hidden w-full flex flex-col justify-center gap-8">
-                <%= render "page_home/features_image", image: feature[:image], tags: feature[:tags] %>
-              </div>
-
-              <div class="body-2 text-black-900">
-                <%=raw feature[:content] %>
-              </div>
-            </div>
-
-            <%= render Link.new feature[:cta][:text], href: feature[:cta][:href] %>
-          </div>
-        <% end %>
-      </div>
-      <div class="hidden lg:block relative w-full">
-        <div class="sticky pt-[70vh] top-[16vh]">
-          <% features.each do |feature| %>
-            <div
-              class="js-features-image absolute inset-0 transition-opacity duration-300
-                opacity-0 data-[current=true]:opacity-100 pointer-events-none data-[current=true]:pointer-events-auto flex flex-col justify-center gap-8"
-              data-current="<%= features.index(feature) == 0 ? 'true' : 'false' %>"
-              data-feature-index="<%= features.index(feature) %>"
-            >
-              <%= render "page_home/features_image", image: feature[:image], tags: feature[:tags] %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+    <% features.each do |feature| %>
+      <%= render "page_home/features_item", **feature %>
+    <% end %>
   </div>
 </div>
