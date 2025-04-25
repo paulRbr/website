@@ -18,6 +18,7 @@ const initCarousel = (carousel) => {
   handleSlideClicks(carousel);
   handleFocusInSlides(carousel);
   handleWindowResize(carousel);
+  handleTouchEvents(carousel);
 };
 
 const goToSlide = (carousel, targetIndex) => {
@@ -112,4 +113,69 @@ const getTrack = (carousel) => {
 
 const getSlides = (carousel) => {
   return Array.from(carousel.querySelectorAll(".js-testimonials-slide"));
+};
+
+const handleTouchEvents = (carousel) => {
+  const track = getTrack(carousel);
+  let startX = 0;
+  let currentTranslate = 0;
+  let isDragging = false;
+  let startPosition = 0;
+
+  track.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startPosition = getCurrentTranslateX(track);
+    track.style.transition = "none"; // Disable transition during drag
+  });
+
+  track.addEventListener(
+    "touchmove",
+    (e) => {
+      if (!isDragging) return;
+
+      // Prevent page scrolling while dragging
+      e.preventDefault();
+      e.stopPropagation();
+
+      const currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      currentTranslate = startPosition + diff;
+
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    },
+    { passive: false }
+  ); // Need to set passive: false to allow preventDefault
+
+  track.addEventListener("touchend", () => {
+    if (!isDragging) return;
+    isDragging = false;
+
+    track.style.transition = "transform 500ms ease-in-out"; // Restore transition
+
+    const slides = getSlides(carousel);
+    const slideWidth = slides[0].offsetWidth;
+    const currentIndex = Number(carousel.getAttribute("data-current-slide"));
+
+    // Determine if swipe was significant enough to change slides
+    const movement = currentTranslate - startPosition;
+    const threshold = slideWidth * 0.2; // 20% of slide width
+
+    if (Math.abs(movement) > threshold) {
+      const newIndex =
+        movement > 0
+          ? Math.max(0, currentIndex - 1)
+          : Math.min(slides.length - 1, currentIndex + 1);
+      goToSlide(carousel, newIndex);
+    } else {
+      // If not swiped far enough, return to current slide
+      goToSlide(carousel, currentIndex);
+    }
+  });
+};
+
+const getCurrentTranslateX = (element) => {
+  const style = window.getComputedStyle(element);
+  const matrix = new DOMMatrix(style.transform);
+  return matrix.m41;
 };
