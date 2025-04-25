@@ -1,8 +1,7 @@
 require "image_size"
 
 class Builders::Image < SiteBuilder
-  # @@use_cloudflare = !ENV["IMAGES_MODE"].nil? && ENV["IMAGES_MODE"] == "cloudflare"
-  @@use_cloudflare = false
+  @@use_cloudflare = ENV["IMAGES_MODE"].nil? || ENV["IMAGES_MODE"] == "cloudflare"
 
   def build
     helper :image_attrs, :image_attrs
