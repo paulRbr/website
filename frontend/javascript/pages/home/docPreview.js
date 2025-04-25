@@ -1,6 +1,7 @@
 export const init = () => {
   handleDefaultTextUrl();
-  handleFileUpload();
+  // no file upload for now
+  // handleFileUpload();
 };
 
 const handleDefaultTextUrl = () => {
