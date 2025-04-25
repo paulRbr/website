@@ -1,15 +1,14 @@
 <div class="w-full bg-black-900 text-white py-12 js-announcement" data-announcement="<%= text %>">
   <div class="container-main flex justify-center items-center relative">
-    <p class="inline-flex items-baseline gap-8 px-32 mx-auto">
+    <p class="flex items-center w-fit gap-8 px-32 body-3 mx-auto">
       <% if defined?(pill) %>
         <span class="bg-aqua-100 border border-aqua-400 rounded-20 px-10 py-4 capped-small text-black-900">
           <%= pill %>
         </span>
       <% end %>
-      <span class="body-4"><%= text %></span>
-      <% if defined?(cta) %>
-        <%= render Link.new cta[:text], href: cta[:href], size: 'small', variant: 'white' %>
-      <% end %>
+      <a class="hover:underline active:no-underline" href="<%= href %>" >
+        <%= text %>
+      </a>
     </p>
   </div>
 </div>
