@@ -7,7 +7,7 @@ dark_header: true
   <%= render "with_dots_bg",
     classes: "-mt-navbar pt-navbar bg-black-900",
     offset: "10px" do %>
-      <div class="mt-section">
+      <div class="mt-section container-main">
         <%= render "section_heading", locals: {
           title: "Discover our pricing plans",
           description: "Adapted to your company’s size and needs.",
@@ -19,11 +19,80 @@ dark_header: true
       </div>
   <% end %>
 
-  <div class="container-main">
+  <div class="lg:container-main">
     <div class="bg-black-900 pb-section">
-      <%= render "page_pricing/plans_summary" %>
+      <%= render "page_pricing/plans_summary", highlight_item: "Entreprise", items: [
+        {
+          name: "Basic",
+          price: "Free",
+          description: "For those who need…",
+          features_description: "Our basic plan features:",
+          features: [
+            "OpenAPI + AsyncAPI support",
+            "Seamless single page experience",
+            "CLI & GitHub action integration",
+            "Custom domain + logo",
+            "1 private or public API",
+            "1 user",
+            "10 guests",
+            "Priority feature requests",
+          ],
+          cta: {
+            text: "Get started",
+            href: "/signup",
+          }
+        },
+        {
+          name: "Pro",
+          price: 250,
+          description: "For those who need…",
+          features_description: "Everything in Basic, plus:",
+          features: [
+            "Branches management",
+            "Advanced access management",
+            "Deployment rollback",
+            "Custom color, favicon & meta image",
+            "Instant diff checker",
+            "10 API docs",
+            "1 Hub",
+            "50 guests",
+            "Unlimited internal users",
+            "Automatic changelog: unlimited",
+          ],
+          cta: {
+            text: "Start 14-day free trial",
+            href: "/signup",
+          }
+        },
+        {
+          name: "Entreprise",
+          price: "Custom",
+          description: "For those who need…",
+          features_description: "Everything in Pro, plus:",
+          features: [
+            "Single Sign-On (SSO)",
+            "Manual releases & release notes",
+            "Remove Bump.sh branding",
+            "Custom JS and CSS",
+            "Custom reports and analytics",
+            "Custom path under your root domain",
+            "Custom number of API docs, Hubs & guests",
+            "Dedicated onboarding sessions",
+            "Professional services",
+            "Priority feature requests",
+          ],
+          cta: {
+            text: "Request demo",
+            href: "/signup",
+          }
+        }
+      ] %>
     </div>
   </div>
 </div>
 
 <%= render "page_pricing/plans_details" %>
+
+<% slot :scripts do %>
+  <script src="<%= asset_path 'javascript/pages/pricing/index.js' %>"></script>
+<% end %>

@@ -51,7 +51,8 @@ class Builders::Image < SiteBuilder
     "/cdn-cgi/image/#{cf_options.join(",")}/#{imagepath}"
   end
 
-  # pass an image path (relative to src folder) with an optional divider scale to retrieve width/height attrs
+  # pass an image path (relative to src folder) with optional forced width or height
+  # to get width/height html attributes
   #
   # this can then be used in an img tag:
   #   <img src="..." <%=raw img_size_attrs(path) %> />

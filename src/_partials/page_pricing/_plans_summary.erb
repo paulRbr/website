@@ -1,79 +1,46 @@
 <%# Pricing plans summary section %>
-<div class="flex flex-col items-center gap-40 w-[56.25rem] mx-auto">
-  <div class="grid grid-cols-3 gap-24">
-    <%= render "page_pricing/plans_summary_item", locals: {
-      name: "Basic",
-      price: "Free",
-      description: "For those who need…",
-      features_description: "Our basic plan features:",
-      features: [
-        "OpenAPI + AsyncAPI support",
-        "Seamless single page experience",
-        "CLI & GitHub action integration",
-        "Custom domain + logo",
-        "1 private or public API",
-        "1 user",
-        "10 guests",
-        "Priority feature requests",
-      ],
-      cta: {
-        text: "Get started",
-        href: "/signup",
-      }
-    } %>
+<div class="js-plansSummary flex flex-col items-center gap-40 lg:w-[56.25rem] mx-auto">
+  <div data-sliding-buttons class="flex lg:hidden flex-wrap justify-center p-4 rounded-12 bg-black-800 border border-black-700 gap-4 relative">
+    <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white"></div>
 
-    <%= render "page_pricing/plans_summary_item", locals: {
-      name: "Pro",
-      price: 250,
-      description: "For those who need…",
-      features_description: "Everything in Basic, plus:",
-      features: [
-        "Branches management",
-        "Advanced access management",
-        "Deployment rollback",
-        "Custom color, favicon & meta image",
-        "Instant diff checker",
-        "10 API docs",
-        "1 Hub",
-        "50 guests",
-        "Unlimited internal users",
-        "Automatic changelog: unlimited",
-      ],
-      cta: {
-        text: "Start 14-day free trial",
-        href: "/signup",
-      }
-    } %>
-
-    <%= render "page_pricing/plans_summary_item", locals: {
-      name: "Entreprise",
-      price: "Custom",
-      highlight: true,
-      description: "For those who need…",
-      features_description: "Everything in Pro, plus:",
-      features: [
-        "Single Sign-On (SSO)",
-        "Manual releases & release notes",
-        "Remove Bump.sh branding",
-        "Custom JS and CSS",
-        "Custom reports and analytics",
-        "Custom path under your root domain",
-        "Custom number of API docs, Hubs & guests",
-        "Dedicated onboarding sessions",
-        "Professional services",
-        "Priority feature requests",
-      ],
-      cta: {
-        text: "Request demo",
-        href: "/signup",
-      }
-    } %>
+    <% items.each_with_index do |item, index| %>
+      <button
+        class="flex relative z-10 justify-center items-center gap-8 px-24 py-6 rounded-8 group"
+        data-index="<%= index %>"
+        <% if item[:name] == highlight_item %>data-current="true"<% end %>
+      >
+        <span class="body-3 vfont-medium text-white group-data-current:text-black-900 transition-colors duration-300"><%= item[:name] %></span>
+      </button>
+    <% end %>
   </div>
-  <p class="bg-black-700 text-white body-3 flex gap-8 py-16 px-24 rounded-full w-full">
-    <span class="inline-flex items-center gap-4">
+
+  <div
+    class="
+      js-plansSummary-carousel w-full relative
+      <%# the padding bottom trick is there to have the highlighted plan button box shadow bleed out of the overflow hidden container %>
+      max-lg:overflow-hidden -mb-40 pb-40
+      <%# we wait for carousel to be initialized before rendering to prevent showing non-highlighted plan for a few ms on load %>
+      opacity-0 data-initialized:opacity-100 lg:opacity-100!
+    "
+  >
+    <div
+      data-carousel-track
+      class="flex transition-transform duration-500 ease-in-out z-0
+      lg:grid lg:grid-cols-3 lg:gap-24 lg:transform-none!"
+    >
+      <% items.each do |item| %>
+        <%= render "page_pricing/plans_summary_item", **item, highlight: item[:name] == highlight_item %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="px-16 lg:px-0 w-full">
+    <p class="bg-black-700 text-white body-3 flex flex-col items-center sm:flex-row gap-8 py-16 px-24 rounded-32 w-full">
+      <span class="inline-flex justify-center items-center gap-4">
       <%= render Icon.new "heart-3-fill", size: 17, class: "text-aqua-500"%>
       <span class="h6">Support:</span>
     </span>
-    <span>We believe our stellar support makes a world of a difference. No matter what plan you're on, you get full (Human) support.</span>
-  </p>
+      <span>We believe our stellar support makes a world of a difference. No matter what plan you're on, you get full (Human) support.</span>
+    </p>
+  </div>
 </div>

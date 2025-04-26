@@ -12,14 +12,14 @@
       description: 'See how teams are using Bump.sh to improve their API documentation workflow'
     } %>
   </div>
-  <div class="js-testimonials relative flex flex-col">
+  <div data-carousel class="relative flex flex-col">
     <%# the margin/padding trick is there so that internal shadows don't clip %>
     <div class="relative w-full overflow-hidden -my-shadow-aqua-medium py-shadow-aqua-medium">
       <%# left and right white to transparent gradients, taking into account the wide internal shadows %>
       <div class="hidden lg:block absolute -top-shadow-aqua-medium -bottom-shadow-aqua-medium left-0 w-[20rem] pointer-events-none z-20" style="background-image: linear-gradient(to right, #fff, transparent);"></div>
       <div class="hidden lg:block absolute -top-shadow-aqua-medium -bottom-shadow-aqua-medium right-0 w-[20rem] pointer-events-none z-20" style="background-image: linear-gradient(to left, #fff, transparent);"></div>
 
-      <div class="js-testimonials-track flex transition-transform duration-500 ease-in-out z-0">
+      <div data-carousel-track class="flex transition-transform duration-500 ease-in-out z-0">
         <%= render "page_home/testimonials_item", locals: {
           company: {
             name: 'Big Id',
@@ -87,13 +87,15 @@
         size: 14,
         variant: "seashell",
         alt: "Previous testimony",
-        classes: "stroke-black stroke-[1.5] js-testimonials-prev-button",
+        "data-carousel-prev-button": true,
+        classes: "stroke-black stroke-[1.5]",
       ) %>
       <%= render IconButton.new("vuesax-linear-arrow-right",
         size: 14,
         variant: "seashell",
         alt: "Next testimony",
-        classes: "stroke-black stroke-[1.5] js-testimonials-next-button",
+        "data-carousel-next-button": true,
+        classes: "stroke-black stroke-[1.5]",
       ) %>
     </div>
   </div>

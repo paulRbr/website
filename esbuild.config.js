@@ -42,6 +42,7 @@ const esbuildOptions = {
     "./frontend/javascript/index.js",
     "./frontend/javascript/pages/home/index.js",
     "./frontend/javascript/pages/about/index.js",
+    "./frontend/javascript/pages/pricing/index.js",
   ],
 };
 

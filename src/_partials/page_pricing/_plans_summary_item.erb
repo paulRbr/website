@@ -14,7 +14,13 @@
       - highlight: boolean, whether to highlight this plan (optional)
 %>
 <% is_highlighted = defined?(highlight) && highlight %>
-<div class="flex flex-col gap-40 p-24 rounded-32 text-white <%= is_highlighted ? 'bg-black-800' : 'bg-black-900' %>">
+<div
+  data-carousel-slide
+  class="transition-transform duration-500 ease-in-out w-full shrink-0 flex flex-col gap-40 p-16 lg:p-24 rounded-32 text-white
+   lg:data-highlighted:bg-black-800 bg-black-900"
+  data-name="<%= name %>"
+  <% if is_highlighted %>data-current-slide="true" data-highlighted<% end %>
+>
   <%# Plan header %>
   <div class="flex flex-col gap-40">
     <div class="flex flex-col gap-24 border-b border-black-600 pb-40">
