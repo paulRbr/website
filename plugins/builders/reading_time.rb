@@ -18,17 +18,17 @@ class Builders::ReadingTime < SiteBuilder
 
       case total_words
       when 0..89
-        "30 #{second_plural}"
+        "30 #{second_plural} read"
       when 90..269
-        "1 #{minute_singular}"
+        "1 #{minute_singular} read"
       when 270..449
-        "2 #{minute_plural}"
+        "2 #{minute_plural} read"
       when 450..629
-        "3 #{minute_plural}"
+        "3 #{minute_plural} read"
       when 630..809
-        "4 #{minute_plural}"
+        "4 #{minute_plural} read"
       when 810..990
-        "5 #{minute_plural}"
+        "5 #{minute_plural} read"
       else
         minutes = (total_words / @@words_per_minute).floor
         "#{minutes} #{minute_plural} read"
