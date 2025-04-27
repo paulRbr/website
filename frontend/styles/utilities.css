@@ -114,6 +114,14 @@ Writing our own utility classes for our variable font instead of re-declaring de
   padding-right: var(--spacing-16);
 }
 
+@utility stretched-link-container {
+  @apply relative;
+}
+
+@utility stretched-link {
+  @apply after:absolute after:inset-0;
+}
+
 @layer utilities {
   .animate-slide-fade-in {
     animation: slide-fade-in 0.15s ease-in-out;

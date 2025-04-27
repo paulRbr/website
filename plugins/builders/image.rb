@@ -5,6 +5,7 @@ class Builders::Image < SiteBuilder
 
   def build
     helper :image_attrs, :image_attrs
+    helper :image_exists, :image_exists
     helper :image_url, :image_url
     helper :image_size, :image_size
   end
@@ -30,10 +31,20 @@ class Builders::Image < SiteBuilder
     attrs
   end
 
+  def image_exists(imagepath)
+    get_filepath(imagepath)
+    true
+  rescue
+    false
+  end
+
   # pass an image path (relative to src folder) and optional cloudflare options
   # and retrieve the new cloudflare image url (or the given path if cloudflare is disabled in env)
   def image_url(imagepath, options = {})
     if !@@use_cloudflare
+      return imagepath
+    end
+    if imagepath.end_with?(".svg")
       return imagepath
     end
     if imagepath.start_with?("/")

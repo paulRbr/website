@@ -110,4 +110,5 @@ This is a good way to be explicit about the design system.
   --blur-4: 4px;
   --blur-8: 8px;
   --default-transition-duration: 0.15s;
+  --aspect-video: 16 / 9;
 }

@@ -4,6 +4,7 @@ author: James Higginbotham
 category: Tech
 image: blog/api-docs-as-code.png
 end_with_preview: true
+fallback_icon: "edit-circle-fill"
 ---
 
 [Docs as code](https://www.writethedocs.org/guide/docs-as-code/) is a powerful methodology that aligns documentation processes with software development workflows.  It treats documentation as a first-class citizen in the development lifecycle by applying a similar approach to the standard development process. Let’s explore what it is, how it works, and how you can get started. 

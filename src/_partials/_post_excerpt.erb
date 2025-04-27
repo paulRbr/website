@@ -1,0 +1,37 @@
+<% imageStyles = "object-cover w-full aspect-video rounded-16 border border-black-300 overflow-hidden transition-shadow duration-300 group-hover/excerpt:shadow-aqua-large" %>
+<div class="flex flex-col gap-16 max-w-[30rem] stretched-link-container group/excerpt">
+  <div class="w-full" style="background: linear-gradient(358.18deg, rgba(249, 253, 253, 0) -0.97%, #F7FDFE 28.76%, #F4FDFF 98.13%)">
+    <% if image_exists image %>
+      <img <%== image_attrs image, {width: 480} %> alt="" class="<%= imageStyles %>">
+    <% else %>
+      <div class="<%= imageStyles %> p-32 flex items-center justify-center" aria-hidden="true">
+        <div class="flex max-w-8/12 items-center justify-center gap-16">
+          <% if defined?(fallback_icon) %>
+            <%= render Icon.new(fallback_icon, size: 48) %>
+          <% else %>
+            <%= render Icon.new('bump', size: 60) %>
+          <% end %>
+          <img <%== image_attrs '/images/logo-text-only.svg', {height: 48} %> class="relative top-4"alt="">
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="flex flex-col gap-8">
+    <div class="flex flex-col-reverse gap-8">
+      <% lvl = defined?(lvl) ? lvl : 2 %>
+      <h<%= lvl %> class="h5 min-h-[2.2em]">
+        <a href="<%= href %>" class="stretched-link active:underline"><%= title %></a>
+      </h<%= lvl %>>
+    </div>
+    <p class="body-3 line-clamp-3 text-ellipsis"><%== excerpt %></p>
+      <div class="flex items-center justify-between gap-8">
+        <% if defined?(category) %>
+          <%= render Tag.new category %>
+        <% else %>
+          <%# just a trick so that our justify-between always works %>
+          <span aria-hidden="true"></span>
+        <% end %>
+        <p class="body-4"><%= date.strftime('%m/%d/%Y') %></p>
+      </div>
+  </div>
+</div>

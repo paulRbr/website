@@ -3,6 +3,9 @@ class Tag < Bridgetown::Component
     unless %w[pill square aqua seashell].include?(variant)
       raise "Invalid variant: #{variant}. Allowed variants: pill, square, aqua, seashell."
     end
+    unless %w[normal small].include?(size)
+      raise "Invalid size: #{size}. Allowed sizes: normal, small."
+    end
     @text = text
     @icon = icon
     @attributes = attributes
