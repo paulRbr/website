@@ -3,18 +3,24 @@
   <th
     id="<%= id %>"
     scope="row"
+    colspan="3"
     <%=raw defined?(category_id) ? "headers=\"#{category_id}\"" : '' %>
-    class="text-left body-3 p-12 lg:h-64 border-b border-black-200"
+    class="text-left body-3 p-12 lg:h-64 border-t border-t-black-500 border-b border-black-200 max-lg:w-[1000px]"
   >
     <%= title %>
   </th>
-  <td class="border-b border-black-200" aria-hidden="true"></td>
-  <td class="border-b border-black-200" aria-hidden="true"></td>
+  <td class="max-lg:hidden border-b border-black-200" aria-hidden="true"></td>
+  <td class="max-lg:hidden border-b border-black-200" aria-hidden="true"></td>
 </tr>
 
 <% mobile_headers = "data-mobile-headers=\"#{id}\"" %>
-<% borderStyles = 'max-lg:first:border-l-0 max-lg:border-r max-lg:last:border-r-0 border-b lg:border-0 lg:border-b border-black-200' %>
-<tr>
+<% borderStyles = "
+  max-lg:first:border-l-0 max-lg:border-r max-lg:last:border-r-0
+  lg:border-0 lg:border-b border-black-200
+  max-lg:group-last/row:border-b-black-500 max-lg:group-last/row:border-b
+
+" %>
+<tr class="group/row">
   <th
     scope="row"
     <%=raw defined?(category_id) ? "data-headers=\"#{category_id}\"" : '' %>
