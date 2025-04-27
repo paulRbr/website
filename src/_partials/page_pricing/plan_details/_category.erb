@@ -1,12 +1,16 @@
-<% id = title.downcase.gsub(' ', '-') %>
+<% borderStyles = 'border-black-200 border-b max-lg:bg-black-200' %>
+<% id = 'pricing-category-' + title.downcase.gsub(' ', '-') %>
 <tr>
-  <th id="<%= id %>" class="text-left p-12 h-64 capped-small flex items-center gap-8 border-b border-black-200">
+  <th id="<%= id %>" colspan="3" class="
+    text-left p-12 h-64 capped-small flex items-center gap-8 max-lg:w-[1000px]
+    <%= borderStyles %>
+  ">
     <%= render Icon.new icon, class: "text-aqua-800" %>
     <%= title %>
   </th>
-  <td class="border-b border-black-200" aria-hidden="true"></td>
-  <td class="border-b border-black-200" aria-hidden="true"></td>
-  <td class="border-b border-black-200" aria-hidden="true"></td>
+  <td class="max-lg:hidden <%= borderStyles %>" aria-hidden="true"></td>
+  <td class="max-lg:hidden <%= borderStyles %>" aria-hidden="true"></td>
+  <td class="max-lg:hidden <%= borderStyles %>" aria-hidden="true"></td>
 </tr>
 
 <% features.each do |feature| %>

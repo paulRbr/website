@@ -1,19 +1,19 @@
 <% plan_heading = "page_pricing/plan_details/plan_heading" %>
 <% category = "page_pricing/plan_details/category" %>
 
-<div class="container-main my-section">
+<div class="lg:container-main my-section">
   <%= render "section_heading", locals: {
     title: 'Plans details',
   } %>
 
   <%# we use separate borders so that the sticky header keeps its borders when scrolling %>
-  <table class="text-black-900 table-fixed w-full relative border-separate border-spacing-0">
+  <table class="js-plansDetails overflow-hidden text-black-900 table-fixed w-full relative border-separate border-spacing-0">
     <caption class="sr-only">Plans details</caption>
     <colgroup>
+      <col class="max-lg:hidden" />
       <col />
       <col />
-      <col />
-      <col class="bg-black-50" />
+      <col class="lg:bg-black-50" />
     </colgroup>
     <thead>
       <tr class="">

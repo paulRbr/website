@@ -1,20 +1,33 @@
 <% is_dummy = defined?(empty) %>
 <% is_highlighted = defined?(highlight) && highlight %>
-<th scope="<%= is_dummy ? 'row' : 'col' %>" class="sticky <%= is_highlighted ? 'bg-black-50' : 'bg-white' %> border-b border-black-200" style="top: calc(var(--spacing-navbar) - 1rem - 2px)">
-  <div class="p-24 flex flex-col items-center justify-center h-full gap-16">
+<th
+  scope="<%= is_dummy ? 'row' : 'col' %>"
+  class="
+    sticky <%= is_highlighted ? 'bg-white lg:bg-black-50' : 'bg-white' %>
+    max-lg:border-y max-lg:nth-2:border-l-0 max-lg:border-r max-lg:last:border-r-0
+    lg:border-0 lg:border-b
+    border-black-200
+    <%= is_dummy ? 'max-lg:hidden' : '' %>
+    top-[calc(var(--spacing-navbar)-1rem-3px)]
+    md:top-[calc(var(--spacing-navbar)-1rem+1px)]
+  "
+>
+  <div class="p-12 lg:p-24 flex flex-col items-center justify-center h-full gap-16">
     <% if is_dummy %>
       <span class="sr-only">Plan</span>
     <% else %>
-      <span class="h4"><%= title %></span>
+      <span class="h6 lg:h4"><%= title %></span>
       <div class="flex items-center gap-4">
         <% if price.is_a?(Numeric) %>
           <span class="h6"><%= price %>€</span>
           <span class="capped-small text-black-600">/mo</span>
         <% else %>
-          <span class="h6"><%= price %></span>
+          <span class="lg:h6 body-3"><%= price %></span>
         <% end %>
       </div>
-      <%= render Button.new cta[:text], href: cta[:href], variant: is_highlighted ? 'primary' : 'outline', size: 'small', width: 'full' %>
+      <div class="hidden lg:block w-full">
+        <%= render Button.new cta[:text], href: cta[:href], variant: is_highlighted ? 'primary' : 'outline', size: 'small', width: 'full' %>
+      </div>
     <% end %>
   </div>
 </th>

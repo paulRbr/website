@@ -107,6 +107,13 @@ Writing our own utility classes for our variable font instead of re-declaring de
   @apply font-sans vfont-medium text-[0.875rem] leading-[1.4];
 }
 
+@utility container-main {
+  @apply w-full mx-auto;
+  max-width: calc(var(--container-main) + var(--spacing-32));
+  padding-left: var(--spacing-16);
+  padding-right: var(--spacing-16);
+}
+
 @layer utilities {
   .animate-slide-fade-in {
     animation: slide-fade-in 0.15s ease-in-out;
@@ -123,12 +130,5 @@ Writing our own utility classes for our variable font instead of re-declaring de
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .container-main {
-    @apply w-full mx-auto;
-    max-width: calc(var(--container-main) + var(--spacing-32));
-    padding-left: var(--spacing-16);
-    padding-right: var(--spacing-16);
   }
 }
