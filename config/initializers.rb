@@ -13,7 +13,7 @@ Bridgetown.configure do |config|
   # You can configure the inflector used by Zeitwerk. In v2.0,
   # ActiveSupport::Inflector will become the default.
   #
-  # config.inflector = ActiveSupport::Inflector
+  config.inflector = ActiveSupport::Inflector
   #
   # Add new inflection rules using the following format. Inflections
   # are locale specific, and you may define rules for as many different

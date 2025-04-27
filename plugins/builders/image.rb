@@ -12,7 +12,11 @@ class Builders::Image < SiteBuilder
   # and retrieve an html string with src, width and height attributes, and optional srcset for retina screens.
   # If using cloudflare, the image src and srcset are cloudflare image urls.
   def image_attrs(imagepath, options = {})
-    original_image_size = get_image_size(get_filepath(imagepath))
+    begin
+      original_image_size = get_image_size(get_filepath(imagepath))
+    rescue
+      return 'src=""'
+    end
 
     attrs = "src=\"#{image_url(imagepath, options)}\" " + image_size(imagepath, options)
 

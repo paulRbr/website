@@ -35,3 +35,10 @@ template_engine: erb
 collections:
   posts:
     permalink: /blog/:slug/
+    relations:
+      belongs_to: team_member
+
+  team_members:
+    permalink: /team/:slug/
+    relations:
+      has_many: posts

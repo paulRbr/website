@@ -17,8 +17,23 @@ layout: default
     <% end %>
 
     <div class="flex justify-between items-center gap-16 pb-24 border-b border-black-300">
-      <%= render 'person_avatar', name: data.author, image: '/images/testimonials/big-id.png' %>
-      <p class="body-3 flex items-center gap-8"><span class="relative top-[1px] w-4 h-4 rounded-full bg-current"></span> <%= reading_time content %></p>
+      <% if resource.relations.team_member %>
+        <%= render 'person_avatar', locals: {
+          name: resource.relations.team_member.data.name,
+          image: "/images/team_members/#{resource.relations.team_member.data.slug}.png"
+        } %>
+      <% elsif data.author %>
+        <%= render 'person_avatar', locals: {
+          name: data.author,
+          image: ""
+        } %>
+      <% else %>
+        <span></span>
+      <% end %>
+      <p class="body-3 flex items-center gap-8">
+        <span class="relative top-[1px] w-4 h-4 rounded-full bg-current"></span>
+        <%= reading_time content %>
+      </p>
     </div>
   </div>
 <% end %>
