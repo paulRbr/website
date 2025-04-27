@@ -6,8 +6,6 @@ class Builders::Image < SiteBuilder
   def build
     helper :image_attrs, :image_attrs
     helper :image_exists, :image_exists
-    helper :image_url, :image_url
-    helper :image_size, :image_size
   end
 
   # pass an image path (relative to src folder) and optional width/height/cloudflare options

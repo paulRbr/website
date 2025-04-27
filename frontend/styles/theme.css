@@ -58,6 +58,7 @@ This is a good way to be explicit about the design system.
   --spacing-0: 0px;
   --spacing-1: 0.0625rem;
   --spacing-2: 0.125rem;
+  --spacing-3: 0.1875rem;
   --spacing-4: 0.25rem;
   --spacing-5: 0.3125rem;
   --spacing-6: 0.375rem;
@@ -107,6 +108,8 @@ This is a good way to be explicit about the design system.
   --shadow-aqua-medium: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54),
     0px 12.92px 49.31px 0px hsla(193, 67%, 81%, 0.4),
     0px 7.84px var(--spacing-shadow-aqua-medium) 0px hsla(193, 67%, 81%, 0.3);
+  --shadow-aqua-small: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54),
+    0px 12.92px 24px 0px hsla(193, 67%, 81%, 0.4);
   --blur-4: 4px;
   --blur-8: 8px;
   --default-transition-duration: 0.15s;

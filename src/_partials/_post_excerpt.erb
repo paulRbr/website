@@ -1,6 +1,6 @@
-<% imageStyles = "object-cover w-full aspect-video rounded-16 border border-black-300 overflow-hidden transition-shadow duration-300 group-hover/excerpt:shadow-aqua-large" %>
+<% imageStyles = "object-cover w-full aspect-video rounded-16 border border-black-300 overflow-hidden transition-shadow duration-300 group-hover/excerpt:shadow-aqua-large group-active/excerpt:shadow-none" %>
 <div class="flex flex-col gap-16 max-w-[30rem] stretched-link-container group/excerpt">
-  <div class="w-full" style="background: linear-gradient(358.18deg, rgba(249, 253, 253, 0) -0.97%, #F7FDFE 28.76%, #F4FDFF 98.13%)">
+  <div class="w-full aqua-gradient">
     <% if image_exists image %>
       <img <%== image_attrs image, {width: 480} %> alt="" class="<%= imageStyles %>">
     <% else %>
@@ -20,7 +20,7 @@
     <div class="flex flex-col-reverse gap-8">
       <% lvl = defined?(lvl) ? lvl : 2 %>
       <h<%= lvl %> class="h5 min-h-[2.2em]">
-        <a href="<%= href %>" class="stretched-link active:underline"><%= title %></a>
+        <a href="<%= href %>" class="stretched-link"><%= title %></a>
       </h<%= lvl %>>
     </div>
     <p class="body-3 line-clamp-3 text-ellipsis"><%== excerpt %></p>

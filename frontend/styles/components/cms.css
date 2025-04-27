@@ -1,0 +1,65 @@
+@layer components {
+  .cms {
+    @apply body-2 flex flex-col gap-16;
+  }
+
+  .cms h1 {
+    @apply h1;
+  }
+
+  .cms h2 {
+    @apply h2;
+  }
+
+  .cms h3 {
+    @apply h3;
+  }
+
+  .cms h4 {
+    @apply h4;
+  }
+
+  .cms h5 {
+    @apply h5;
+  }
+
+  .cms h6 {
+    @apply h6;
+  }
+
+  .cms :where(h2, h3, h4, h5, h6):not(:first-child) {
+    @apply mt-32;
+  }
+
+  .cms strong {
+    @apply vfont-medium;
+  }
+
+  .cms a {
+    @apply underline hover:no-underline active:underline;
+  }
+
+  .cms :where(video, img) {
+    @apply max-w-full rounded-16;
+  }
+
+  .cms ul {
+    @apply list-disc pl-32;
+  }
+
+  .cms ol {
+    @apply list-decimal pl-32;
+  }
+
+  .cms blockquote > p {
+    @apply p-24 bg-aqua-100 border-b border-aqua-400 rounded-tl-8 rounded-tr-8;
+  }
+
+  .cms [class*="language-"] > .highlight {
+    @apply p-24 border-b border-black-50 rounded-8;
+  }
+
+  .cms code {
+    @apply font-mono;
+  }
+}
