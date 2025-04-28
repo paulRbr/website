@@ -148,4 +148,14 @@ Writing our own utility classes for our variable font instead of re-declaring de
       transform: translateY(0);
     }
   }
+
+  .animate-dialog {
+    animation: dialog 0.3s ease-in-out 0.15s both;
+  }
+
+  @keyframes dialog {
+    from {
+      opacity: 0;
+    }
+  }
 }

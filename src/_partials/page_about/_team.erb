@@ -3,9 +3,9 @@
     <%= render 'section_heading', title: 'Meet the team' %>
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-24 md:gap-56">
-      <% collections.team_members.each do |member| %>
-        <div class="flex flex-col items-center gap-8 w-full">
-          <div class="flex flex-col items-center gap-16 w-full">
+      <% collections.team_members.resources.each_with_index do |member, index| %>
+        <div class="flex flex-col items-center gap-8 w-fit mx-auto stretched-link-container">
+          <div class="flex flex-col items-center gap-16">
             <div class="rounded-24 overflow-hidden w-[104px] h-[104px] shadow-aqua-large">
               <img
                 <%== image_attrs "/images/team_members/#{member.data.slug}.png", {width: 104} %>
@@ -15,7 +15,9 @@
               >
             </div>
             <h3 class="h6 text-black-900 w-full text-center">
-              <%= member.data.name %>
+              <button type="button" class="stretched-link js-openTeamMemberDialog" data-team-member-index="<%= index %>">
+                <%= member.data.name %>
+              </button>
             </h3>
           </div>
           <p class="capped-small text-black-80 w-full text-center"><%= member.data.role %></p>
@@ -24,3 +26,100 @@
     </div>
   </div>
 <% end %>
+
+<%# see https://a11y-dialog.netlify.app/usage/markup and https://a11y-dialog.netlify.app/usage/styling to better get how
+to markup and style the dialog-related elements %>
+<div
+  id="team-members-dialog"
+  aria-label="Team members in details"
+  aria-hidden="true"
+  class="group/dialog fixed z-[100] bg-black-900/50 inset-0 flex pt-32 px-8 sm:px-16 items-start md:items-center justify-center aria-hidden:hidden"
+>
+  <div
+    data-a11y-dialog-hide
+    class="fixed inset-0 backdrop-blur-4 z-[101]
+    transition-opacity duration-300 opacity-0 group-not-aria-hidden/dialog:opacity-100"
+  >
+  </div>
+  <div role="document" class="h-full js-teamMembersCarousel relative z-[102] w-[46rem] max-w-full mx-auto animate-dialog">
+    <div class="js-teamMembersCarousel-wrapper flex flex-col-reverse justify-center h-full">
+      <div class="js-teamMembersCarousel-wrapper flex justify-center gap-16 my-16 md:mt-40 relative z-10 shrink-0">
+        <%= render IconButton.new("vuesax-linear-arrow-left",
+          size: 14,
+          variant: "seashell",
+          alt: "Previous testimony",
+          "data-carousel-prev-button": true,
+          classes: "stroke-black stroke-[1.5]",
+        ) %>
+        <%= render IconButton.new("vuesax-linear-arrow-right",
+          size: 14,
+          variant: "seashell",
+          alt: "Next testimony",
+          "data-carousel-next-button": true,
+          classes: "stroke-black stroke-[1.5]",
+        ) %>
+      </div>
+      <div class="bg-white rounded-24 overflow-auto shrink">
+        <div class="relative flex flex-col">
+          <div class="relative w-full overflow-hidden">
+            <div data-carousel-track class="flex transition-transform duration-500 ease-in-out z-0">
+              <% collections.team_members.resources.each do |member| %>
+                <div
+                  data-carousel-slide
+                  class="group/slide relative p-16 lg:p-32 transition-transform duration-500 ease-in-out w-full shrink-0 flex flex-col gap-24"
+                  <% if collections.team_members.resources.first === member %>data-current-slide<% end %>
+                >
+                  <button
+                    type="button"
+                    data-a11y-dialog-hide
+                    class="hidden group-data-current-slide/slide:flex small-link absolute top-8 right-12 md:top-32 md:right-32 cursor-pointer z-[103] items-center gap-4">
+                    Close <%= render Icon.new 'close-fill', classes: 'relative top-1' %>
+                  </button>
+                  <div class="mt-24 sm:mt-0 flex flex-col sm:flex-row gap-24 items-center">
+                    <div class="rounded-24 overflow-hidden w-[122px] h-[122px] sm:w-[184px] sm:h-[184px]">
+                      <img
+                        <%== image_attrs "/images/team_members/#{member.data.slug}.png", {width: 184} %>
+                        class="object-cover saturate-0 opacity-80 aspect-square"
+                        loading="lazy"
+                        alt=""
+                      >
+                    </div>
+                    <div class="flex flex-col gap-8">
+                      <div role="heading" aria-level="2" class="h5">
+                        <%= member.data.name %>
+                      </div>
+                      <p class="capped-small"><%= member.data.role %></p>
+                      <div class="flex flex-col sm:flex-row gap-12">
+                        <div class="flex gap-6">
+                          <%= render Icon.new 'map-pin-2-fill', size: 24, classes: 'p-5 bg-seashell-400 rounded-full' %>
+                          <%= member.data.location %>
+                        </div>
+                        <div class="flex gap-6">
+                          <%= render Icon.new 'calendar-2-fill', size: 24, classes: 'p-5 bg-seashell-400 rounded-full' %>
+                          <%= member.data.since %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-12 py-24 border-t border-b border-black-100">
+                    <div role="heading" aria-level="3" class="capped-small text-black-600">
+                      About
+                    </div>
+                    <div class="cms">
+                      <%= markdownify member.content %>
+                    </div>
+                  </div>
+                  <% if member.data.linkedin %>
+                    <div>
+                      <%= render Link.new "Connect on LinkedIn", href: member.data.linkedin, size: 'small', arrow: false, icon: 'linkedin-box-line' %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
