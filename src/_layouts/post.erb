@@ -37,12 +37,49 @@ layout: default
   </div>
 <% end %>
 
-<div class="container-main mb-section2x">
-  <div class="cms">
-    <%= yield %>
+<div class="container-main mb-section relative">
+  <div class="flex flex-col lg:flex-row gap-32">
+    <div class="lg:w-3/12">
+      <div class="sticky top-navbar">
+        <div class="flex flex-col gap-24 pb-0 lg:pb-24 lg:border-b border-black-300">
+          <%= render 'toc', toc: toc(markdownify(content)) %>
+          <div class="hidden lg:block">
+            <%= render 'share_page' %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cms lg:w-9/12">
+      <%= yield %>
+    </div>
   </div>
+</div>
+
+<div class="container-main my-section mb-section2x">
+  <% if resource.data.related_posts %>
+    <%= render 'section_heading', locals: {
+      title: 'Related articles',
+      description: 'We think you might like these articles too.',
+      lvl: 2
+    } %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-32 mx-auto w-fit">
+      <% resource.data.related_posts.each do |related_post| %>
+        <%= render 'post_excerpt', locals: {
+          **related_post.data,
+          lvl: 3,
+          href: related_post.relative_url,
+          excerpt: post_excerpt(markdownify(related_post.content)),
+          image: defined?(related_post.data.image) ? '/images/' + related_post.data.image : nil
+        } %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <% slot :stylesheets do %>
   <link rel="stylesheet" href="<%= asset_path 'styles/pygment-monokai.css' %>" />
+<% end %>
+
+<% slot :scripts do %>
+  <script src="<%= asset_path 'javascript/pages/post/index.js' %>"></script>
 <% end %>

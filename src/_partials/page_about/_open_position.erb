@@ -6,7 +6,7 @@
         <%= render Tag.new "Remote", icon: "home-3-line" %>
       </div>
     </div>
-    <div class="flex flex-col gap-16 body-3"><%= content %></div>
+    <div class="flex flex-col gap-16 body-3"><%= locals[:content] %></div>
   </div>
   <%= render Link.new "View position", href: href %>
 </div>

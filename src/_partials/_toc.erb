@@ -1,0 +1,28 @@
+<% views = ['mobile', 'desktop'] %>
+
+<% views.each do |view| %>
+  <% if view == 'mobile' %>
+  <details class="flex lg:hidden flex-col p-12 gap-24 rounded-8 border border-black-300 group/toc-details">
+    <summary class="marker:hidden list-none cursor-pointer">
+  <% else %>
+    <div class="hidden lg:flex flex-col p-12 gap-24 rounded-8 border border-black-300">
+  <% end %>
+      <h2 class="inline-flex gap-8 items-center capped-small text-black-600">
+        <%= render Icon.new 'arrow-down-s-line', size: 14, classes: "lg:hidden text-black-600 transition-transform duration-300 group-open/toc-details:rotate-180" %>
+        In this article
+      </h2>
+  <% if view == 'mobile' %>
+    </summary>
+  <% end %>
+
+  <ul class="group-open/toc-details:mt-12 js-toc flex flex-col gap-12">
+    <% toc.each do |item| %>
+      <%= render 'toc_item', item: item, root: true %>
+    <% end %>
+  </ul>
+<% if view == 'mobile' %>
+</details>
+<% else %>
+</div>
+<% end %>
+<% end %>

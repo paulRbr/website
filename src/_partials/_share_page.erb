@@ -1,0 +1,17 @@
+<div class="flex flex-col gap-16">
+  <h2 class="capped-small text-black-600">Share this article</h2>
+  <% social_links = [
+    { title: 'Twitter', href: "https://twitter.com/intent/tweet?url=#{resource.absolute_url}&text=#{resource.data.title}&via={bump_hq}", icon: 'twitter-x-line' },
+    { title: 'Facebook', href: "https://www.facebook.com/sharer.php?u=#{resource.absolute_url}", icon: 'facebook-circle-fill' },
+    { title: 'LinkedIn', href: "https://www.linkedin.com/sharing/share-offsite/?url=#{resource.absolute_url}", icon: 'linkedin-box-fill' },
+  ] %>
+  <ul role="list" class="flex gap-16 -mx-8">
+    <% social_links.each do |social_link| %>
+      <li>
+        <a href="<%= social_link[:href] %>" aria-label="Share this post on <%= social_link[:title] %>" class="block p-8 rounded-8 transition-colors hover:bg-black-100 active:bg-black-300">
+          <%= render Icon.new social_link[:icon], size: 20, classes: "text-black-600" %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

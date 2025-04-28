@@ -5,7 +5,7 @@
 <div class="container-main mb-section">
   <span role="heading" aria-level="2" class="sr-only">Recent posts</span>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 mx-auto w-fit">
-    <% grid_posts.each_with_index do |post, index| %>
+    <% grid_posts.each do |post| %>
       <%= render 'post_excerpt', locals: {
         **post.data,
         lvl: 3,
