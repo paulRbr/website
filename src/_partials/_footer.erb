@@ -52,7 +52,7 @@
   { title: 'Instagram', href: '#', icon: 'instagram-line' },
   { title: 'LinkedIn', href: '#', icon: 'linkedin-box-fill' },
 ] %>
-<div class="bg-black-50 pb-section relative">
+<div id="footer" class="bg-black-50 pb-section relative">
   <%= render "with_dots_bg", classes: "pt-section" do %>
     <div class="container-main">
       <%= render "section_heading", locals: {
@@ -64,7 +64,7 @@
     </div>
   <% end %>
 
-  <footer class="container-main">
+  <footer class="container-main" role="contentinfo">
     <%# have a heading helping screen reader users. Use role heading instead of h2 to not impact SEO %>
     <div role="heading" aria-level="2" class="sr-only">Footer</div>
 

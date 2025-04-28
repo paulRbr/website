@@ -27,7 +27,7 @@
 
     <%= render "header/header", metadata: site.metadata, resource: resource, dark: defined?(data.dark_header) && data.dark_header %>
 
-    <main class="<%= !defined?(data.with_navbar_padding) || data.with_navbar_padding ? "relative -mt-navbar pt-navbar" : "" %>">
+    <main id="content" role="main"class="<%= !defined?(data.with_navbar_padding) || data.with_navbar_padding ? "relative -mt-navbar pt-navbar" : "" %>">
       <%= yield %>
     </main>
 
