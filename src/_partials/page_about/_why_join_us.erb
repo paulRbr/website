@@ -67,7 +67,10 @@
       </div>
 
 
-      <% images = Dir.glob("src/images/about/*.{png,jpg,jpeg}") %>
+      <% images = [
+        '/images/about/keyboard.png',
+        '/images/about/keyboard-2.png',
+      ] %>
       <% images = images.map { |image| image.gsub("src/", "") } %>
       <div class="mt-24">
         <div class="js-aboutImages photoswipe flex flex-col items-center gap-24" data-current-index="0">
@@ -86,7 +89,7 @@
                   transition-opacity duration-300 opacity-100 not-data-current:opacity-0"
             >
               <img
-                <%== image_attrs "/#{image}", {width: 900} %>
+                <%== image_attrs image, {width: 900} %>
                 loading="lazy"
                 alt=""
                 class=""
