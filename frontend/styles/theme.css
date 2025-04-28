@@ -110,6 +110,8 @@ This is a good way to be explicit about the design system.
     0px 7.84px var(--spacing-shadow-aqua-medium) 0px hsla(193, 67%, 81%, 0.3);
   --shadow-aqua-small: 0px 3.85px 14.68px 0px hsla(193, 67%, 81%, 0.54),
     0px 12.92px 24px 0px hsla(193, 67%, 81%, 0.4);
+  --shadow-xl: 0 10px 25px 0px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
   --blur-4: 4px;
   --blur-8: 8px;
   --default-transition-duration: 0.15s;

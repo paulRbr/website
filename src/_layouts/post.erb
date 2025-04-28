@@ -1,6 +1,12 @@
 ---
 layout: default
 ---
+<% slot :skip_links do %>
+  <%= render 'skip_link', href: '#content', title: 'content' %>
+  <%= render 'skip_link', href: '#post', title: 'post' %>
+  <%= render 'skip_link', href: '#footer', title: 'footer' %>
+<% end %>
+
 <%= render "with_dots_bg",
   classes: "-mt-navbar pt-navbar pb-section aqua-gradient" do %>
   <div class="container-main mt-section">
@@ -47,15 +53,28 @@ layout: default
             <%= render 'share_page' %>
           </div>
         </div>
+        <div class="hidden lg:block mt-24">
+          <% cta = defined?(data.cta) && data.cta.title && data.cta.href ? data.cta : {
+            title: 'Book your demo now',
+            description: 'Schedule a call with our team',
+            href: '#'
+          } %>
+          <%= render 'cta_card', **cta %>
+        </div>
       </div>
     </div>
-    <div class="cms lg:w-9/12">
-      <%= yield %>
+    <div class="lg:w-9/12">
+      <article id="post" class="cms mb-section">
+        <%= yield %>
+      </article>
+      <div class="lg:hidden">
+        <%= render 'share_page' %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container-main my-section mb-section2x">
+<div class="container-main my-section2x">
   <% if resource.data.related_posts %>
     <%= render 'section_heading', locals: {
       title: 'Related articles',
