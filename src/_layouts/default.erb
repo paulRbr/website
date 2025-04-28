@@ -7,6 +7,22 @@
   <body
     class="bg-white text-black-900 <%= data.body_class %> data-dialog-open:overflow-hidden"
   >
+    <ul>
+      <li>
+        <a
+          href="#content"
+          class="not-focus-visible:sr-only focus-visible:inline-block px-12 py-8 rounded-8 absolute z-[200] w-fit top-16 left-16 bg-black-900 text-white"
+        >
+          Skip to content
+        </a>
+      <li>
+        <a
+          href="#footer"
+          class="not-focus-visible:sr-only focus-visible:inline-block px-12 py-8 rounded-8 absolute z-[200] w-fit top-16 left-16 bg-black-900 text-white"
+        >
+          Skip to footer
+        </a>
+    </ul>
     <%= slotted :before_header %>
 
     <%= render "header/header", metadata: site.metadata, resource: resource, dark: defined?(data.dark_header) && data.dark_header %>
