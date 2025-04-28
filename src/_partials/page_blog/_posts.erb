@@ -2,7 +2,7 @@
 <% grid_items = 18 %>
 <% grid_posts = collections.posts.resources.slice(0, grid_items) %>
 <% older_posts = collections.posts.resources.slice(grid_items, collections.posts.resources.length - grid_items) %>
-<div class="container-main mb-section2x">
+<div class="container-main mb-section">
   <span role="heading" aria-level="2" class="sr-only">Recent posts</span>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 mx-auto w-fit">
     <% grid_posts.each_with_index do |post, index| %>
@@ -15,19 +15,24 @@
       } %>
     <% end %>
   </div>
-  <div class="my-section flex flex-col gap-32">
-  <h2 class="h2">Older posts</h2>
-  <div class="flex flex-col gap-24">
-    <% older_posts.each do |post| %>
-      <div>
-        <p class="mb-8"><a href="<%= post.relative_url %>" class="hover:underline active:no-underline"><%= post.data.title %></a></p>
-        <div class="flex items-center gap-8">
-          <% if defined?(post.data.category) %>
-            <%= render Tag.new post.data.category %>
-          <% end %>
-          <p class="body-4"><%= post.data.date.strftime('%m/%d/%Y') %></p>
+</div>
+
+<div class="mt-section py-section text-white bg-black-900">
+  <div class="container-main">
+    <div class="flex flex-col gap-32">
+      <h2 class="h2">Older posts</h2>
+      <div class="flex flex-col gap-24">
+      <% older_posts.each do |post| %>
+        <div>
+          <p class="mb-8"><a href="<%= post.relative_url %>" class="hover:underline active:no-underline"><%= post.data.title %></a></p>
+          <div class="flex items-center gap-8">
+            <% if defined?(post.data.category) %>
+              <%= render Tag.new post.data.category, variant: "pill-on-dark" %>
+            <% end %>
+            <p class="body-4"><%= post.data.date.strftime('%m/%d/%Y') %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
