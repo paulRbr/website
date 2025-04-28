@@ -14,7 +14,7 @@
         class="h-24 w-auto"
       >
     </div>
-    <div class="body-2 md:body-1"><%= locals[:content] %></div>
+    <div class="body-2 md:body-1"><%= content %></div>
     <%= render 'person_avatar', name: person[:name], tag: person[:tag], image: person[:image] %>
     <div class="md:hidden">
       <%= render Link.new 'Read more', href: href %>
