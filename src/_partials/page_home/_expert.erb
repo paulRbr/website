@@ -5,9 +5,10 @@
         title: 'Enterprise ready',
         pill: 'More than a SaaS',
         description: 'Not only are we experts in API docs, OpenAPI and AsyncAPI, but we’re also the best partners when it comes to workflows and integration to complex environments.',
-        variant: 'dark',
-        content: render(Button.new('Talk to an expert', variant: 'seashell', href: '#'))
-      } %>
+        variant: 'dark'
+      } do %>
+        <%= render Button.new 'Talk to an expert', variant: 'seashell', href: '#' %>
+      <% end %>
     </div>
 
     <div class="flex flex-col sm:max-w-[28rem] md:max-w-[56.25rem] md:grid md:grid-cols-2 gap-24 mx-auto">
@@ -28,13 +29,13 @@
       <%= render "bento_item", locals: {
         icon: "image-edit-line",
         title: "Brand impact",
-        description: "Personalize your library to your brand."
+        description: "Personalize your API portal to your brand."
       } %>
 
       <%= render "bento_item", locals: {
         icon: "scales-2-line",
         title: "Scalable & reliable",
-        description: "Whether you have one or hundreds of APIs, we're here for you."
+        description: "Whether you have hundreds of APIs, endpoints or high complexity, Bump.sh stays lightning-fast."
       } %>
 
       <%= render "bento_item", locals: {
@@ -47,17 +48,16 @@
         <%= render "bento_item", locals: {
           icon: "keyboard-box-line",
           title: "Key features",
-          description: "Subtext here"
+          description: "Details matter when publishing a showcase for your business."
         } do %>
           <% slot :right_column do %>
             <div class="flex flex-wrap gap-8 justify-end">
               <%= render Tag.new "Custom JS & CSS", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
               <%= render Tag.new "Full white labelling", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
               <%= render Tag.new "Custom analytics & reports", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "SSO", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Multiple SSO", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Embeddable portal", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Search engine integration", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
             </div>
           <% end %>
         <% end %>
