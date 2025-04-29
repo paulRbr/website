@@ -9,7 +9,7 @@ dark_header: true
     offset: "10px" do %>
       <div class="mt-section container-main">
         <%= render "section_heading", locals: {
-          title: "Discover our pricing plans",
+          title: "Pricing",
           description: "Adapted to your company’s size and needs.",
           variant: "dark",
           lvl: 1
@@ -25,17 +25,16 @@ dark_header: true
         {
           name: "Basic",
           price: "Free",
-          description: "For those who need…",
+          description: "Get a stunning API doc online in seconds",
           features_description: "Our basic plan features:",
           features: [
             "OpenAPI + AsyncAPI support",
+            "OpenAPI Overlay",
             "Seamless single page experience",
-            "CLI & GitHub action integration",
+            "CLI, API & GitHub action integration",
             "Custom domain + logo",
-            "1 private or public API",
-            "1 user",
-            "10 guests",
-            "Priority feature requests",
+            "1 API doc, 1 user, 10 guests",
+            "Automatic changelog: 5 last entries",
           ],
           cta: {
             text: "Get started",
@@ -43,20 +42,17 @@ dark_header: true
           }
         },
         {
-          name: "Pro",
-          price: 250,
-          description: "For those who need…",
+          name: "Standard",
+          price: 249,
+          description: "Showcase and share all your API docs",
           features_description: "Everything in Basic, plus:",
           features: [
-            "Branches management",
             "Advanced access management",
-            "Deployment rollback",
+            "Release rollback",
             "Custom color, favicon & meta image",
-            "Instant diff checker",
-            "10 API docs",
-            "1 Hub",
-            "50 guests",
-            "Unlimited internal users",
+            "Branches management",
+            "API Explorer",
+            "10 API docs, 1 Hub, 50 guests, unlimited internal users",
             "Automatic changelog: unlimited",
           ],
           cta: {
@@ -65,20 +61,17 @@ dark_header: true
           }
         },
         {
-          name: "Entreprise",
+          name: "Enterprise",
           price: "Custom",
-          description: "For those who need…",
+          description: "Handle complex API docs needs at scale",
           features_description: "Everything in Pro, plus:",
           features: [
             "Single Sign-On (SSO)",
             "Manual releases & release notes",
-            "Remove Bump.sh branding",
-            "Custom JS and CSS",
+            "Advanced customization and integration",
             "Custom reports and analytics",
-            "Custom path under your root domain",
             "Custom number of API docs, Hubs & guests",
             "Dedicated onboarding sessions",
-            "Professional services",
             "Priority feature requests",
           ],
           cta: {

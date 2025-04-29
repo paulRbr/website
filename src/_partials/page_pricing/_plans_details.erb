@@ -30,8 +30,8 @@
           }
         } %>
         <%= render plan_heading, locals: {
-          title: 'Pro',
-          price: 250,
+          title: 'Standard',
+          price: 249,
           cta: {
             text: 'Start 14-day free trial',
             href: '#',
@@ -50,8 +50,9 @@
     </thead>
     <tbody>
       <%= render category, title: 'Specification Support', icon: 'spectrum-fill', features: [
-        { title: 'OpenAPI', cols: [true, true, true] },
+        { title: 'OpenAPI (Swagger 2.0 to OpenAPI 3.1)', cols: [true, true, true] },
         { title: 'AsyncAPI', cols: [true, true, true] },
+        { title: 'OpenAPI Overlay', cols: [true, true, true] },
       ] %>
 
       <%= render category, title: 'Documentation Publication', icon: 'git-repository-fill', features: [
@@ -71,7 +72,7 @@
 
       <%= render category, title: 'API Explorer', icon: 'apps-2-fill', features: [
         { title: 'Browse and try-it-out', cols: [false, true, true] },
-        { title: 'Manual release management', cols: [false, false, true] },
+        { title: 'Automatic API key filling', cols: [false, false, true] },
       ] %>
 
       <%= render category, title: 'Release management', icon: 'terminal-box-fill', features: [
@@ -80,8 +81,8 @@
       ] %>
 
       <%= render category, title: 'Changelog', icon: 'login-circle-fill', features: [
-        { title: 'Browse and try-it-out', cols: ['last 5 entries', '1 year retention', 'unlimited retention'] },
-        { title: 'Manual release management', cols: [false, true, true] },
+        { title: 'Automatic Changelog', cols: ['last 5 entries', '1 year retention', 'unlimited retention'] },
+        { title: 'Unified Changelog + Search', cols: [false, true, true] },
       ] %>
 
       <%= render category, title: 'Branding customization', icon: 'edit-circle-fill', features: [
@@ -89,9 +90,10 @@
         { title: 'Custom logo', cols: [true, true, true] },
         { title: 'Custom color, favicon, meta image ', cols: [false, false, 'on demand'] },
         { title: 'Remove "Powered by Bump.sh"', cols: [false, false, 'add-on'] },
-        { title: 'Embed', cols: [false, false, 'add-on'] },
+        { title: 'Embedded mode', cols: [false, false, 'add-on'] },
         { title: 'Custom CSS', cols: [false, false, 'add-on'] },
         { title: 'Custom JS', cols: [false, false, 'add-on'] },
+        { title: 'Custom Login page', cols: [false, false, 'add-on'] },
       ] %>
 
       <%= render category, title: 'Integrations', icon: 'stack-fill', features: [
