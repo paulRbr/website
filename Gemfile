@@ -42,3 +42,4 @@ gem "dotenv", "~> 3.1"
 gem "image_size", "~> 3.4"
 
 gem 'bridgetown-related-posts'
+gem "bridgetown-svg-inliner", "~> 2.0"

@@ -61,4 +61,5 @@ Bridgetown.configure do |config|
   # visit: https://edge.bridgetownrb.com/docs/configuration/initializers/
 
   init :"bridgetown-related-posts"
+  init :"bridgetown-svg-inliner"
 end
