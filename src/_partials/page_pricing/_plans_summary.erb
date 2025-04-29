@@ -27,7 +27,7 @@
       lg:grid lg:grid-cols-3 lg:gap-24 lg:transform-none!"
     >
       <% items.each_with_index do |item, index| %>
-        <%= render "page_pricing/plans_summary_item", **item, index: index, highlight: index == highlight_item_index %>
+        <%= render "page_pricing/plans_summary_item", **item, index: index, highlight: item[:highlight] %>
       <% end %>
     </div>
   </div>
