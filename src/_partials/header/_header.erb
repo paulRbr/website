@@ -47,8 +47,8 @@
       href: '/pricing'
     },
     {
-      title: 'Product',
-      href: '/product'
+      title: 'Blog',
+      href: '/blog'
     },
     {
       title: 'Resources',
@@ -56,68 +56,39 @@
         title: 'All ressources',
         id: 'resources',
         layout: 'grid',
+        cta: true,
         items: [
           {
-            title: 'About',
-            icon: 'team-line',
-            href: '/about',
-            description: 'Short explanation sentence here'
+            title: 'Help center',
+            icon: 'book-open-line',
+            href: 'https://docs.bump.sh/help/',
+            description: 'How to use Bump.sh'
           },
           {
-            title: 'Blog',
+            title: 'API reference',
             icon: 'book-read-line',
-            href: '/blog',
-            description: 'Short explanation sentence here'
+            href: 'https://developers.bump.sh',
+            description: 'Complete guide for using Bump.sh API'
           },
           {
-            title: 'Careers',
+            title: 'Product updates',
             icon: 'rocket-2-line',
-            href: '/careers',
-            description: 'Short explanation sentence here'
+            href: 'https://docs.bump.sh/product-updates/',
+            description: 'New features, improvements, and bug fixes'
           },
           {
-            title: 'Customers',
-            icon: 'user-star-line',
-            href: '/customers',
-            description: 'Short explanation sentence here'
-          }
+            title: 'The ultimate OpenAPI guide',
+            icon: 'edit-circle-fill', # TODO: Replace with OpenAPI real logo
+            href: 'https://docs.bump.sh/guides/openapi/specification/v3.1/introduction/what-is-openapi/',
+            description: 'Master OpenAPI from the start'
+          },
         ]
       }
     },
     {
-      title: 'Documentation',
-      submenu: {
-        title: 'All documentation',
-        id: 'documentation',
-        layout: 'flex',
-        items: [
-          {
-            title: 'Help center',
-            icon: 'team-line',
-            href: '/help-center',
-            description: 'Short explanation sentence here'
-          },
-          {
-            title: 'API Reference',
-            icon: 'user-star-line',
-            href: '/api-reference',
-            description: 'Short explanation sentence here'
-          },
-          {
-            title: 'API Management Encyclopedia',
-            icon: 'book-read-line',
-            href: '/api-encyclopedia',
-            description: 'Short explanation sentence here'
-          },
-          {
-            title: 'Status',
-            icon: 'rocket-2-line',
-            href: '/status',
-            description: 'Short explanation sentence here'
-          }
-        ]
-      }
-    }
+      title: 'About',
+      href: '/about'
+    },
   ] %>
 
   <%= render 'header/desktop_nav', menu_items: menu_items %>
