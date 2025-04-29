@@ -2,16 +2,23 @@
   <div class="container-main">
     <div class="md:w-[36.75rem] mx-auto">
       <%= render 'section_heading', locals: {
-        title: 'Your dedicated doc team',
-        pill: 'pill title',
+        title: 'Enterprise ready',
+        pill: 'More than a SaaS',
         description: 'Not only are we experts in API docs, OpenAPI and AsyncAPI, but we’re also the best partners when it comes to workflows and integration to complex environments.',
-        variant: 'dark'
-      } do %>
-        <%= render Button.new 'Talk to an expert', variant: 'seashell', href: '#' %>
-      <% end %>
+        variant: 'dark',
+        content: render(Button.new('Talk to an expert', variant: 'seashell', href: '#'))
+      } %>
     </div>
 
     <div class="flex flex-col sm:max-w-[28rem] md:max-w-[56.25rem] md:grid md:grid-cols-2 gap-24 mx-auto">
+      <div class="col-span-2">
+        <%= render "bento_item", locals: {
+          icon: "team-line",
+          title: "Your dedicated doc team",
+          description: "We take pride in caring about your needs, challenges, and objectives. See us as an extension of your team."
+        } %>
+      </div>
+
       <%= render "bento_item", locals: {
         icon: "command-fill",
         title: "Access management",
@@ -44,9 +51,9 @@
         } do %>
           <% slot :right_column do %>
             <div class="flex flex-wrap gap-8 justify-end">
-              <%= render Tag.new "custom JS & CSS", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "full white labelling", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
-              <%= render Tag.new "custom analytics & reports", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Custom JS & CSS", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Full white labelling", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
+              <%= render Tag.new "Custom analytics & reports", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
               <%= render Tag.new "SSO", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
               <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
               <%= render Tag.new "Other feature", icon: "hard-drive-2-line", variant: "seashell", size: "small" %>
