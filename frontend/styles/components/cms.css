@@ -27,10 +27,6 @@
     @apply h6;
   }
 
-  .cms :where([id]):not(:first-child) {
-    scroll-margin-top: var(--spacing-navbar);
-  }
-
   .cms :where(h2, h3, h4, h5, h6):not(:first-child) {
     @apply mt-32;
   }
