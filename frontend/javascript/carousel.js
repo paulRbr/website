@@ -78,7 +78,7 @@ export const goToSlide = (
   if (!animate) {
     disableAnimation(track);
   }
-  track.style.transform = `translateX(${position}px)`;
+  track.style.transform = `translate3d(${position}px, 0px, 0px)`;
   carousel.setAttribute("data-current-slide", targetIndex);
   if (!animate) {
     // re-enable animation just a few ms after to prevent browser from doing it all together and animating anyway
@@ -254,7 +254,7 @@ const handleTouchEvents = (carousel, options) => {
       const diff = currentX - startX;
       currentTranslate = startPosition + diff;
 
-      track.style.transform = `translateX(${currentTranslate}px)`;
+      track.style.transform = `translate3d(${currentTranslate}px, 0px, 0px)`;
     },
     { passive: false }
   ); // Need to set passive: false to allow preventDefault

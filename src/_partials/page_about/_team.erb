@@ -59,7 +59,11 @@ to markup and style the dialog-related elements %>
       <div class="bg-white rounded-24 overflow-auto shrink">
         <div class="relative flex flex-col">
           <div class="relative w-full overflow-hidden">
-            <div data-carousel-track class="flex transition-transform duration-500 ease-in-out z-0">
+            <div
+              data-carousel-track
+              class="flex transition-transform duration-500 ease-in-out z-0"
+              style="transform: translate3d(0px, 0px, 0px)"
+            >
               <% collections.team_members.resources.each do |member| %>
                 <div
                   data-carousel-slide
