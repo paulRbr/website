@@ -7,7 +7,7 @@
     - icon (required) pass an icon name
     - description (required)
 %>
-<li class="relative flex gap-8 items-baseline p-2 hover:bg-black-50 active:bg-black-100 transition-colors rounded-8">
+<li class="relative flex gap-8 items-baseline p-12 hover:bg-black-50 active:bg-black-100 transition-colors rounded-8">
   <%= render Icon.new icon, size: 16, classes: 'relative top-[2px]' %>
   <div class="flex flex-col gap-8">
     <a class="other-link after:absolute after:inset-0" href="<%= href %>"><%= title %></a>
