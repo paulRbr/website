@@ -46,7 +46,7 @@
       </h2>
       <div class="flex flex-wrap justify-center items-center w-full gap-32 md:gap-64">
         <% companyLogos.each do |companyLogo| %>
-          <%= svg companyLogo[:image], class: "h-32 w-auto" %>
+          <%= svg companyLogo[:image], class: "h-32 w-auto", role: "img", "aria-label": companyLogo[:name] %>
         <% end %>
       </div>
     </div>
