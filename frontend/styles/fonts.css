@@ -9,3 +9,27 @@
     U+2022, U+2026, U+20AC, U+2122, U+2190-2193, U+2196-2199, U+221A, U+2264,
     U+2265;
 }
+
+/*
+  Fallback font for Saans. This helps diminushing Cumulative Layout Shift a bit.
+  Values got by running a node script with capsize:
+
+  ```
+  import { createFontStack } from "@capsizecss/core";
+  import { fromFile } from "@capsizecss/unpack";
+
+  import arialMetrics from "@capsizecss/metrics/arial";
+  const saans = await fromFile("saans-variable-subset.woff2");
+
+  const { fontFaces } = createFontStack([saans, arialMetrics]);
+  console.log(fontFaces);
+  ```
+*/
+@font-face {
+  font-family: "Saans Fallback";
+  src: local("Arial"), local("ArialMT");
+  ascent-override: 91.3691%;
+  descent-override: 22.5913%;
+  line-gap-override: 0%;
+  size-adjust: 99.5961%;
+}

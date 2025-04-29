@@ -12,10 +12,10 @@ This is a good way to be explicit about the design system.
 @theme {
   /* disable default tailwind utilities: this theme is a 100% custom theme that doesn't extend anything */
   --*: initial;
-  --font-sans: Saans, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: Saans, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  --font-sans: Saans, "Saans Fallback", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: Saans, "Saans Fallback", ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --default-font-family: var(--font-sans);
   --font-sans-wght: 380;
   --font-sans-ital: 0;
