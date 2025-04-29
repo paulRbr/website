@@ -6,19 +6,19 @@
 <% companyLogos = [
   {
     name: 'Lightspeed',
-    image: '/images/company-logos/lightspeed-dark.png'
-  },
-  {
-    name: 'Memo Bank',
-    image: '/images/company-logos/memo-bank-dark.png'
-  },
-  {
-    name: 'Big ID',
-    image: '/images/company-logos/big-id-dark.png'
+    image: '/images/company-logos/lightspeed.svg'
   },
   {
     name: 'Elastic',
-    image: '/images/company-logos/elastic-dark.png'
+    image: '/images/company-logos/elastic.svg'
+  },
+  {
+    name: 'MongoDB',
+    image: '/images/company-logos/mongodb.svg'
+  },
+  {
+    name: 'Redpanda',
+    image: '/images/company-logos/redpanda.svg'
   }
 ] %>
 <div class="bg-black-900 text-black-100">
@@ -26,13 +26,9 @@
     <h3 class="capped-small text-black-100">
       Trusted by leading companies
     </h3>
-    <div class="flex flex-wrap sm:justify-center sm:items-center w-full gap-24">
+    <div class="flex flex-wrap sm:justify-center sm:items-center w-full gap-24 fill-white">
       <% companyLogos.each do |companyLogo| %>
-        <img
-          <%== image_attrs companyLogo[:image], {height: 32} %>
-          alt="<%= companyLogo[:name] %>"
-          class="h-24 w-auto"
-        >
+        <%= svg companyLogo[:image], class: "h-32 w-auto fill-none" %>
       <% end %>
     </div>
   </div>

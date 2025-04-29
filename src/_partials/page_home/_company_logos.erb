@@ -5,37 +5,41 @@
 %>
 <% companyLogos = [
   {
-    name: 'Lightspeed',
-    image: '/images/company-logos/lightspeed.png'
-  },
-  {
-    name: 'Memo Bank',
-    image: '/images/company-logos/memo-bank.png'
-  },
-  {
-    name: 'Motorola Solutions',
-    image: '/images/company-logos/motorola-solutions.png'
-  },
-  {
-    name: 'Elastic',
-    image: '/images/company-logos/elastic.png'
-  },
-  {
     name: 'BigId',
-    image: '/images/company-logos/big-id.png'
-  },
-  {
-    name: 'Memo Bank',
-    image: '/images/company-logos/memo-bank.png'
-  },
-  {
-    name: 'Elastic',
-    image: '/images/company-logos/elastic.png'
+    image: '/images/company-logos/bigid.svg'
   },
   {
     name: 'Lightspeed',
-    image: '/images/company-logos/lightspeed.png'
+    image: '/images/company-logos/lightspeed.svg'
   },
+  {
+    name: 'Memo Bank',
+    image: '/images/company-logos/memo-bank.svg'
+  },
+  {
+    name: 'Elastic',
+    image: '/images/company-logos/elastic.svg'
+  },
+  {
+    name: 'MongoDB',
+    image: '/images/company-logos/mongodb.svg'
+  },
+  {
+    name: 'Redpanda',
+    image: '/images/company-logos/redpanda.svg'
+  },
+  {
+    name: 'Memo Bank',
+    image: '/images/company-logos/memo-bank.svg'
+  },
+  {
+    name: 'Forto',
+    image: '/images/company-logos/forto.svg'
+  },
+  {
+    name: 'Aviobook',
+    image: '/images/company-logos/aviobook.svg'
+  }
 ] %>
 <div class="bg-white my-section2x">
   <div class="container-main">
@@ -45,12 +49,7 @@
       </h2>
       <div class="flex flex-wrap justify-center items-center w-full gap-32 md:gap-64">
         <% companyLogos.each do |companyLogo| %>
-          <img
-            loading="lazy"
-            <%== image_attrs companyLogo[:image], {height: 32} %>
-            alt="<%= companyLogo[:name] %>"
-            class="h-32 w-auto"
-          >
+          <%= svg companyLogo[:image], class: "h-32 w-auto" %>
         <% end %>
       </div>
     </div>
