@@ -2,9 +2,11 @@
 <% category = "page_pricing/plan_details/category" %>
 
 <div class="lg:container-main my-section">
-  <%= render "section_heading", locals: {
-    title: 'Plans details',
-  } %>
+  <div class="max-lg:mx-16">
+    <%= render "section_heading", locals: {
+      title: 'Plans details',
+    } %>
+  </div>
 
   <%# we use separate borders so that the sticky header keeps its borders when scrolling %>
   <table class="js-plansDetails text-black-900 table-fixed w-full relative border-separate border-spacing-0">
