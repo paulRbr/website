@@ -14,7 +14,7 @@
           <div style="width: calc(100% + 2px)" class="<%= dropdown_styles %>">
 
             <%# specific submenu content for some items are handled here. These are not rendered in the mobile menu %>
-            <% if item[:title] === 'Resources' %>
+            <% if item[:submenu][:cta] %>
               <div class="w-[17.625rem] p-24 bg-black-50 text-black-600 mt-32 rounded-8 flex flex-col">
                 <h2 class="other-link text-black-900 mb-8">
                   Want a personalized product tour?
