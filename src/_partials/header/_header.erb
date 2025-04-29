@@ -12,7 +12,7 @@
 
 <div class="js-headerMobileBlurBackdrop md:hidden pointer-events-none data-open:pointer-events-auto fixed inset-0 z-30 backdrop-blur-4 opacity-0 data-open:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
 <div class="js-headerPositionTracker" aria-hidden="true"></div>
-<div class="js-header container-main sticky top-16 left-0 right-0 z-50">
+<div class="js-header container-main will-change-transform sticky top-16 left-0 right-0 z-50">
 <div
   <%= defined?(dark) && dark ? 'data-dark' : '' %>
   class="js-headerContent relative z-40 group/header <%= base_styles %> <%= fixed_styles %> <%= hover_styles %> <%= open_styles %> <%= mobile_opening_styles %>"
