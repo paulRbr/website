@@ -1,4 +1,4 @@
-const fixOnScroll = () => {
+const handleStickyStyles = () => {
   const headerOriginalPosition = document.querySelector(
     ".js-headerPositionTracker"
   );
@@ -12,7 +12,7 @@ const fixOnScroll = () => {
       if (fixedMenu) {
         header
           .querySelector(".js-headerContent")
-          .setAttribute("data-fixed", fixedMenu);
+          .setAttribute("data-fixed", "true");
       } else {
         header.querySelector(".js-headerContent").removeAttribute("data-fixed");
       }
@@ -26,5 +26,5 @@ const fixOnScroll = () => {
 };
 
 export const init = () => {
-  fixOnScroll();
+  handleStickyStyles();
 };
