@@ -1,0 +1,30 @@
+  <div
+    data-carousel
+    id="carousel-<%= locals[:id] %>"
+    class="carousel-<%= locals[:id] %> relative flex flex-col <%= locals[:container_classes] || '' %>"
+    <%= locals[:container_attrs] || '' %>
+  >
+    <div class="relative w-full overflow-hidden <%= locals[:inner_classes] || '' %>">
+      <%= locals[:before_track] || '' %>
+      <div
+        data-carousel-track
+        class="flex transition-transform duration-500 ease-in-out z-0"
+      >
+        <% if locals[:items] %>
+          <% items.each do |item| %>
+            <div
+              data-carousel-slide
+              class="group/slide relative
+              w-full shrink-0 <%= locals[:item_wrapper_classes] || '' %>"
+              <% if items.index(item) === (locals[:default_current_index] || 0) %>data-current-slide<% end %>
+            >
+              <% locals[:item_template].call(item) %>
+            </div>
+          <% end %>
+        <% elsif content %>
+          <%= content %>
+        <% end %>
+      </div>
+      <%= locals[:after_track] || '' %>
+    </div>
+  </div>

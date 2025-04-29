@@ -1,7 +1,7 @@
 const tabbableElementsSelector =
   "a, button, input, select, textarea, iframe, [controls], [tabindex='0']";
 
-export const enableSection = (container) => {
+export const enableSectionForScreenReaders = (container) => {
   container.removeAttribute("aria-hidden");
   container.querySelectorAll("[data-sr-util-disabled]").forEach((element) => {
     element.removeAttribute("data-sr-util-disabled");
@@ -14,7 +14,7 @@ export const enableSection = (container) => {
   });
 };
 
-export const disableSection = (container) => {
+export const disableSectionForScreenReaders = (container) => {
   container.setAttribute("aria-hidden", "true");
   container.setAttribute("data-sr-util-disabled", "");
   container.querySelectorAll(tabbableElementsSelector).forEach((element) => {

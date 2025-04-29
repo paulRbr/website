@@ -25,22 +25,18 @@
     icon: 'apps-2-line',
   }
 ] %>
-<div class="js-heroScreenshots flex flex-col-reverse items-center gap-24 w-full my-section" data-current-index="0">
+<div
+  id="fadeshow-hero"
+  class="flex flex-col-reverse items-center gap-24 w-full my-section"
+  data-current-index="0"
+>
   <%# start with the buttons in the DOM for better screen reader experience %>
-  <div data-sliding-buttons class="flex flex-wrap justify-center p-4 rounded-12 bg-aqua-200 border border-aqua-300 gap-4 relative">
-    <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white"></div>
-
-    <% features.each_with_index do |feature, index| %>
-      <button
-        class="flex relative z-10 justify-center items-center gap-8 px-24 py-6 rounded-8"
-        data-index="<%= index %>"
-        <% if feature == features.first %>data-current="true"<% end %>
-      >
-        <%= render Icon.new feature[:icon], size: 18  %>
-        <span class="body-3 vfont-medium text-black-900"><%= feature[:title] %></span>
-      </button>
-    <% end %>
-  </div>
+  <%= render 'sliding_buttons', locals: {
+    items_id: 'fadeshow-hero',
+    classes: 'bg-aqua-200 border border-aqua-300',
+    initial_index: 0,
+    items: features.map { |item| { name: item[:title], icon: item[:icon] } }
+  } %>
 
   <%# Browser window with shadow effect and titlebar with dots. Easier to have this in HTML/CSS rather than in the image for visually better transitions %>
   <div class="flex flex-col w-full rounded-8 md:rounded-16 overflow-hidden shadow-aqua-large">
@@ -62,11 +58,11 @@
             alt="Bump.sh is your <%= feature[:title] %>"
             class="
               w-full h-auto rounded-8 md:rounded-16 overflow-hidden
-              not-data-current:absolute not-data-current:inset-0
-              transition-opacity duration-300 opacity-100 not-data-current:opacity-0
+              not-data-current-image:absolute not-data-current-image:inset-0
+              transition-opacity duration-300 opacity-100 not-data-current-image:opacity-0
             "
-            data-index="<%= index %>"
-            <% if feature == features.first %>data-current="true"<% end %>
+            data-image-index="<%= index %>"
+            <% if feature == features.first %>data-current-image="true"<% end %>
             <% if feature != features.first %>aria-hidden="true"<% end %>
           />
         <% end %>

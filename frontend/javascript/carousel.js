@@ -1,13 +1,12 @@
-import { enableSection, disableSection } from "./screenReaderUtils";
-
-export const init = () => {
-  // to manually initiate carousels that must be given options,
-  // just dont set the data-carousel attribute on the element to prevent automatic initialization
-  const carousels = document.querySelectorAll("[data-carousel]");
-  carousels.forEach((carousel) => {
-    initCarousel(carousel);
-  });
-};
+import {
+  enableSectionForScreenReaders,
+  disableSectionForScreenReaders,
+} from "./screenReaderUtils";
+import {
+  initSlidingButtons,
+  getSlidingButtons,
+  setCurrentButton,
+} from "./slidingButtons";
 
 /**
  * Initialize a very simple carousel
@@ -25,12 +24,21 @@ export const init = () => {
  * @param {Function} options.onSlideChange - a function that will be called when the slide changes with the slide dom el and its index as arguments
  * @returns an object with a goToSlide function tied to the initialized carousel and a reset function to disable all carousel behavior
  */
-export const initCarousel = (carousel, options = {}) => {
+export const initCarousel = (carouselId, options = {}) => {
+  const carousel = document.getElementById(carouselId);
   if (!carousel) {
     return;
   }
 
+  carousel.setAttribute("data-carousel", "");
   const slides = getSlides(carousel);
+
+  handleNavigationClicks(carousel, options);
+  handleSlidingButtonsClicks(carousel, options);
+  handleSlideClicks(carousel, options);
+  handleFocusInSlides(carousel, options);
+  handleWindowResize(carousel, options);
+  handleTouchEvents(carousel, options);
 
   if (carousel.querySelector("[data-current-slide]") === null) {
     goToSlide(carousel, Math.floor(slides.length / 2), {
@@ -44,12 +52,6 @@ export const initCarousel = (carousel, options = {}) => {
       { animate: false, ...options }
     );
   }
-
-  handleNavigationClicks(carousel, options);
-  handleSlideClicks(carousel, options);
-  handleFocusInSlides(carousel, options);
-  handleWindowResize(carousel, options);
-  handleTouchEvents(carousel, options);
 
   carousel.setAttribute("data-initialized", "true");
 
@@ -86,33 +88,44 @@ export const goToSlide = (
   }
   slides.forEach((slide, index) => {
     if (Number(index) === Number(targetIndex)) {
-      enableSlide(slide, index, options);
+      enableSlide(slide, index, { ...options, animate });
     } else {
       disableSlide(slide, index, options);
     }
   });
 };
 
-const enableSlide = (slide, index, { onSlideChange, screenReaderMode }) => {
+const enableSlide = (
+  slide,
+  index,
+  { onSlideChange, screenReaderMode, animate }
+) => {
   slide.removeAttribute("aria-hidden");
   slide.setAttribute("data-current-slide", "true");
   onSlideChange?.(slide, index);
+  updateSlidingButtons(slide.closest("[data-carousel]"), index, { animate });
   if (screenReaderMode === "current") {
-    enableSection(slide);
+    enableSectionForScreenReaders(slide);
   }
 };
 
 const disableSlide = (slide, index, { screenReaderMode }) => {
   slide.removeAttribute("data-current-slide");
   if (screenReaderMode === "current") {
-    disableSection(slide);
+    disableSectionForScreenReaders(slide);
   }
 };
 
 const handleNavigationClicks = (carousel, options) => {
   const slides = getSlides(carousel);
-  carousel
-    .querySelector("[data-carousel-prev-button]")
+  const navContainer = document.querySelector(
+    `.items-nav[data-items-id="${carousel.id}"]`
+  );
+  if (!navContainer) {
+    return;
+  }
+  navContainer
+    .querySelector("[data-prev-button]")
     ?.addEventListener("click", () => {
       goToSlide(
         carousel,
@@ -124,8 +137,8 @@ const handleNavigationClicks = (carousel, options) => {
       );
     });
 
-  carousel
-    .querySelector("[data-carousel-next-button]")
+  navContainer
+    .querySelector("[data-next-button]")
     ?.addEventListener("click", () => {
       goToSlide(
         carousel,
@@ -134,6 +147,28 @@ const handleNavigationClicks = (carousel, options) => {
         options
       );
     });
+};
+
+const handleSlidingButtonsClicks = (carousel, options) => {
+  const slidingButtonsContainer = getSlidingButtons(carousel);
+  if (slidingButtonsContainer) {
+    initSlidingButtons(slidingButtonsContainer, {
+      onClick: (button, index) => {
+        goToSlide(carousel, index, options);
+      },
+    });
+  }
+};
+
+const updateSlidingButtons = (carousel, index, { animate }) => {
+  const slidingButtonsContainer = getSlidingButtons(carousel);
+  if (slidingButtonsContainer) {
+    setCurrentButton(
+      slidingButtonsContainer.querySelector(`button[data-index="${index}"]`),
+      slidingButtonsContainer,
+      { animate }
+    );
+  }
 };
 
 /**

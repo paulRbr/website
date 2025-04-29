@@ -1,22 +1,17 @@
 <%# Pricing plans summary section %>
 <div class="js-plansSummary flex flex-col items-center gap-40 lg:w-[56.25rem] mx-auto">
-  <div data-sliding-buttons class="flex lg:hidden flex-wrap justify-center p-4 rounded-12 bg-black-800 border border-black-700 gap-4 relative">
-    <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white"></div>
-
-    <% items.each_with_index do |item, index| %>
-      <button
-        class="flex relative z-10 justify-center items-center gap-8 px-24 py-6 rounded-8 group"
-        data-index="<%= index %>"
-        <% if item[:name] == highlight_item %>data-current="true"<% end %>
-      >
-        <span class="body-3 vfont-medium text-white group-data-current:text-black-900 transition-colors duration-300"><%= item[:name] %></span>
-      </button>
-    <% end %>
-  </div>
+  <%= render 'sliding_buttons', locals: {
+    items_id: 'carousel-plans-summary',
+    classes: 'lg:hidden bg-black-800 border border-black-700',
+    text_classes: 'text-white! group-data-current:text-black-900!',
+    initial_index: nil,
+    items: items.map { |item| { name: item[:name] } }
+  } %>
 
   <div
+    id="carousel-plans-summary"
     class="
-      js-plansSummary-carousel w-full relative
+      w-full relative
       <%# the padding bottom trick is there to have the highlighted plan button box shadow bleed out of the overflow hidden container %>
       max-lg:overflow-hidden -mb-40 pb-40
       <%# we wait for carousel to be initialized before rendering to prevent showing non-highlighted plan for a few ms on load %>
@@ -28,8 +23,8 @@
       class="flex transition-transform duration-500 ease-in-out z-0
       lg:grid lg:grid-cols-3 lg:gap-24 lg:transform-none!"
     >
-      <% items.each do |item| %>
-        <%= render "page_pricing/plans_summary_item", **item, highlight: item[:name] == highlight_item %>
+      <% items.each_with_index do |item, index| %>
+        <%= render "page_pricing/plans_summary_item", **item, highlight: index == highlight_item_index %>
       <% end %>
     </div>
   </div>

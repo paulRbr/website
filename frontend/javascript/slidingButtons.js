@@ -1,4 +1,4 @@
-export const init = (container, { onClick }) => {
+export const initSlidingButtons = (container, { onClick }) => {
   container.querySelectorAll("button").forEach((button, index) => {
     if (!button.getAttribute("data-index")) {
       button.setAttribute("data-index", index);
@@ -41,7 +41,7 @@ export const setCurrentButton = (
   }
 
   const prevButton = container.querySelector('button[data-current="true"]');
-  prevButton.removeAttribute("data-current");
+  prevButton?.removeAttribute("data-current");
   if (!animate) {
     slidingBackground.classList.remove("transition-all", "duration-300");
   }
@@ -55,4 +55,10 @@ export const setCurrentButton = (
     }, 100);
   }
   button.setAttribute("data-current", "true");
+};
+
+export const getSlidingButtons = (container) => {
+  return document.querySelector(
+    `.items-slidingButtons[data-items-id="${container.id}"]`
+  );
 };

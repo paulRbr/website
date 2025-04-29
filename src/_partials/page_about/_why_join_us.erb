@@ -71,44 +71,40 @@
         '/images/about/keyboard.png',
         '/images/about/keyboard-2.png',
       ] %>
-      <% images = images.map { |image| image.gsub("src/", "") } %>
       <div class="mt-24">
-        <div class="js-aboutImages flex flex-col items-center gap-24" data-current-index="0">
+        <div
+          id="fadeshow-why-join-us"
+          class="flex flex-col items-center gap-24"
+          data-current-index="0"
+        >
           <div class="w-full relative h-auto rounded-16 overflow-hidden bg-white">
             <% images.each_with_index do |image, index| %>
-            <button
-              type="button"
-              data-why-join-us-images-index="<%= index %>"
-              <% if image == images.first %>data-current="true"<% end %>
-              <% if image != images.first %>aria-hidden="true"<% end %>
-              class="js-openWhyJoinUsImagesDialog block w-full h-auto rounded-16 overflow-hidden
-                  not-data-current:absolute not-data-current:inset-0
-                  transition-opacity duration-300 opacity-100 not-data-current:opacity-0"
-            >
-              <img
-                <%== image_attrs image, {width: 900} %>
-                loading="lazy"
-                alt=""
-                class=""
+              <button
+                type="button"
+                data-image-index="<%= index %>"
+                data-dialog-carousel-index="<%= index %>"
+                data-dialog-open="dialog-why-join-us"
+                <% if image == images.first %>data-current-image="true"<% end %>
+                <% if image != images.first %>aria-hidden="true"<% end %>
+                class="block w-full h-auto rounded-16 overflow-hidden
+                    not-data-current-image:absolute not-data-current-image:inset-0
+                    transition-opacity duration-300 opacity-100 not-data-current-image:opacity-0 not-data-current-image:pointer-events-none"
               >
-             </button>
+                <img
+                  <%== image_attrs image, {width: 900} %>
+                  loading="lazy"
+                  alt=""
+                  class=""
+                >
+              </button>
             <% end %>
           </div>
 
-          <div class="flex justify-center gap-16 relative z-10">
-            <%= render IconButton.new("vuesax-linear-arrow-left",
-              size: 14,
-              variant: "seashell",
-              alt: "Previous image",
-              classes: "stroke-black stroke-[1.5] js-aboutImages-prev-button",
-            ) %>
-            <%= render IconButton.new("vuesax-linear-arrow-right",
-              size: 14,
-              variant: "seashell",
-              alt: "Next image",
-              classes: "stroke-black stroke-[1.5] js-aboutImages-next-button",
-            ) %>
-          </div>
+          <%= render 'items_nav', locals: {
+            items_id: 'fadeshow-why-join-us',
+            prev_label: "Previous image",
+            next_label: "Next image",
+          } %>
         </div>
       </div>
     </div>
@@ -119,10 +115,10 @@
 <%# see https://a11y-dialog.netlify.app/usage/markup and https://a11y-dialog.netlify.app/usage/styling to better get how
 to markup and style the dialog-related elements %>
 <div
-  id="why-join-us-images-dialog"
+  id="dialog-why-join-us"
   aria-label="Images slideshow"
   aria-hidden="true"
-  class="group/dialog fixed z-[100] bg-black-900/50 inset-0 flex pt-32 px-8 sm:px-16 items-start md:items-center justify-center aria-hidden:hidden"
+  class="group/dialog pt-32 fixed z-[100] bg-black-900/50 inset-0 flex items-start md:items-center justify-center aria-hidden:hidden"
 >
   <div
     data-a11y-dialog-hide
@@ -130,51 +126,36 @@ to markup and style the dialog-related elements %>
     transition-opacity duration-300 opacity-0 group-not-aria-hidden/dialog:opacity-100"
   >
   </div>
-  <div role="document" class="h-full w-full js-whyJoinUsImagesCarousel relative z-[102] mx-auto animate-dialog">
-    <div class="js-whyJoinUsImagesCarousel-wrapper flex flex-col-reverse justify-center h-full">
-      <div class="js-whyJoinUsImagesCarousel-wrapper flex justify-center gap-16 my-16 md:mt-40 relative z-10 shrink-0">
-        <%= render IconButton.new("vuesax-linear-arrow-left",
-          size: 14,
-          variant: "seashell",
-          alt: "Previous image",
-          "data-carousel-prev-button": true,
-          classes: "stroke-black stroke-[1.5]",
-        ) %>
-        <%= render IconButton.new("vuesax-linear-arrow-right",
-          size: 14,
-          variant: "seashell",
-          alt: "Next image",
-          "data-carousel-next-button": true,
-          classes: "stroke-black stroke-[1.5]",
-        ) %>
-      </div>
+  <div role="document" class="h-full w-full relative z-[102] mx-auto animate-dialog">
+    <div data-dialog-dirty-height-fix class="flex flex-col-reverse justify-center h-full">
+      <%= render 'items_nav', locals: {
+        items_id: 'carousel-why-join-us',
+        prev_label: "Previous image",
+        next_label: "Next image",
+        classes: 'my-16 md:mt-40',
+      } %>
       <div class="overflow-auto shrink">
-        <div class="relative flex flex-col">
-          <div class="relative w-full overflow-hidden">
+        <%= render 'carousel', locals: {
+          id: 'why-join-us',
+          before_track: capture do %>
             <button
               type="button"
               data-a11y-dialog-hide
               class="hidden group-data-current-slide/slide:flex small-link absolute top-8 right-12 md:top-32 md:right-32 cursor-pointer z-[103] items-center gap-4">
               Close <%= render Icon.new 'close-fill', classes: 'relative top-1' %>
             </button>
-            <div data-carousel-track class="flex transition-transform duration-500 ease-in-out z-0">
-              <% images.each_with_index do |image, index| %>
-                <div
-                  data-carousel-slide
-                  class="group/slide relative p-16 lg:p-32 transition-transform duration-500 ease-in-out w-full shrink-0 flex flex-col gap-24"
-                  <% if index === 0 %>data-current-slide<% end %>
-                >
-                  <img
-                    <%== image_attrs image, {width: 1600} %>
-                    class="object-cover"
-                    loading="lazy"
-                    alt=""
-                  >
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+          <% end,
+          items: images,
+          item_wrapper_classes: '',
+          item_template: ->(item) do %>
+            <img
+              <%== image_attrs item, {width: 1600} %>
+              class="w-full h-full object-cover"
+              loading="lazy"
+              alt=""
+            >
+          <% end
+        } %>
       </div>
     </div>
   </div>
