@@ -10,7 +10,6 @@ dark_header: true
       <div class="mt-section container-main">
         <%= render "section_heading", locals: {
           title: "Pricing",
-          description: "Adapted to your company’s size and needs.",
           variant: "dark",
           lvl: 1
         } do %>
@@ -25,7 +24,7 @@ dark_header: true
         {
           name: "Basic",
           price: "Free",
-          description: "Get a stunning API doc online in seconds",
+          description: "For solo API builders who want their API to shine.",
           features_description: "Our basic plan features:",
           features: [
             "OpenAPI + AsyncAPI support",
@@ -42,9 +41,9 @@ dark_header: true
           }
         },
         {
-          name: "Standard",
+          name: "Pro",
           price: 249,
-          description: "Showcase and share all your API docs",
+          description: "For API teams who care about clean delivery and access control.",
           features_description: "Everything in Basic, plus:",
           features: [
             "Advanced access management",
@@ -64,7 +63,7 @@ dark_header: true
           name: "Enterprise",
           price: "Custom",
           highlight: true,
-          description: "Handle complex API docs needs at scale",
+          description: "For companies who manage complex API and ecosystems at scale.",
           features_description: "Everything in Pro, plus:",
           features: [
             "Single Sign-On (SSO)",
