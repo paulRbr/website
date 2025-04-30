@@ -230,38 +230,56 @@ const handleTouchEvents = (carousel, options) => {
   }
   const track = getTrack(carousel);
   let startX = 0;
+  let startY = 0;
   let currentTranslate = 0;
   let isDragging = false;
   let startPosition = 0;
+  let isScrolling = null;
 
   track.addEventListener("touchstart", (e) => {
-    isDragging = true;
     startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
     startPosition = getCurrentTranslateX(track);
+    isScrolling = null;
     disableAnimation(track);
   });
 
   track.addEventListener(
     "touchmove",
     (e) => {
-      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const diffX = currentX - startX;
+      const diffY = currentY - startY;
 
-      // Prevent page scrolling while dragging
+      // Determine if the user is trying to scroll vertically
+      if (isScrolling === null) {
+        isScrolling = Math.abs(diffY) > Math.abs(diffX);
+      }
+
+      // If scrolling vertically, let the default scroll behavior happen
+      if (isScrolling) {
+        return;
+      }
+
+      // Otherwise handle horizontal carousel movement
       e.preventDefault();
       e.stopPropagation();
 
-      const currentX = e.touches[0].clientX;
-      const diff = currentX - startX;
-      currentTranslate = startPosition + diff;
+      if (!isDragging) {
+        isDragging = true;
+      }
 
+      currentTranslate = startPosition + diffX;
       track.style.transform = `translate3d(${currentTranslate}px, 0px, 0px)`;
     },
     { passive: false }
-  ); // Need to set passive: false to allow preventDefault
+  );
 
   track.addEventListener("touchend", () => {
     if (!isDragging) return;
     isDragging = false;
+    isScrolling = null;
 
     enableAnimation(track);
 
