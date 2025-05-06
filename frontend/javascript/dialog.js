@@ -31,8 +31,6 @@ export const initDialog = (id, { onUserOpen, carousel }) => {
 
   document.querySelectorAll(`[data-dialog-open="${id}"]`).forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("coucou");
-
       dialog.show();
       const index = button.dataset.dialogCarouselIndex;
       if (index !== undefined && carousel && carousel.goToSlide) {

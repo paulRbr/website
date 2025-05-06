@@ -136,6 +136,8 @@ const showImage = (container, targetIndex) => {
   targetImage.setAttribute("data-current-image", "true");
   currentImage.setAttribute("aria-hidden", "true");
   targetImage.removeAttribute("aria-hidden");
+  currentImage.setAttribute("tabindex", "-1");
+  targetImage.removeAttribute("tabindex");
   container.setAttribute("data-current-index", targetIndex);
   updateSlidingButtons(container, targetIndex);
   return {
