@@ -14,37 +14,48 @@ class Builders::Image < SiteBuilder
   # If using cloudflare, the image src and srcset are cloudflare image urls.
   def image_attrs(imagepath, options = {})
     begin
-      get_image_size(get_filepath(imagepath))
+      original_size = get_image_size(get_filepath(imagepath))
     rescue
       return 'src=""'
     end
 
+    # responsive is an optional parameter that defaults to true
+    is_responsive = !(options[:responsive] == false)
+    # remove the responsive parameter from the options hash before passing it down as cloudflare options
+    options.delete(:responsive)
+
     attrs = "src=\"#{image_url(imagepath, options)}\" " + image_size(imagepath, options)
 
-    if !@@use_cloudflare || imagepath.end_with?(".svg") || !options[:width]
+    if !@@use_cloudflare || imagepath.end_with?(".svg")
       return attrs
+    end
+
+    if !options[:width] && !options[:height]
+      return attrs
+    end
+
+    width = options[:width]
+    if !options[:width] && options[:height]
+      width = original_size[:width] * (options[:height].to_f / original_size[:height].to_f)
+      options.delete(:height)
     end
 
     # add optimized sizing depending on screen size with cloudflare
 
     # first handle the srcset attribute
     # 1120 is there because its the max size of our main container. Bigger steps are there mostly for modals.
-    steps = [100, 200, 400, 500, 768, 1120, 2048, 3000]
-    if options[:width]
-      steps << options[:width]
-    end
+    steps = [100, 200, 400, 500, 768, 1120, 2048, 3000, width]
     srcset = []
-    options.delete(:height)
     steps.each do |step|
       srcset << "#{image_url(imagepath, options.merge(width: step))} #{step}w"
     end
     attrs += " srcset=\"#{srcset.join(", ")}\""
 
     # then handle the sizes attribute
-    attrs += if options[:responsive] == false
-      " sizes=\"#{options[:width]}px\""
+    attrs += if is_responsive
+      " sizes=\"(max-width: #{width}px) 100vw, #{width}px\""
     else
-      " sizes=\"(max-width: #{options[:width]}px) 100vw, #{options[:width]}px\""
+      " sizes=\"#{width}px\""
     end
 
     attrs
