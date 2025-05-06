@@ -60,7 +60,7 @@
     @apply p-32 bg-aqua-100 border-b border-aqua-400 rounded-tl-8 rounded-tr-8;
   }
 
-  .cms [class*="language-"] > .highlight {
+  .cms .highlighter-rouge > .highlight {
     @apply p-32 border-b border-black-50 rounded-8 overflow-auto text-[1rem];
   }
 
