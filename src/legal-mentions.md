@@ -1,36 +1,35 @@
 ---
-layout: page
 title: Legal mentions
+layout: page
 ---
 
 Bump.sh is a product of It ducks SAS.
 
 ## Site editor
+Company
+It ducks
 
-Company It ducks
+### Capital
+3,326.90 €
 
-Capital  
-3,466.90 €
-
-Registration  
+### Registration
 831116330 R.C.S. Angers
 
-VAT  
+### VAT
 FR86831116330
 
-Address  
+### Address
 25 rue Lenepveu, 49100 Angers, France
 
-Email  
+### Email
 hello@bump.sh
 
-## Publishing director
-
+### Publishing director
 Sébastien Charrier
 
 ## Hosting
+Provider name
+Heroku Inc.
 
-Provider name Heroku Inc.
-
-Address  
+### Address
 650 7th Street, San Francisco CA 94103, USA
