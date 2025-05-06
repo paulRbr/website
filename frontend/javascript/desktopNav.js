@@ -13,10 +13,13 @@ const navDropdowns = () => {
     content.classList.add("hidden");
   });
 
+  const hidingDelays = new Map();
+
   // initiate all dropdown items
   toggles.forEach((toggle) => {
     // on hover: show/hide dropdowns
     toggle.addEventListener("mouseenter", () => {
+      clearTimeout(hidingDelays[toggle]);
       showDropdown(toggle, contents);
     });
     /**
@@ -27,16 +30,21 @@ const navDropdowns = () => {
         return;
       }
       if (!toggle.closest("li").contains(event.relatedTarget)) {
-        hideDropdown(toggle);
+        clearTimeout(hidingDelays[toggle]);
+        hidingDelays[toggle] = setTimeout(() => hideDropdown(toggle), 400);
       }
     };
     toggle.addEventListener("mouseleave", onMouseLeave);
     toggle.nextElementSibling.addEventListener("mouseleave", onMouseLeave);
+    toggle.nextElementSibling.addEventListener("mouseenter", () => {
+      clearTimeout(hidingDelays[toggle]);
+    });
 
     // on click: show/hide dropdowns
     toggle.addEventListener("click", () => {
       const content = toggle.nextElementSibling;
       if (content.classList.contains("hidden")) {
+        clearTimeout(hidingDelays[toggle]);
         showDropdown(toggle, contents);
       } else {
         hideDropdown(toggle);
@@ -55,6 +63,7 @@ const showDropdown = (toggle, contents) => {
   const content = toggle.nextElementSibling;
   const icon = toggle.querySelector(".js-navToggleIcon");
   content.closest("li").setAttribute("data-open", "true");
+  content.closest(".js-headerContent").setAttribute("data-open", "true");
   content.classList.add("flex", "animate-slide-fade-in");
   content.classList.remove("hidden");
   icon.classList.add("rotate-180");
@@ -79,6 +88,7 @@ const hideDropdown = (toggle) => {
   const icon = toggle.querySelector(".js-navToggleIcon");
   content.classList.add("hidden");
   content.closest("li").removeAttribute("data-open");
+  content.closest(".js-headerContent").removeAttribute("data-open");
   content.classList.remove("flex", "animate-slide-fade-in");
   icon.classList.remove("rotate-180");
 };
