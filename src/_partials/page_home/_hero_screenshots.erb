@@ -62,9 +62,10 @@
             style="will-change: opacity"
             class="
               not-data-current-image:absolute not-data-current-image:inset-0
-              transition-opacity duration-300 opacity-100 not-data-current-image:opacity-0
+              not-data-current-image:pointer-events-none
+              not-data-current-image:opacity-0 opacity-100 transition-opacity duration-300
             "
-            <% if feature == features.first %>
+            <% if index == 0 %>
               data-current-image="true"
             <% else %>
               aria-hidden="true"
