@@ -124,3 +124,7 @@ When developing locally or building for production, you can set up specific env 
   - Possible values: `cloudflare`
   - If `cloudflare`, all images are processed through [cloudflare urls](https://developers.cloudflare.com/images/transform-images/transform-via-url/).  
     If any other value or the var doesn't exist, images are not processed by anything. ⚠ Not using `cloudflare` in production is not recommended, as in this case, images are rendered with unoptimized sizes.
+- `WEBSITE_URL`
+  - Optional
+  - Possible values: complete URL of website. Example: `https://next.bump.sh/`.
+  - If set, this URL is used as base for Cloudflare image URLs. This is useful to setup locally to test cloudflare image transforms.

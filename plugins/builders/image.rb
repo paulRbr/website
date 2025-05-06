@@ -2,6 +2,7 @@ require "image_size"
 
 class Builders::Image < SiteBuilder
   @@use_cloudflare = ENV["IMAGES_MODE"] == "cloudflare"
+  @@website_url = ENV["WEBSITE_URL"] || ""
 
   def build
     helper :image_attrs, :image_attrs
@@ -13,7 +14,7 @@ class Builders::Image < SiteBuilder
   # If using cloudflare, the image src and srcset are cloudflare image urls.
   def image_attrs(imagepath, options = {})
     begin
-      original_image_size = get_image_size(get_filepath(imagepath))
+      get_image_size(get_filepath(imagepath))
     rescue
       return 'src=""'
     end
@@ -24,11 +25,16 @@ class Builders::Image < SiteBuilder
       return attrs
     end
 
-    # check if we can x2 the image for retina display
-    wanted_image_size = get_image_size(get_filepath(imagepath), options)
-    if wanted_image_size[:width] * 2 <= original_image_size[:width]
-      retina_src = image_url(imagepath, options.merge(width: wanted_image_size[:width] * 2, height: wanted_image_size[:height] * 2))
-      attrs += " srcset=\"#{retina_src} 2x\""
+    # add optimized sizing depending on screen size with cloudflare
+    steps = [500, 768, 1024, 1536, 2048, 3000]
+    srcset = []
+    options.delete(:height)
+    steps.each do |step|
+      srcset << "#{image_url(imagepath, options.merge(width: step))} #{step}w"
+    end
+    attrs += " srcset=\"#{srcset.join(", ")}\""
+    if options[:width] && !options[:sizes]
+      attrs += " sizes=\"(max-width: #{options[:width]}px) 100vw, #{options[:width]}px\""
     end
     attrs
   end
@@ -61,7 +67,8 @@ class Builders::Image < SiteBuilder
       options[:height] = options[:height].to_i
     end
     cf_options = ["format=#{cf_format}", *options.map { |key, value| "#{key}=#{value}" }]
-    "/cdn-cgi/image/#{cf_options.join(",")}/#{imagepath}"
+    zone = @@website_url.end_with?("/") ? @@website_url : "#{@@website_url}/"
+    "#{zone}cdn-cgi/image/#{cf_options.join(",")}/#{imagepath}"
   end
 
   # pass an image path (relative to src folder) with optional forced width or height
