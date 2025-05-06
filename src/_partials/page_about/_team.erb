@@ -51,9 +51,11 @@ to markup and style the dialog-related elements %>
 
       <%= render 'items_nav', locals: {
         items_id: 'carousel-team-members',
+        nav_label: 'Team members navigation',
         prev_label: 'Previous team member',
         next_label: 'Next team member',
-        classes: 'my-16 md:mt-40'
+        classes: 'my-16 md:mt-40',
+        default_dialog_focus: true
       } %>
 
       <div class="bg-white rounded-24 overflow-auto shrink">
@@ -67,8 +69,12 @@ to markup and style the dialog-related elements %>
               <% collections.team_members.resources.each do |member| %>
                 <div
                   data-carousel-slide
+                  role="tabpanel"
+                  aria-label="<%= member.data.name %>"
                   class="group/slide relative p-16 lg:p-32 w-full shrink-0 flex flex-col gap-24"
-                  <% if collections.team_members.resources.first === member %>data-current-slide<% end %>
+                  <% if collections.team_members.resources.first === member %>
+                    data-current-slide
+                  <% end %>
                 >
                   <button
                     type="button"

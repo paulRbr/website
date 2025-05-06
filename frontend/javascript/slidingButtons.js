@@ -18,6 +18,8 @@ export const initSlidingButtons = (container, { onClick }) => {
     onClick?.(button, Number(button.getAttribute("data-index")));
   });
 
+  handleKeyboard(container, { onClick });
+
   window.addEventListener("resize", () => {
     const currentButton = container.querySelector(
       'button[data-current="true"]'
@@ -42,6 +44,8 @@ export const setCurrentButton = (
 
   const prevButton = container.querySelector('button[data-current="true"]');
   prevButton?.removeAttribute("data-current");
+  prevButton?.setAttribute("aria-selected", "false");
+  prevButton?.setAttribute("tabindex", "-1");
   if (!animate) {
     slidingBackground.classList.remove("transition-all", "duration-300");
   }
@@ -55,10 +59,44 @@ export const setCurrentButton = (
     }, 100);
   }
   button.setAttribute("data-current", "true");
+  button.setAttribute("tabindex", "0");
+  button.setAttribute("aria-selected", "true");
 };
 
 export const getSlidingButtons = (container) => {
   return document.querySelector(
     `.items-slidingButtons[data-items-id="${container.id}"]`
   );
+};
+
+const handleKeyboard = (container, { onClick }) => {
+  container.addEventListener("keyup", (event) => {
+    if (!event.target.closest("button[data-index]")) {
+      return;
+    }
+
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      return onArrowKey(event.key, container, { onClick });
+    }
+  });
+};
+
+const onArrowKey = (key, container, { onClick }) => {
+  const currentButton = container.querySelector('button[data-current="true"]');
+  const currentIndex = Number(currentButton.getAttribute("data-index"));
+  const newIndex =
+    key === "ArrowLeft"
+      ? currentIndex - 1
+      : key === "ArrowRight"
+      ? currentIndex + 1
+      : null;
+  if (newIndex === null) {
+    return;
+  }
+  const newButton = container.querySelector(`button[data-index="${newIndex}"]`);
+  if (newButton) {
+    setCurrentButton(newButton, container);
+    newButton.focus();
+    onClick?.(newButton, newIndex);
+  }
 };

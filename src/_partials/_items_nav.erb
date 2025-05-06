@@ -1,6 +1,8 @@
 <div
   data-dialog-dirty-height-fix
   data-items-id="<%= locals[:items_id] %>"
+  role="tablist"
+  aria-label="<%= locals[:nav_label] %>"
   class="
     items-nav
     flex justify-center shrink-0 relative z-10 gap-16
@@ -13,14 +15,18 @@
     alt: locals[:prev_label] || "Previous item",
     "data-prev-button": true,
     classes: "stroke-black stroke-[1.5]",
-    type: "button"
+    type: "button",
+    role: "tab"
   ) %>
+
   <%= render IconButton.new("vuesax-linear-arrow-right",
     size: locals[:size] || 14,
     variant: "seashell",
     alt: locals[:next_label] || "Next item",
     "data-next-button": true,
     classes: "stroke-black stroke-[1.5]",
-    type: "button"
+    type: "button",
+    role: "tab",
+    **(locals[:default_dialog_focus] ? { "data-default-dialog-focus": true } : {})
   ) %>
 </div>

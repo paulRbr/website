@@ -20,6 +20,46 @@ export const init = () => {
     "carousel-plans-summary"
   );
   const isLargeScreen = window.matchMedia("(min-width: 62em)");
+
+  const whenOnLargeScreen = () => {
+    enableSectionForScreenReaders(plansSummary);
+    plansSummary
+      .querySelectorAll('[data-role="tabpanel"]')
+      .forEach((tabpanel) => {
+        tabpanel.removeAttribute("role");
+        tabpanel.removeAttribute("aria-labelledby");
+      });
+  };
+
+  const whenOnSmallScreen = () => {
+    carousel.goToSlide(
+      Number(plansSummaryCarousel.getAttribute("data-current-slide"))
+    );
+    plansSummary
+      .querySelectorAll('[data-role="tabpanel"]')
+      .forEach((tabpanel) => {
+        tabpanel.setAttribute("role", "tabpanel");
+        tabpanel.setAttribute(
+          "aria-labelledby",
+          tabpanel.getAttribute("data-aria-labelledby")
+        );
+      });
+  };
+
+  if (isLargeScreen.matches) {
+    whenOnLargeScreen();
+  } else {
+    whenOnSmallScreen();
+  }
+  isLargeScreen.addEventListener("change", (e) => {
+    if (e.matches) {
+      whenOnLargeScreen();
+    } else {
+      whenOnSmallScreen();
+    }
+  });
+
+  // make sure the carousel track follows window resize on mobile
   window.addEventListener("resize", () => {
     if (isLargeScreen.matches) {
       return;
@@ -27,18 +67,5 @@ export const init = () => {
     carousel.goToSlide(
       Number(plansSummaryCarousel.getAttribute("data-current-slide"))
     );
-  });
-
-  if (isLargeScreen.matches) {
-    enableSectionForScreenReaders(plansSummary);
-  }
-  isLargeScreen.addEventListener("change", (e) => {
-    if (e.matches) {
-      enableSectionForScreenReaders(plansSummary);
-    } else {
-      carousel.goToSlide(
-        Number(plansSummaryCarousel.getAttribute("data-current-slide"))
-      );
-    }
   });
 };

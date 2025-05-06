@@ -126,29 +126,41 @@ const handleNavigationClicks = (carousel, options) => {
   if (!navContainer) {
     return;
   }
-  navContainer
-    .querySelector("[data-prev-button]")
-    ?.addEventListener("click", () => {
-      goToSlide(
-        carousel,
-        (Number(carousel.getAttribute("data-current-slide")) -
-          1 +
-          slides.length) %
-          slides.length,
-        options
-      );
-    });
+  const goPrev = () => {
+    goToSlide(
+      carousel,
+      (Number(carousel.getAttribute("data-current-slide")) -
+        1 +
+        slides.length) %
+        slides.length,
+      options
+    );
+  };
+  const goNext = () => {
+    goToSlide(
+      carousel,
+      (Number(carousel.getAttribute("data-current-slide")) + 1) % slides.length,
+      options
+    );
+  };
+  const handleArrowKeys = (e) => {
+    if (e.key === "ArrowLeft") {
+      goPrev();
+    } else if (e.key === "ArrowRight") {
+      goNext();
+    }
+  };
 
-  navContainer
-    .querySelector("[data-next-button]")
-    ?.addEventListener("click", () => {
-      goToSlide(
-        carousel,
-        (Number(carousel.getAttribute("data-current-slide")) + 1) %
-          slides.length,
-        options
-      );
-    });
+  const prevButton = navContainer.querySelector("[data-prev-button]");
+  const nextButton = navContainer.querySelector("[data-next-button]");
+  if (prevButton) {
+    prevButton.addEventListener("click", goPrev);
+    prevButton.addEventListener("keyup", handleArrowKeys);
+  }
+  if (nextButton) {
+    nextButton.addEventListener("click", goNext);
+    nextButton.addEventListener("keyup", handleArrowKeys);
+  }
 };
 
 const handleSlidingButtonsClicks = (carousel, options) => {

@@ -15,9 +15,13 @@
           <% items.each do |item| %>
             <div
               data-carousel-slide
+              role="tabpanel"
+              aria-label="<% locals[:item_label].call(item) %>"
               class="group/slide relative
               w-full shrink-0 <%= locals[:item_wrapper_classes] || '' %>"
-              <% if items.index(item) === (locals[:default_current_index] || 0) %>data-current-slide<% end %>
+              <% if items.index(item) === (locals[:default_current_index] || 0) %>
+                data-current-slide
+              <% end %>
             >
               <% locals[:item_template].call(item) %>
             </div>

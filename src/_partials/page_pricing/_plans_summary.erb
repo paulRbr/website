@@ -2,6 +2,7 @@
 <div class="js-plansSummary flex flex-col items-center gap-40 lg:w-[56.25rem] mx-auto">
   <%= render 'sliding_buttons', locals: {
     items_id: 'carousel-plans-summary',
+    nav_label: 'Plans navigation',
     classes: 'lg:hidden bg-black-800 border border-black-700',
     text_classes: 'text-white! group-data-current:text-black-900!',
     initial_index: nil,
@@ -25,7 +26,7 @@
       lg:grid lg:grid-cols-3 lg:gap-24 lg:transform-none!"
     >
       <% items.each_with_index do |item, index| %>
-        <%= render "page_pricing/plans_summary_item", **item, highlight: index == highlight_item_index %>
+        <%= render "page_pricing/plans_summary_item", **item, index: index, highlight: index == highlight_item_index %>
       <% end %>
     </div>
   </div>

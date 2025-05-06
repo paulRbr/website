@@ -102,6 +102,7 @@
 
           <%= render 'items_nav', locals: {
             items_id: 'fadeshow-why-join-us',
+            nav_label: "Images slideshow navigation",
             prev_label: "Previous image",
             next_label: "Next image",
           } %>
@@ -130,8 +131,10 @@ to markup and style the dialog-related elements %>
     <div data-dialog-dirty-height-fix class="flex flex-col-reverse justify-center h-full">
       <%= render 'items_nav', locals: {
         items_id: 'carousel-why-join-us',
+        nav_label: "Images slideshow navigation (zoomed in)",
         prev_label: "Previous image",
         next_label: "Next image",
+        default_dialog_focus: true,
         classes: 'my-16 md:mt-40',
       } %>
       <div class="overflow-auto shrink">
@@ -147,6 +150,7 @@ to markup and style the dialog-related elements %>
           <% end,
           items: images,
           item_wrapper_classes: '',
+          item_label: ->(item) do %>Image <%= images.index(item) + 1 %><% end,
           item_template: ->(item) do %>
             <img
               <%== image_attrs item, {width: 1600} %>

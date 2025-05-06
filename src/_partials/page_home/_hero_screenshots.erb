@@ -33,6 +33,7 @@
   <%# start with the buttons in the DOM for better screen reader experience %>
   <%= render 'sliding_buttons', locals: {
     items_id: 'fadeshow-hero',
+    nav_label: 'Screenshots navigation',
     classes: 'bg-aqua-200 border border-aqua-300',
     initial_index: 0,
     items: features.map { |item| { name: item[:title], icon: item[:icon] } }
@@ -53,19 +54,28 @@
     <div class="flex flex-col justify-center items-center w-full bg-black-900 rounded-b-8 p-2 md:pt-2 md:px-12 md:pb-12">
       <div class="w-full relative h-auto rounded-8 md:rounded-16 overflow-hidden bg-white">
         <% features.each_with_index do |feature, index| %>
-          <img
-            <%== image_attrs feature[:image], {width: 1094} %>
-            alt="Bump.sh is your <%= feature[:title] %>"
+          <div
+            role="tabpanel"
+            id="fadeshow-hero-tabpanel-<%= index %>"
+            aria-labelledby="fadeshow-hero-tab-<%= index %>"
+            data-image-index="<%= index %>"
             style="will-change: opacity"
             class="
-              w-full h-auto rounded-8 md:rounded-16 overflow-hidden
               not-data-current-image:absolute not-data-current-image:inset-0
               transition-opacity duration-300 opacity-100 not-data-current-image:opacity-0
             "
-            data-image-index="<%= index %>"
-            <% if feature == features.first %>data-current-image="true"<% end %>
-            <% if feature != features.first %>aria-hidden="true"<% end %>
-          />
+            <% if feature == features.first %>
+              data-current-image="true"
+            <% else %>
+              aria-hidden="true"
+            <% end %>
+          >
+            <img
+              <%== image_attrs feature[:image], {width: 1094} %>
+              alt="Bump.sh is your <%= feature[:title] %>"
+              class="w-full h-auto rounded-8 md:rounded-16 overflow-hidden"
+            />
+          </div>
         <% end %>
       </div>
     </div>

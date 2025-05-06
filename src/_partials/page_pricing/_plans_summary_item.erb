@@ -19,7 +19,13 @@
   class="w-full shrink-0 flex flex-col gap-40 p-16 lg:p-24 rounded-32 text-white
    lg:data-highlighted:bg-black-800 bg-black-900"
   data-name="<%= name %>"
-  <% if is_highlighted %>data-current-slide="true" data-highlighted<% end %>
+  id="carousel-plans-summary-tabpanel-<%= index %>"
+  <%# since tabpanel is used only on mobile, those attrs are set dynamically in JS %>
+  data-role="tabpanel"
+  data-aria-labelledby="carousel-plans-summary-tab-<%= index %>"
+  <% if is_highlighted %>
+    data-current-slide="true" data-highlighted
+  <% end %>
 >
   <%# Plan header %>
   <div class="flex flex-col gap-40">

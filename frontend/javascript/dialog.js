@@ -5,6 +5,11 @@ export const initDialog = (id, { onUserOpen, carousel }) => {
   const body = document.querySelector("body");
   dialog.on("show", function () {
     body.setAttribute("data-dialog-open", "true");
+    if (dialog.$el.querySelector("[data-default-dialog-focus]")) {
+      setTimeout(() => {
+        dialog.$el.querySelector("[data-default-dialog-focus]").focus();
+      }, 0);
+    }
   });
 
   dialog.on("hide", function () {

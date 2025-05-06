@@ -1,5 +1,7 @@
 <div
   data-items-id="<%= locals[:items_id] %>"
+  role="tablist"
+  aria-label="<%= locals[:nav_label] %>"
   class="items-slidingButtons flex flex-wrap justify-center p-4 rounded-12 gap-4 relative <%= locals[:classes] %>"
 >
   <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white <%= locals[:sliding_bg_classes] %>"></div>
@@ -7,7 +9,17 @@
     <button
       class="flex relative z-10 justify-center items-center gap-8 px-24 py-6 rounded-8 group"
       data-index="<%= index %>"
-      <% if locals[:initial_index] == index %>data-current="true"<% end %>
+      id="<%= locals[:items_id] %>-tab-<%= index %>"
+      aria-controls="<%= locals[:items_id] %>-tabpanel-<%= index %>"
+      role="tab"
+      <% if locals[:initial_index] == index %>
+        data-current="true"
+        tabindex="0"
+        aria-selected="true"
+      <% else %>
+        tabindex="-1"
+        aria-selected="false"
+      <% end %>
     >
       <% if item[:icon] %>
         <%= render Icon.new item[:icon], size: locals[:icon_size] || 18  %>
