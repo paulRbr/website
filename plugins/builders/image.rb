@@ -21,21 +21,32 @@ class Builders::Image < SiteBuilder
 
     attrs = "src=\"#{image_url(imagepath, options)}\" " + image_size(imagepath, options)
 
-    if !@@use_cloudflare || imagepath.end_with?(".svg")
+    if !@@use_cloudflare || imagepath.end_with?(".svg") || !options[:width]
       return attrs
     end
 
     # add optimized sizing depending on screen size with cloudflare
-    steps = [500, 768, 1024, 1536, 2048, 3000]
+
+    # first handle the srcset attribute
+    # 1120 is there because its the max size of our main container. Bigger steps are there mostly for modals.
+    steps = [100, 200, 400, 500, 768, 1120, 2048, 3000]
+    if options[:width]
+      steps << options[:width]
+    end
     srcset = []
     options.delete(:height)
     steps.each do |step|
       srcset << "#{image_url(imagepath, options.merge(width: step))} #{step}w"
     end
     attrs += " srcset=\"#{srcset.join(", ")}\""
-    if options[:width] && !options[:sizes]
-      attrs += " sizes=\"(max-width: #{options[:width]}px) 100vw, #{options[:width]}px\""
+
+    # then handle the sizes attribute
+    attrs += if options[:responsive] == false
+      " sizes=\"#{options[:width]}px\""
+    else
+      " sizes=\"(max-width: #{options[:width]}px) 100vw, #{options[:width]}px\""
     end
+
     attrs
   end
 

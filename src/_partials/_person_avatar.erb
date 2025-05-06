@@ -1,7 +1,7 @@
 <div class="flex gap-8 items-center">
   <% if defined?(image) %>
     <div class="w-48 h-48 md:w-64 md:h-64 rounded-full shadow-aqua-small leading-none">
-        <img <%== image_attrs image, {width: 64} %>
+        <img <%== image_attrs image, {width: 64, responsive: false} %>
           alt=""
           loading="lazy"
           class="w-full h-full object-cover rounded-full overflow-hidden"
