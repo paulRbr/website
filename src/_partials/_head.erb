@@ -10,18 +10,8 @@
   }
 </script>
 <%= slotted :head_meta %>
+<link rel="stylesheet" href="<%= asset_path :css %>" />
 <link rel="preload" href="<%= asset_path "fonts/saans-uprights-variable-subset.woff2" %>" as="font" type="font/woff2" crossorigin fetchpriority="high">
-<%#
-  Inlining css in production may go faster depending on the final css size.
-  Let's try it for now and tinker with it later (yes, really perf-geek stuff that doesn't matter at all)
-%>
-<% if Bridgetown.env.production? %>
-  <style>
-    <%== asset_inline :css %>
-  </style>
-<% else %>
-  <link rel="stylesheet" href="<%= asset_path :css %>" />
-<% end %>
 <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
 <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
