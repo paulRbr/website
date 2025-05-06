@@ -21,7 +21,7 @@ class Builders::Image < SiteBuilder
 
     attrs = "src=\"#{image_url(imagepath, options)}\" " + image_size(imagepath, options)
 
-    if !@@use_cloudflare
+    if !@@use_cloudflare || imagepath.end_with?(".svg")
       return attrs
     end
 
