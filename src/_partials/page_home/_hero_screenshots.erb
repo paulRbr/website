@@ -72,6 +72,9 @@
           >
             <img
               <%== image_attrs feature[:image], {width: 1094} %>
+              <% if index == 0 %>
+                fetchpriority="high"
+              <% end %>
               alt="Bump.sh is your <%= feature[:title] %>"
               class="w-full h-auto rounded-8 md:rounded-16 overflow-hidden"
             />
