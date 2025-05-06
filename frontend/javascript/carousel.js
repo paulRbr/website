@@ -261,12 +261,13 @@ const handleTouchEvents = (carousel, options) => {
 
       // If scrolling vertically, let the default scroll behavior happen
       if (isScrolling) {
+        // Do not preventDefault, allow vertical scroll
         return;
+      } else {
+        // As soon as we know it's a horizontal drag, always prevent vertical scroll for this gesture
+        e.preventDefault();
+        e.stopPropagation();
       }
-
-      // Otherwise handle horizontal carousel movement
-      e.preventDefault();
-      e.stopPropagation();
 
       if (!isDragging) {
         isDragging = true;
