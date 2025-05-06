@@ -1,6 +1,6 @@
 @layer components {
   .cms {
-    @apply body-2 flex flex-col gap-16;
+    @apply body-1 flex flex-col gap-30;
   }
 
   .cms h1 {
@@ -28,7 +28,7 @@
   }
 
   .cms :where(h2, h3, h4, h5, h6):not(:first-child) {
-    @apply mt-32;
+    @apply mt-15;
   }
 
   .cms strong {
@@ -44,19 +44,20 @@
   }
 
   .cms ul {
-    @apply list-disc pl-32;
+    @apply list-disc pl-40;
   }
 
   .cms ol {
-    @apply list-decimal pl-32;
+    @apply list-decimal pl-40;
   }
 
   .cms blockquote > p {
-    @apply p-24 bg-aqua-100 border-b border-aqua-400 rounded-tl-8 rounded-tr-8;
+    @apply block p-32 bg-aqua-100 border-b border-aqua-400 rounded-tl-8 rounded-tr-8;
+  }
   }
 
   .cms [class*="language-"] > .highlight {
-    @apply p-24 border-b border-black-50 rounded-8;
+    @apply p-32 border-b border-black-50 rounded-8;
   }
 
   .cms code {
