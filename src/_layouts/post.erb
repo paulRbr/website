@@ -79,7 +79,10 @@ layout: default
     <%= render 'section_heading', locals: {
       title: 'Related articles',
       description: 'We think you might like these articles too.',
-      lvl: 2
+      lvl: 2,
+      # just force an empty content variable to avoid the partial to take the post `content`
+      # (I just didn't find how to handle this in a cleaner way by looking at bridgetown docs and code)
+      content: ''
     } %>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-32 mx-auto w-fit">
       <% resource.data.related_posts.each do |related_post| %>
