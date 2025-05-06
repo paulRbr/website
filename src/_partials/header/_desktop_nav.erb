@@ -1,9 +1,4 @@
 <% dropdown_styles = 'js-navDropdownContent hidden border border-t-0 border-black-100 opacity-0 absolute -mt-1 -mx-1 top-full z-30 left-0 right-0 w-full bg-white p-24 gap-16'%>
-<style>
-  .js-headerContent:hover .js-desktopNav > ul > li:not([data-open]) > :is(a, button):not(:hover) {
-    opacity: 0.6;
-  }
-</style>
 <nav aria-label="Main navigation" role="navigation" class="hidden md:block js-desktopNav">
   <ul role="list" class="navItems flex gap-12">
     <% menu_items.each do |item| %>
