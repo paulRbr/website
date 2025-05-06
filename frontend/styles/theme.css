@@ -14,14 +14,14 @@ This is a good way to be explicit about the design system.
   --*: initial;
   --font-sans: Saans, "Saans Fallback", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: Saans, "Saans Fallback", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-mono: "Saans Mono", "Saans Fallback", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --default-font-family: var(--font-sans);
   --font-sans-wght: 380;
-  --font-sans-ital: 0;
-  --font-sans-mono: 0;
-  --font-sans--font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+  --font-sans--font-variation-settings: "wght" var(--font-sans-wght);
+  /* tailwind font weights are only used by the mono font. see our `vfont-*` utilities for the main, variable font. */
+  --font-weight-regular: 380;
+  --font-weight-semibold: 670;
   --color-aqua-50: hsl(192 100% 98%);
   --color-aqua-100: hsl(193 100% 95%);
   --color-aqua-200: hsl(193 82% 89%);

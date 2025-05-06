@@ -1,16 +1,15 @@
 # Font handling
 
-Bump.sh uses one custom font-face in multiple variants for all its type: [Saans](https://displaay.net/typeface/saans-collection/).
+Bump.sh uses a custom font-face for all its type: [Saans](https://displaay.net/typeface/saans-collection/).
 
-## Variable font
+## Font files
 
-We use a variable font file. It allows us to render the font in multiple weights/italic/mono with one unique woff2 file.
-
-_Note: for some reason, the variable font file in the drive folder only has the `wght` font axe and misses the `ital` and `MONO` axes. For now I snatched the testing font on the displaay website to have a complete variable font file…_
+- the main heading/body font is a variable font file (_Saans Uprights_). It allows us to render the font in multiple weights with one unique woff2 file.
+- the mono font is not a variable font, so we have two files: one for the regular weight and one for the semibold weight.
 
 ### Font-related CSS rules
 
-With our variable font, the "normal way" to change font-weight, font-style and fixed width (mono) is not done with classic `font-weight` for `font-style` rules, but with `font-variation-settings`.
+With our variable font, the tailwind "normal way" to change font-weight is not done with classic `font-weight` for `font-style` rules, but with `font-variation-settings`.
 
 This is why specific `vfont-*` tailwind utilities are added. They match the naming of default tailwind utilities with a _v_ prefix (like _variable_ font) and change the font rendering correctly.
 
@@ -18,13 +17,25 @@ This is why specific `vfont-*` tailwind utilities are added. They match the nami
 
 For extra performance chef's kiss moment, we do what is called "font subsetting". We remove the characters we assume won't ever appear on the website. This small trick has a big impact on the font file size, almost dividing it by 2.
 
-We do this with [glyphhanger](https://github.com/zachleat/glyphhanger). The subsetted font is built locally while developing the website, and tracked in git to ease up building. This is done because glyphhanger depends on a few python packages that might be troublesome to have required on cloud services building the static website.
+We do this with [glyphhanger](https://github.com/zachleat/glyphhanger). The subsetted fonts are built locally while developing the website, and tracked in git to ease up building. This is done because glyphhanger depends on a few python packages that might be troublesome to have required on cloud services building the static website.
 
-The current subset has been built with this command:
+The current subsets have been built with these commands:
 
 ```bash
 glyphhanger \
-  --subset="./saans-variable.woff2" \
+  --subset="./saans-uprights.woff2" \
+  --formats=woff2 \
+  --output=. \
+  --whitelist="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀàâäÇçèÉÊËéêëÏîïÔôùûŒœÆ  &•#…€$~˚°%\_=+-×÷\*/[]{}()<>,.:;?@«»©™←↑→↓↖↗↘↙√≤≥'\!\’\“\”\\\`\""
+
+glyphhanger \
+  --subset="./saans-mono-regular.woff2" \
+  --formats=woff2 \
+  --output=. \
+  --whitelist="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀàâäÇçèÉÊËéêëÏîïÔôùûŒœÆ  &•#…€$~˚°%\_=+-×÷\*/[]{}()<>,.:;?@«»©™←↑→↓↖↗↘↙√≤≥'\!\’\“\”\\\`\""
+
+glyphhanger \
+  --subset="./saans-mono-semibold.woff2" \
   --formats=woff2 \
   --output=. \
   --whitelist="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÀàâäÇçèÉÊËéêëÏîïÔôùûŒœÆ  &•#…€$~˚°%\_=+-×÷\*/[]{}()<>,.:;?@«»©™←↑→↓↖↗↘↙√≤≥'\!\’\“\”\\\`\""
@@ -40,9 +51,9 @@ You might need to tinker with the whitelist if you happen to write names of Swed
 
 _This setup can eventually be improved so that glyphhanger [crawls the whole website](https://github.com/zachleat/glyphhanger?tab=readme-ov-file#use-the-spider-to-gather-urls-from-links) and whitelists by itself all necessary characters. But that's a rabbit hole I won't get into :)_
 
-### When updating the subsetted font
+### When updating the subsetted fonts
 
 When you run the glyphhanger command with a new whitelist, don't forget to:
 
-- update the command in this README
-- update the unicode-range of the `@font-face` rule in the CSS. The unicode-range is in the glyphhanger command output.
+- update the commands in this README
+- update the unicode-range of the `@font-face` rules in the CSS. The unicode-range is in the glyphhanger command output.

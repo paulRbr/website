@@ -10,37 +10,18 @@ Writing our own utility classes for our variable font instead of re-declaring de
   - overriding default utility doesn't work, it just adds a new declaration in addition to the default one
   - having both font-style/font-weight (default utility) + font-variation-settings (custom utility)
     would be problematic depending on browsers, as they can add both a virtual weight + the variable font weight styling
-    and I'd rather stick to "default tailwind" as much as possible.
 */
-@utility vfont-italic {
-  --font-sans-ital: 10;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
-}
-@utility vfont-not-italic {
-  --font-sans-ital: 0;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
-}
 @utility vfont-regular {
   --font-sans-wght: 380;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+  font-variation-settings: "wght" var(--font-sans-wght);
 }
 @utility vfont-medium {
   --font-sans-wght: 570;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+  font-variation-settings: "wght" var(--font-sans-wght);
 }
 @utility vfont-semibold {
   --font-sans-wght: 670;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
-}
-@utility vfont-mono {
-  --font-sans-mono: 100;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+  font-variation-settings: "wght" var(--font-sans-wght);
 }
 
 /* Text type utilities. Naming matches figma design. */
@@ -67,13 +48,13 @@ Writing our own utility classes for our variable font instead of re-declaring de
 }
 
 @utility private-capped {
-  @apply vfont-mono leading-[normal] tracking-[2%] uppercase;
+  @apply font-mono leading-[normal] tracking-[2%] uppercase;
 }
 @utility capped-small {
-  @apply private-capped vfont-semibold text-[0.75rem];
+  @apply private-capped font-semibold text-[0.75rem];
 }
 @utility capped-big {
-  @apply private-capped vfont-regular text-[0.875rem];
+  @apply private-capped font-regular text-[0.875rem];
 }
 
 @utility private-body {

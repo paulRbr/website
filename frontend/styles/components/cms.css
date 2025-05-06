@@ -60,6 +60,6 @@
   }
 
   .cms code {
-    @apply vfont-mono;
+    @apply font-mono;
   }
 }
