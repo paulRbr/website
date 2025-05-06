@@ -5,18 +5,11 @@ More specific/complete css utilities should be declared as tailwind "components"
 Note: utilities prefixed with "private-" are here only to help build other utilities,
 and are not intended to be used in the templates.
 */
-
-@utility font-mono {
-  --font-sans-mono: 100;
-  font-variation-settings: "wght" var(--font-sans-wght),
-    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
-}
 /*
 Writing our own utility classes for our variable font instead of re-declaring default tailwind utilities because:
   - overriding default utility doesn't work, it just adds a new declaration in addition to the default one
   - having both font-style/font-weight (default utility) + font-variation-settings (custom utility)
     would be problematic depending on browsers, as they can add both a virtual weight + the variable font weight styling
-  - the 'font-mono' above is okay as default utility rule don't collapse with our custom needs,
     and I'd rather stick to "default tailwind" as much as possible.
 */
 @utility vfont-italic {
@@ -41,6 +34,11 @@ Writing our own utility classes for our variable font instead of re-declaring de
 }
 @utility vfont-semibold {
   --font-sans-wght: 670;
+  font-variation-settings: "wght" var(--font-sans-wght),
+    "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
+}
+@utility vfont-mono {
+  --font-sans-mono: 100;
   font-variation-settings: "wght" var(--font-sans-wght),
     "ital" var(--font-sans-ital), "MONO" var(--font-sans-mono);
 }
@@ -69,7 +67,7 @@ Writing our own utility classes for our variable font instead of re-declaring de
 }
 
 @utility private-capped {
-  @apply font-mono leading-[normal] tracking-[2%] uppercase;
+  @apply vfont-mono leading-[normal] tracking-[2%] uppercase;
 }
 @utility capped-small {
   @apply private-capped vfont-semibold text-[0.75rem];
