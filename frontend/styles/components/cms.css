@@ -51,9 +51,13 @@
     @apply list-decimal pl-40;
   }
 
+  .cms p > em:only-child,
   .cms blockquote > p {
     @apply block p-32 bg-aqua-100 border-b border-aqua-400 rounded-tl-8 rounded-tr-8;
   }
+
+  .cms em {
+    font-style: normal;
   }
 
   .cms [class*="language-"] > .highlight {
