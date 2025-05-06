@@ -17,6 +17,7 @@ export const initImagesFadeshow = (containerId, { onChange = null } = {}) => {
   const container = document.getElementById(containerId);
   handleNavClicks(container, { onChange });
   handleSlidingButtonsClicks(container, { onChange });
+  handleSwipeEvents(container, { onChange });
 };
 
 const handleNavClicks = (container, { onChange }) => {
@@ -51,6 +52,59 @@ const handleSlidingButtonsClicks = (container, options) => {
     onClick: (button, index) => {
       showImage(container, index);
     },
+  });
+};
+
+const handleSwipeEvents = (container, { onChange }) => {
+  let startX = null;
+  let startY = null;
+  let isSwiping = false;
+
+  container.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 1) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isSwiping = true;
+    }
+  });
+
+  container.addEventListener(
+    "touchmove",
+    (e) => {
+      // Optionally, prevent vertical scroll if horizontal swipe is detected
+      if (!isSwiping || e.touches.length !== 1) {
+        return;
+      }
+      const dx = e.touches[0].clientX - startX;
+      const dy = e.touches[0].clientY - startY;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        e.preventDefault(); // Prevent horizontal scroll
+      }
+    },
+    { passive: false }
+  );
+
+  container.addEventListener("touchend", (e) => {
+    if (!isSwiping) {
+      return;
+    }
+    isSwiping = false;
+    if (startX === null || startY === null) {
+      return;
+    }
+    const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+    const dx = endX - startX;
+    const dy = endY - startY;
+    const threshold = 30; // Minimum px distance to be considered a swipe
+    // Only trigger swipe if horizontal movement is at least twice the vertical movement
+    if (Math.abs(dx) > threshold && Math.abs(dx) > Math.abs(dy) * 2) {
+      const direction = dx < 0 ? 1 : -1; // 1 for next, -1 for prev
+      const image = showSiblingImage(container, direction);
+      onChange?.({ direction: direction === 1 ? "next" : "prev", image });
+    }
+    startX = null;
+    startY = null;
   });
 };
 
