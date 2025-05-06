@@ -61,7 +61,7 @@
   }
 
   .cms [class*="language-"] > .highlight {
-    @apply p-32 border-b border-black-50 rounded-8;
+    @apply p-32 border-b border-black-50 rounded-8 overflow-auto text-[1rem];
   }
 
   .cms code {
