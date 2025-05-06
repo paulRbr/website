@@ -16,8 +16,11 @@ const burger = () => {
 
   const open = () => {
     toggleBackdrop(true);
-    updateNavHeight();
-    updateNavPosition();
+    /* timeout a tiny bit to let the browser time to maybe show its own navbar, reducing the actual height we'll want to take */
+    setTimeout(() => {
+      updateNavHeight();
+      updateNavPosition();
+    }, 100);
     document.addEventListener("focusin", closeOnBlur);
     openSlideDown(toggle, "header");
   };
