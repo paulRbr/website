@@ -46,7 +46,12 @@
       </h2>
       <div class="flex flex-wrap justify-center items-center w-full gap-32 md:gap-64">
         <% companyLogos.each do |companyLogo| %>
-          <%= svg companyLogo[:image], class: "h-32 w-auto", role: "img", "aria-label": companyLogo[:name] %>
+          <%= render 'company_logo', locals: {
+            image: companyLogo[:image],
+            label: companyLogo[:name],
+            height: 32,
+            classes: 'h-32'
+          } %>
         <% end %>
       </div>
     </div>

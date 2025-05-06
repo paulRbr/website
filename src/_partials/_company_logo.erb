@@ -1,0 +1,10 @@
+<% if image.end_with?('.svg') %>
+  <%= svg image, class: "w-auto #{classes}", **(locals[:label] ? { role: "img", "aria-label": locals[:label] } : { "aria-hidden": true }) %>
+<% else %>
+  <img
+    loading="lazy"
+    <%== image_attrs image, {height: locals[:height], responsive: false} %>
+    alt="<%= locals[:label] || "" %>"
+    class="w-auto <%= classes %>"
+  >
+<% end %>
