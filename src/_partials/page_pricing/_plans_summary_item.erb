@@ -47,7 +47,7 @@
     <%# Features list %>
     <div class="flex flex-col gap-16">
       <h4 class="body-3 vfont-semibold"><%= features_description %></h4>
-      <ul role="list" class="flex flex-col gap-6">
+      <ul role="list" class="flex flex-col gap-12">
         <% features.each do |feature| %>
           <li class="flex items-start gap-8">
             <%= render Icon.new "checkbox-circle-fill", class: "flex-shrink-0 mt-2 text-black-600" %>
