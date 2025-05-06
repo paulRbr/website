@@ -26,7 +26,8 @@ const initWhyJoinUsImages = () => {
  */
 const initTeamMembersDialog = () => {
   const carousel = initCarousel("carousel-team-members", {
-    controlled: true,
+    enableSwipe: true,
+    followFocus: false,
     screenReaderMode: "current",
   });
 

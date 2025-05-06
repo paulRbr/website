@@ -20,7 +20,9 @@ import {
  * @param {HTMLElement} carousel
  * @param {Object} options
  * @param {boolean} options.controlled - (default false) if true, you must manually call goToSlide to change slides (no user touch-grab, no tab-to-focus, etc.). (in that case you might need to handle window resize yourself depending on your carousel layout)
- * @param {boolean} options.screenReaderMode - (default 'all') if 'all', all slides are exposed to screen reader users linearly. If 'current', only the current slide is exposed.
+ * @param {boolean} options.followFocus - (default true) if true, carousel auto moves to a slide when users press Tab and the activeElement becomes something in a non-current slide. If options.controlled is true, this is ignored.
+ * @param {boolean} options.enableSwipe - (default true) if true, carousel moves to a slide when users swipes the carousel. If options.controlled is true, this is ignored.
+ * @param {boolean} options.screenReaderMode - (default 'all') if 'all', all slides are exposed to screen reader users linearly. If 'current', only the current slide is exposed, also meaning they can't be focused with keyboard.
  * @param {Function} options.onSlideChange - a function that will be called when the slide changes with the slide dom el and its index as arguments
  * @returns an object with a goToSlide function tied to the initialized carousel and a reset function to disable all carousel behavior
  */
@@ -194,7 +196,7 @@ const handleSlideClicks = (carousel, options) => {
  * When focusing an element inside a slide, go to it
  */
 const handleFocusInSlides = (carousel, options) => {
-  if (options.controlled) {
+  if (options.controlled || options.followFocus === false) {
     return;
   }
   getSlides(carousel).forEach((slide, index) => {
@@ -225,7 +227,7 @@ const handleWindowResize = (carousel, options) => {
 };
 
 const handleTouchEvents = (carousel, options) => {
-  if (options.controlled) {
+  if (options.controlled || options.enableSwipe === false) {
     return;
   }
   const track = getTrack(carousel);
