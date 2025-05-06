@@ -4,12 +4,12 @@
 
     <div class="grid grid-cols-2 md:grid-cols-3 gap-24 md:gap-56">
       <% collections.team_members.resources.each_with_index do |member, index| %>
-        <div class="flex flex-col items-center gap-8 w-fit mx-auto stretched-link-container">
+        <div class="flex flex-col items-center gap-8 w-fit mx-auto stretched-link-container group/member">
           <div class="flex flex-col items-center gap-16">
             <div class="rounded-24 overflow-hidden w-[104px] h-[104px] shadow-aqua-large">
               <img
                 <%== image_attrs "/images/team_members/#{member.data.slug}.png", {width: 104} %>
-                class="w-full h-full object-cover saturate-0 opacity-80"
+                class="w-full h-full object-cover saturate-0 opacity-80 group-hover/member:saturate-100 group-hover/member:opacity-100 transition-all duration-300"
                 loading="lazy"
                 alt=""
               >
@@ -80,7 +80,7 @@ to markup and style the dialog-related elements %>
                     <div class="rounded-24 overflow-hidden w-[122px] h-[122px] sm:w-[184px] sm:h-[184px]">
                       <img
                         <%== image_attrs "/images/team_members/#{member.data.slug}.png", {width: 184} %>
-                        class="object-cover saturate-0 opacity-80 aspect-square"
+                        class="object-cover aspect-square"
                         loading="lazy"
                         alt=""
                       >
