@@ -5,9 +5,9 @@ layout: page
 
 **Last updated: September 30th, 2024**
 
-Bump.sh is a solution developed by It Ducks, accessible as a Software as a Service (“<ins>SaaS</ins>”) through its Website.
+Bump.sh is a solution developed by It Ducks, accessible as a Software as a Service (“<em>SaaS</em>”) through its Website.
 
-This privacy policy (the “<ins>Privacy Policy</ins>”) describes It Ducks’ policies and procedures on the collection,
+This privacy policy (the “<em>Privacy Policy</em>”) describes It Ducks’ policies and procedures on the collection,
 use, and disclosure of Users’ information and personal data when they use It Ducks’ website and Solution, as defined
 under Article 1.
 
@@ -15,11 +15,11 @@ It Ducks ensures that the Users’ Personal Data, as defined below, is collected
 provisions of:
 
 * French law no. 78-17 of 6 January 1978 on data processing, data files, and individual liberties.
-* Regulation no 2016/679 of the European Parliament and of the Council of 27 April 2016 (the “<ins>GDPR</ins>”).
+* Regulation no 2016/679 of the European Parliament and of the Council of 27 April 2016 (the “<em>GDPR</em>”).
 
-(together, the “<ins>Data Protection Laws</ins>”).
+(together, the “<em>Data Protection Laws</em>”).
 
-It Ducks’ Privacy Policy is part of its general terms of services (the “<ins>T&Cs</ins>”), available on its Website.
+It Ducks’ Privacy Policy is part of its general terms of services (the “<em>T&Cs</em>”), available on its Website.
 
 **1\. Definitions**
 
@@ -28,12 +28,14 @@ The following definitions shall have the same meaning regardless of whether they
 
 <table>
   <thead>
-    <th>
-      Definition
-    </th>
-    <th>
-      Description of definition
-    </th>
+    <tr>
+      <th>
+        Definition
+      </th>
+      <th>
+        Description of definition
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -119,7 +121,7 @@ The following definitions shall have the same meaning regardless of whether they
     <tr>
       <td>“Website”
       </td>
-      <td>refers to https://<a href="http://meilisearch.com">bump.sh</a> and its sub-domains (e.g https://***.bumph.sh).
+      <td>refers to <a href="https://bump.sh">https://bump.sh</a> and its sub-domains (e.g https://***.bumph.sh).
       </td>
     </tr>
   </tbody>
@@ -130,7 +132,7 @@ The following definitions shall have the same meaning regardless of whether they
 
 **2\. Processing of Personal Data**
 
-2.1\. <ins>Data controller</ins>
+2.1\. <em>Data controller</em>
 
 It Ducks acts as data controller for the Data collected from the Client exclusively for the creation of the Account and
 the performance of the contract and the follow-up of the customer relationship. The Company does not collect and/or
@@ -142,25 +144,27 @@ To exercise their rights or for any questions, Users may contact It Ducks by ema
 
 
 
-2.2\. <ins>Lawfulness of the Processing</ins>
+2.2\. <em>Lawfulness of the Processing</em>
 
 The Privacy Policy must be accepted without any reserve (i) before accessing the Website and the Solution and (ii) each
 time It Ducks modifies the Policy Privacy.
 
 In the event the User does not accept It Ducks’ Privacy Policy, the User will not be able to access the Solution.
 
-2.3\. <ins>Types of data collected</ins>
+2.3\. <em>Types of data collected</em>
 
 The following Data is automatically collected when Users use the Website and the Solution:
 
 <table>
   <thead>
-    <th>
-      Type
-    </th>
-    <th>
-      Data collected
-    </th>
+    <tr>
+      <th>
+        Type
+      </th>
+      <th>
+        Data collected
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -179,17 +183,17 @@ The following Data is automatically collected when Users use the Website and the
       <td>Usage Data</td>
       <td>Usage Data are part of Users’ Personal Data. Usage Data may include information such as Users’:
         <ul>
-          <li>browser type.
-          <li>browser version.
-          <li>Website pages visited by Users.
-          <li>time and date of users visits.
-          <li>time spent on these pages.
-          <li>unique device identifiers.
-          <li>types of mobile device used.
-          <li>Users’ mobile device unique ID.
-          <li>IP addresses of Users’ mobile devices.
-          <li>Users’ mobile operating systems.
-          <li>types of mobile Internet browser.
+          <li>browser type.</li>
+          <li>browser version.</li>
+          <li>Website pages visited by Users.</li>
+          <li>time and date of users visits.</li>
+          <li>time spent on these pages.</li>
+          <li>unique device identifiers.</li>
+          <li>types of mobile device used.</li>
+          <li>Users’ mobile device unique ID.</li>
+          <li>IP addresses of Users’ mobile devices.</li>
+          <li>Users’ mobile operating systems.</li>
+          <li>types of mobile Internet browser.</li>
           <li>
             unique device identifiers.
           </li>
@@ -205,7 +209,7 @@ The following Data is automatically collected when Users use the Website and the
 
 
 
-2.4\. <ins>Legal basis of the Processing</ins>
+2.4\. <em>Legal basis of the Processing</em>
 
 Data is essential for It Ducks to provide Users access to the Website and the Solution.
 
@@ -223,7 +227,7 @@ In such case, It Ducks will no longer be able to provide users with its Solution
 
 
 
-2.5\. <ins>Purpose of the Processing</ins>
+2.5\. <em>Purpose of the Processing</em>
 
 It Ducks may use Data for the following purposes:
 
@@ -237,19 +241,21 @@ Solution.
 functionalities of the Solution (including security updates when necessary) or the launch of new services).
 * **manage Users’ requests**.
 
-2.6\. <ins>Retention of Data</ins>
+2.6\. <em>Retention of Data</em>
 
 It Ducks keeps Data for:
 
 
 <table>
   <thead>
-    <th>
-      Processing
-    </th>
-    <th>
-      Description of processing
-    </th>
+    <tr>
+      <th>
+        Processing
+      </th>
+      <th>
+        Description of processing
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -289,7 +295,7 @@ It Ducks keeps Data for:
       </td>
       <td>
         information relating to a prospect will be kept for three (3) years after the date of the last message from the
-        prospect, as per the French National commission for information technology and liberties (the “<ins>CNIL</ins>”)
+        prospect, as per the French National commission for information technology and liberties (the “<em>CNIL</em>”)
         recommendation.
       </td>
     </tr>
@@ -299,7 +305,7 @@ It Ducks keeps Data for:
 
 
 
-2.7\. <ins>International transfers of Data</ins>
+2.7\. <em>International transfers of Data</em>
 
 Data may be transferred to servers located outside of France.
 
@@ -426,7 +432,7 @@ Users’ consents to this Privacy Policy embody Users’ agreement to these tran
 
 
 
-2.8\. <ins>Security measures</ins>
+2.8\. <em>Security measures</em>
 
 To ensure the security of Personal Data, It Ducks has set up the following technical measures:: access controls with
 login and passwords, computer protection measures, development of digital certificates, firewalls, etc.
@@ -436,13 +442,14 @@ best efforts, It Ducks cannot guarantee its absolute security.
 
 
 
-2.9\. <ins>Users’ rights</ins>
+2.9\. <em>Users’ rights</em>
 
 As per the Data Protection Laws, Users have a right of access, rectification, deletion of their Data, limitation or
 opposition to their processing, a right to define guidelines for the storage, deletion and communication of their Data
 after their death, and the right to portability of their Data.
 
 For any claim or request, Users can contact:
+
 - It Ducks by writing at [hello@bump.sh](mailto:hello@bump.sh); or
 - the CNIL at [https://www.cnil.fr/fr/plaintes](https://www.cnil.fr/fr/plaintes).
 
@@ -453,7 +460,7 @@ parties’ sites or services which would appear on its Website and/or Solution.
 
 
 
-**4\. Changes to the Privacy Policy**</ins>
+**4\. Changes to the Privacy Policy**
 
 It Ducks reserves the right to adapt or modify the Privacy Policy at any time by publishing an updated version on the
 Website and the Solution.
