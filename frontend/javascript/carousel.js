@@ -242,6 +242,7 @@ const handleTouchEvents = (carousel, options) => {
   if (options.controlled || options.enableSwipe === false) {
     return;
   }
+  const trackContainer = getTrackContainer(carousel);
   const track = getTrack(carousel);
   let startX = 0;
   let startY = 0;
@@ -250,7 +251,7 @@ const handleTouchEvents = (carousel, options) => {
   let startPosition = 0;
   let isScrolling = null;
 
-  track.addEventListener("touchstart", (e) => {
+  trackContainer.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
     startPosition = getCurrentTranslateX(track);
@@ -258,7 +259,7 @@ const handleTouchEvents = (carousel, options) => {
     disableAnimation(track);
   });
 
-  track.addEventListener(
+  trackContainer.addEventListener(
     "touchmove",
     (e) => {
       const currentX = e.touches[0].clientX;
@@ -274,6 +275,7 @@ const handleTouchEvents = (carousel, options) => {
       // If scrolling vertically, let the default scroll behavior happen
       if (isScrolling) {
         // Do not preventDefault, allow vertical scroll
+        enableAnimation(track);
         return;
       } else {
         // As soon as we know it's a horizontal drag, always prevent vertical scroll for this gesture
@@ -291,7 +293,7 @@ const handleTouchEvents = (carousel, options) => {
     { passive: false }
   );
 
-  track.addEventListener("touchend", () => {
+  trackContainer.addEventListener("touchend", () => {
     if (!isDragging) return;
     isDragging = false;
     isScrolling = null;
@@ -321,6 +323,10 @@ const handleTouchEvents = (carousel, options) => {
 
 const getTrack = (carousel) => {
   return carousel.querySelector("[data-carousel-track]");
+};
+
+const getTrackContainer = (carousel) => {
+  return carousel.querySelector("[data-carousel-track-container]");
 };
 
 const getSlides = (carousel) => {

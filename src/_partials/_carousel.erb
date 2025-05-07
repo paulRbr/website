@@ -4,7 +4,7 @@
     class="carousel-<%= locals[:id] %> relative flex flex-col <%= locals[:container_classes] || '' %>"
     <%= locals[:container_attrs] || '' %>
   >
-    <div class="relative w-full overflow-hidden <%= locals[:inner_classes] || '' %>">
+    <div data-carousel-track-container class="relative w-full overflow-hidden <%= locals[:inner_classes] || '' %>">
       <%= locals[:before_track] || '' %>
       <div
         data-carousel-track

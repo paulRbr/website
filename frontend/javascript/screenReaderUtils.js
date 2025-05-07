@@ -3,6 +3,7 @@ const tabbableElementsSelector =
 
 export const enableSectionForScreenReaders = (container) => {
   container.removeAttribute("aria-hidden");
+  container.removeAttribute("data-sr-util-disabled");
   container.querySelectorAll("[data-sr-util-disabled]").forEach((element) => {
     element.removeAttribute("data-sr-util-disabled");
     element.removeAttribute("aria-hidden");
