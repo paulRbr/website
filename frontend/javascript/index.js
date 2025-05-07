@@ -7,7 +7,9 @@ import { init as initDesktopNav } from "./desktopNav";
 import { init as initMobileNav } from "./mobileNav";
 import { init as initPrefetch } from "./prefetch";
 
-initHeader();
-initDesktopNav();
-initMobileNav();
-initPrefetch();
+document.addEventListener("DOMContentLoaded", () => {
+  initHeader();
+  initDesktopNav();
+  initMobileNav();
+  initPrefetch();
+});

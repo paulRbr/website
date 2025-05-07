@@ -12,6 +12,8 @@
     document.documentElement.classList.add("motion-reduce");
   }
 </script>
+<script src="<%= asset_path 'javascript/index.js' %>"></script>
+<%= slotted :scripts %>
 <%= slotted :head_meta %>
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <link rel="preload" href="<%= asset_path "fonts/saans-uprights-variable-subset.woff2" %>" as="font" type="font/woff2" crossorigin fetchpriority="high">

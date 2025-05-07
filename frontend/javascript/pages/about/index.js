@@ -34,5 +34,7 @@ const initTeamMembersDialog = () => {
   initDialog("dialog-team-members", { carousel });
 };
 
-initWhyJoinUsImages();
-initTeamMembersDialog();
+document.addEventListener("DOMContentLoaded", () => {
+  initWhyJoinUsImages();
+  initTeamMembersDialog();
+});
