@@ -6,11 +6,13 @@
     - href (optional if dropdown is true, required otherwise)
     - dropdown (optional, default: false), set to true to render a button with an arrow icon
 %>
-<% styles = 'flex relative z-40 items-center gap-4 small-link py-16 px-4 transition-all border-b-2 border-transparent hover:border-black-900' %>
+<% styles = 'flex relative z-40 items-center gap-4 small-link py-16 px-4 transition-all border-b-2 aria-expanded:border-black-900' %>
+<% not_current_page_styles = 'border-transparent hover:border-black-900!' %>
+<% current_page_styles = 'border-black-900 group-data-fixed/header:border-black-900 group-data-dark/header:border-white group-data-fixed/header:group-hover/header:border-transparent group-hover/header:border-transparent group-data-open/header:border-transparent hover:border-black-900!' %>
 
 <% if defined?(dropdown) && dropdown %>
   <button
-    class="<%= styles %> js-navToggle"
+    class="<%= styles %> <%= not_current_page_styles %> js-navToggle"
     aria-controls="desktop-nav-dropdown-<%= id %>"
     aria-expanded="false"
   >
@@ -18,5 +20,5 @@
     <%= render Icon.new 'arrow-down-s-line', size: 12, classes: 'js-navToggleIcon transition-all relative top-[2px]' %>
   </button>
 <% else %>
-  <a class="<%= styles %>" href="<%= href %>" data-prefetch="hover"><%= title %></a>
+  <a class="<%= styles %> <%= href == resource.relative_url ? current_page_styles : not_current_page_styles %>" href="<%= href %>" data-prefetch="hover"><%= title %></a>
 <% end %>
