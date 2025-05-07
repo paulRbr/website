@@ -4,7 +4,7 @@
   aria-label="<%= locals[:nav_label] %>"
   class="items-slidingButtons flex flex-wrap justify-center p-4 rounded-12 gap-4 relative <%= locals[:classes] %>"
 >
-  <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 transition-all duration-300 rounded-8 bg-white <%= locals[:sliding_bg_classes] %>"></div>
+  <div data-sliding-buttons-bg class="z-0 absolute bottom-4 top-4 left-4 motion-safe:transition-all motion-safe:duration-300 rounded-8 bg-white <%= locals[:sliding_bg_classes] %>"></div>
   <% items.each_with_index do |item, index| %>
     <button
       class="flex relative z-10 justify-center items-center gap-8 px-24 py-6 rounded-8 group"

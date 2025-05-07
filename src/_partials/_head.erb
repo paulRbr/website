@@ -8,6 +8,9 @@
   if (window.innerWidth < 450 && window.innerHeight < 950) {
     document.documentElement.classList.add("is-mobile");
   }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    document.documentElement.classList.add("motion-reduce");
+  }
 </script>
 <%= slotted :head_meta %>
 <link rel="stylesheet" href="<%= asset_path :css %>" />

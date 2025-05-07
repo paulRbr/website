@@ -334,11 +334,19 @@ const getSlides = (carousel) => {
 };
 
 const disableAnimation = (track) => {
-  track.classList.remove("transition-transform", "duration-500", "ease-in-out");
+  track.classList.remove(
+    "motion-safe:transition-transform",
+    "motion-safe:duration-500",
+    "motion-safe:ease-in-out"
+  );
 };
 
 const enableAnimation = (track) => {
-  track.classList.add("transition-transform", "duration-500", "ease-in-out");
+  track.classList.add(
+    "motion-safe:transition-transform",
+    "motion-safe:duration-500",
+    "motion-safe:ease-in-out"
+  );
 };
 
 const getCurrentTranslateX = (element) => {

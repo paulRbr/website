@@ -65,7 +65,11 @@ const showDropdown = (toggle, contents) => {
   toggle.setAttribute("aria-expanded", "true");
   content.closest("li").setAttribute("data-open", "true");
   content.closest(".js-headerContent").setAttribute("data-open", "true");
-  content.classList.add("flex", "animate-slide-fade-in");
+  content.classList.add(
+    "flex",
+    "animate-slide-fade-in",
+    "motion-reduce:opacity-100"
+  );
   content.classList.remove("hidden");
   icon.classList.add("rotate-180");
   contents.forEach((otherContent) => {

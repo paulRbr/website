@@ -1,3 +1,5 @@
+import { isMobile, hasReducedMotion } from "./deviceUtils";
+
 export const init = () => {
   burger();
   navDropdowns();
@@ -78,8 +80,7 @@ const updateNavHeight = () => {
   if (!header || !nav) {
     return;
   }
-  const isMobile = document.documentElement.classList.contains("is-mobile");
-  if (!isMobile) {
+  if (!isMobile()) {
     return;
   }
   const headerRect = header.getBoundingClientRect();
@@ -108,7 +109,7 @@ const updateNavPosition = () => {
 // In case you want to reuse this behavior, these dropdown toggles require a bunch of specific css classes and html attributes to work:
 // - a parent item having a `group/xxx` class (like `group/nav_item`)
 // - on the toggle button: `peer` class + aria-controls attribute + aria-expanded attribute
-// - on the content right next to it: `transition-all duration-300 hidden grid-rows-[0fr] data-closing:grid-rows-[0fr] peer-aria-expanded:grid data-opening:grid-rows-[1fr]`
+// - on the content right next to it: `motion-safe:transition-all motion-safe:duration-300 hidden grid-rows-[0fr] data-closing:grid-rows-[0fr] peer-aria-expanded:grid data-opening:grid-rows-[1fr]`
 //   and a class matching the group name like that: group-data-open/nav_item:grid-rows-[1fr]
 // - the content wraps an inner element having a `overflow-hidden` class
 //
@@ -128,35 +129,38 @@ const initToggle = (toggle, group, options = {}) => {
 const closeSlideUp = (toggle, groupSelector) => {
   const content = document.getElementById(toggle.getAttribute("aria-controls"));
   const group = toggle.closest(`.group\\/${groupSelector}`);
-  content.addEventListener(
-    "transitionend",
-    () => {
-      content.removeAttribute("data-closing");
-      group.removeAttribute("data-open");
-      toggle.setAttribute("aria-expanded", "false");
-    },
-    { once: true }
-  );
-  content.setAttribute("data-closing", "true");
+  const close = () => {
+    content.removeAttribute("data-closing");
+    group.removeAttribute("data-open");
+    toggle.setAttribute("aria-expanded", "false");
+  };
+  if (hasReducedMotion()) {
+    close();
+  } else {
+    content.addEventListener("transitionend", close, { once: true });
+    content.setAttribute("data-closing", "true");
+  }
 };
 
 const openSlideDown = (toggle, groupSelector) => {
   const content = document.getElementById(toggle.getAttribute("aria-controls"));
   const group = toggle.closest(`.group\\/${groupSelector}`);
-  content.addEventListener(
-    "transitionend",
-    () => {
-      content.removeAttribute("data-opening");
-      group.removeAttribute("data-opening");
-      group.setAttribute("data-open", "true");
-    },
-    { once: true }
-  );
-  // this triggers the removal of "hidden" class, but the menu is still at height 0
-  group.setAttribute("data-opening", "true");
-  toggle.setAttribute("aria-expanded", "true");
-  // delay the opening state after the removal of "hidden" class, to ensure there is a transition effect
-  setTimeout(() => {
-    content.setAttribute("data-opening", "true");
-  }, 20);
+  const open = () => {
+    content.removeAttribute("data-opening");
+    group.removeAttribute("data-opening");
+    group.setAttribute("data-open", "true");
+  };
+  if (hasReducedMotion()) {
+    open();
+    toggle.setAttribute("aria-expanded", "true");
+  } else {
+    content.addEventListener("transitionend", open, { once: true });
+    // this triggers the removal of "hidden" class, but the menu is still at height 0
+    group.setAttribute("data-opening", "true");
+    toggle.setAttribute("aria-expanded", "true");
+    // delay the opening state after the removal of "hidden" class, to ensure there is a transition effect
+    setTimeout(() => {
+      content.setAttribute("data-opening", "true");
+    }, 20);
+  }
 };

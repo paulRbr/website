@@ -6,7 +6,7 @@
   <% if locals[:is_initial_slide] %>
     data-current-slide
   <% end %>
-  class="transition-transform duration-500 ease-in-out w-[90%] md:w-[45rem] shrink-0 h-auto flex flex-col md:flex-row-reverse gap-32 bg-white border border-black-100 rounded-12 p-32 shadow-aqua-medium scale-90 data-current-slide:scale-100 relative data-current-slide:z-30 not-data-current-slide:cursor-pointer"
+  class="motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-in-out w-[90%] md:w-[45rem] shrink-0 h-auto flex flex-col md:flex-row-reverse gap-32 bg-white border border-black-100 rounded-12 p-32 shadow-aqua-medium scale-90 data-current-slide:scale-100 relative data-current-slide:z-30 not-data-current-slide:cursor-pointer"
 >
   <div class="flex flex-col gap-24">
     <%# we give screen reader context with a visually hidden heading before the content %>

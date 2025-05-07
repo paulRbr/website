@@ -47,7 +47,10 @@ export const setCurrentButton = (
   prevButton?.setAttribute("aria-selected", "false");
   prevButton?.setAttribute("tabindex", "-1");
   if (!animate) {
-    slidingBackground.classList.remove("transition-all", "duration-300");
+    slidingBackground.classList.remove(
+      "motion-safe:transition-all",
+      "motion-safe:duration-300"
+    );
   }
   slidingBackground.style.left = `${button.offsetLeft}px`;
   slidingBackground.style.top = `${button.offsetTop}px`;
@@ -55,7 +58,10 @@ export const setCurrentButton = (
   slidingBackground.style.height = `${button.offsetHeight}px`;
   if (!animate) {
     setTimeout(() => {
-      slidingBackground.classList.add("transition-all", "duration-300");
+      slidingBackground.classList.add(
+        "motion-safe:transition-all",
+        "motion-safe:duration-300"
+      );
     }, 100);
   }
   button.setAttribute("data-current", "true");
