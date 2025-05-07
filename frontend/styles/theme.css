@@ -104,6 +104,8 @@ This is a good way to be explicit about the design system.
   --radius-32: 2rem;
   --radius-pill: 3.125rem;
   --shadow-nav: 0 4px 28px hsla(15, 6%, 14%, 0.05);
+  --shadow-aqua-large-simple: 0rem 0.8074rem 3.0819rem 0rem
+    rgba(173, 225, 239, 0.4);
   --shadow-aqua-large: 0rem 0.2404rem 0.9176rem 0rem rgba(173, 225, 239, 0.54),
     0rem 0.8074rem 3.0819rem 0rem rgba(173, 225, 239, 0.4),
     0rem 0.49rem 13.7976rem 0rem rgba(173, 225, 239, 0.3);
