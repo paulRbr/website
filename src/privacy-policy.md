@@ -21,7 +21,7 @@ provisions of:
 
 It Ducks’ Privacy Policy is part of its general terms of services (the “<em>T&Cs</em>”), available on its Website.
 
-**1\. Definitions**
+## 1. Definitions
 
 The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
 
@@ -130,9 +130,9 @@ The following definitions shall have the same meaning regardless of whether they
 
 
 
-**2\. Processing of Personal Data**
+## 2. Processing of Personal Data
 
-2.1\. <em>Data controller</em>
+### 2.1. Data controller
 
 It Ducks acts as data controller for the Data collected from the Client exclusively for the creation of the Account and
 the performance of the contract and the follow-up of the customer relationship. The Company does not collect and/or
@@ -144,14 +144,14 @@ To exercise their rights or for any questions, Users may contact It Ducks by ema
 
 
 
-2.2\. <em>Lawfulness of the Processing</em>
+### 2.2. Lawfulness of the Processing
 
 The Privacy Policy must be accepted without any reserve (i) before accessing the Website and the Solution and (ii) each
 time It Ducks modifies the Policy Privacy.
 
 In the event the User does not accept It Ducks’ Privacy Policy, the User will not be able to access the Solution.
 
-2.3\. <em>Types of data collected</em>
+### 2.3. Types of data collected
 
 The following Data is automatically collected when Users use the Website and the Solution:
 
@@ -209,7 +209,7 @@ The following Data is automatically collected when Users use the Website and the
 
 
 
-2.4\. <em>Legal basis of the Processing</em>
+### 2.4. Legal basis of the Processing
 
 Data is essential for It Ducks to provide Users access to the Website and the Solution.
 
@@ -227,7 +227,7 @@ In such case, It Ducks will no longer be able to provide users with its Solution
 
 
 
-2.5\. <em>Purpose of the Processing</em>
+### 2.5. Purpose of the Processing
 
 It Ducks may use Data for the following purposes:
 
@@ -241,7 +241,7 @@ Solution.
 functionalities of the Solution (including security updates when necessary) or the launch of new services).
 * **manage Users’ requests**.
 
-2.6\. <em>Retention of Data</em>
+### 2.6. Retention of Data
 
 It Ducks keeps Data for:
 
@@ -305,7 +305,7 @@ It Ducks keeps Data for:
 
 
 
-2.7\. <em>International transfers of Data</em>
+### 2.7. International transfers of Data
 
 Data may be transferred to servers located outside of France.
 
@@ -432,7 +432,7 @@ Users’ consents to this Privacy Policy embody Users’ agreement to these tran
 
 
 
-2.8\. <em>Security measures</em>
+### 2.8. Security measures
 
 To ensure the security of Personal Data, It Ducks has set up the following technical measures:: access controls with
 login and passwords, computer protection measures, development of digital certificates, firewalls, etc.
@@ -442,7 +442,7 @@ best efforts, It Ducks cannot guarantee its absolute security.
 
 
 
-2.9\. <em>Users’ rights</em>
+### 2.9. Users’ rights
 
 As per the Data Protection Laws, Users have a right of access, rectification, deletion of their Data, limitation or
 opposition to their processing, a right to define guidelines for the storage, deletion and communication of their Data
@@ -453,14 +453,14 @@ For any claim or request, Users can contact:
 - It Ducks by writing at [hello@bump.sh](mailto:hello@bump.sh); or
 - the CNIL at [https://www.cnil.fr/fr/plaintes](https://www.cnil.fr/fr/plaintes).
 
-**3\. Third parties’ websites**
+## 3. Third parties’ websites
 
 It Ducks has no control over and assumes no responsibility for the content, privacy policies or practices of any third
 parties’ sites or services which would appear on its Website and/or Solution.
 
 
 
-**4\. Changes to the Privacy Policy**
+## 4. Changes to the Privacy Policy
 
 It Ducks reserves the right to adapt or modify the Privacy Policy at any time by publishing an updated version on the
 Website and the Solution.
