@@ -134,6 +134,6 @@ class Builders::Image < SiteBuilder
       height = options[:height]
       width = options[:height].to_f * ratio.to_f
     end
-    {width: width, height: height}
+    {width: width.to_i, height: height.to_i}
   end
 end
