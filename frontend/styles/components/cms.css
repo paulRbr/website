@@ -67,4 +67,25 @@
   .cms code {
     @apply font-mono;
   }
+
+  .cms table {
+    @apply w-full table-auto border-collapse;
+  }
+
+  .cms thead {
+    @apply border-b border-black-400;
+  }
+
+  .cms tbody tr {
+    @apply border-b border-black-200;
+  }
+
+  .cms th,
+  .cms td {
+    @apply p-8 text-left;
+  }
+
+  .cms th {
+    @apply vfont-medium;
+  }
 }
