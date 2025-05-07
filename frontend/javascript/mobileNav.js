@@ -1,4 +1,5 @@
 import { isMobile, hasReducedMotion } from "./deviceUtils";
+import { prefetch } from "./prefetch";
 
 export const init = () => {
   burger();
@@ -149,6 +150,7 @@ const openSlideDown = (toggle, groupSelector) => {
     content.removeAttribute("data-opening");
     group.removeAttribute("data-opening");
     group.setAttribute("data-open", "true");
+    prefetchMobileItems();
   };
   if (hasReducedMotion()) {
     open();
@@ -163,4 +165,13 @@ const openSlideDown = (toggle, groupSelector) => {
       content.setAttribute("data-opening", "true");
     }, 20);
   }
+};
+
+const prefetchMobileItems = () => {
+  setTimeout(() => {
+    const items = document.querySelectorAll('[data-prefetch="mobile"]');
+    items.forEach((item) => {
+      prefetch(item.href);
+    });
+  }, 300);
 };
