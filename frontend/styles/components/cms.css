@@ -1,6 +1,6 @@
 @layer components {
   .cms {
-    @apply body-1 flex flex-col gap-30;
+    @apply body-2 flex flex-col gap-30;
   }
 
   .cms h1 {

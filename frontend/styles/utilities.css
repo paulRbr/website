@@ -64,7 +64,7 @@ Writing our own utility classes for our variable font instead of re-declaring de
   @apply private-body text-[1.25rem] leading-[1.5];
 }
 @utility body-2 {
-  @apply private-body text-[1rem];
+  @apply private-body text-[1rem] leading-[1.7];
 }
 @utility body-3 {
   @apply private-body text-[0.875rem];
