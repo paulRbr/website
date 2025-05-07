@@ -14,8 +14,7 @@
     <div class="md:hidden bg-black-100 rounded-8 p-8 md:p-16 flex justify-center items-center">
       <%= render 'company_logo', locals: {
         image: company[:image],
-        height: 24,
-        classes: 'h-24'
+        height: company[:height] || 24,
       } %>
     </div>
     <div class="body-2 md:body-1"><%= content %></div>
@@ -31,8 +30,7 @@
     <div class="bg-black-100 rounded-8 p-16 flex justify-center items-center">
       <%= render 'company_logo', locals: {
         image: company[:image],
-        height: 24,
-        classes: 'h-24'
+        height: company[:height] || 24,
       } %>
     </div>
     <div class="mt-32">

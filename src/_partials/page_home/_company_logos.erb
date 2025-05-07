@@ -14,11 +14,14 @@
   },
   {
     name: 'Elastic',
-    image: '/images/company-logos/elastic.svg'
+    image: '/images/company-logos/elastic.svg',
+    height: 40
   },
   {
     name: 'Redpanda',
-    image: '/images/company-logos/redpanda.svg'
+    image: '/images/company-logos/redpanda.svg',
+    height: 24,
+    extra_classes: 'top-2'
   },
   {
     name: 'MongoDB',
@@ -27,11 +30,13 @@
 
   {
     name: 'Forto',
-    image: '/images/company-logos/forto.svg'
+    image: '/images/company-logos/forto.svg',
+    height: 18
   },
   {
     name: 'Memo Bank',
-    image: '/images/company-logos/memo-bank.svg'
+    image: '/images/company-logos/memo-bank.svg',
+    height: 24
   },
   {
     name: 'Aviobook',
@@ -49,8 +54,8 @@
           <%= render 'company_logo', locals: {
             image: companyLogo[:image],
             label: companyLogo[:name],
-            height: 32,
-            classes: 'h-32'
+            height: companyLogo[:height] || 32,
+            classes: companyLogo[:extra_classes]
           } %>
         <% end %>
       </div>

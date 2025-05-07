@@ -10,7 +10,8 @@
   },
   {
     name: 'Elastic',
-    image: '/images/company-logos/elastic.svg'
+    image: '/images/company-logos/elastic.svg',
+    height: 40
   },
   {
     name: 'MongoDB',
@@ -18,7 +19,9 @@
   },
   {
     name: 'Redpanda',
-    image: '/images/company-logos/redpanda.svg'
+    image: '/images/company-logos/redpanda.svg',
+    height: 24,
+    extra_classes: 'top-2'
   }
 ] %>
 <div class="bg-black-900 text-black-100">
@@ -31,8 +34,8 @@
         <%= render 'company_logo', locals: {
           image: companyLogo[:image],
           label: companyLogo[:name],
-          height: 32,
-          classes: 'h-32 fill-none'
+          height: companyLogo[:height] || 32,
+          classes: "fill-none #{companyLogo[:extra_classes]}"
         } %>
       <% end %>
     </div>
