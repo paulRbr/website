@@ -5,13 +5,13 @@ layout: page
 
 **Last updated: March 25, 2024**
 
-It Ducks is a French simplified joint stock company registered with the trade and companies register of Angers under number 831 116 330, having its headquarter located _25, rue Lenepveu 49100 Angers_ (France), (“<ins>It Ducks</ins>” or “<ins>We</ins>”).
+It Ducks is a French simplified joint stock company registered with the trade and companies register of Angers under number 831 116 330, having its headquarter located _25, rue Lenepveu 49100 Angers_ (France), (“<em>It Ducks</em>” or “<em>We</em>”).
 
-It Ducks developed a SaaS platform called “<ins>Bump.sh</ins>” (the “<ins>Solution</ins>” or “<ins>Bump.sh</ins>”) enabling companies (the “<ins>Users</ins>”) to build and publish application programming interface (“<ins>APIs</ins>”) documentation.
+It Ducks developed a SaaS platform called “<em>Bump.sh</em>” (the “<em>Solution</em>” or “<em>Bump.sh</em>”) enabling companies (the “<em>Users</em>”) to build and publish application programming interface (“<em>APIs</em>”) documentation.
 
 Bump.sh is accessible through the [following link](https://bump.sh/users/sign_up).
 
-By using the Solution and the website the User agrees to comply with the following general terms and conditions of services (the “<ins>T&Cs</ins>”) which form a binding contract between us, giving the User access to both the Solution and the website [bump.sh](https://bump.sh/) (the “<ins>Website</ins>”).
+By using the Solution and the website the User agrees to comply with the following general terms and conditions of services (the “<em>T&Cs</em>”) which form a binding contract between us, giving the User access to both the Solution and the website [bump.sh](https://bump.sh/) (the “<em>Website</em>”).
 
 To access the Solution, the User must first accept It Duck’s T&Cs and Privacy Policy, accessible and printable at any time using the links accessible on the bottom of the Website’s homepage.
 
@@ -27,7 +27,7 @@ To access the Solution, the User must first accept It Duck’s T&Cs and Privacy 
   3. gather all of their API documentation in a single content site.
 
 * The extensive list of features is accessible [here](https://bump.sh/).
-* The User uploads its own content (the “<ins>Content</ins>”). It Ducks has no access to the APIs’ code, nor any other information included in them.
+* The User uploads its own content (the “<em>Content</em>”). It Ducks has no access to the APIs’ code, nor any other information included in them.
 * It Ducks reserves the right to aggregate data derived from the use of the Solution by Users such as technical changes in the APIs. Such data is anonymized. It Ducks uses the analytics to manage the Solution’s commercial and technical developments.
 * The User can contact It Ducks for any questions or enquiries at the following address: [hello@bump.sh](mailto:hello@bump.sh).
 
@@ -45,7 +45,7 @@ To access the Solution, the User must first accept It Duck’s T&Cs and Privacy 
 
 ### **4\. License – Intellectual property**
 
-* It Ducks grants the User, for the duration of the use of the Solution, with a non-exclusive, non-transferable and strictly personal right to use the Solution, in accordance with the T&Cs, and under the conditions and within the limits set out below (the “<ins>License</ins>”).
+* It Ducks grants the User, for the duration of the use of the Solution, with a non-exclusive, non-transferable and strictly personal right to use the Solution, in accordance with the T&Cs, and under the conditions and within the limits set out below (the “<em>License</em>”).
 * Our subscription offers are detailed on our Website.
 * Our free plan can be accessed by simply creating an account (please refer to Section 3 above). Our free subscription plan can be modified and closed by It Ducks at any time without prior formal notification. The User cannot claim any indemnity or hold It Ducks responsible for this reason.
 * It Ducks holds all intellectual and industrial property rights relating to the Solution and the Website. None of them is transferred to the User.
@@ -134,7 +134,7 @@ To access the Solution, the User must first accept It Duck’s T&Cs and Privacy 
 
 ### **11\. Personal data**
 
-* In the context of the use of the Solution and the Website, It Ducks may collect and process certain personal data, including the User’s name, email address, postal address, banking information, IP address, connection and navigation data, and data recorded in cookies (the “<ins>Data</ins>”). It Ducks ensures that the Data is collected and processed in compliance with the provisions of French law no. 78-17 of 6 January 1978 on data processing, data files, and individual liberties, and the Regulation no 2016/679 of the European Parliament and of the Council of 27 April 2016 (the “Data Protection Laws”), and in accordance with its Privacy Policy accessible on our Website. Under the Data Protection Laws, the User is the data controller of the Data carried out under the contract through the use of the Solution.
+* In the context of the use of the Solution and the Website, It Ducks may collect and process certain personal data, including the User’s name, email address, postal address, banking information, IP address, connection and navigation data, and data recorded in cookies (the “<em>Data</em>”). It Ducks ensures that the Data is collected and processed in compliance with the provisions of French law no. 78-17 of 6 January 1978 on data processing, data files, and individual liberties, and the Regulation no 2016/679 of the European Parliament and of the Council of 27 April 2016 (the “Data Protection Laws”), and in accordance with its Privacy Policy accessible on our Website. Under the Data Protection Laws, the User is the data controller of the Data carried out under the contract through the use of the Solution.
 * The Privacy Policy is an integral part of the T&Cs.
 * The User is invited to consult the Privacy Policy for a more detailed explanation of the conditions of the collection and processing of the Data.
 * In particular, It Ducks undertakes to use only server hosting providers, in case they are located outside the European Union, who present sufficient guarantees as to the implementation of the technical and organizational measures necessary to carry out the processing of the User’s Data in compliance with the Data Protection Laws.
