@@ -9,18 +9,18 @@ It Ducks follows the best practices to comply with (i) the ePrivacy Directive of
 When connecting to the  https://bump.sh website, a banner is displayed to remind the Users of their rights.
 Regarding such, Users can email It Ducks at hello@bump.sh for any questions they may have.
 
-**1\. What is a cookie**
+## 1. What is a cookie
 
 A cookie is a small piece of data stored by a server in the Users’ computer terminal, tablet, phone, or browser memory when they use a website or an application.
 Cookies can be used on a future visit to the same website or application.
 Cookies have multiple purposes: they can help personalize the pages displayed, store the user’s settings, track site usage. They also may be used for advertising purposes.
 
-**2\. Why does It Ducks use cookies and trackers? For how long?**
+## 2. Why does It Ducks use cookies and trackers? For how long?
 
 It Ducks uses cookies and other services to facilitate Users’ browsing, optimize technical management, compile visit statistics, and analyze traffic on its website.
 The storage period of the information recorded by cookies may not exceed thirteen (13) months.
 
-**3\. Why does It Ducks use cookies and trackers? For how long?**
+## 3. What cookies does It Ducks use?
 
 It Ducks uses the following cookies:
 - Essential cookies: these are crucial for the efficient and proper functioning of the website. They include cookies enabling It Ducks to record Users’ preferences, optimize the design of its website or ease navigation so Users have the best experience.
@@ -33,21 +33,23 @@ Cookies and other trackers used by It Ducks are listed hereinafter:
 
 <table>
   <thead>
-    <th>
-      Cookies’ name
-    </th>
-    <th>
-      Issuer
-    </th>
-    <th>
-      Purpose
-    </th>
-    <th>
-      Retention period
-    </th>
-    <th>
-      Mandatory?
-    </th>
+    <tr>
+      <th>
+        Cookies’ name
+      </th>
+      <th>
+        Issuer
+      </th>
+      <th>
+        Purpose
+      </th>
+      <th>
+        Retention period
+      </th>
+      <th>
+        Mandatory?
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -123,7 +125,7 @@ Cookies and other trackers used by It Ducks are listed hereinafter:
   </tbody>
 </table>
 
-**3\. Users’ rights**
+## 3. Users’ rights
 
 Users are fully free to accept or refuse all cookies but also to personalise their preferences and their consent may be withdrawn at any time.
 Users may configure their browser to be informed each time a cookie is created or to prevent them from being saved.
@@ -131,12 +133,14 @@ All cookies can be removed from Users’ devices through their browser settings,
 
 <table>
   <thead>
-    <th>
-      Browser
-    </th>
-    <th>
-      Settings
-    </th>
+    <tr>
+      <th>
+        Browser
+      </th>
+      <th>
+        Settings
+      </th>
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -150,7 +154,7 @@ All cookies can be removed from Users’ devices through their browser settings,
         - click on “Cookies and other site data”.
       </td>
     </tr>
-        <tr>
+    <tr>
       <td>
         Mozilla Firefox
       </td>
@@ -161,8 +165,7 @@ All cookies can be removed from Users’ devices through their browser settings,
         Under the heading “Send websites a "Do Not Track" signal that you don't want to be tracked”, choose “Always”.
       </td>
     </tr>
-        </tr>
-        <tr>
+    <tr>
       <td>
         Microsoft Internet Explorer
       </td>
