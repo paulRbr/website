@@ -59,12 +59,12 @@
         { title: 'Public', cols: [true, true, true] },
         { title: 'Private', cols: ['1 user', 'unlimited users', 'unlimited users'] },
         { title: 'Partner (guests)', cols: ['10 guests', 'per bundle', 'Up to 1'] },
-        { title: 'Hubs', cols: [false, 'per bundle', 'Up to 1'] },
+        { title: 'Hubs', cols: [false, true, true] },
         { title: 'Branches', cols: [false, true, true] },
       ] %>
 
       <%= render category, title: 'Access Management', icon: 'user-shared-fill', features: [
-        { title: 'Granular user access management (org, hub, doc)', cols: [true, true, true] },
+        { title: 'Granular user access management (org, hub, doc)', cols: [false, true, true] },
         { title: 'Email invitations', cols: [false, true, true] },
         { title: 'SSO', cols: [false, false, true] },
         { title: 'RBAC', cols: [false, false, true] },
@@ -76,7 +76,7 @@
       ] %>
 
       <%= render category, title: 'Release management', icon: 'terminal-box-fill', features: [
-        { title: 'Unrelease a version', cols: [false, true, true] },
+        { title: 'Unrelease a version (rollback)', cols: [false, true, true] },
         { title: 'Manual release management', cols: [false, false, true] },
       ] %>
 
@@ -88,12 +88,11 @@
       <%= render category, title: 'Branding customization', icon: 'edit-circle-fill', features: [
         { title: 'Custom domain', cols: [true, true, true] },
         { title: 'Custom logo', cols: [true, true, true] },
-        { title: 'Custom color, favicon, meta image ', cols: [false, false, 'on demand'] },
-        { title: 'Remove "Powered by Bump.sh"', cols: [false, false, 'add-on'] },
-        { title: 'Embedded mode', cols: [false, false, 'add-on'] },
-        { title: 'Custom CSS', cols: [false, false, 'add-on'] },
-        { title: 'Custom JS', cols: [false, false, 'add-on'] },
-        { title: 'Custom Login page', cols: [false, false, 'add-on'] },
+        { title: 'Custom color, favicon, meta image ', cols: [false, true, true] },
+        { title: 'Remove "Powered by Bump.sh"', cols: [false, false, true] },
+        { title: 'Embedded mode', cols: [false, false, true] },
+        { title: 'Custom CSS & JS', cols: [false, false, true] },
+        { title: 'Custom Login page', cols: [false, false, true] },
       ] %>
 
       <%= render category, title: 'Integrations', icon: 'stack-fill', features: [
@@ -101,6 +100,7 @@
         { title: 'API', cols: [true, true, true] },
         { title: 'Deploy docs with GitHub Action', cols: [true, true, true] },
         { title: 'Comments on PRs with GitHub Action', cols: [false, true, true] },
+        { title: 'Slack notifications', cols: [false, false, true] },
       ] %>
     </tbody>
   </table>
