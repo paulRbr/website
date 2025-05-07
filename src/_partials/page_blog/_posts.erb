@@ -1,7 +1,7 @@
 
 <% grid_items = 18 %>
 <% grid_posts = collections.posts.resources.slice(0, grid_items) %>
-<% older_posts = collections.posts.resources.slice(grid_items, collections.posts.resources.length - grid_items) %>
+<% older_posts = (collections.posts.resources.slice(grid_items, collections.posts.resources.length - grid_items) || []) %>
 <div class="container-main mb-section">
   <span role="heading" aria-level="2" class="sr-only">Recent posts</span>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-32 mx-auto w-fit">
