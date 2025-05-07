@@ -62,6 +62,7 @@ const navDropdowns = () => {
 const showDropdown = (toggle, contents) => {
   const content = toggle.nextElementSibling;
   const icon = toggle.querySelector(".js-navToggleIcon");
+  toggle.setAttribute("aria-expanded", "true");
   content.closest("li").setAttribute("data-open", "true");
   content.closest(".js-headerContent").setAttribute("data-open", "true");
   content.classList.add("flex", "animate-slide-fade-in");
@@ -86,6 +87,7 @@ const showDropdown = (toggle, contents) => {
 const hideDropdown = (toggle) => {
   const content = toggle.nextElementSibling;
   const icon = toggle.querySelector(".js-navToggleIcon");
+  toggle.setAttribute("aria-expanded", "false");
   content.classList.add("hidden");
   content.closest("li").removeAttribute("data-open");
   content.closest(".js-headerContent").removeAttribute("data-open");

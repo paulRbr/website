@@ -9,7 +9,11 @@
 <% styles = 'flex relative z-40 items-center gap-4 small-link py-16 px-4 transition-all border-b-2 border-transparent hover:border-black-900' %>
 
 <% if defined?(dropdown) && dropdown %>
-  <button class="<%= styles %> js-navToggle">
+  <button
+    class="<%= styles %> js-navToggle"
+    aria-controls="desktop-nav-dropdown-<%= id %>"
+    aria-expanded="false"
+  >
     <span><%= title %></span>
     <%= render Icon.new 'arrow-down-s-line', size: 12, classes: 'js-navToggleIcon transition-all relative top-[2px]' %>
   </button>

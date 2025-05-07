@@ -3,10 +3,10 @@
   <ul role="list" class="navItems flex gap-12">
     <% menu_items.each do |item| %>
       <li>
-        <%= render 'header/desktop_nav_item', title: item[:title], href: item[:href], dropdown: !!item[:submenu] %>
+        <%= render 'header/desktop_nav_item', title: item[:title], href: item[:href], dropdown: !!item[:submenu], id: item[:submenu] && item[:submenu][:id] %>
 
         <% if item[:submenu] %>
-          <div style="width: calc(100% + 2px)" class="<%= dropdown_styles %>">
+          <div style="width: calc(100% + 2px)" class="<%= dropdown_styles %>" id="desktop-nav-dropdown-<%= item[:submenu][:id] %>">
 
             <%# specific submenu content for some items are handled here. These are not rendered in the mobile menu %>
             <% if item[:submenu][:cta] %>
