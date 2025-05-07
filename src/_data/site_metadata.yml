@@ -5,7 +5,7 @@
 # in the templates via {{ site.metadata.myvariable }}.
 
 title: Bump.sh
-tagline: Stunning API doc, made easy.
+tagline: The modern API doc platform
 email: hello@bump.sh
 description: >-
-  Publish your entire API catalog in a beautifully-designed library that automatically stays up-to-date.
+  From API contract to documentation portal: streamline your workflow and deliver the best API experience. Built for engineers and tech writers.
