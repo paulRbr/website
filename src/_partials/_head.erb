@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
 <% resource_title = strip_html(strip_newlines(title)) %>
-<title>coucou seb<% if resource_title != "Index" %><%= resource_title %> · <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
+<title><% if resource_title != "Index" %><%= resource_title %> · <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="<%= metadata.description %>" />
 <%# simple check for "mobile-like" portrait viewports %>
