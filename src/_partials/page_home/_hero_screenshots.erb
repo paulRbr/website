@@ -25,11 +25,11 @@
     icon: 'apps-2-line',
   }
 ] %>
-<div
+<%# <div
   id="fadeshow-hero"
   class="flex flex-col-reverse items-center gap-24 w-full my-section"
   data-current-index="0"
->
+> %>
   <%# start with the buttons in the DOM for better screen reader experience %>
   <%= render 'sliding_buttons', locals: {
     items_id: 'fadeshow-hero',
@@ -54,6 +54,7 @@
     <%# <div class="flex flex-col justify-center items-center w-full bg-black-900 rounded-b-8 p-2 md:pt-2 md:px-12 md:pb-12"> %>
       <%# <div class="w-full relative h-auto rounded-8 md:rounded-16 overflow-hidden bg-white"> %>
         <% features.each_with_index do |feature, index| %>
+          <% if index == 0 %>
           <div
             role="tabpanel"
             id="fadeshow-hero-tabpanel-<%= index %>"
@@ -61,7 +62,9 @@
             data-image-index="<%= index %>"
             style="will-change: opacity"
             class="
-              not-data-current-image:hidden
+              not-data-current-image:absolute not-data-current-image:inset-0
+              not-data-current-image:pointer-events-none
+              not-data-current-image:opacity-0 opacity-100 transition-opacity duration-300
             "
             <% if index == 0 %>
               data-current-image="true"
@@ -79,7 +82,8 @@
             />
           </div>
         <% end %>
+        <% end %>
       <%# </div> %>
     <%# </div> %>
   <%# </div> %>
-</div>
+<%# </div> %>
