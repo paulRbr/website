@@ -60,7 +60,7 @@ Bridgetown.configure do |config|
   # For more documentation on how to configure your site using this initializers file,
   # visit: https://edge.bridgetownrb.com/docs/configuration/initializers/
 
-  config.url = ENV.fetch("DEPLOY_URL", "https://example.com")
+  config.url = ENV.fetch("URL", "https://example.com")
 
   init :"bridgetown-related-posts"
   init :"bridgetown-svg-inliner"
