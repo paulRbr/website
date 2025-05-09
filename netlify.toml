@@ -18,3 +18,8 @@
   pretty_urls = true
 [build.processing.images]
   compress = true
+
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      Cache-Control = "max-age=30, public"
