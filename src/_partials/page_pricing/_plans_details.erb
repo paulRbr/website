@@ -30,7 +30,7 @@
           }
         } %>
         <%= render plan_heading, locals: {
-          title: 'Standard',
+          title: 'Pro',
           price: 249,
           cta: {
             text: 'Start 14-day free trial',
@@ -56,9 +56,10 @@
       ] %>
 
       <%= render category, title: 'Documentation Publication', icon: 'git-repository-fill', features: [
+        { title: '# of API docs', cols: ['1', '10', 'custom'] },
         { title: 'Public', cols: [true, true, true] },
         { title: 'Private', cols: ['1 user', 'unlimited users', 'unlimited users'] },
-        { title: 'Partner (guests)', cols: ['10 guests', 'per bundle', 'Up to 1'] },
+        { title: 'Partner (guests)', cols: ['10 guests', '50 guests', 'custom'] },
         { title: 'Hubs', cols: [false, true, true] },
         { title: 'Branches', cols: [false, true, true] },
       ] %>
