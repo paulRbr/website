@@ -82,8 +82,8 @@ to markup and style the dialog-related elements %>
                     class="hidden group-data-current-slide/slide:flex small-link absolute top-8 right-12 md:top-32 md:right-32 cursor-pointer z-[103] items-center gap-4">
                     Close <%= render Icon.new 'close-fill', classes: 'relative top-1' %>
                   </button>
-                  <div class="mt-24 sm:mt-0 flex flex-col sm:flex-row gap-24 items-center">
-                    <div class="rounded-24 overflow-hidden w-[122px] h-[122px] sm:w-[184px] sm:h-[184px]">
+                  <div class="mt-0 flex flex-col sm:flex-row gap-24 sm:items-center">
+                    <div class="rounded-24 overflow-hidden w-[184px] h-[184px]">
                       <img
                         <%== image_attrs "/images/team_members/#{member.data.slug}.png", {width: 184, responsive: false} %>
                         class="object-cover aspect-square"
