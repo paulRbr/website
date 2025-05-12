@@ -33,6 +33,12 @@ template_engine: erb
 # pagination:
 #   enabled: true
 collections:
+  alternatives:
+    permalink: /alternative/:slug/
+    output: true
+    relations:
+      belongs_to: team_member
+
   posts:
     permalink: /blog/:slug/
     relations:
