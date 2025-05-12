@@ -34,7 +34,7 @@ template_engine: erb
 #   enabled: true
 collections:
   alternatives:
-    permalink: /alternative/:slug/
+    permalink: /compare/:slug/
     output: true
     relations:
       belongs_to: team_member

@@ -2,7 +2,7 @@
   {
     title: 'Compare',
     links: collections.alternatives.resources.map { |alternative|
-      {title: alternative.data.short_title, href: "/alternative/#{alternative.data.slug}"}
+      {title: alternative.data.short_title, href: url_for(alternative)}
     }
   },
   {
