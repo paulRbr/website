@@ -40,7 +40,7 @@ export const initToc = (container) => {
     let found = false;
     headings.forEach((heading) => {
       const rect = heading.getBoundingClientRect();
-      if (!found && rect.top > 86) {
+      if (!found && rect.top > 80) {
         found = heading;
       }
     });
