@@ -1,12 +1,9 @@
 <% link_lists = [
   {
     title: 'Compare',
-    links: [
-      { title: 'Rapidoc', href: '#' },
-      { title: 'Redoc', href: '#' },
-      { title: 'Stoplight', href: '#' },
-      { title: 'SwaggerUI', href: '#' },
-    ]
+    links: collections.alternatives.resources.map { |alternative|
+      {title: alternative.data.short_title, href: "/alternative/#{alternative.data.slug}"}
+    }
   },
   {
     title: 'Information',
