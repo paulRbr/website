@@ -6,4 +6,11 @@
   [id] {
     scroll-margin-top: var(--spacing-navbar);
   }
+
+  /* remove browser default font weights as we use the variable font metrics to set them up */
+  b,
+  strong,
+  th {
+    font-weight: normal;
+  }
 }
