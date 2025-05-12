@@ -125,7 +125,7 @@ to markup and style the dialog-related elements %>
   id="dialog-why-join-us"
   aria-label="Images slideshow"
   aria-hidden="true"
-  class="group/dialog pt-32 fixed z-[100] bg-black-900/50 inset-0 flex items-start md:items-center justify-center aria-hidden:hidden"
+  class="group/dialog fixed z-[100] bg-black-900/50 inset-0 flex items-start md:items-center justify-center aria-hidden:hidden"
 >
   <div
     data-a11y-dialog-hide
@@ -141,26 +141,20 @@ to markup and style the dialog-related elements %>
         prev_label: "Previous image",
         next_label: "Next image",
         default_dialog_focus: true,
-        classes: 'my-16 md:mt-40',
+        classes: 'my-16 md:my-24',
       } %>
-      <div class="overflow-auto shrink">
+      <div class="grow shrink min-h-0">
         <%= render 'carousel', locals: {
           id: 'why-join-us',
-          before_track: capture do %>
-            <button
-              type="button"
-              data-a11y-dialog-hide
-              class="hidden group-data-current-slide/slide:flex small-link absolute top-8 right-12 md:top-32 md:right-32 cursor-pointer z-[103] items-center gap-4">
-              Close <%= render Icon.new 'close-fill', classes: 'relative top-1' %>
-            </button>
-          <% end,
+          container_classes: 'h-full justify-center',
+          track_classes: 'h-full',
           items: images,
           item_wrapper_classes: '',
           item_label: ->(item) do %>Image <%= images.index(item) + 1 %><% end,
           item_template: ->(item) do %>
             <img
               <%== image_attrs item, {width: 1600} %>
-              class="w-full h-full object-cover"
+              class="w-full h-full object-contain"
               loading="lazy"
               alt=""
             >

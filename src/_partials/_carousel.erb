@@ -2,6 +2,7 @@
     data-carousel
     id="carousel-<%= locals[:id] %>"
     class="carousel-<%= locals[:id] %> relative flex flex-col <%= locals[:container_classes] || '' %>"
+    data-dialog-dirty-height-fix
     <%= locals[:container_attrs] || '' %>
   >
     <div data-carousel-track-container class="relative w-full overflow-hidden <%= locals[:inner_classes] || '' %>">
@@ -9,7 +10,7 @@
       <div
         data-carousel-track
         style="transform: translate3d(0px, 0px, 0px)"
-        class="flex will-change-transform motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-in-out z-0"
+        class="flex will-change-transform motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-in-out z-0 <%= locals[:track_classes] || '' %>"
       >
         <% if locals[:items] %>
           <% items.each do |item| %>
