@@ -1,6 +1,6 @@
 <div class="lg:flex flex-wrap p-12 rounded-8 border border-black-300">
   <% if defined?(company.logo) %>
-    <%= svg "/images/" + company.logo %>
+    <%= render Image.new(company.logo) %>
   <% else %>
     <h2 class="capped-small text-black-600">Company</h2>
   <% end %>
