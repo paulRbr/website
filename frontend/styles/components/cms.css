@@ -85,6 +85,10 @@
     @apply p-8 text-left;
   }
 
+  .cms td {
+    word-break: break-word;
+  }
+
   .cms th {
     @apply vfont-medium;
   }
