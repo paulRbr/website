@@ -18,7 +18,7 @@ layout: default
 <% slot :opengraph_image do %>
   <% og_img = resource.data.image %>
   <% if og_img %>
-    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/#{og_img.gsub(/^\//, '')}" %>">
+    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/images/#{og_img.gsub(/^\//, '')}" %>">
   <% end %>
 <% end %>
 
