@@ -1,0 +1,30 @@
+---
+layout: empty
+---
+<div
+  style="
+    background: linear-gradient(
+      358.18deg,
+      rgba(249, 253, 253, 0) -0.97%,
+      #f7fdfe 28.76%,
+      #f4fdff 98.13%
+    );
+  "
+  class="w-full h-dvh flex flex-col items-center justify-center"
+>
+  <div class="container-main text-center">
+    <h1 class="flex flex-col gap-16 mb-24">
+      <span class="h1 vfont-extrabold text-[4.5rem]"><%= data.code %></span>
+      <span class="h1"><%= data.meaning %></span>
+    </h1>
+
+    <p class="body-1 text-black-800 mb-40">
+      <%= data.description %>
+    </p>
+
+    <p>
+      <%= render Button.new "Back to Bump.sh home", href: "/", variant:
+      "primary" %>
+    </p>
+  </div>
+</div>

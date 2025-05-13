@@ -23,6 +23,10 @@ Writing our own utility classes for our variable font instead of re-declaring de
   --font-sans-wght: 670;
   font-variation-settings: "wght" var(--font-sans-wght);
 }
+@utility vfont-extrabold {
+  --font-sans-wght: 790;
+  font-variation-settings: "wght" var(--font-sans-wght);
+}
 
 /* Text type utilities. Naming matches figma design. */
 @utility private-heading {
