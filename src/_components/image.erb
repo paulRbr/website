@@ -1,0 +1,5 @@
+<% if svg? %>
+  <%= svg path, **options %>
+<% else %>
+  <img <%= image_attributes.html_safe %> >
+<% end %>
