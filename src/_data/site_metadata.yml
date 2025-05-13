@@ -9,4 +9,4 @@ tagline: The modern API doc platform
 email: hello@bump.sh
 description: >-
   From API contract to documentation portal: streamline your workflow and deliver the best API experience. Built for engineers and tech writers.
-# opengraph_image: /images/meta-image.png
+opengraph_image: /images/meta-image.png
