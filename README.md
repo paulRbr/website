@@ -119,12 +119,16 @@ Refer to the [Bridgetown deployment docs](https://www.bridgetownrb.com/docs/depl
 
 When developing locally or building for production, you can set up specific env vars to change the website behavior.
 
+- `URL`
+  - Possible value: complete URL of website, without trailing slash. Fallbacks to `https://bump.sh` if not set when building for production.
+  - This URL is used as base for opengraph meta data URLs, ⚠ so it should be carefully set when building the website for production.
+  - Note: it's automatically set by Netlify when building the website.
 - `IMAGES_MODE`
-  - Optional
-  - Possible values: `cloudflare`
-  - If `cloudflare`, all images are processed through [cloudflare urls](https://developers.cloudflare.com/images/transform-images/transform-via-url/).  
-    If any other value or the var doesn't exist, images are not processed by anything. ⚠ Not using `cloudflare` in production is not recommended, as in this case, images are rendered with unoptimized sizes.
-- `WEBSITE_URL`
-  - Optional
-  - Possible values: complete URL of website. Example: `https://next.bump.sh/`.
-  - If set, this URL is used as base for Cloudflare image URLs. This is useful to setup locally to test cloudflare image transforms.
+  - Possible value: `cloudflare`
+  - If value is `cloudflare`, all bitmap images are processed through [Cloudflare Images](https://developers.cloudflare.com/images/transform-images/transform-via-url/).  
+    If any other value or the var doesn't exist, images are not processed by anything. ⚠ Not using `cloudflare` in production is not recommended, as in this case, images are rendered with unoptimized filesizes.
+- `CLOUDFLARE_ZONE`
+  - Possible value: name of the Cloudflare zone to use for images served with [Cloudflare Images](https://developers.cloudflare.com/images/transform-images/transform-via-url/) (see Cloudflare docs for format details).
+  - If not set, relative URLs are used for images served through Cloudflare.
+  - Example: if `bump.sh` is set, all images URLs begin with `https://bump.sh/cdn-cgi/…`. If nothing is set, they begin with `/cdn-cgi/…`.
+  - This is helpful when you develop the website locally and you want to test cloudflare images by serving them through an external website that is itself behind cloudflare.

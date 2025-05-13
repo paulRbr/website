@@ -2,7 +2,7 @@ require "image_size"
 
 class Builders::Image < SiteBuilder
   @@use_cloudflare = ENV["IMAGES_MODE"] == "cloudflare"
-  @@website_url = ENV["WEBSITE_URL"] || ""
+  @@cloudflare_zone = ENV["CLOUDFLARE_ZONE"] || nil
 
   def build
     helper :image_attrs, :image_attrs
@@ -89,8 +89,8 @@ class Builders::Image < SiteBuilder
       options[:height] = options[:height].to_i
     end
     cf_options = ["format=#{cf_format}", *options.map { |key, value| "#{key}=#{value}" }]
-    zone = @@website_url.end_with?("/") ? @@website_url : "#{@@website_url}/"
-    "#{zone}cdn-cgi/image/#{cf_options.join(",")}/#{imagepath}"
+    base_url = @@cloudflare_zone ? "https://#{@@cloudflare_zone}" : ""
+    "#{base_url}/cdn-cgi/image/#{cf_options.join(",")}/#{imagepath}"
   end
 
   # pass an image path (relative to src folder) with optional forced width or height
