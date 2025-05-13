@@ -7,6 +7,21 @@ layout: default
   <%= render 'skip_link', href: '#footer', title: 'footer' %>
 <% end %>
 
+<% slot :head_meta do %>
+  <% if resource.relations.team_member %>
+    <meta property="article:author" content="<%= resource.relations.team_member.data.name %>">
+  <% elsif data.author %>
+    <meta property="article:author" content="<%= data.author %>">
+  <% end %>
+<% end %>
+
+<% slot :opengraph_image do %>
+  <% og_img = resource.data.image %>
+  <% if og_img %>
+    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/#{og_img.gsub(/^\//, '')}" %>">
+  <% end %>
+<% end %>
+
 <%= render "with_dots_bg",
   classes: "-mt-navbar pt-navbar pb-section aqua-gradient" do %>
   <div class="container-main mt-section">

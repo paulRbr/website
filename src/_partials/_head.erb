@@ -1,6 +1,7 @@
 <meta charset="utf-8" />
 <% resource_title = strip_html(strip_newlines(title)) %>
-<title><% if resource_title != "Index" %><%= resource_title %> · <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
+<% page_title = resource_title != "Index" ? "#{resource_title} · #{metadata.title}" : "#{metadata.title}: #{metadata.tagline}" %>
+<title><%= page_title %></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="<%= metadata.description %>" />
 <%# simple check for "mobile-like" portrait viewports %>
@@ -14,7 +15,7 @@
 </script>
 <script src="<%= asset_path 'javascript/index.js' %>"></script>
 <%= slotted :scripts %>
-<%= slotted :head_meta %>
+
 <link rel="stylesheet" href="<%= asset_path :css %>" />
 <link rel="preload" href="<%= asset_path "fonts/saans-uprights-variable-subset.woff2" %>" as="font" type="font/woff2" crossorigin fetchpriority="high">
 <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
@@ -23,4 +24,22 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Bump.sh" />
 <link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+<meta property="og:site_name" content="<%= metadata.title %>">
+<meta property="og:title" content="<%= page_title %>">
+<% if resource && resource.absolute_url %>
+  <meta property="og:url" content="<%= resource.absolute_url %>">
+<% end %>
+<% if resource && resource.collection %>
+  <meta property="og:type" content="<%= resource.collection.label === "posts" ? "article" : "website" %>">
+<% end %>
+<%= slotted :opengraph_image do %>
+  <% og_img = metadata.opengraph_image %>
+  <% if og_img %>
+    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/#{og_img.gsub(/^\//, '')}" %>">
+  <% end %>
+<% end %>
+
+<%= slotted :head_meta %>
+
 <%= live_reload_dev_js %>
