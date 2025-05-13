@@ -1,0 +1,17 @@
+<div class="lg:flex flex-wrap p-12 rounded-8 border border-black-300">
+  <% if defined?(company.logo) %>
+    <%= svg "/images/" + company.logo %>
+  <% else %>
+    <h2 class="capped-small text-black-600">Company</h2>
+  <% end %>
+
+  <ul class="body-3 mt-12 text-black-800">
+    <% company.each do |key, value| %>
+      <% next if ["website", "logo"].include?(key) %>
+      <li class="mb-4"><%= key.capitalize %>: <%= value %></li>
+    <% end %>
+    <% if defined?(company.website) %>
+      <li class="small-link mt-12"><a href="<%= company.website %>"><%= company.website %></a></li>
+    <% end %>
+  </ul>
+</div>
