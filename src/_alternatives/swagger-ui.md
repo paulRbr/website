@@ -1,5 +1,5 @@
 ---
-title: It's OK SwaggerUI, you can REST now.
+title: The best SwaggerUI alternative.
 short_title: SwaggerUI
 author: Christophe Dujarric
 ---
