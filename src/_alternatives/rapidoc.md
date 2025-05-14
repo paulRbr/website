@@ -8,7 +8,7 @@ author: Christophe Dujarric
 
 When it was initially released, RapiDoc was a great alternative to SwaggerUI, offering a better user experience and navigation, with a index and a search feature. As most of the "OpenAPI renderers", it relied on JavaScript to fetch OpenAPI definition files from a distant URL, and then render it in the client's browser.
 
-As communicated in 2021 by mrin9, RapiDoc's original creator, "one of the main advantage of RapiDoc is its powerful customization". Since then, the UI and UX standards and expectations for API documentation have greatly evolved, starting with the 3-columns display inspired by Stripe, which Rapidoc does not support.
+As communicated in 2021 by mrin9, RapiDoc's original creator, "one of the main advantage of RapiDoc is its powerful customization". Since then, the UI and UX standards and expectations for API documentation have greatly evolved, starting with the 3-columns display inspired by Stripe, which RapiDoc does not support.
 
 For use cases requiring to publish a simple, unique and public API doc with relatively rare updates, RapiDoc was a great option, providing that you had skills in HTML and CSS.
 
