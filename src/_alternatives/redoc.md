@@ -6,9 +6,9 @@ author: Christophe Dujarric
 
 **Redoc is a solid open source tool** for rendering API docs from an OpenAPI definition. It’s fast to get started, comes with a convenient CLI, and delivers a clean UI out of the box. It’s a great option when you just need a static reference and don’t mind managing the hosting and integration yourself.
 
-**Bump.sh builds on that same simplicity—but goes much further**. We offer everything you’d expect from a modern CLI-driven workflow, and then add the layers that teams need as their API surface grows: support for multiple APIs through catalogs, automated breaking change detection, versioning, changelogs, and seamless deployment. **All of it designed to slot cleanly into your existing CI/CD pipeline**.
+**Bump.sh builds on that same simplicity, but goes much further**. We offer everything you’d expect from a modern CLI-driven workflow, and then add the layers that teams need as their API surface grows: support for multiple APIs through catalogs, automated breaking change detection, versioning, changelogs, and seamless deployment. **All of it designed to slot cleanly into your existing CI/CD pipeline**.
 
-It’s also worth noting that Redoc is the open source base for Redocly, the commercial, hosted version with added features and integrations. **In contrast, Bump.sh was designed from the start as a hosted service**. That means no open core split or feature gating between tools—just a fully supported, performance-driven platform purpose-built for teams who want to treat API documentation as a first-class product.
+It’s also worth noting that Redoc is the open source base for Redocly, the commercial, hosted version with added features and integrations. **In contrast, Bump.sh was designed from the start as a hosted service**. That means no open core split or feature gating between tools. Just a fully supported, performance-driven platform purpose-built for teams who want to treat API documentation as a first-class product.
 
 **You’re not just getting a rendering engine.** You’re getting a full documentation workflow, shaped by our experience helping teams of all sizes publish fast, reliable, and developer-friendly API docs.
 
