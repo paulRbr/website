@@ -17,7 +17,7 @@ It’s also worth noting that Redoc is the open source base for Redocly, the com
 ### Batteries included
 **Bump.sh isn’t just a renderer**. It’s built for [modern API workflows](https://docs.bump.sh/guides/openapi/specification/v3.1/the-perfect-modern-openapi-workflow/).
 
-We plug right into your **Git-based process**, generate changelogs automatically, [**detect breaking changes in CI**](https://docs.bump.sh/help/changes-management/changelog/), and help your team turn OpenAPI definition files updates into **publish-ready release notes**. All of that happens behind the scenes—without changing how your team works.
+We plug right into your **Git-based process**, generate changelogs automatically, [**detect breaking changes in CI**](https://docs.bump.sh/help/changes-management/changelog/), and help your team turn OpenAPI definition files updates into **publish-ready release notes**. All of that happens behind the scenes, without changing how your team works.
 
 Need to manage more than one API? We’ve got that too. Bump.sh can **consolidate multiple definitions into a single, [searchable API catalog](https://docs.bump.sh/help/hubs/)** with a unified changelog across versions and specs. Your consumers get one clear place to explore everything you offer.
 
