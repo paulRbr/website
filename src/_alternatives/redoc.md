@@ -19,7 +19,7 @@ It’s also worth noting that Redoc is the open source base for Redocly, the com
 
 We plug right into your **Git-based process**, generate changelogs automatically, [**detect breaking changes in CI**](https://docs.bump.sh/help/changes-management/changelog/), and help your team turn OpenAPI definition files updates into **publish-ready release notes**. All of that happens behind the scenes—without changing how your team works.
 
-Need to manage more than one API? We’ve got that too. Bump.sh can **consolidate multiple definitions into a single, [searchable API catalog](https://docs.bump.sh/help/hubs/)**—with a unified changelog across versions and specs. Your consumers get one clear place to explore everything you offer.
+Need to manage more than one API? We’ve got that too. Bump.sh can **consolidate multiple definitions into a single, [searchable API catalog](https://docs.bump.sh/help/hubs/)** with a unified changelog across versions and specs. Your consumers get one clear place to explore everything you offer.
 
 API docs are more than a listing of endpoints. An while your can always get your hands in the code to bend how Redoc is built and **publish additional contextual information, this is all native in Bump.sh**. [Dedicated sections in the API reference](https://docs.bump.sh/help/documentation-experience/topics/), Markdown support (with [external references](https://docs.bump.sh/help/specification-support/references/)), mermaid support. Check.
 
@@ -29,9 +29,9 @@ API docs are more than a listing of endpoints. An while your can always get your
 
 With Redoc, customizing your docs usually means dealing with YAML overrides or hand-tuning HTML, CSS, or JS.
 
-Bump.sh skips all that. Once it’s set up, **your team just maintains API definitions and content**. No front-end work required, no custom deployment logic to own. Everything is handled—from previews to production publishing—so your team can focus on shipping.
+Bump.sh skips all that. Once it’s set up, **your team just maintains API definitions and content**. No front-end work required, no custom deployment logic to own. Everything is handled, from previews to production publishing, so your team can focus on shipping.
 
-We’re focused on doing one thing really well: **publishing beautiful, reliable, versioned API reference docs**. Not a docs CMS. Not a markdown site generator. Just **the best OpenAPI (and AsyncAPI) publishing experience** you’ll find—and one that **fits cleanly into your stack**. We're here to make your [API contracts](https://bump.sh/blog/api-contracts-extended-introduction) something that your users can rely on for optimal API adoption.
+We’re focused on doing one thing really well: **publishing beautiful, reliable, versioned API reference docs**. Not a docs CMS. Not a markdown site generator. Just **the best OpenAPI (and AsyncAPI) publishing experience** you’ll find. And one that **fits cleanly into your stack**. We're here to make your [API contracts](https://bump.sh/blog/api-contracts-extended-introduction) something that your users can rely on for optimal API adoption.
 
 We’re also not a faceless platform. **We care about how your team works**, and we’ve helped companies of all sizes build great documentation workflows. You’ll always get **fast, thoughtful support** from people who know the product inside out and **genuinely want to help**.
 
@@ -41,6 +41,6 @@ Redoc helped redefine what good API docs could look like. **Bump.sh** takes that
 
 We give your users a polished, responsive, single-page interface built for exploration. You can [share-and-highlight a deep link to a specific section of the docs](https://docs.bump.sh/product-updates/2021/09/11/share-and-highlight-anything-inside-your-api-documentation/), or to a pre-filled API request in the [API Explorer](https://docs.bump.sh/help/documentation-experience/api-explorer/). **Everything is interactive, easy to navigate, and designed to make finding the right info fast**.
 
-We auto-generate examples from your definition, support multiple languages out of the box, and keep the layout clean and easy to navigate—even when your API includes deeply nested properties or complex structures. The **experience stays consistent no matter how big or detailed your definition gets**. It’s not just functional, it’s enjoyable—something your users will notice the moment they land on the page.
+We auto-generate examples from your definition, support multiple languages out of the box, and keep the layout clean and easy to navigate. Even when your API includes deeply nested properties or complex structures. The **experience stays consistent no matter how big or detailed your definition gets**. It’s not just functional, it’s enjoyable; something your users will notice the moment they land on the page.
 
-And we don’t stand still. We’re **always refining the experience based on user feedback** and what we see across the API space. We believe great docs don’t just explain your API—they reflect the quality of the product behind it. Proof? **We were one of the first two vendors to [support OpenAPI Overlays](https://docs.bump.sh/guides/openapi/specification/v3.1/extending/overlays/)**, super useful to further tweak what API info to publish, when and to what audience.
+And we don’t stand still. We’re **always refining the experience based on user feedback** and what we see across the API space. We believe great docs don’t just explain your API: they reflect the quality of the product behind it. Proof? **We were one of the first two vendors to [support OpenAPI Overlays](https://docs.bump.sh/guides/openapi/specification/v3.1/extending/overlays/)**, super useful to further tweak what API info to publish, when and to what audience.
