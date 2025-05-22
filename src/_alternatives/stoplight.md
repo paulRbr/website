@@ -20,14 +20,14 @@ Stoplight Elements is a Web/React component that drops into existing documentati
 
 OK, Stoplight Elements offers a rather decent UI for rendering OpenAPI definition files, as well as a "try-it-out"/interaction API console. Yet, it suffers from the same issues than other client-side OpenAPI renderers (like [Swagger UI](../swagger-ui/) and [Redoc](../redoc/)), on top of falling short for more advanced support and features like most Open Source tools.
 
-* **Active development**: After being bought out by SmartBear, the entire **Stoplight ecosystem has gone into maintenance mode** and only a handful of low stakes commits have been made to the documentation. **We’re actively adding brilliant new functionality all the time**, actively working with our users to shape the roadmap.
-* **Easy setup**: Stoplight Elements is confusing to get started for non technical users as it needs a web server and code to load the component.
+* **Active development**: After being bought out by SmartBear, the entire **Stoplight ecosystem has gone into maintenance mode** and only a handful of low stakes commits have been made to the documentation. Bump.sh alive and kicking. **We’re actively adding brilliant new functionality all the time**, actively working with our users to shape the roadmap.
+* **Easy setup**: Stoplight Elements is confusing to get started for non technical users as it needs a web server and code to load the component. Creating a new API doc can be done by a tech writer or a product owner, who might not necessarily have the time or the knowledge for a tedious configuration step.
 * **Server-side processing**: While Elements depends on the browser to load and render JSON files, **Bump.sh handles your API definition files on the server**, enabling a range of advantages we detail below. This includes built-in support for `$ref` files, effortless publishing of both OpenAPI and AsyncAPI specs, and more.
 * **Try it/console**: **Bump.sh features a beautiful, interactive documentation** with Try-It functionality, that doesn't get stuck to the third column of the doc, offering a **full screen** to let your build even the **most complex requests**, and which works far better at **handling things like CORS** (we even released an [Open Source CORS proxy](https://github.com/bump-sh/cors-toujours), used in the background).
 
 ### Built for modern workflows
 
-Let's hammer it down: **Bump.sh is not there to lock you into a walled-garden**. **We do API Reference**. We do it (really) well, and with some cool and unique features that come with it. So **no matter what your workflow is** (design-first, code-first, with our without Git), Bump.sh fits right in. 
+Let's hammer it down: **Bump.sh is not there to lock you into a walled-garden**. **We do API Reference**. We do our best in that part, with some cool and unique features that come with it. So **no matter what your workflow is** (design-first, code-first, with our without Git), Bump.sh fits right in. 
 
 Now the past years have shown us the community converge to [modern ways to design, build and publish APIs and docs](https://docs.bump.sh/guides/openapi/specification/v3.1/the-perfect-modern-openapi-workflow/). And **we made sure that Bump.sh could support you** there, anytime having up-to-date and user-friendly docs could assist.
 
