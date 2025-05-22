@@ -11,7 +11,7 @@
         "lvl" => 3,
         "href" => post.relative_url,
         "excerpt" => post_excerpt(markdownify(post.content)),
-        "image" => defined?(post.data.image) ? '/images/' + post.data.image : nil
+        "image" => defined?(post.data.image) ? '/website/images/' + post.data.image : nil
       } %>
     <% end %>
   </div>

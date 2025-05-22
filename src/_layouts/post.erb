@@ -18,7 +18,7 @@ layout: default
 <% slot :opengraph_image do %>
   <% og_img = resource.data.image %>
   <% if og_img %>
-    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/images/#{og_img.gsub(/^\//, '')}" %>">
+    <meta property="og:image" name="image" content="<%= og_img.start_with?('http') ? og_img : "#{site.config.url}/website/images/#{og_img.gsub(/^\//, '')}" %>">
   <% end %>
 <% end %>
 
@@ -41,7 +41,7 @@ layout: default
       <% if resource.relations.team_member %>
         <%= render 'person_avatar', locals: {
           name: resource.relations.team_member.data.name,
-          image: "/images/team_members/#{resource.relations.team_member.data.slug}.png"
+          image: "/website/images/team_members/#{resource.relations.team_member.data.slug}.png"
         } %>
       <% elsif data.author %>
         <%= render 'person_avatar', locals: {
@@ -107,7 +107,7 @@ layout: default
           "lvl" => 3,
           "href" => related_post.relative_url,
           "excerpt" => post_excerpt(markdownify(related_post.content)),
-          "image" => defined?(related_post.data.image) ? '/images/' + related_post.data.image : nil
+          "image" => defined?(related_post.data.image) ? '/website/images/' + related_post.data.image : nil
         } %>
       <% end %>
     </div>
