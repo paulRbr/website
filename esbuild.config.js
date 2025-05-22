@@ -38,6 +38,10 @@ const esbuildOptions = {
   globOptions: {
     excludeFilter: /\.(dsd|lit)\.css$/,
   },
+  bridgetownConfig: {
+    destination: "output/website",
+  },
+  publicPath: "/website/_bridgetown/static",
   entryPoints: [
     "./frontend/javascript/index.js",
     "./frontend/javascript/pages/home/index.js",

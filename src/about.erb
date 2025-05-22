@@ -8,5 +8,5 @@ with_navbar_padding: false
 <%= render "page_about/current_positions" %>
 
 <% slot :scripts do %>
-  <script src="<%= asset_path 'javascript/pages/about/index.js' %>"></script>
+  <script src="<%= subfolder_asset_path 'website', 'javascript/pages/about/index.js' %>"></script>
 <% end %>

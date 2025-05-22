@@ -51,3 +51,5 @@ collections:
 
 related_posts:
   limit: 3
+
+keep_files: ["website"]

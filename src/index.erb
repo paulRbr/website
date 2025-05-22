@@ -18,5 +18,5 @@ with_navbar_padding: false
 <%= render "page_home/testimonials" %>
 
 <% slot :scripts do %>
-  <script src="<%= asset_path 'javascript/pages/home/index.js' %>"></script>
+  <script src="<%= subfolder_asset_path 'website', 'javascript/pages/home/index.js' %>"></script>
 <% end %>

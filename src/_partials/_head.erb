@@ -13,11 +13,11 @@
     document.documentElement.classList.add("motion-reduce");
   }
 </script>
-<script src="<%= asset_path 'javascript/index.js' %>"></script>
+<script src="<%= subfolder_asset_path 'website', 'javascript/index.js' %>"></script>
 <%= slotted :scripts %>
 
-<link rel="stylesheet" href="<%= asset_path :css %>" />
-<link rel="preload" href="<%= asset_path "fonts/saans-uprights-variable-subset.woff2" %>" as="font" type="font/woff2" crossorigin fetchpriority="high">
+<link rel="stylesheet" href="<%= subfolder_asset_path 'website', :css %>" />
+<link rel="preload" href="<%= subfolder_asset_path 'website', "fonts/saans-uprights-variable-subset.woff2" %>" as="font" type="font/woff2" crossorigin fetchpriority="high">
 <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
 <link rel="shortcut icon" href="/images/favicon/favicon.ico" />

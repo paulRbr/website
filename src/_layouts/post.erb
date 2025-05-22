@@ -115,9 +115,9 @@ layout: default
 </div>
 
 <% slot :stylesheets do %>
-  <link rel="stylesheet" href="<%= asset_path 'styles/pygment-monokai.css' %>" />
+  <link rel="stylesheet" href="<%= subfolder_asset_path 'website', 'styles/pygment-monokai.css' %>" />
 <% end %>
 
 <% slot :scripts do %>
-  <script src="<%= asset_path 'javascript/pages/post/index.js' %>"></script>
+  <script src="<%= subfolder_asset_path 'website', 'javascript/pages/post/index.js' %>"></script>
 <% end %>
