@@ -84,5 +84,5 @@ dark_header: true
 <%= render "page_pricing/plans_details" %>
 
 <% slot :scripts do %>
-  <script src="<%= subfolder_asset_path 'website', 'javascript/pages/pricing/index.js' %>"></script>
+  <script src="/website<%= asset_path 'javascript/pages/pricing/index.js' %>"></script>
 <% end %>
