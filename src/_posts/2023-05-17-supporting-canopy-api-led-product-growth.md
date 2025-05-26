@@ -1,6 +1,6 @@
 ---
 title: "Supporting Canopy's API-Led Product Growth"
-category: Company
+category: Customer
 image: blog/canopy-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -42,6 +42,6 @@ We’re still regularly having calls, collecting Canopy’s feedback, and figuri
 At Bump.sh, our mission is to help teams and companies to step up their API game. We’re right here if you need some assistance on these kinds of projects; [feel free to contact us anytime](mailto:hello@bump.sh).
 
 ---
-#### Canopy
+## Canopy
 
 With [Canopy](https://canopyservicing.com/)'s API and CanopyOS, Fintechs, banks, and credit unions can improve borrower repayment rates, increase net promoter scores, and decrease the cost of servicing for lending and credit card products.

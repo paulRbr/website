@@ -86,6 +86,7 @@ jobs:
           file: src/v3/api/openapi.yaml
           branch: v3
 ```
+
 ### Example: One Git branch per API version
 
 This setup involves one GitHub repository. Each version of the API is in its own

@@ -1,6 +1,6 @@
 ---
 title: "How BigID Enhanced Processes and Boosted Satisfaction by Upgrading Their API Documentation Portal"
-category: Company
+category: Customer
 image: blog/bigid-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -32,6 +32,6 @@ Looking for your docs-as-code API documentation portal? [We're here to help.](ma
 
 ---
 
-#### Some Words about BigID
+## Some Words about BigID
 
 [BigID](https://bigid.com/) is a data intelligence platform that helps organizations discover, classify, and manage sensitive data across all environments, enhancing privacy, security, compliance, and data governance. Since its founding eight years ago, BigID has grown from a small startup of fewer than ten employees to a market leader with over 500 employees. This rapid growth highlighted the need to replace initial workarounds with scalable, professional solutions.

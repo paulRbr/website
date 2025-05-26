@@ -1,6 +1,6 @@
 ---
 title: "Improving PPE analytics product adoption and brand image"
-category: Company
+category: Customer
 image: blog/ppe-analytics-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -21,15 +21,15 @@ They quickly realized that a data hub without an API doesn't take you very far, 
 
 The [Design First approach](https://bump.sh/blog/dev-guide-api-design-first) is chosen here: they experimented with documentation before coding the API. Five years of backlog on the subject, with all the data, is excellent material for asking the right questions about the API. Technically, the choice is made to use OpenAPI.
 
-The first specification file was created and then uploaded to [Bump.sh](http://bump.sh/). After this first rendering, they needed a few weeks to iterate, adjust, and add descriptions where necessary. Visualizing clear and human-readable documentation in a matter of moments was crucial for the team: you quickly see what works or not in terms of understanding and approach.
+The first specification file was created and then uploaded to Bump.sh. After this first rendering, they needed a few weeks to iterate, adjust, and add descriptions where necessary. Visualizing clear and human-readable documentation in a matter of moments was crucial for the team: you quickly see what works or not in terms of understanding and approach.
 
 Even before the API code was ready, the PPE analytics team shared its first documentation with future users. The approach allows observing the first friction points and correcting them very quickly, much more than if they had to touch production code.
 
 Finally, another key advantage emerged from this Design-First approach: by preparing the documentation in advance, you quickly realize how to better structure your data.
 
-## [Bump.sh](http://bump.sh/) in the toolbox
+## Bump.sh in the toolbox
 
-For PPE analytics, [Bump.sh](http://bump.sh/) becomes their API wingman, offering them a smooth and comfortable experience. They appreciate the console's workflow and the CLI is essential to them: they quickly switch to continuous integration to gain speed.
+For PPE analytics, Bump.sh becomes their API wingman, offering them a smooth and comfortable experience. They appreciate the console's workflow and the CLI is essential to them: they quickly switch to continuous integration to gain speed.
 
 Uploading their specification file and getting clear and readable documentation is an automated process, as the changes are instantly reflected when a developer pushes a new version. For them, quality, clear, and complete documentation is, above all, about being professional. Users and customers are reassured to see that a product is documented and well thought out. Even better: complete documentation sends a message about the obtained data quality.
 
@@ -39,7 +39,7 @@ They now aim to expand even further, with the ambition of becoming the indispens
 
 ---
 
-#### Where PPE analytics stands on the market
+## Where PPE analytics stands on the market
 
 PPE analytics offers a unique collaborative platform for all players in the Personal Protective Equipment (PPE) market.
 

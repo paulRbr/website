@@ -1,6 +1,6 @@
 ---
 title: "Helping Memo Bank deliver APIs to their customers, and comply with European FinTech regulations"
-category: Company
+category: Customer
 image: blog/memobank-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -55,7 +55,7 @@ In all, Memo Bank adopted all of the key features of Bump.sh, with a special hig
 Some of their favorite Bump.sh perks? The ability to set a custom domain, the stunning design (including the dark mode), the changelog, the versioning and branches, the CLI, the full support of OpenAPI, the automation, and the section introductions with Markdown support. And beyond the tool itself, they appreciated finding the Bump.sh team around the corner whenever they had a question or needed support.
 
 ---
-#### Memo Bank’s journey, so far
+## Memo Bank’s journey, so far
 
 Memo Bank was created in 2017 to offer Small and Medium Businesses a banking experience that echoes their needs and challenges. Where traditional banks offer services for larger businesses, and some FinTech make a difference for individuals, the SMB market was poorly addressed.
 

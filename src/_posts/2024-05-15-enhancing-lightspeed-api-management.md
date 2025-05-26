@@ -1,6 +1,6 @@
 ---
 title: "Enhancing Lightspeed API Management"
-category: Company
+category: Customer
 image: blog/lightspeed-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -59,7 +59,7 @@ The ongoing collaboration with the Bump.sh team has been invaluable, offering co
 
 ---
 
-#### To learn more about Lightspeed:
+## To learn more about Lightspeed:
 
 Lightspeed is the unified POS and payments platform powering the world's best businesses in over 100 countries.
 

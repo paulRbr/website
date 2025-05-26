@@ -1,6 +1,6 @@
 ---
 title: "A Better API Documentation for Radar Healthcare’s Customers"
-category: Company
+category: Customer
 image: blog/radar-healthcare-api.png
 end_with_preview: true
 ---
@@ -42,7 +42,7 @@ Internally, Radar Healthcare has seen significant time and resource savings acro
 > — **Kate Santo - Technical Writer**
 
 ---
-### To learn more about Radar Healthcare
+## To learn more about Radar Healthcare
 
 Founded in 2012, Radar Healthcare is a UK-based company that provides advanced software solutions to improve healthcare quality, safety, and compliance.
 Their technology helps transform large volumes of healthcare data into actionable insights, enabling care providers to make more informed decisions and reduce risks.

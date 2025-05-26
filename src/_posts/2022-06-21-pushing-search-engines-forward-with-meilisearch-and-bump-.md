@@ -1,6 +1,6 @@
 ---
 title: "Pushing search engines forward with Meilisearch and Bump.sh"
-category: Company
+category: Customer
 image: blog/meilisearch-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -35,7 +35,7 @@ We care a lot about our relationship with Guillaume and his team here at Bump.sh
 
 ---
 
-### About Meilisearch
+## About Meilisearch
 
 Search has become an essential topic for companies and organizations these last few years. Improving search has a direct impact on keeping your customers with you. With higher volumes of data, good performances could be harder to reach or require more resources. And giving the best search experience can be the difference between them and their competitors.
 

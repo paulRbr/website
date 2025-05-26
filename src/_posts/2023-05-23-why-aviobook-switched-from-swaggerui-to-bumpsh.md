@@ -1,6 +1,6 @@
 ---
 title: "Why AvioBook switched from Swagger UI to Bump.sh for all of their APIs"
-category: Company
+category: Customer
 image: blog/aviobook-usecase-bump-sh.png
 end_with_preview: true
 ---
@@ -44,7 +44,7 @@ Working with AvioBook has been a blast for us, too. Beyond the fact that we’re
 Looking for an alternative to Swagger UI? AvioBook can tell better than us. [We're here to help.](mailto:hello@bump.sh)
 
 ---
-#### Some Words about AvioBook
+## Some Words about AvioBook
 
 AvioBook (a Thales Group company) is a software and hardware technology company building a suite of solutions for airlines. Starting with an EFB or Electronic Flight Bag solution for pilots, the suite now includes tools for all stakeholders in flight operations from dispatchers and technicians through to cabin crew and EFB admins.
 
