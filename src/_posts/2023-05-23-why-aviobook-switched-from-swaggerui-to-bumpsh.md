@@ -1,5 +1,5 @@
 ---
-title: Why AvioBook switched from Swagger UI to Bump.sh for all of their APIs
+title: Why AvioBook switched from Swagger UI to Bump.sh for all of their APIs
 author: Christophe Dujarric
 category: Customers
 image: blog/aviobook-usecase-bump-sh.png
