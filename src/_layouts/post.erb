@@ -104,10 +104,10 @@ layout: default
       <% resource.data.related_posts.each do |related_post| %>
         <%= render 'post_excerpt', locals: {
           **related_post.data,
-          lvl: 3,
-          href: related_post.relative_url,
-          excerpt: post_excerpt(markdownify(related_post.content)),
-          image: defined?(related_post.data.image) ? '/images/' + related_post.data.image : nil
+          "lvl" => 3,
+          "href" => related_post.relative_url,
+          "excerpt" => post_excerpt(markdownify(related_post.content)),
+          "image" => defined?(related_post.data.image) ? '/images/' + related_post.data.image : nil
         } %>
       <% end %>
     </div>
