@@ -1,6 +1,6 @@
 <% imageStyles = "object-cover w-full aspect-video rounded-16 border border-black-300 overflow-hidden transition-shadow duration-300 group-hover/excerpt:shadow-aqua-large group-active/excerpt:shadow-none" %>
 <div class="flex flex-col gap-16 max-w-[30rem] stretched-link-container group/excerpt">
-  <div class="w-full aqua-gradient">
+  <div class="w-full aqua-gradient rounded-16">
     <% if image_exists image %>
       <img <%== image_attrs image, {width: 480} %> alt="" class="<%= imageStyles %>">
     <% else %>
