@@ -1,5 +1,6 @@
 ---
-title: "How BigID Enhanced Processes and Boosted Satisfaction by Upgrading Their API Documentation Portal"
+title: How BigID enhanced processes and boosted satisfaction by upgrading their API documentation portal
+author: Christophe Dujarric
 category: Customers
 image: blog/bigid-usecase-bump-sh.png
 company:
@@ -30,7 +31,7 @@ An internal poll at BigID showed an 85% increase in satisfaction with the new AP
 
 > “This is much better than the old site and is exactly what we need. It looks great, and we can easily find all the information we need.”
 
-> *We’re thrilled with the organizational improvements and process efficiencies we've achieved thanks to Bump.sh. These changes wouldn’t have been possible without the comprehensive capabilities of the Bump.sh platform and their exceptional support, which has been second to none. The responsive and collaborative nature of the Bump.sh team has made all the difference; they're consistently attentive to our feedback and continuously develop new features that go beyond industry standards. We’re excited about the future as we continue to benefit from Bump’s innovative and customer-focused approach.*  
+> *We’re thrilled with the organizational improvements and process efficiencies we've achieved thanks to Bump.sh. These changes wouldn’t have been possible without the comprehensive capabilities of the Bump.sh platform and their exceptional support, which has been second to none. The responsive and collaborative nature of the Bump.sh team has made all the difference; they're consistently attentive to our feedback and continuously develop new features that go beyond industry standards. We’re excited about the future as we continue to benefit from Bump’s innovative and customer-focused approach.*
 > — **Yossi Karp - Technical Writing Manager**
 
 Looking for your docs-as-code API documentation portal? [We're here to help.](mailto:hello@bump.sh)

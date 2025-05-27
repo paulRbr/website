@@ -1,5 +1,6 @@
 ---
-title: "A Better API Documentation for Radar Healthcare’s Customers"
+title: A better API documentation for Radar Healthcare’s customers
+author: Jay Cormier
 category: Customers
 image: blog/radar-healthcare-usecase-bump-sh.png
 company:
@@ -21,7 +22,7 @@ Some of these modules are also available through Radar Healthcare’s API, a Par
 
 Quickly, the importance of having comprehensive documentation became evident to help their customers fully benefit from the potential of the API for their organizations:
 
-> "We wanted to document our API as we understood the benefits of this, so we extensively researched a range of API documentation tools and compared them all according to a number of criteria that were very important to us, such as user experience, development effort required to set things up, support, data security compliance, branding, and customization. Bump.sh was the tool that matched our criteria."  
+> "We wanted to document our API as we understood the benefits of this, so we extensively researched a range of API documentation tools and compared them all according to a number of criteria that were very important to us, such as user experience, development effort required to set things up, support, data security compliance, branding, and customization. Bump.sh was the tool that matched our criteria."
 > — **Kate Santo - Technical Writer**
 
 The integration of Bump.sh into the tech stack and workflow was a smooth process. Radar Healthcare already had an OpenAPI specification file, and the many resources available (guides, help center) as well as the quick support helped them get started quickly, establishing a solid foundation within a few days to build upon.
@@ -42,10 +43,11 @@ A few months after implementing this new API documentation, Radar Healthcare con
 
 Internally, Radar Healthcare has seen significant time and resource savings across various teams: developers appreciate the flexibility of code samples, and technical writers can more easily manage deployments thanks to the various available methods.
 
-> "Using Bump.sh has allowed us to have neat, easy-to-digest API documentation that we can update as needed and tailor to our users' needs. There is a lot that Bump.sh does by default, which saves us a lot of time, and a lot that we get to do easily because of how Bump is built."  
+> "Using Bump.sh has allowed us to have neat, easy-to-digest API documentation that we can update as needed and tailor to our users' needs. There is a lot that Bump.sh does by default, which saves us a lot of time, and a lot that we get to do easily because of how Bump is built."
 > — **Kate Santo - Technical Writer**
 
 ---
+
 ## To learn more about Radar Healthcare
 
 Founded in 2012, Radar Healthcare is a UK-based company that provides advanced software solutions to improve healthcare quality, safety, and compliance.

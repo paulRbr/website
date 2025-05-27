@@ -1,5 +1,6 @@
 ---
-title: "Enhancing Lightspeed API Management"
+title: Enhancing Lightspeed API management
+author: Jay Cormier
 category: Customers
 image: blog/lightspeed-usecase-bump-sh.png
 company:
@@ -10,7 +11,7 @@ company:
   partnering since: 2023
 ---
 
-## Enhancing API Management with Bump.sh
+## Enhancing API management with Bump.sh
 
 Lightspeed enables seamless integration with other systems and services through robust and well-documented APIs. This flexibility ensures that our merchants can leverage the full power of Lightspeed's platform while incorporating the third-party tools and systems they require to thrive in a competitive landscape.
 
@@ -38,7 +39,7 @@ To support this new approach, we made significant changes to our internal proces
 
 > Before we moved to Bump.sh, updating our API specs and documentation was challenging and required developer intervention.
 > After the move, I could access and edit the specs myself and crucially preview changes before release. I can now quickly add important details and corrections without developer assistance, making my job easier and improving support for our Partners and Partner Support teams.
-> Additionally, having access to the specs allowed me to learn more about API design and the development life cycle, enabling me to better communicate our partners' needs to API development teams.  
+> Additionally, having access to the specs allowed me to learn more about API design and the development life cycle, enabling me to better communicate our partners' needs to API development teams.
 > — *Leah Williams, Technical Writer - API*
 
 ## Adopting Bump.sh for Additional Benefits
@@ -50,7 +51,7 @@ Making the mindset shift to treat API documentation as a first-class citizen and
 - **Improved Team Collaboration:** Adopting Bump.sh and prioritizing API documentation has transformed the way the entire team, from development to technical writers, collaborates to provide excellent documentation.
 
 > Our journey with Bump.sh has been a revelation. It not only solved our immediate challenges but also opened new avenues for innovation in API management.
-> The ability to automate changelogs and receive notifications has been a game-changer for our team.  
+> The ability to automate changelogs and receive notifications has been a game-changer for our team.
 > — *Alexander Mühlbauer, Development Manager*
 
 ## Conclusion: A Strategic Partnership
@@ -61,7 +62,7 @@ The ongoing collaboration with the Bump.sh team has been invaluable, offering co
 
 ---
 
-## To learn more about Lightspeed:
+## To learn more about Lightspeed
 
 Lightspeed is the unified POS and payments platform powering the world's best businesses in over 100 countries.
 

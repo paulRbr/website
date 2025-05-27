@@ -1,5 +1,6 @@
 ---
-title: "Improving PPE analytics product adoption and brand image"
+title: Improving PPE analytics product adoption and brand image
+author: Jay Cormier
 category: Customers
 image: blog/ppe-analytics-usecase-bump-sh.png
 company:
