@@ -3,6 +3,10 @@
   <head>
     <%= render "head", metadata: site.metadata, title: data.title, resource: resource %>
     <%= slotted :stylesheets %>
+
+    <% if ENV["FATHOM_ID"].present? %>
+    <script src="https://cdn.usefathom.com/script.js" data-site="<%= ENV["FATHOM_ID"] %>" defer></script>
+    <% end %>
   </head>
   <body
     class="bg-white text-black-900 <%= data.body_class %> data-dialog-open:overflow-hidden"
