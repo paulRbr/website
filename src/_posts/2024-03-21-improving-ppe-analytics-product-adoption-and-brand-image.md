@@ -1,8 +1,12 @@
 ---
 title: "Improving PPE analytics product adoption and brand image"
-category: Customer
+category: Customers
 image: blog/ppe-analytics-usecase-bump-sh.png
-end_with_preview: true
+company:
+  name: PPE Analytics
+  domain: Safety Equipment Data Management
+  website: https://www.ppe-analytics.com/
+  partnering since: 2022
 ---
 
 ## Construction Helmets, a Ruthless Universe

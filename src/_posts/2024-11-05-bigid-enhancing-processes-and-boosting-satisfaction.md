@@ -1,8 +1,13 @@
 ---
 title: "How BigID Enhanced Processes and Boosted Satisfaction by Upgrading Their API Documentation Portal"
-category: Customer
+category: Customers
 image: blog/bigid-usecase-bump-sh.png
-end_with_preview: true
+company:
+  logo: company-logos/bigid.svg
+  name: BigID
+  domain: Data Governance
+  website: https://bigid.com/
+  partnering since: 2024
 ---
 
 ## Technical Writers supporting API demand surge

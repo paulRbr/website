@@ -1,8 +1,13 @@
 ---
 title: "Why AvioBook switched from Swagger UI to Bump.sh for all of their APIs"
-category: Customer
+category: Customers
 image: blog/aviobook-usecase-bump-sh.png
-end_with_preview: true
+company:
+  logo: company-logos/aviobook.svg
+  name: Aviobook
+  domain: Aviation Software
+  website: https://www.aviobook.aero/
+  partnering since: 2021
 ---
 
 ## About Mano, AvioBook’s CTO

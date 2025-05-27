@@ -1,8 +1,12 @@
 ---
 title: "A Better API Documentation for Radar Healthcare’s Customers"
-category: Customer
+category: Customers
 image: blog/radar-healthcare-usecase-bump-sh.png
-end_with_preview: true
+company:
+  name: Radar Healthcare
+  domain: HealthTech Compliance
+  website: https://radarhealthcare.com/
+  partnering since: 2023
 ---
 
 ## An API Serving Healthcare

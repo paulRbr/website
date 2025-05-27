@@ -1,8 +1,13 @@
 ---
 title: "Helping Memo Bank deliver APIs to their customers, and comply with European FinTech regulations"
-category: Customer
+category: Customers
 image: blog/memobank-usecase-bump-sh.png
-end_with_preview: true
+company:
+  logo: company-logos/memo-bank.svg
+  name: Memo Bank
+  domain: Business Banking
+  website: https://memo.bank/
+  partnering since: 2022
 ---
 
 ## Engineering at Memo Bank
