@@ -44,7 +44,7 @@ class Builders::Image < SiteBuilder
 
     # first handle the srcset attribute
     # 1120 is there because its the max size of our main container. Bigger steps are there mostly for modals.
-    steps = [100, 200, 400, 500, 768, 1120, 2048, 3000, width]
+    steps = [100, 200, 400, 500, 768, 1120, 2048, 3000, width.round]
     srcset = []
     steps.each do |step|
       srcset << "#{image_url(imagepath, options.merge(width: step))} #{step}w"
