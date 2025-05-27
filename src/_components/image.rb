@@ -6,7 +6,7 @@ class Image < Bridgetown::Component
   ]
 
   def initialize(path, height: nil, **options)
-    @path = "/images/" + path
+    @path = "/website/images/" + path
     @height = height
     @options = options
   end
