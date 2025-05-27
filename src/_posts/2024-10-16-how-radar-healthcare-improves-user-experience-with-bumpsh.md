@@ -1,7 +1,7 @@
 ---
 title: "A Better API Documentation for Radar Healthcare’s Customers"
 category: Customer
-image: blog/radar-healthcare-api.png
+image: blog/radar-healthcare-usecase-bump-sh.png
 end_with_preview: true
 ---
 
