@@ -19,9 +19,12 @@
     </div>
     <div class="body-2 md:body-1"><%= content %></div>
     <%= render 'person_avatar', name: person[:name], tag: person[:tag], image: person[:image] %>
+
+    <% if defined?(href) %>
     <div class="md:hidden">
       <%= render Link.new 'Read more', href: href %>
     </div>
+    <% end %>
   </div>
 
   <div class="hidden md:block h-full w-1 bg-black-50 shrink-0"></div>
@@ -33,8 +36,11 @@
         height: company[:height] || 24,
       } %>
     </div>
+
+    <% if defined?(href) %>
     <div class="mt-32">
       <%= render Link.new 'Read more', href: href %>
     </div>
+    <% end %>
   </div>
 </div>
