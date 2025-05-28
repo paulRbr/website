@@ -1,23 +1,13 @@
 <div id="careers" class="container-main my-section2x">
   <%= render 'section_heading', locals: {
     title: 'Our current open positions',
-    pill: 'pill title',
-    description: 'This is the subtext that explains the section further',
+    pill: 'We’re hiring',
+    description: 'If you see a role that fits, go for it! If not, feel free to reach out anyway: we’re always up for meeting great people. No need for a cover letter, just tell us your story.'
   } %>
 
   <div class="flex flex-col gap-24">
-    <%= render 'page_about/open_position', title: "Backend Engineer", href: "#" do %>
+    <%= render 'page_about/open_position', title: "Fullstack Engineer", href: "https://bumpsh.notion.site/Senior-Full-Stack-Engineer-FR-1911fc8d7017802aa481d72b9868046b" do %>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <% end %>
-    <%= render 'page_about/open_position', title: "Frontend Engineer", href: "#" do %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <% end %>
-    <%= render 'page_about/open_position', title: "Product Manager", href: "#" do %>
-      <p>olore magna aliqua consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <% end %>
-  </div>
-
-  <div class="flex justify-center items-center mt-48">
-    <%= render Link.new "See all open positions", href: "#" %>
   </div>
 </div>
