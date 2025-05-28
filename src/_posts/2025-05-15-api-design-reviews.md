@@ -26,7 +26,7 @@ Design reviews are generally done for an API overall when its first form is crea
 - **Performance and Scalability** - Evaluate the API design for potential
   performance bottlenecks. Are consumers going to need to load 1,000 endpoints
   to solve the main use-case, or is data being computed on load which might slow
-  things down? 
+  things down?
 
 - **Backward Compatibility** - Identify any breaking changes that could affect
   existing consumers of the API. Ensure that changes are backward compatible or
@@ -48,7 +48,7 @@ Design reviews are generally done for an API overall when its first form is crea
 - **Impact on Documentation** - Determine how changes will affect existing
   documentation (reference docs, guiders, tutorials, etc). Ensure that
   documentation is updated to reflect any changes in the API before the change
-  is made to avoid anything getting out of sync. 
+  is made to avoid anything getting out of sync.
 
 It seems like a whole lot to think about but that is why design reviews pull in
 multiple people from various departments or walks of life. Getting all these
@@ -61,7 +61,7 @@ changes getting into production.
 
 There are countless ways people try to handle this. One of the most complicated
 came from a famous API thought leader who suggested folks email Word documents
-full of feedback around with spreadsheets to track them... 
+full of feedback around with spreadsheets to track them...
 
 A far more common approach is to put the review process through the same Pull
 Request workflow that developers are already using to review code changes on
@@ -71,7 +71,7 @@ To know the best way forward it's helpful to know the history of the pull
 request because it hasn't been around all that long. For decades developers
 would email around a diff file (short for difference) called `new-function.diff`
 and people would chat about that technical change on their IRC channels or
-around the water cooler. 
+around the water cooler.
 
 It was a massive faff and multiple diffs could conflict, so when Git gained
 popularity and added the
@@ -115,12 +115,12 @@ that below.
 ## Diffs Aren't Design Reviews
 
 Technical writers often report difficulty staring directly into a pull request
-that's making loads of changes to massive OpenAPI documents. 
+that's making loads of changes to massive OpenAPI documents.
 
 A single pull request might involve anything from reordering some parameters,
 complete reorganization of the file structure of infinite `$ref`'ed YAML, to a
 breaking change that could the vast majority of integrations API consumers. It
-can all be lost in a sea of red and green changes in the "diff" view. 
+can all be lost in a sea of red and green changes in the "diff" view.
 
 Technical writers shouldn’t need to learn YAML and stare into the void like
 this, nor should they need to use complex CLI tools or anything else just to see
@@ -144,7 +144,7 @@ Some changes in OpenAPI documents have no impact on API consumers, such as:
 These modifications might make the OpenAPI documents cleaner, but do not alter
 the API’s behavior. The huge wall of changes would look like loads of change is
 happening, and maybe some changes have been sprinkled into what was otherwise
-just a formatting change. 
+just a formatting change.
 
 Here's a change which looks like it's probably not going to break anything, it's
 just moving an inline definition of a parameter into a reference, and adding a
@@ -234,7 +234,7 @@ jobs:
 
 The `deploy-docs` job is doing what it suggests, deploying API documentation
 when merged to `main`. That's the standard workflow and can be removed if you
-don't need that right now. 
+don't need that right now.
 
 The important part here is the `api-diff` job. Once you've updated
 `<BUMP_DOC_ID>` to the ID found in the Bump.sh API settings page, popped in the
@@ -318,7 +318,7 @@ progressing.
 
 You can get as creative as you like with this, and have all stakeholders
 involved so there system architects and the governance teams all get their say
-before things progress. 
+before things progress.
 
 Make sure its possible to bypass this in emergencies, like pushing a hotfix, but
 generally speaking this should help to make sure things always get better and
@@ -350,6 +350,6 @@ profitable.
 
 ## Conclusion
 
-API design reviews are a critical part of ensuring that APIs are consistent, usable, and aligned with organizational standards. By leveraging tools like Bump.sh, you can streamline the review process, reduce manual effort, and focus on meaningful changes that impact API consumers. 
+API design reviews are a critical part of ensuring that APIs are consistent, usable, and aligned with organizational standards. By leveraging tools like Bump.sh, you can streamline the review process, reduce manual effort, and focus on meaningful changes that impact API consumers.
 
 Automating repetitive tasks, integrating reviews into pull requests, and using API linting tools can help teams collaborate effectively and maintain high-quality APIs. With the right processes and tools in place, API design reviews don’t have to be hard—they can be an opportunity to build better APIs and foster cross-functional collaboration.
