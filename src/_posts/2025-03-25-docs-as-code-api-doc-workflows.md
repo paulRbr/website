@@ -4,26 +4,21 @@ author: James Higginbotham
 category: Tech
 image: blog/api-docs-as-code.png
 end_with_preview: true
-fallback_icon: "edit-circle-fill"
-cta:
-  title: "Discover our most trusted partner"
-  description: "Clicking this will make you a better human."
-  href: "https://manu.habite.la"
 ---
 
-[Docs as code](https://www.writethedocs.org/guide/docs-as-code/) is a powerful methodology that aligns documentation processes with software development workflows.  It treats documentation as a first-class citizen in the development lifecycle by applying a similar approach to the standard development process. Let’s explore what it is, how it works, and how you can get started. 
+[Docs as code](https://www.writethedocs.org/guide/docs-as-code/) is a powerful methodology that aligns documentation processes with software development workflows.  It treats documentation as a first-class citizen in the development lifecycle by applying a similar approach to the standard development process. Let’s explore what it is, how it works, and how you can get started.
 
 ## What is Docs as Code?
 
-Docs as Code combines software development practices—such as version control, automated testing, and continuous integration— to your documentation processes. Technical writers and developers are able to collaborate more effectively as a result, ensuring that API documentation remains up-to-date, consistent, and of high quality. For large organizations with multiple teams and shared technical writers, docs as code offers a structured framework to blend developer-generated documentation and improvements and additional documentation produced by technical writers. 
+Docs as Code combines software development practices—such as version control, automated testing, and continuous integration— to your documentation processes. Technical writers and developers are able to collaborate more effectively as a result, ensuring that API documentation remains up-to-date, consistent, and of high quality. For large organizations with multiple teams and shared technical writers, docs as code offers a structured framework to blend developer-generated documentation and improvements and additional documentation produced by technical writers.
 
 ## How Docs as Code Transforms Technical Writing
 
-Applying continuous delivery principles to documentation brings numerous advantages, such as improved collaboration, automation, and version control. Most traditional methods of technical writing include a few elements of traditional software delivery. Docs as code combines version control, automated testing of documentation, and continuous deployment into an optimized workflow. 
+Applying continuous delivery principles to documentation brings numerous advantages, such as improved collaboration, automation, and version control. Most traditional methods of technical writing include a few elements of traditional software delivery. Docs as code combines version control, automated testing of documentation, and continuous deployment into an optimized workflow.
 
 ### Track Changes with Version Control
 
-**Version control** helps to track changes to documentation over time, allowing mistakes to be reverted or new revisions to be built and released using a single snapshot. Version control systems, such as [Git](https://git-scm.com/), are often used by developers and therefore can be leveraged for docs as code. 
+**Version control** helps to track changes to documentation over time, allowing mistakes to be reverted or new revisions to be built and released using a single snapshot. Version control systems, such as [Git](https://git-scm.com/), are often used by developers and therefore can be leveraged for docs as code.
 
 By managing documentation in a repository alongside the codebase, teams can:
 
@@ -42,7 +37,7 @@ _Are you new to git? Check out our article that provides an [introduction to git
 - **Link checkers** to validate internal and external links
 - **Schema validation tools** to ensure API documentation aligns with actual API definitions
 - **Spell checkers and grammar checkers** to catch errors before publication
-- **OpenAPI linters** (e.g., [vacuum](https://bump.sh/blog/api-linting-with-vacuum)) to enforce compliance with your organization’s API style guide. 
+- **OpenAPI linters** (e.g., [vacuum](https://bump.sh/blog/api-linting-with-vacuum)) to enforce compliance with your organization’s API style guide.
 
 By automating quality control, documentation teams catch issues early in the writing process and reduce manual proofreading efforts.
 
