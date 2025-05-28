@@ -1,9 +1,8 @@
 ---
-title: "Documenting Multiple API Versions"
+title: Documenting Multiple API Versions
 author: Phil Sturgeon
 category: Tech
 image: blog/multiple-api-versions-doc.png
-end_with_preview: true
 ---
 
 Versioning an API can be incredibly difficult, but working out how to handle documentation for multiple API versions can be even more of a challenge. When you release a new version of an API you’re going to need to keep the old one around for a while, and manage it as its own project until it can be retired. Thankfully Bump.sh makes it as simple and flexible as you could hope for. 

@@ -1,9 +1,8 @@
 ---
-title: "API Design Reviews Don’t Have to be Hard"
+title: API Design Reviews Don’t Have to be Hard
 author: Phil Sturgeon
 category: Tech
 image: blog/api-design-reviews.png
-end_with_preview: true
 ---
 
 An API Design Review is one of a few parts of a larger API Governance program, where various people review changes to an API to make sure its a good choice for the architecture and wider ecosystem. This often involves a wide variety of persona, including API designers, API developers, technical writers, system architects, and maybe even a dedicated [governance team](https://docs.bump.sh/guides/openapi/leveraging-the-openapi-specification-for-api-governance/).
