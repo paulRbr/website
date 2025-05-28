@@ -1,4 +1,4 @@
-enable: true
+#enable: true
 pill: "New"
 text: "This is an exemple of a type of annoucement that goes here"
 href: "#"
