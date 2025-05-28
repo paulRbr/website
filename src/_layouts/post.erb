@@ -73,7 +73,7 @@ layout: default
           <% cta = defined?(data.cta) && data.cta.title && data.cta.href ? data.cta : {
             title: 'Book your demo now',
             description: 'Schedule a call with our team',
-            href: 'https://calendly.com/bump-sh/discovery-call-bump-sh'
+            href: calendly_url
           } %>
           <%# little padding to align the card with the bottom of the article content (we need it because the big content line-height creates a gap at the end) %>
           <div style="padding-bottom: 4px"><%= render 'cta_card', **cta %></div>
