@@ -75,12 +75,13 @@ layout: default
             description: 'Schedule a call with our team',
             href: '#'
           } %>
-          <%= render 'cta_card', **cta %>
+          <%# little padding to align the card with the bottom of the article content (we need it because the big content line-height creates a gap at the end) %>
+          <div style="padding-bottom: 4px"><%= render 'cta_card', **cta %></div>
         </div>
       </div>
     </div>
     <div class="lg:w-9/12">
-      <article id="post" class="cms mb-section">
+      <article id="post" class="cms">
         <%= yield %>
       </article>
       <div class="lg:hidden">
